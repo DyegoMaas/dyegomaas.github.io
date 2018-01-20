@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Blog Dyego Maas</title>
+    <link>http://blog.dyegomaas.com.br/categories/</link>
+    <description>Recent content in Categories on Blog Dyego Maas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    
+	<atom:link href="http://blog.dyegomaas.com.br/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Citações</title>
+      <link>http://blog.dyegomaas.com.br/categories/cita%C3%A7%C3%B5es/</link>
+      <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.dyegomaas.com.br/categories/cita%C3%A7%C3%B5es/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Projetos</title>
+      <link>http://blog.dyegomaas.com.br/categories/projetos/</link>
+      <pubDate>Sat, 20 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.dyegomaas.com.br/categories/projetos/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
