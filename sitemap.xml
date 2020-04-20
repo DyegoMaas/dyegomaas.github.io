@@ -3,7 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://dyegomaas.github.io/categories/c#/</loc>
+    <loc>https://dyegomaas.github.io/</loc>
+    <lastmod>2020-04-19T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dyegomaas.github.io/tags/c#/</loc>
     <lastmod>2020-04-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -13,12 +19,17 @@
   </url>
   
   <url>
-    <loc>https://dyegomaas.github.io/</loc>
+    <loc>https://dyegomaas.github.io/posts/</loc>
     <lastmod>2020-04-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dyegomaas.github.io/posts/</loc>
+    <loc>https://dyegomaas.github.io/tags/</loc>
+    <lastmod>2020-04-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://dyegomaas.github.io/tags/test-builders/</loc>
     <lastmod>2020-04-19T00:00:00+00:00</lastmod>
   </url>
   
@@ -30,10 +41,6 @@
   <url>
     <loc>https://dyegomaas.github.io/categories/testes/</loc>
     <lastmod>2020-04-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dyegomaas.github.io/tags/</loc>
   </url>
   
 </urlset>
