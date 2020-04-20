@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Dyego Maas</title>
-    <link>/posts/</link>
+    <link>https://blog.dyegomaas.com.br/posts/</link>
     <description>Recent content in Posts on Dyego Maas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <lastBuildDate>Sun, 19 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.dyegomaas.com.br/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Test Builders em C# - Introdução</title>
-      <link>/posts/test-builders-csharp-intro/</link>
+      <link>https://blog.dyegomaas.com.br/posts/test-builders-csharp-intro/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>/posts/test-builders-csharp-intro/</guid>
+      <guid>https://blog.dyegomaas.com.br/posts/test-builders-csharp-intro/</guid>
       <description>Este é o primeiro post da série sobre TestBuilders.
 Implementar uma boa suíte de testes unitários para nossos projetos pode ser muito recompensador, e na maioria dos casos, é indispensável. Mas, se não tomarmos certos cuidados, a manutenção desta suíte pode se tornar tediosa e até terrivelmente trabalhosa.
 Vejamos um cenário muito comum, e que pode ser resolvido facilmente com o design pattern Builder aplicado a testes.
