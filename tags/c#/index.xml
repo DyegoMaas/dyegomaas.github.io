@@ -1,26 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>c# on Dyego Maas</title>
-    <link>https://dyegomaas.github.io/tags/c#/</link>
-    <description>Recent content in c# on Dyego Maas</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>pt-BR</language>
-    <lastBuildDate>Sun, 19 Apr 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://dyegomaas.github.io/tags/c#/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Simplificando setup de testes com Test Builders</title>
-      <link>https://dyegomaas.github.io/posts/test-builders-csharp-intro/</link>
-      <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://dyegomaas.github.io/posts/test-builders-csharp-intro/</guid>
-      <description>Implementar uma boa suíte de testes unitários para nossos projetos pode ser muito recompensador, e na maioria dos casos, é indispensável. Mas, se não tomarmos certos cuidados, a manutenção desta suíte pode se tornar tediosa e até terrivelmente trabalhosa.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>c# on Dyego Maas</title><link>https://dyegomaas.github.io/tags/c#/</link><description>Recent content in c# on Dyego Maas</description><generator>Hugo -- gohugo.io</generator><language>pt-BR</language><lastBuildDate>Sun, 19 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://dyegomaas.github.io/tags/c#/index.xml" rel="self" type="application/rss+xml"/><item><title>Simplificando setup de testes com Test Builders</title><link>https://dyegomaas.github.io/posts/test-builders-csharp-intro/</link><pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate><guid>https://dyegomaas.github.io/posts/test-builders-csharp-intro/</guid><description>Implementar uma boa suíte de testes unitários para nossos projetos pode ser muito recompensador, e na maioria dos casos, é indispensável. Mas, se não tomarmos certos cuidados, a manutenção desta suíte pode se tornar tediosa e até terrivelmente trabalhosa.
 Vejamos um cenário muito comum, e que pode ser resolvido facilmente com o design pattern Builder aplicado a testes.
-O que pode dar errado? Digamos que no nosso sistema imaginário, temos um objeto de negócio como este:</description>
-    </item>
-    
-  </channel>
-</rss>
+O que pode dar errado? Digamos que no nosso sistema imaginário, temos um objeto de negócio como este:</description></item></channel></rss>
