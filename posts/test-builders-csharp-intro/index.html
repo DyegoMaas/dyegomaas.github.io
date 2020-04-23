@@ -23,13 +23,11 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Simplificando setup de testes com Test Builders"/>
 <meta name="twitter:description" content="Implementar uma boa suíte de testes unitários para nossos projetos pode ser muito recompensador, e na maioria dos casos, é indispensável. Mas, se não tomarmos certos cuidados, a manutenção desta suíte pode se tornar tediosa e até terrivelmente trabalhosa.
-Vejamos um cenário muito comum, e que pode ser resolvido facilmente com o design pattern Builder aplicado a testes.
-O que pode dar errado? Digamos que no nosso sistema imaginário, temos um objeto de negócio como este:"/>
+Vejamos um cenário muito comum, e que pode ser resolvido facilmente com o design pattern Builder aplicado a testes para obter o que chamamos de test data builders, ou simplesmente test builders."/>
 
 <meta property="og:title" content="Simplificando setup de testes com Test Builders" />
 <meta property="og:description" content="Implementar uma boa suíte de testes unitários para nossos projetos pode ser muito recompensador, e na maioria dos casos, é indispensável. Mas, se não tomarmos certos cuidados, a manutenção desta suíte pode se tornar tediosa e até terrivelmente trabalhosa.
-Vejamos um cenário muito comum, e que pode ser resolvido facilmente com o design pattern Builder aplicado a testes.
-O que pode dar errado? Digamos que no nosso sistema imaginário, temos um objeto de negócio como este:" />
+Vejamos um cenário muito comum, e que pode ser resolvido facilmente com o design pattern Builder aplicado a testes para obter o que chamamos de test data builders, ou simplesmente test builders." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://dyegomaas.github.io/posts/test-builders-csharp-intro/" />
 <meta property="article:published_time" content="2020-04-19T00:00:00+00:00" />
@@ -250,8 +248,8 @@ O que pode dar errado? Digamos que no nosso sistema imaginário, temos um objeto
   
   <div class="post">
     <p>Implementar uma boa suíte de testes unitários para nossos projetos pode ser muito recompensador, e na maioria dos casos, é indispensável. Mas, se não tomarmos certos cuidados, a manutenção desta suíte pode se tornar tediosa e até terrivelmente trabalhosa.</p>
-<p>Vejamos um cenário muito comum, e que pode ser resolvido facilmente com o <em>design pattern <a href="https://pt.wikipedia.org/wiki/Builder"><strong>Builder</strong></a></em> aplicado a testes.</p>
-<h2 id="o-que-pode-dar-errado">O que pode dar errado?</h2>
+<p>Vejamos um cenário muito comum, e que pode ser resolvido facilmente com o <em>design pattern <a href="https://pt.wikipedia.org/wiki/Builder"><strong>Builder</strong></a></em> aplicado a testes para obter o que chamamos de <em>test data builders</em>, ou simplesmente <em>test builders</em>. Ao longo deste artigo e de eventuais outros, vou chamar esses construtores de <em>test builders</em>.</p>
+<h2 id="testes-repetitivos">Testes repetitivos</h2>
 <p>Digamos que no nosso sistema imaginário, temos um objeto de negócio como este:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cliente</span>
 {
