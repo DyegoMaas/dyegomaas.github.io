@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>github.io on Dyego Maas</title>
+    <link>https://dyegomaas.github.io/tags/github.io/</link>
+    <description>Recent content in github.io on Dyego Maas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Thu, 23 Apr 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://dyegomaas.github.io/tags/github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Entrega contínua de blogs Hugo com GitHub Actions</title>
+      <link>https://dyegomaas.github.io/posts/continuous-delivery-blog-com-hugo/</link>
+      <pubDate>Thu, 23 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://dyegomaas.github.io/posts/continuous-delivery-blog-com-hugo/</guid>
+      <description>O Hugo é hoje um dos melhores e mais populares geradores de sites estáticos. Já o GitHub Pages oferece um excelente serviço para distribuir gratuitamente conteúdos estáticos, o que é perfeito para blogs. Logo, é natural que as duas ferramentas sejam comumente usadas em conjunto.
+A partir do momento que o blog estiver todo configurado, com todos os templates customizados da forma como queremos, o dia-a-dia do blog passa a revolver em torno da criação de conteúdo.</description>
+    </item>
+    
+  </channel>
+</rss>
