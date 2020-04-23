@@ -238,7 +238,7 @@ A partir do momento que o blog estiver todo configurado, com todos os templates 
     
     
     <br/>
-    <i class="fas fa-clock"></i> 5 min de leitura
+    <i class="fas fa-clock"></i> 6 min de leitura
 </div>
 
 
@@ -372,6 +372,30 @@ A partir do momento que o blog estiver todo configurado, com todos os templates 
 <p><img src="/img/posts/continuous-delivery-blog-com-hugo/actions-menu.png" alt="Lista de execuções dos workflows"></p>
 <p>Se o processo ocorrer sem problemas, você vai ver todos os jobs com sucesso e o seu blog vai estar atualizado.</p>
 <p><img src="/img/posts/continuous-delivery-blog-com-hugo/visao-build.png" alt="Lista de execuções dos workflows"></p>
+<h3 id="agendamento-de-posts">Agendamento de posts</h3>
+<p>Esta abordagem também permite a publicação automática de posts agendados. A resposta está no começo do workflow. Podemos configurar um agendamento através de uma <a href="https://en.wikipedia.org/wiki/Cron">expressão cron</a> simples, como esta:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">schedule</span>:
+  - <span style="color:#66d9ef">cron</span>:  <span style="color:#e6db74">&#39;0 0 5 * *&#39;</span>
+</code></pre></div><p>Esta expressão descreve a frequência de deploy nos seguintes termos:</p>
+<pre><code>┌───────────── minuto (0 - 59)
+│ ┌───────────── hora (0 - 23)
+│ │ ┌───────────── dia do mês (1 - 31)
+│ │ │ ┌───────────── mês (1 - 12 ou JAN-DEZ)
+│ │ │ │ ┌───────────── dia da semana (0 - 6 ou DOM-SAB)
+│ │ │ │ │
+│ │ │ │ │
+│ │ │ │ │
+* * * * *
+</code></pre>
+<p>Assim, nossa expressão <code>0 0 5 * *</code> significa que o workflow deve ser disparado todos os dias, de todos os meses, às 5 horas da manhã.</p>
+<p>No cabeçalho dos nossos posts, precisamos definir a data de postagem:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#960050;background-color:#1e0010">+++</span>
+<span style="color:#a6e22e">author</span> = <span style="color:#e6db74">&#34;John Connor&#34;</span>
+<span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Post agendado para o futuro longínquo&#34;</span>
+<span style="color:#a6e22e">date</span> = <span style="color:#e6db74">&#34;2032-07-03&#34;</span>
+<span style="color:#960050;background-color:#1e0010">+++</span>
+</code></pre></div><p>Se publicarmos este post com data futura para o branch <code>master</code>, por padrão o Hugo não vai incluí-lo na geração do site. O workflow será executado todos os dias às 5 horas da manhã, até o dia 3 de julho de 2032, a data agendada para esta postagem, e ela será incluída na publicação do site deste dia em diante.</p>
+<h3 id="trabalhando-com-branches">Trabalhando com branches</h3>
 <p>Por fim, esta abordagem também nos permite escrever os posts em branches individuais, sem marcar os posts com <code>draft = true</code>. Eu crio branches no formato <code>post/nome-do-branch</code>. Quando está pronto, é só fazer merge para o branch <code>master</code> que o processo vai ser disparado.</p>
 <p>E é isso. Espero que essas dicas sejam úteis. E se você usa alguma outra estratégia ou tem alguma dica útil, compartilhe nos comentários.</p>
 
