@@ -100,7 +100,7 @@ O que pode dar errado? Digamos que no nosso sistema imaginário, temos um objeto
       
       
       <p class="site__description">
-         Escritor e Arquiteto de software 
+         Arquiteto de software e Escritor 
       </p>
     </div>
     <div class="collapsible-menu">
@@ -292,7 +292,7 @@ começam a divergir, e talvez nem todos os cenários sejam realmente válidos.</
     cpfValido.Should().BeTrue();
 }
 </code></pre></div><p>Podemos ver que já existem divergências na forma como a propriedade CPF é configurada em cada cenário: algumas possuem CPFs formatados, outras não; alguns CPFs talvez sejam válidos, mas a maioria não é.</p>
-<p>E então chega o dia em que o time decide que para resolver incosistências nos tratamentos do CPF do cliente, vão implementar um objeto rico do tipo CPF, que vai se autovalidar.</p>
+<p>E então chega o dia em que o time decide que para resolver inconsistências nos tratamentos do CPF do cliente, vão implementar um objeto rico do tipo CPF, que vai se autovalidar.</p>
 <p>A classe <code>CPF</code> é mais ou menos assim:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CPF</span>
 {
@@ -310,7 +310,7 @@ começam a divergir, e talvez nem todos os cenários sejam realmente válidos.</
 </code></pre></div><p>O time está contente com essa implementação e decide que a propriedade CPF do cliente deverá ser alterada de <code>string</code> para <code>CPF</code>.</p>
 <p>Mas então se dão conta de que o objeto cliente é instanciado em 652 testes, e de diferentes formas.</p>
 <p>Alguém sugere que poderiam fazer esse ajuste facilmente com uma operação de substituição (CTRL+H), mas então se dá conta que a classe CPF é instanciada a partir de um <code>long</code>, e não de uma <code>String</code>, e que vão ter que ajustar na mão todos os 652 testes.</p>
-<p>O problema que eles eles estão enfrentando é fruto do alto <strong>acomplamento entre os cenários de teste de o código de produção</strong>.</p>
+<p>O problema que eles eles estão enfrentando é fruto do alto <strong>acoplamento entre os cenários de teste de o código de produção</strong>.</p>
 <p>Este é o típico cenário que o uso de <strong>Test Builders</strong> poderia ter evitado uma grande dor de cabeça.</p>
 <h2 id="test-builders">Test Builders</h2>
 <p>Os Test Builders podem nos ajudar de várias formas:</p>
@@ -351,7 +351,7 @@ começam a divergir, e talvez nem todos os cenários sejam realmente válidos.</
         .Construir();
     <span style="color:#75715e">//... teste que valida CPF
 </span><span style="color:#75715e"></span>}
-</code></pre></div><p>Se agora o time tomar a decisar de transformar a propriedade CPF do cliente de <code>String</code> para <code>CPF</code>, será muito simples, pois basta fazer este ajuste no próprio builder, uma única vez:</p>
+</code></pre></div><p>Se agora o time tomar a decisão de transformar a propriedade CPF do cliente de <code>String</code> para <code>CPF</code>, será muito simples, pois basta fazer este ajuste no próprio <em>builder</em>, uma única vez:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClienteBuilder</span>
 {
     <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> cpf;
@@ -460,7 +460,7 @@ começam a divergir, e talvez nem todos os cenários sejam realmente válidos.</
 <li>Alguns preços fazem parte de uma tabela de preços aplicada por quantidade. Estes tipos, que obedece a uma faixa de quantidade de produtos vendidos. Quando <code>CodigoTabela</code> for zero, <code>InicioFaixa</code> e <code>FimFaixa</code> também serão.</li>
 </ol>
 <p>Esta regra de negócio é um pouco complicada, e se nosso <em>builder</em> não for implementado com cuidado, essas regras não vão ficar claras nos testes, ou pior ainda, vários cenários podem não fazer sentido nenhum!</p>
-<p>Podemos garantir que todos os cenários sejam construídos de acordo com estas regras simplemente traduzindo-as para a interface do <code>PrecoResponseBuilder</code>:</p>
+<p>Podemos garantir que todos os cenários sejam construídos de acordo com estas regras simplesmente traduzindo-as para a interface do <code>PrecoResponseBuilder</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> TipoPreco
 {
     Praticado = <span style="color:#ae81ff">1</span>, <span style="color:#75715e">// tabelado
@@ -548,7 +548,7 @@ começam a divergir, e talvez nem todos os cenários sejam realmente válidos.</
 
     <span style="color:#75715e">//... alguma lógica de teste
 </span><span style="color:#75715e"></span>}
-</code></pre></div><p>Como pudemos ver, os <em>builders</em> podem ser extremamente benéficos para nossas suítes de testes e ajudam a proteger nossos testes de mudanças nos nossos sitemas, simplificando muito nosso dia-a-dia.</p>
+</code></pre></div><p>Como pudemos ver, os <em>builders</em> podem ser extremamente benéficos para nossas suítes de testes e ajudam a proteger nossos testes de mudanças nos nossos sistemas, simplificando muito nosso dia-a-dia.</p>
 
   </div>
   
