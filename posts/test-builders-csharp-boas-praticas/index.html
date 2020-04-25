@@ -12,7 +12,7 @@
     "@type" : "BlogPosting",
     "mainEntityOfPage": {
          "@type": "WebPage",
-         "@id": "https:\/\/dyegomaas.github.io\/"
+         "@id": "https:\/\/blog.dyegomaas.com.br\/"
     },
     "articleSection" : "posts",
     "name" : "Test Builders - Boas práticas",
@@ -27,7 +27,7 @@
     "copyrightYear" : "2020",
     "datePublished": "2020-04-22 00:00:00 \x2b0000 UTC",
     "dateModified" : "2020-04-22 00:00:00 \x2b0000 UTC",
-    "url" : "https:\/\/dyegomaas.github.io\/posts\/test-builders-csharp-boas-praticas\/",
+    "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/test-builders-csharp-boas-praticas\/",
     "wordCount" : "692",
     "keywords" : [ "c#","test builders","Blog" ]
 }
@@ -57,7 +57,7 @@ Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns
 &ldquo;Bom&rdquo; e &ldquo;ruim&rdquo; são distinções claramente subjetivas, e os exemplos que listei abaixo são baseados na minha experiência pessoal e refletem a minha opinião apenas.
 Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns cuidados. Vamos ver alguns antipatterns comuns que já observei muitas pessoas fazendo (inclusive eu)." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://dyegomaas.github.io/posts/test-builders-csharp-boas-praticas/" />
+<meta property="og:url" content="https://blog.dyegomaas.com.br/posts/test-builders-csharp-boas-praticas/" />
 <meta property="article:published_time" content="2020-04-22T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-04-22T00:00:00+00:00" />
 
@@ -76,21 +76,21 @@ Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns
 
 
 
-<link rel="stylesheet" href="https://dyegomaas.github.io/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=">
+<link rel="stylesheet" href="https://blog.dyegomaas.com.br/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=" crossorigin="anonymous">
 
 
-<link rel="stylesheet" href="https://dyegomaas.github.io/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
-
-
-
-
-<link rel="stylesheet" href="https://dyegomaas.github.io/scss/overrides.34637e923df26beed655557070a58466875520f3865a87515ecfe631417d21be.css" integrity="sha256-NGN&#43;kj3ya&#43;7WVVVwcKWEZodVIPOGWodRXs/mMUF9Ib4=">
-<link rel="stylesheet" href="https://dyegomaas.github.io/scss/custom.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU=">
+<link rel="stylesheet" href="https://blog.dyegomaas.com.br/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" crossorigin="anonymous" media="print">
 
 
 
 
-<link rel="stylesheet" href="https://dyegomaas.github.io/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=">
+<link rel="stylesheet" href="https://blog.dyegomaas.com.br/scss/overrides.34637e923df26beed655557070a58466875520f3865a87515ecfe631417d21be.css" integrity="sha256-NGN&#43;kj3ya&#43;7WVVVwcKWEZodVIPOGWodRXs/mMUF9Ib4=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://blog.dyegomaas.com.br/scss/custom.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU=" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="https://blog.dyegomaas.com.br/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=" crossorigin="anonymous">
 
 
 
@@ -100,8 +100,8 @@ Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!-- Icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://dyegomaas.github.io/apple-touch-icon-144-precomposed.png">
-    <link rel="shortcut icon" href="https://dyegomaas.github.io/favicon.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://blog.dyegomaas.com.br/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="https://blog.dyegomaas.com.br/favicon.png">
     
     
 
@@ -114,14 +114,14 @@ Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns
   <div class="container ">
     <div class="sidebar-about">
       <span class="site__title">
-        <a href="https://dyegomaas.github.io/">Dyego Maas</a>
+        <a href="https://blog.dyegomaas.com.br/">Dyego Maas</a>
       </span>
       
         
         
         
         <div class="author-image">
-          <img src="https://dyegomaas.github.io/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+          <img src="https://blog.dyegomaas.com.br/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
         </div>
         
       
@@ -140,7 +140,7 @@ Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns
 		 
 			 
 				<li>
-					<a href="https://dyegomaas.github.io/posts/">
+					<a href="https://blog.dyegomaas.com.br/posts/">
 						<span>Blog</span>
 					</a>
 				</li>
@@ -237,7 +237,7 @@ Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns
           em
           
           
-              <a class="badge badge-category" href="https://dyegomaas.github.io/categories/testes">TESTES</a>
+              <a class="badge badge-category" href="https://blog.dyegomaas.com.br/categories/testes">TESTES</a>
               
           
       
@@ -249,10 +249,10 @@ Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns
           <br/>
            <i class="fas fa-tags"></i>
           
-          <a class="badge badge-tag" href="https://dyegomaas.github.io/tags/c">c#</a>
+          <a class="badge badge-tag" href="https://blog.dyegomaas.com.br/tags/c">c#</a>
            
       
-          <a class="badge badge-tag" href="https://dyegomaas.github.io/tags/test-builders">test builders</a>
+          <a class="badge badge-tag" href="https://blog.dyegomaas.com.br/tags/test-builders">test builders</a>
           
       
     
@@ -282,7 +282,7 @@ Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns
 <p>Builders ajudam bastante, mas temos que tomar alguns cuidados. Vamos ver alguns <em>antipatterns</em> comuns que já observei muitas pessoas fazendo (inclusive eu).</p>
 <h3 id="tentar-prever-o-futuro">Tentar prever o futuro</h3>
 <p>Um erro comum que muitos desenvolvedores cometem ao implementar novo <em>builder</em> para testes é tentar prever o futuro. Eles fazem isso <strong>criando métodos para configurar cada propriedade</strong> do objeto em questão, mesmo quando no momento, só precisam customizar uma ou duas propriedades, como no exemplo abaixo: com um monte de código basicamente inútil, e que pode não ser nem útil quando essas propriedades vierem a ser customizadas.</p>
-<p><img src="https://dyegomaas.github.io/img/posts/test-builders-deep-dive/builder-com-lixo.png" alt="Test builder com lixo"></p>
+<p><img src="https://blog.dyegomaas.com.br/img/posts/test-builders-deep-dive/builder-com-lixo.png" alt="Test builder com lixo"></p>
 <p>Nessas horas é bom nos lembrarmos do princípio <a href="https://pt.wikipedia.org/wiki/YAGNI">YAGNI</a>, ou <em>You aren&rsquo;t gonna need it!</em> (Você não vai precisar disso!), que tende a ser bastante verdadeiro. Desenvolvedores, como qualque outro ser humano, são péssimos em adivinhar o futuro. A recomendação aqui é simples: implemente customizações apenas para o que for necessário.</p>
 <h3 id="inicializar-os-valores-padrão-direto-nos-fields">Inicializar os valores padrão direto nos fields</h3>
 <p>Outro erro muito fácil de cometer e ser tentado a jogar os valores padrão direto nos <em>fields</em>, como é feito na imagem abaixo.</p>
@@ -381,7 +381,7 @@ Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns
 
 <div class="navigation navigation-single">
     
-    <a href="https://dyegomaas.github.io/posts/test-builders-csharp-intro/" class="navigation-prev">
+    <a href="https://blog.dyegomaas.com.br/posts/test-builders-csharp-intro/" class="navigation-prev">
       <i aria-hidden="true" class="fa fa-chevron-left"></i>
       <span class="navigation-tittle">Simplificando setup de testes com Test Builders</span>
     </a>

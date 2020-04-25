@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Dyego Maas</title>
-    <link>https://dyegomaas.github.io/tags/</link>
+    <link>https://blog.dyegomaas.com.br/tags/</link>
     <description>Recent content in Tags on Dyego Maas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <lastBuildDate>Wed, 22 Apr 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://dyegomaas.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.dyegomaas.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>c#</title>
-      <link>https://dyegomaas.github.io/tags/c#/</link>
+      <link>https://blog.dyegomaas.com.br/tags/c#/</link>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dyegomaas.github.io/tags/c#/</guid>
+      <guid>https://blog.dyegomaas.com.br/tags/c#/</guid>
       <description></description>
     </item>
     
     <item>
       <title>test builders</title>
-      <link>https://dyegomaas.github.io/tags/test-builders/</link>
+      <link>https://blog.dyegomaas.com.br/tags/test-builders/</link>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://dyegomaas.github.io/tags/test-builders/</guid>
+      <guid>https://blog.dyegomaas.com.br/tags/test-builders/</guid>
       <description></description>
     </item>
     
