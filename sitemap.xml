@@ -43,7 +43,17 @@
   </url>
   
   <url>
+    <loc>https://blog.dyegomaas.com.br/tags/builder-pattern/</loc>
+    <lastmod>2020-04-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.dyegomaas.com.br/posts/test-builders-csharp-intro/</loc>
+    <lastmod>2020-04-19T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/test-data-builders/</loc>
     <lastmod>2020-04-19T00:00:00+00:00</lastmod>
   </url>
   
