@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>builder pattern</title>
+      <link>https://blog.dyegomaas.com.br/tags/builder-pattern/</link>
+      <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/builder-pattern/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>C#</title>
       <link>https://blog.dyegomaas.com.br/tags/c#/</link>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
@@ -21,27 +30,9 @@
     </item>
     
     <item>
-      <title>test builders</title>
-      <link>https://blog.dyegomaas.com.br/tags/test-builders/</link>
-      <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.dyegomaas.com.br/tags/test-builders/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>builder pattern</title>
-      <link>https://blog.dyegomaas.com.br/tags/builder-pattern/</link>
-      <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.dyegomaas.com.br/tags/builder-pattern/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>test data builders</title>
       <link>https://blog.dyegomaas.com.br/tags/test-data-builders/</link>
-      <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/test-data-builders/</guid>
       <description></description>
