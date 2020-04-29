@@ -4,7 +4,7 @@
     
 
 
-    <head>
+    <head itemscope itemtype="https://blog.dyegomaas.com.br/">
     <link href="https://gmpg.org/xfn/11" rel="profile">
     <script type="application/ld+json">
 {
@@ -19,11 +19,19 @@
     "headline" : "Test Data Builders - Boas práticas",
     "description" : "Neste post, vamos explorar algumas boas práticas na escrita de Test Data Builders. Mas para entender o que são \x26ldquo;bons\x26rdquo; builders, primeiro precisamos entender o que são builders \x26ldquo;ruins\x26rdquo;.\n\x26ldquo;Bom\x26rdquo; e \x26ldquo;ruim\x26rdquo; são distinções claramente subjetivas, e os exemplos que listei abaixo são baseados na minha experiência pessoal e refletem a minha opinião apenas.\nErros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns cuidados. Vamos ver alguns antipatterns comuns que já observei muitas pessoas fazendo (inclusive eu).",
     "inLanguage" : "en-US",
-    "author" : "",
-    "creator" : "",
-    "publisher": "",
-    "accountablePerson" : "",
-    "copyrightHolder" : "",
+    "author" : {
+        "@type": "Person",
+        "name": "Dyego Maas"
+    }, 
+    "image": {
+        "@type": "imageObject",
+        "url": "https://blog.dyegomaas.com.br/img/posts/post-csharp.png"
+    },
+    
+    "creator" : "Dyego Maas",
+    "publisher": "Dyego Maas",
+    "accountablePerson" : "Dyego Maas",
+    "copyrightHolder" : "Dyego Maas",
     "copyrightYear" : "2020",
     "datePublished": "2020-04-22",
     "dateModified" : "2020-04-22",
@@ -37,21 +45,25 @@
 <meta http-equiv="Cache-Control" content="public" />
 <!-- Enable responsiveness on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<base href="https://blog.dyegomaas.com.br/posts/test-builders-csharp-boas-praticas/">
 <meta name="generator" content="Hugo 0.69.0" />
 
     
     
     
 
-<title>Test Data Builders - Boas práticas • Dyego Maas</title>
+<title itemprop="name">Test Data Builders - Boas práticas • Dyego Maas</title>
 
 
+<link rel="canonical" href="https://blog.dyegomaas.com.br/posts/test-builders-csharp-boas-praticas/" itemprop="url" /> 
+<meta name="url" content="https://blog.dyegomaas.com.br/posts/test-builders-csharp-boas-praticas/" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Test Data Builders - Boas práticas"/>
 <meta name="twitter:description" content="Neste post, vamos explorar algumas boas práticas na escrita de Test Data Builders. Mas para entender o que são &ldquo;bons&rdquo; builders, primeiro precisamos entender o que são builders &ldquo;ruins&rdquo;.
 &ldquo;Bom&rdquo; e &ldquo;ruim&rdquo; são distinções claramente subjetivas, e os exemplos que listei abaixo são baseados na minha experiência pessoal e refletem a minha opinião apenas.
 Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns cuidados. Vamos ver alguns antipatterns comuns que já observei muitas pessoas fazendo (inclusive eu)."/>
 
+<meta property="og:site_name" content="Blog - Dyego Maas" />
 <meta property="og:title" content="Test Data Builders - Boas práticas" />
 <meta property="og:description" content="Neste post, vamos explorar algumas boas práticas na escrita de Test Data Builders. Mas para entender o que são &ldquo;bons&rdquo; builders, primeiro precisamos entender o que são builders &ldquo;ruins&rdquo;.
 &ldquo;Bom&rdquo; e &ldquo;ruim&rdquo; são distinções claramente subjetivas, e os exemplos que listei abaixo são baseados na minha experiência pessoal e refletem a minha opinião apenas.
@@ -106,7 +118,6 @@ Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns
     
 
 </head>
-
 
     <body class=" ">
     
