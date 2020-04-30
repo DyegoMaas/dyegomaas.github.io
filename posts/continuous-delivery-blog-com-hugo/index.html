@@ -23,11 +23,6 @@
         "@type": "Person",
         "name": "Dyego Maas"
     }, 
-    "image": {
-        "@type": "imageObject",
-        "url": "https://blog.dyegomaas.com.br/img/posts/continuous-delivery-blog-com-hugo/cover.png"
-    },
-    
     "creator" : "Dyego Maas",
     "publisher": "Dyego Maas",
     "accountablePerson" : "Dyego Maas",
@@ -61,15 +56,16 @@
 <link rel="canonical" href="https://blog.dyegomaas.com.br/posts/continuous-delivery-blog-com-hugo/" itemprop="url" />
 <meta name="url" content="https://blog.dyegomaas.com.br/posts/continuous-delivery-blog-com-hugo/" />
 <meta property="og:site_name" content="Blog - Dyego Maas" />
+
 <meta property="og:title" content="Entrega contínua de blogs Hugo com GitHub Actions" />
 <meta property="og:description" content="O Hugo é hoje um dos melhores e mais populares geradores de sites estáticos. Já o GitHub Pages oferece um excelente serviço para distribuir gratuitamente conteúdos estáticos, o que é perfeito para blogs. Logo, é natural que as duas ferramentas sejam comumente usadas em conjunto.
 A partir do momento que o blog estiver todo configurado, com todos os templates customizados da forma como queremos, o dia-a-dia do blog passa a revolver em torno da criação de conteúdo." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.dyegomaas.com.br/posts/continuous-delivery-blog-com-hugo/" />
-<meta property="og:image" content="https://blog.dyegomaas.com.br/img/posts/continuous-delivery-blog-com-hugo/cover.png" />
+<meta property="og:image" content="/posts/continuous-delivery-blog-com-hugo/img/cover.png"/>
+<meta property="og:image:secure_url" content="https://blog.dyegomaas.com.br/posts/continuous-delivery-blog-com-hugo/img/cover.png"/>
 <meta property="article:published_time" content="2020-04-29T00:00:00+00:00" />
 <meta property="article:modified_time" content="2020-04-29T00:00:00+00:00" />
-
 
 <meta name="theme-color" content="#000000" />
 <meta name="msapplication-TileColor" content="#000000" />
@@ -415,15 +411,15 @@ A partir do momento que o blog estiver todo configurado, com todos os templates 
           <span style="color:#66d9ef">directory</span>: static-site
 </code></pre></div><p>Sera necessário subsituir algumas variáveis no template, como o <code>&lt;nomeusuario&gt;</code>, o <code>&lt;email-valido&gt;</code>, e o template utilizado.</p>
 <p>Além disso, você deve ter notado que em dois momentos precisamos de um token do GitHub, como nesta linha: <code>github_token: ${{ secrets.CD_BLOG_TOKEN }}</code>. É bem fácil gerar e cadastrar este token.</p>
-<p><img src="/img/posts/continuous-delivery-blog-com-hugo/caminho-gerar-token.png" alt="Settings/Developer settings/Personal access tokens/Generate new token"></p>
-<p><img src="/img/posts/continuous-delivery-blog-com-hugo/new-personal-access-token.png" alt="Permissões do token, habilitando a opção repo"></p>
+<p><img src="/posts/continuous-delivery-blog-com-hugo/img/caminho-gerar-token.png" alt="Settings/Developer settings/Personal access tokens/Generate new token"></p>
+<p><img src="/posts/continuous-delivery-blog-com-hugo/img/new-personal-access-token.png" alt="Permissões do token, habilitando a opção repo"></p>
 <p>Provavelmente, habitalando somente a opção &ldquo;public_repo&rdquo; já deve funcionar, mas não testei esta opção. Se você quiser testar, pode deixar um comentário contando se funcionou.</p>
 <p>Feito isso, clique em <code>Generate token</code> e uma tela vai abrir. Salve este token, ele é importante. Agora, precisaremos criar um Secret no nosso repositório.</p>
 <p>Navegue para as configurações do seu repositório, e na seção Secrets, cadastre um secret com o nome <code>CD_BLOG_TOKEN</code>, com o token como valor.</p>
 <p>Feito isso, basta fazer um commit na master e o workflow será disparado. Você pode acompanhar o resultado em Actions:</p>
-<p><img src="/img/posts/continuous-delivery-blog-com-hugo/actions-menu.png" alt="Lista de execuções dos workflows"></p>
+<p><img src="/posts/continuous-delivery-blog-com-hugo/img/actions-menu.png" alt="Lista de execuções dos workflows"></p>
 <p>Se o processo ocorrer sem problemas, você vai ver todos os jobs com sucesso e o seu blog vai estar atualizado.</p>
-<p><img src="/img/posts/continuous-delivery-blog-com-hugo/visao-build.png" alt="Lista de execuções dos workflows"></p>
+<p><img src="/posts/continuous-delivery-blog-com-hugo/img/visao-build.png" alt="Lista de execuções dos workflows"></p>
 <h3 id="agendamento-de-posts">Agendamento de posts</h3>
 <p>Esta abordagem também permite a publicação automática de posts agendados. A resposta está no começo do workflow. Podemos configurar um agendamento através de uma <a href="https://en.wikipedia.org/wiki/Cron">expressão cron</a> simples, como esta:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">schedule</span>:
