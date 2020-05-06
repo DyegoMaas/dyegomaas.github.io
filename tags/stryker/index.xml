@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>stryker on Blog Dyego Maas</title>
+    <link>https://blog.dyegomaas.com.br/tags/stryker/</link>
+    <description>Recent content in stryker on Blog Dyego Maas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Wed, 06 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.dyegomaas.com.br/tags/stryker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Testes de mutação com Stryker.NET</title>
+      <link>https://blog.dyegomaas.com.br/posts/testes-mutacao-stryker-net/</link>
+      <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/testes-mutacao-stryker-net/</guid>
+      <description>A realidade do desenvolvimento nos dias atuais demanda agir rápido. Nossos produtos precisam ser capazes de mudar quase tão rapidamente quanto o comportamento e as demandas dos nossos clientes. Precisamos ser capazes de correr. De entregar rápido e errar rápido. De aprender com os erros e seguir em frente. E a única forma segura de seguir em frente num ritmo alucinante é seguir com qualidade.
+Os testes unitários são uma das principais ferramentas do desenvolvedor para garantir um desenvolvimento com qualidade.</description>
+    </item>
+    
+  </channel>
+</rss>

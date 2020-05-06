@@ -4,16 +4,61 @@
   
   <url>
     <loc>https://blog.dyegomaas.com.br/</loc>
-    <lastmod>2020-04-29T00:00:00+00:00</lastmod>
+    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/categories/blogging/</loc>
-    <lastmod>2020-04-29T00:00:00+00:00</lastmod>
+    <loc>https://blog.dyegomaas.com.br/tags/c#/</loc>
+    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.dyegomaas.com.br/categories/</loc>
+    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/code-coverage/</loc>
+    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/net-core/</loc>
+    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/posts/</loc>
+    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/stryker/</loc>
+    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/</loc>
+    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/categories/testes/</loc>
+    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/testes-de-muta%C3%A7%C3%A3o/</loc>
+    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/posts/testes-mutacao-stryker-net/</loc>
+    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/categories/blogging/</loc>
     <lastmod>2020-04-29T00:00:00+00:00</lastmod>
   </url>
   
@@ -48,16 +93,6 @@
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/posts/</loc>
-    <lastmod>2020-04-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.dyegomaas.com.br/tags/</loc>
-    <lastmod>2020-04-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.dyegomaas.com.br/posts/test-builders-csharp-boas-praticas/</loc>
     <lastmod>2020-04-22T00:00:00+00:00</lastmod>
   </url>
@@ -68,17 +103,7 @@
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/tags/c#/</loc>
-    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.dyegomaas.com.br/tags/test-data-builders/</loc>
-    <lastmod>2020-04-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.dyegomaas.com.br/categories/testes/</loc>
     <lastmod>2020-04-22T00:00:00+00:00</lastmod>
   </url>
   
