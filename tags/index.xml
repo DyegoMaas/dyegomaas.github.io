@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Blog Dyego Maas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 06 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>docker</title>
+      <link>https://blog.dyegomaas.com.br/tags/docker/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>in memory</title>
+      <link>https://blog.dyegomaas.com.br/tags/in-memory/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/in-memory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>mongodb</title>
+      <link>https://blog.dyegomaas.com.br/tags/mongodb/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tmpfs</title>
+      <link>https://blog.dyegomaas.com.br/tags/tmpfs/</link>
+      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/tmpfs/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>C#</title>
