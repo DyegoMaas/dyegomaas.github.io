@@ -31,7 +31,7 @@
     "datePublished": "2020-05-13",
     "dateModified" : "2020-05-13",
     "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/testes-mais-rapidos-com-mongodb-inmemory\/",
-    "wordCount" : "454",
+    "wordCount" : "477",
     "keywords" : [ "mongodb","in memory","docker","tmpfs","Blog" ]
 }
 </script>
@@ -306,7 +306,15 @@
 <p><code>docker run -p 27017:27017 --tmpfs=/data/db mongo:3.6.0</code></p>
 <p>Como podemos ver, basta informar um diretório onde será montado o diretório em memória, neste exemplo <code>/data/db</code> o MongoDB já vai se entender com o resto.</p>
 <p>Para rodar os testes localmente com esta instância do MongoDB, especialmente se você já tiver outra instância rodando, pode ser necessário mapear este banco em memória para uma porta alternativa. Isto pode ser feito facilmente alterando a porta externa (a primeira das duas) com a configuração <code>-p 27018:27017</code>. Feito isso, é só configurar os testes para utilizarem esta porta.</p>
-<h2 id="alternativas">Alternativas</h2>
+<p>Abaixo, um exemplo com Docker Compose:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">version</span>: <span style="color:#e6db74">&#34;3&#34;</span>
+<span style="color:#66d9ef">services</span>:
+  <span style="color:#66d9ef">mongo-in-memory</span>:
+    <span style="color:#66d9ef">image</span>: mongo:<span style="color:#ae81ff">3.6.0</span>
+    <span style="color:#66d9ef">tmpfs</span>: /data/db
+    <span style="color:#66d9ef">ports</span>:
+      - <span style="color:#e6db74">&#34;27017:27017&#34;</span>
+</code></pre></div><h2 id="alternativas-a-usar-um-banco-em-memória">Alternativas a usar um banco em memória</h2>
 <p>Uma alternativa é utilizar algum tipo de biblioteca que simule o MongoDB, de modo a obter testes que executem rapidamente sem depender de ferramentas externas. Um exemplo é o <a href="https://github.com/mongomock/mongomock">mongomock</a> para Python.</p>
 <p>Esta opção tem algumas desvantagens, no entanto. Em especial, o comportamento de alguns índices pode não corresponder ao comportamento que seria obtido em uma instância real do MongoDB. Já passei por situações em que testes conseguiam violar índices únicos sem quebrar, e por isso não confio muito nesta solução.</p>
 <p>Outra opção é simplesmente não utilizar uma biblioteca dessas e mockar todas as consultas ao MongoDB. Assim, teremos uma suíte cheia de testes unitários.</p>
