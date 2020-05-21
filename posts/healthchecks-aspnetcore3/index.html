@@ -36,7 +36,7 @@
     "datePublished": "2020-05-20",
     "dateModified" : "2020-05-20",
     "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/healthchecks-aspnetcore3\/",
-    "wordCount" : "1216",
+    "wordCount" : "1227",
     "keywords" : [ "aspnetcore","healthcheck","Blog" ]
 }
 </script>
@@ -392,7 +392,7 @@
         <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> Task.FromResult(<span style="color:#66d9ef">new</span> HealthCheckResult(context.Registration.FailureStatus, exception: excecao));
     }
 }
-</code></pre></div><p>O exemplo acima possui alguns detalhes interessantes para analisarmos. O primeiro ponto é o uso da sintaxe de <em>pattern matching</em> do C# 8 para selecionar o resultado da checagem com base em dois parâmetros: 1) o sucesso ou insucesso na consulta ao serviço externo, e 2) o tempo de resposta do serviço.</p>
+</code></pre></div><p>O exemplo acima e bem próximo de uma implementação que fiz no trabalho e possui alguns detalhes interessantes para analisarmos. O primeiro ponto é o uso da sintaxe de <em>pattern matching</em> do C# 8 para selecionar o resultado da checagem com base em dois parâmetros: 1) o sucesso ou insucesso na consulta ao serviço externo, e 2) o tempo de resposta do serviço.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">var</span> healthCheckResult = (result.IsSuccessStatusCode, stopwatch.Elapsed) <span style="color:#66d9ef">switch</span>
 {
     (<span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">var</span> tempoResposta) when tempoResposta &lt;= TimeSpan.FromSeconds(<span style="color:#ae81ff">5</span>) =&gt; HealthCheckResult.Healthy(),
