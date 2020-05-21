@@ -112,35 +112,7 @@
     <link rel="shortcut icon" href="/favicon.png">
     <link rel="alternate" type="application/rss+xml" href="https://blog.dyegomaas.com.br/tags/net-core/index.xml" title="Blog Dyego Maas" />
 
-    <script src="https://unpkg.com/lunr/lunr.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.pt.min.js" defer></script>
-<script async>
-  var getJSON = function(url, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.responseType = 'json';
-    xhr.onload = function() {
-      var status = xhr.status;
-      if (status === 200) {
-        callback(null, xhr.response);
-      } else {
-        callback(status, xhr.response);
-      }
-    };
-    xhr.send();
-  };
-
-  document.onreadystatechange = function () {
-     if (document.readyState == "complete") {
-      getJSON('/search-index.json', function (err, data) {
-        
-        
-      })
-      console.log('ready')
-   }
- }
-</script>
+    
 </head>
 
     <body class=" ">
