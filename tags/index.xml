@@ -6,10 +6,46 @@
     <description>Recent content in Tags on Blog Dyego Maas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 20 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>csharp</title>
+      <link>https://blog.dyegomaas.com.br/tags/csharp/</link>
+      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/csharp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pattern matching</title>
+      <link>https://blog.dyegomaas.com.br/tags/pattern-matching/</link>
+      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/pattern-matching/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>programação funcional</title>
+      <link>https://blog.dyegomaas.com.br/tags/programa%C3%A7%C3%A3o-funcional/</link>
+      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/programa%C3%A7%C3%A3o-funcional/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>type matching</title>
+      <link>https://blog.dyegomaas.com.br/tags/type-matching/</link>
+      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/type-matching/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>aspnetcore</title>

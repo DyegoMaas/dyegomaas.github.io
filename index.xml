@@ -6,10 +6,21 @@
     <description>Recent content on Blog Dyego Maas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 20 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Pattern matching no C# 8.0</title>
+      <link>https://blog.dyegomaas.com.br/posts/pattern-matching-csharp/</link>
+      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/pattern-matching-csharp/</guid>
+      <description>A partir do C# 7.0 a linguagem começou a receber funcionalidades que fazem uso de um recurso de programação funcional chamado pattern matching. A maioria desses recursos é derivada do F# e a introdução deles no C# visa facilitar a vida do desenvolvedor e solução de certos tipos de problemas.
+São recursos muito poderosos e que simplificam em muito alguns tipos de construções.
+Como os recursos de pattern matching do C# 8.</description>
+    </item>
     
     <item>
       <title>Como implementar Health Checks para sua aplicação usando as extensões do ASP.NET Core 3.0</title>
