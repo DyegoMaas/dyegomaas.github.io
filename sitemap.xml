@@ -18,11 +18,6 @@
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/categories/dev/</loc>
-    <lastmod>2020-05-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.dyegomaas.com.br/tags/pattern-matching/</loc>
     <lastmod>2020-05-27T00:00:00+00:00</lastmod>
   </url>
@@ -34,6 +29,11 @@
   
   <url>
     <loc>https://blog.dyegomaas.com.br/posts/</loc>
+    <lastmod>2020-05-27T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/categories/programacao/</loc>
     <lastmod>2020-05-27T00:00:00+00:00</lastmod>
   </url>
   
