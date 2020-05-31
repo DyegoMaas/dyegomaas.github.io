@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Blog Dyego Maas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 27 May 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 31 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>dev</title>
+      <link>https://blog.dyegomaas.com.br/tags/dev/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/dev/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://blog.dyegomaas.com.br/tags/hugo/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hyde-hyde</title>
+      <link>https://blog.dyegomaas.com.br/tags/hyde-hyde/</link>
+      <pubDate>Sun, 31 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/hyde-hyde/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>csharp</title>
@@ -170,15 +197,6 @@
       <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/github.io/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://blog.dyegomaas.com.br/tags/hugo/</link>
-      <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.dyegomaas.com.br/tags/hugo/</guid>
       <description></description>
     </item>
     
