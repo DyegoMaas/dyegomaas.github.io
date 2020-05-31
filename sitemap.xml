@@ -103,11 +103,6 @@
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/tags/c#/</loc>
-    <lastmod>2020-05-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.dyegomaas.com.br/tags/code-coverage/</loc>
     <lastmod>2020-05-06T00:00:00+00:00</lastmod>
   </url>
@@ -123,7 +118,7 @@
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/tags/testes-de-muta%C3%A7%C3%A3o/</loc>
+    <loc>https://blog.dyegomaas.com.br/tags/testes-de-mutacao/</loc>
     <lastmod>2020-05-06T00:00:00+00:00</lastmod>
   </url>
   
