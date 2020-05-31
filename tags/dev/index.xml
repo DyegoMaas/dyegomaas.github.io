@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hugo on Blog Dyego Maas</title>
-    <link>https://blog.dyegomaas.com.br/tags/hugo/</link>
-    <description>Recent content in hugo on Blog Dyego Maas</description>
+    <title>dev on Blog Dyego Maas</title>
+    <link>https://blog.dyegomaas.com.br/tags/dev/</link>
+    <description>Recent content in dev on Blog Dyego Maas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <lastBuildDate>Sun, 31 May 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.dyegomaas.com.br/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.dyegomaas.com.br/tags/dev/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,16 +20,6 @@
       <description>Insert Lead paragraph here.
 A augue nunc lacus auctor efficitur tempor placerat, dictum volutpat mi vitae viverra porta non sem, himenaeos senectus vivamus potenti cubilia sollicitudin. Curae cursus inceptos tincidunt magna mi nibh ad enim etiam, molestie eu quis primis hendrerit taciti phasellus. Feugiat ultricies dictumst iaculis potenti odio laoreet urna at, ultrices curae leo accumsan proin sem lobortis.
 Heading 2 Sollicitudin ornare odio blandit aenean enim lacus accumsan elementum vestibulum porta mauris lorem, ullamcorper class fermentum sem hendrerit ante augue penatibus scelerisque felis leo proin,ad nascetur venenatis sodales dignissim viverra suspendisse turpis convallis condimentum sapien.</description>
-    </item>
-    
-    <item>
-      <title>Entrega contínua de blogs Hugo com GitHub Actions</title>
-      <link>https://blog.dyegomaas.com.br/posts/continuous-delivery-blog-com-hugo/</link>
-      <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.dyegomaas.com.br/posts/continuous-delivery-blog-com-hugo/</guid>
-      <description>O Hugo é hoje um dos melhores e mais populares geradores de sites estáticos. Já o GitHub Pages oferece um excelente serviço para distribuir gratuitamente conteúdos estáticos, o que é perfeito para blogs. Logo, é natural que as duas ferramentas sejam comumente usadas em conjunto.
-A partir do momento que o blog estiver todo configurado, com todos os templates customizados da forma como queremos, o dia-a-dia do blog passa a revolver em torno da criação de conteúdo.</description>
     </item>
     
   </channel>
