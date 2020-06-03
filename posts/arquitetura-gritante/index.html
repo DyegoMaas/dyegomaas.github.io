@@ -449,7 +449,7 @@
 </code></pre><p>Agora podemos identificar, só de vislumbrar a estrutura de diretórios, as funcionalidades que a aplicação implementa: cadastro de usuários na loja, pesquisa de produtos, carrinho de compras e realizar pedidos.</p>
 <p>Essa abordagem exige uma certa dose de mudança em relação a forma como muitos de nós estão acostumados a organizar o código das nossas aplicações. E esta organização traz consigo vários benefícios.</p>
 <h4 id="sem-mais-códigos-compartilhados-por-acidente">Sem mais códigos compartilhados por acidente</h4>
-<p>Uma das primeiras diferenças que notamos é a ausência do <code>ClientesService</code> e do <code>ClientesRepository</code>, que antes eram <em>valas comuns</em> para jogar todo e qualquer código relacionado a um clientes.</p>
+<p>Uma das primeiras diferenças que notamos é a ausência do <code>ClientesService</code> e do <code>ClientesRepository</code>, que antes eram <em>valas comuns</em> para jogar todo e qualquer código relacionado a um cliente.</p>
 <p>No lugar, temos em cada diretório de caso de uso, um código extremamente especializado em atender àquele caso de uso específico, e nenhum outro.</p>
 <p>A reutilização de código de lógica de negócio não é apenas desencorajada, mas até certo ponto proibida.</p>
 <blockquote>
