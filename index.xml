@@ -6,7 +6,7 @@
     <description>Recent content on Blog Dyego Maas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 03 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 19 Apr 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/index.xml" rel="self" type="application/rss+xml" />
     
@@ -83,6 +83,26 @@ A partir do momento que o blog estiver todo configurado, com todos os templates 
       <description>Neste post, vamos explorar algumas boas práticas na escrita de Test Data Builders. Mas para entender o que são &amp;ldquo;bons&amp;rdquo; builders, primeiro precisamos entender o que são builders &amp;ldquo;ruins&amp;rdquo;.
 &amp;ldquo;Bom&amp;rdquo; e &amp;ldquo;ruim&amp;rdquo; são distinções claramente subjetivas, e os exemplos que listei abaixo são baseados na minha experiência pessoal e refletem a minha opinião apenas.
 Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns cuidados. Vamos ver alguns antipatterns comuns que já observei muitas pessoas fazendo (inclusive eu).</description>
+    </item>
+    
+    <item>
+      <title>asdf</title>
+      <link>https://blog.dyegomaas.com.br/posts2/test-builders-csharp-intro/</link>
+      <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts2/test-builders-csharp-intro/</guid>
+      <description>Implementar uma boa suíte de testes unitários para nossos projetos pode ser muito recompensador, e na maioria dos casos, é indispensável. Mas, se não tomarmos certos cuidados, a manutenção desta suíte pode se tornar tediosa e até terrivelmente trabalhosa.
+Vejamos um cenário muito comum, e que pode ser resolvido facilmente com o design pattern Builder aplicado a testes para obter o que chamamos de test data builders, ou simplesmente test builders.</description>
+    </item>
+    
+    <item>
+      <title>asdf</title>
+      <link>https://blog.dyegomaas.com.br/test-builders-csharp-intro/</link>
+      <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/test-builders-csharp-intro/</guid>
+      <description>Implementar uma boa suíte de testes unitários para nossos projetos pode ser muito recompensador, e na maioria dos casos, é indispensável. Mas, se não tomarmos certos cuidados, a manutenção desta suíte pode se tornar tediosa e até terrivelmente trabalhosa.
+Vejamos um cenário muito comum, e que pode ser resolvido facilmente com o design pattern Builder aplicado a testes para obter o que chamamos de test data builders, ou simplesmente test builders.</description>
     </item>
     
     <item>
