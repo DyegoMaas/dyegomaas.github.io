@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gource on Blog Dyego Maas</title>
+    <link>https://blog.dyegomaas.com.br/tags/gource/</link>
+    <description>Recent content in gource on Blog Dyego Maas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.dyegomaas.com.br/tags/gource/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Como visualizar o desenvolvimento de projetos com Gource</title>
+      <link>https://blog.dyegomaas.com.br/posts/como-visualizar-desenvolvimento-com-gource/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/como-visualizar-desenvolvimento-com-gource/</guid>
+      <description>O Gource é uma ferramenta open-source que permite visualizar o desenvolvimento de projetos de software com base num sistema de controle de versão como Git, Mercurial, Bazaar and SVN.
+Por exemplo, esta é uma visualização de quase 2 horas de toda a história de desenvolvimento do kernel do Linux de 1991 a 2015:
+  Esse tipo de visualização pode ter várias utilidades. Para um projeto open-source, pode servir como reconhecimento ao trabalho de uma comunidade engajada.</description>
+    </item>
+    
+  </channel>
+</rss>
