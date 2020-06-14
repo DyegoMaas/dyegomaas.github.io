@@ -111,7 +111,8 @@
 
 
 <link rel="stylesheet" href="/scss/overrides.12fbd34ba51238ef12b6f61ae1b5ff4cfd5251d04d2bed751ef6fb4782b2dd6c.css" integrity="sha256-EvvTS6USOO8StvYa4bX/TP1SUdBNK&#43;11Hvb7R4Ky3Ww=" crossorigin="anonymous">
-<link rel="stylesheet" href="/scss/custom.356eb375015fa3430fc734a26978e28dcc7d1fce6d600bbd87b7dc50879068cf.css" integrity="sha256-NW6zdQFfo0MPxzSiaXjijcx9H85tYAu9h7fcUIeQaM8=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/modal.5c65a7d8815b8dd5ca27db121de2ae36a3d9ca2bd31554af64dabd3b7a9581b7.css" integrity="sha256-XGWn2IFbjdXKJ9sSHeKuNqPZyivTFVSvZNq9O3qVgbc=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/custom.be16b7609f0660b4fdf4e88e7704e477b74c75e26b0503d6597664052ad40ac7.css" integrity="sha256-vha3YJ8GYLT99OiOdwTkd7dMdeJrBQPWWXZkBSrUCsc=" crossorigin="anonymous">
 
 
 
@@ -134,32 +135,15 @@
 <script src="https://unpkg.com/lunr/lunr.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.pt.min.js" defer></script>
-<script async>
-  var getJSON = function(url, callback) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.responseType = 'json';
-    xhr.onload = function() {
-      var status = xhr.status;
-      if (status === 200) {
-        callback(null, xhr.response);
-      } else {
-        callback(status, xhr.response);
-      }
-    };
-    xhr.send();
-  };
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" defer></script>
 
+<script src="/js/layout-adjustments.js" defer></script><script src="/js/custom-search.js" defer></script>
+
+<script async>
   document.onreadystatechange = function () {
     if (document.readyState == "complete") {
-      
-      
-      
-      
-
-      console.log('ready')
-
-      $('.matchheight').matchHeight();
+      adjustLayout();
+      initializeSearch('/search-index.json', '/search-data-companion.json');
    }
  }
 </script>
@@ -193,20 +177,42 @@
       <div class="menu-content">
         <div>
 	<ul class="sidebar-nav">
-		 
-		 
+		
+		
 			 
 				<li>
 					<a href="/posts/">
 						<span>Blog</span>
 					</a>
 				</li>
-			 
+			
 		
 		<li>
 			<a href="https://dyegomaas.com.br/">
 				<span>Sobre<span>
 			</a>
+		</li>
+		<li>
+			<a id="search-button" rel="search" style="cursor: pointer;">
+    <i class="fa fa-search" aria-hidden="true"></i>
+</a>
+
+<div id="search-results-modal" class="modal display-none">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close">&times;</span>
+        <h2>O que você procura?</h2>
+      </div>
+      <div class="modal-body">
+        <input type="search" id="search-input" results="10" placeholder="Pesquisar... (pressione Enter)">
+        <div>
+            <ul id="search-results"></ul>
+        </div>
+      </div>
+      
+    </div>
+</div>
 		</li>
 	</ul>
 </div>
