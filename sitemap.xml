@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.dyegomaas.com.br/</loc>
+    <lastmod>2020-06-10T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.dyegomaas.com.br/categories/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
   </url>
@@ -225,16 +230,6 @@
   <url>
     <loc>https://blog.dyegomaas.com.br/tags/test-data-builders/</loc>
     <lastmod>2020-04-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.dyegomaas.com.br/test-builders-csharp-intro/</loc>
-    <lastmod>2020-04-19T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.dyegomaas.com.br/</loc>
-    <lastmod>2020-04-19T00:00:00+00:00</lastmod>
   </url>
   
   <url>

@@ -24,13 +24,10 @@ function initializeSearch(searchIndexFilename, searchMetadataFilename) {
     .then((values) => {
       const indexJson = values[0];
       const metadata = values[1];
-      console.log('index', indexJson);
-      console.log('metadata', metadata);
 
       const index = lunr.Index.load(indexJson);
-      window.SearchIndex = index;
-      window.SearchFor = function (terms) {
-        return window.SearchIndex.search(terms);
+      const searchFor = function (terms) {
+        return index.search(terms);
       };
       console.log('search index succesfully loaded');
 
@@ -70,15 +67,12 @@ function initializeSearch(searchIndexFilename, searchMetadataFilename) {
         terms = this.value;
         console.log('terms', terms);
         if (terms && terms.length > 0) {
-          const searchResults = window.SearchFor(terms);
-          const uris = searchResults.map(function (resultDescription) {
-            return resultDescription.ref;
-          });
-          console.log(`found ${uris.length} results`);
+          const searchResults = searchFor(terms);
+          console.log(`found ${searchResults.length} results`);
 
-          if (uris.length > 0) {
-            const searchResultsViewModels = uris.map((uri) => {
-              return metadata.filter((doc => doc.uri === uri))[0];
+          if (searchResults.length > 0) {
+            const searchResultsViewModels = searchResults.map((searchResult) => {
+              return metadata.filter((doc => doc.uri === searchResult.ref))[0];
             });
             updateSearchResults(Mustache.render(searchResultTemplate, { 'searchResults': searchResultsViewModels }));
           }
