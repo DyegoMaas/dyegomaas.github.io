@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Blog Dyego Maas</title>
     <link>https://blog.dyegomaas.com.br/tags/</link>
-    <description>Recent content in Tags on Blog Dyego Maas</description>
+    <description>Recent content in Tags on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <lastBuildDate>Wed, 17 Jun 2020 00:00:00 +0000</lastBuildDate>
@@ -12,291 +13,531 @@
     
     
     <item>
-      <title>blog</title>
+      <title>blogx</title>
       <link>https://blog.dyegomaas.com.br/tags/blog/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/blog/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>hugo</title>
+      <title>hugox</title>
       <link>https://blog.dyegomaas.com.br/tags/hugo/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/hugo/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>hugo lunr</title>
+      <title>hugo lunrx</title>
       <link>https://blog.dyegomaas.com.br/tags/hugo-lunr/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/hugo-lunr/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>lunrjs</title>
+      <title>lunrjsx</title>
       <link>https://blog.dyegomaas.com.br/tags/lunrjs/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/lunrjs/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>site estatico</title>
+      <title>site estaticox</title>
       <link>https://blog.dyegomaas.com.br/tags/site-estatico/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/site-estatico/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>controle de versao</title>
+      <title>controle de versaox</title>
       <link>https://blog.dyegomaas.com.br/tags/controle-de-versao/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/controle-de-versao/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>gource</title>
+      <title>gourcex</title>
       <link>https://blog.dyegomaas.com.br/tags/gource/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/gource/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>video</title>
+      <title>herculesx</title>
+      <link>https://blog.dyegomaas.com.br/tags/hercules/</link>
+      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/hercules/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>videox</title>
       <link>https://blog.dyegomaas.com.br/tags/video/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/video/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>arquitetura gritante</title>
+      <title>arquitetura gritantex</title>
       <link>https://blog.dyegomaas.com.br/tags/arquitetura-gritante/</link>
       <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/arquitetura-gritante/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>arquitetura limpa</title>
+      <title>arquitetura limpax</title>
       <link>https://blog.dyegomaas.com.br/tags/arquitetura-limpa/</link>
       <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/arquitetura-limpa/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>SOLID</title>
+      <title>SOLIDx</title>
       <link>https://blog.dyegomaas.com.br/tags/solid/</link>
       <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/solid/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>SRP</title>
+      <title>SRPx</title>
       <link>https://blog.dyegomaas.com.br/tags/srp/</link>
       <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/srp/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>csharp</title>
+      <title>csharpx</title>
       <link>https://blog.dyegomaas.com.br/tags/csharp/</link>
       <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/csharp/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>pattern matching</title>
+      <title>pattern matchingx</title>
       <link>https://blog.dyegomaas.com.br/tags/pattern-matching/</link>
       <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/pattern-matching/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>programação funcional</title>
+      <title>programação funcionalx</title>
       <link>https://blog.dyegomaas.com.br/tags/programa%C3%A7%C3%A3o-funcional/</link>
       <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/programa%C3%A7%C3%A3o-funcional/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>type matching</title>
+      <title>type matchingx</title>
       <link>https://blog.dyegomaas.com.br/tags/type-matching/</link>
       <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/type-matching/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>aspnetcore</title>
+      <title>aspnetcorex</title>
       <link>https://blog.dyegomaas.com.br/tags/aspnetcore/</link>
       <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/aspnetcore/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>healthcheck</title>
+      <title>healthcheckx</title>
       <link>https://blog.dyegomaas.com.br/tags/healthcheck/</link>
       <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/healthcheck/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>docker</title>
+      <title>dockerx</title>
       <link>https://blog.dyegomaas.com.br/tags/docker/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/docker/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>in memory</title>
+      <title>in memoryx</title>
       <link>https://blog.dyegomaas.com.br/tags/in-memory/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/in-memory/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>mongodb</title>
+      <title>mongodbx</title>
       <link>https://blog.dyegomaas.com.br/tags/mongodb/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/mongodb/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>tmpfs</title>
+      <title>tmpfsx</title>
       <link>https://blog.dyegomaas.com.br/tags/tmpfs/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/tmpfs/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>code coverage</title>
+      <title>code coveragex</title>
       <link>https://blog.dyegomaas.com.br/tags/code-coverage/</link>
       <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/code-coverage/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>net core</title>
+      <title>net corex</title>
       <link>https://blog.dyegomaas.com.br/tags/net-core/</link>
       <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/net-core/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>stryker</title>
+      <title>strykerx</title>
       <link>https://blog.dyegomaas.com.br/tags/stryker/</link>
       <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/stryker/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>testes de mutacao</title>
+      <title>testes de mutacaox</title>
       <link>https://blog.dyegomaas.com.br/tags/testes-de-mutacao/</link>
       <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/testes-de-mutacao/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>continuous delivery</title>
+      <title>continuous deliveryx</title>
       <link>https://blog.dyegomaas.com.br/tags/continuous-delivery/</link>
       <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/continuous-delivery/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>github actions</title>
+      <title>github actionsx</title>
       <link>https://blog.dyegomaas.com.br/tags/github-actions/</link>
       <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/github-actions/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>github pages</title>
+      <title>github pagesx</title>
       <link>https://blog.dyegomaas.com.br/tags/github-pages/</link>
       <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/github-pages/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>github.io</title>
+      <title>github.iox</title>
       <link>https://blog.dyegomaas.com.br/tags/github.io/</link>
       <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/github.io/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>builder pattern</title>
+      <title>builder patternx</title>
       <link>https://blog.dyegomaas.com.br/tags/builder-pattern/</link>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/builder-pattern/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>test data builders</title>
+      <title>test data buildersx</title>
       <link>https://blog.dyegomaas.com.br/tags/test-data-builders/</link>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/test-data-builders/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
     </item>
     
   </channel>

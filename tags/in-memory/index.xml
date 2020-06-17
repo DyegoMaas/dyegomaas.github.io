@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>in memory on Blog Dyego Maas</title>
     <link>https://blog.dyegomaas.com.br/tags/in-memory/</link>
-    <description>Recent content in in memory on Blog Dyego Maas</description>
+    <description>Recent content in in memory on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <lastBuildDate>Wed, 13 May 2020 00:00:00 +0000</lastBuildDate>
@@ -12,13 +13,25 @@
     
     
     <item>
-      <title>Testes de integração mais rápidos com Docker e MongoDB em memória</title>
+      <title>Testes de integração mais rápidos com Docker e MongoDB em memóriax</title>
       <link>https://blog.dyegomaas.com.br/posts/testes-mais-rapidos-com-mongodb-inmemory/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/posts/testes-mais-rapidos-com-mongodb-inmemory/</guid>
       <description>A forma mais fácil de configurar o MongoDB para rodar em memória é utilizando um sistema de arquivos do tipo tmpfs.
 Os sistemas de arquivo tmpfs não armazenam os dados em dispositivos de armazenamento permanentes, como HDs, pendrives, etc. Ao invés disso, manipulam os dados diretamente na memória RAM, ou seja, são voláteis. Por isso, muitas distribuições Unix os utilizam para diretório temporário /tmp ou até para compartilhamento de memória.</description>
+
+      
+      
+      
+      
+      
+        
+        
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/testes-mais-rapidos-com-mongodb-inmemory/img/cover.png" type="image/png"/>      
     </item>
     
   </channel>

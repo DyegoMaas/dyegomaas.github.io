@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>lunrjs on Blog Dyego Maas</title>
     <link>https://blog.dyegomaas.com.br/tags/lunrjs/</link>
-    <description>Recent content in lunrjs on Blog Dyego Maas</description>
+    <description>Recent content in lunrjs on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <lastBuildDate>Wed, 17 Jun 2020 00:00:00 +0000</lastBuildDate>
@@ -12,7 +13,7 @@
     
     
     <item>
-      <title>Como implementei a busca offline para o meu site estático feito em Hugo</title>
+      <title>Como implementei a busca offline para o meu site estático feito em Hugox</title>
       <link>https://blog.dyegomaas.com.br/posts/como-implementei-busca-offline-blog/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -21,6 +22,18 @@
 Por isso decidi criar um site estático com Hugo. Mas nem por isso ele precisa ser muito restrito em funcionalidades. Não é a falta de um servidor que impediria ter um recurso de busca de conteúdo no site.
 A questão então era como implementar uma busca off-line para o blog.
 Pesquisa Após uma breve pesquisa encontrei uma página de documentação do Hugo descrevendo as principais estratégias para implementar um sistema de busca para um blog com Hugo.</description>
+
+      
+      
+      
+      
+      
+        
+        
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/como-implementei-busca-offline-blog/img/cover-lunr.png" type="image/png"/>      
     </item>
     
   </channel>

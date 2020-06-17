@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Blog Dyego Maas</title>
     <link>https://blog.dyegomaas.com.br/categories/</link>
-    <description>Recent content in Categories on Blog Dyego Maas</description>
+    <description>Recent content in Categories on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <lastBuildDate>Wed, 17 Jun 2020 00:00:00 +0000</lastBuildDate>
@@ -12,57 +13,99 @@
     
     
     <item>
-      <title>Blogging</title>
+      <title>Bloggingx</title>
       <link>https://blog.dyegomaas.com.br/categories/blogging/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/categories/blogging/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/categories/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>Tutorial</title>
+      <title>Tutorialx</title>
       <link>https://blog.dyegomaas.com.br/categories/tutorial/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/categories/tutorial/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/categories/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>Arquitetura</title>
+      <title>Arquiteturax</title>
       <link>https://blog.dyegomaas.com.br/categories/arquitetura/</link>
       <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/categories/arquitetura/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/categories/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>Programacao</title>
+      <title>Programacaox</title>
       <link>https://blog.dyegomaas.com.br/categories/programacao/</link>
       <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/categories/programacao/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/categories/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>AspNetCore</title>
+      <title>AspNetCorex</title>
       <link>https://blog.dyegomaas.com.br/categories/aspnetcore/</link>
       <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/categories/aspnetcore/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/categories/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>
-      <title>Testes</title>
+      <title>Testesx</title>
       <link>https://blog.dyegomaas.com.br/categories/testes/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/categories/testes/</guid>
       <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/categories/img/posts/social-media.png" type="image/png"/>      
     </item>
     
   </channel>

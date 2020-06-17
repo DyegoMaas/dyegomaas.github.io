@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Arquitetura on Blog Dyego Maas</title>
     <link>https://blog.dyegomaas.com.br/categories/arquitetura/</link>
-    <description>Recent content in Arquitetura on Blog Dyego Maas</description>
+    <description>Recent content in Arquitetura on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <lastBuildDate>Wed, 03 Jun 2020 00:00:00 +0000</lastBuildDate>
@@ -12,7 +13,7 @@
     
     
     <item>
-      <title>Arquitetura Gritante</title>
+      <title>Arquitetura Gritantex</title>
       <link>https://blog.dyegomaas.com.br/posts/arquitetura-gritante/</link>
       <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -21,6 +22,13 @@
 O conceito é muito simples, mas certamente nos faz refletir sobre como estruturamos nossas aplicações, e como a estrutura escolhida dá uma cara para uma aplicação.
  O tema da aplicação deve ser evidente na sua estrutura.
  À primeira vista, esta fala pode parecer óbvia, mas vamos ver alguns exemplos para entender as nuances do problema.</description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/categories/arquitetura/img/posts/social-media.png" type="image/png"/>      
     </item>
     
   </channel>

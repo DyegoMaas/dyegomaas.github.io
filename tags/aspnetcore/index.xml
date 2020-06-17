@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>aspnetcore on Blog Dyego Maas</title>
     <link>https://blog.dyegomaas.com.br/tags/aspnetcore/</link>
-    <description>Recent content in aspnetcore on Blog Dyego Maas</description>
+    <description>Recent content in aspnetcore on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <lastBuildDate>Wed, 20 May 2020 00:00:00 +0000</lastBuildDate>
@@ -12,13 +13,20 @@
     
     
     <item>
-      <title>Como implementar Health Checks para sua aplicação usando as extensões do ASP.NET Core 3.0</title>
+      <title>Como implementar Health Checks para sua aplicação usando as extensões do ASP.NET Core 3.0x</title>
       <link>https://blog.dyegomaas.com.br/posts/healthchecks-aspnetcore3/</link>
       <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/posts/healthchecks-aspnetcore3/</guid>
       <description>O ASP.NET Core 3.0 fornece uma forma bastante prática de implementar um endpoint para checar a saúde de uma aplicação.
 Um endpoint de Health Check bem implementado pode nos ajudar de inúmeras formas a manter uma aplicação rodando. Podemos usá-los em conjunto com o liveness probes do Kubernetes, por exemplo, para que ele possa verificar a saúde de um serviço e assim poder reiniciá-lo caso as coisas dêem errado. Ferramentas de monitoramento também podem fazer uso desses endpoints para gerar alertas e estatísticas.</description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/aspnetcore/img/posts/social-media.png" type="image/png"/>      
     </item>
     
   </channel>
