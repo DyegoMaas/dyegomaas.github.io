@@ -6,10 +6,22 @@
     <description>Recent content in Posts on Blog Dyego Maas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 10 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jun 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Como implementei a busca offline para o meu site estático feito em Hugo</title>
+      <link>https://blog.dyegomaas.com.br/posts/como-implementei-busca-offline-blog/</link>
+      <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/como-implementei-busca-offline-blog/</guid>
+      <description>Este blog começou como um experimento: eu queria fazer um site que não custasse nada no fim do mês.
+Por isso decidi criar um site estático com Hugo. Mas nem por isso ele precisa ser muito restrito em funcionalidades. Não é a falta de um servidor que impediria ter um recurso de busca de conteúdo no site.
+A questão então era como implementar uma busca off-line para o blog.
+Pesquisa Após uma breve pesquisa encontrei uma página de documentação do Hugo descrevendo as principais estratégias para implementar um sistema de busca para um blog com Hugo.</description>
+    </item>
     
     <item>
       <title>Como visualizar o desenvolvimento de projetos com Gource</title>
