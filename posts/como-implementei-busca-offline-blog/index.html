@@ -31,7 +31,7 @@
     "datePublished": "2020-06-17",
     "dateModified" : "2020-06-17",
     "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/como-implementei-busca-offline-blog\/",
-    "wordCount" : "1318",
+    "wordCount" : "1355",
     "keywords" : [ "blog","hugo","site estatico","lunrjs","hugo lunr","Blog" ]
 }
 </script>
@@ -363,8 +363,9 @@
   
   
   <div class="post">
-    <p>Este blog começou como um experimento: eu queria fazer um site que não custasse nada no fim do mês.</p>
-<p>Por isso decidi criar um site estático com <a href="https://gohugo.io">Hugo</a>. Mas nem por isso ele precisa ser muito restrito em funcionalidades. Não é a falta de um servidor que impediria ter um recurso de busca de conteúdo no site.</p>
+    <p>Este blog começou como um experimento e um objetivo: não custar nada no fim do mês.</p>
+<p>Por isso decidi criar um site estático com um gerador chamado <a href="https://gohugo.io">Hugo</a>. Isso significa que não existe um backend para o blog; não existe uma arquitetura Cliente/Servidor, apenas o cliente, e todo o conteúdo do site é pré-renderizado.</p>
+<p>Mas nem por isso ele precisa ser muito restrito em funcionalidades. Não é a falta de um servidor que impediria ter um recurso de busca de conteúdo no site.</p>
 <p>A questão então era como implementar uma busca off-line para o blog.</p>
 <h3 id="pesquisa">Pesquisa</h3>
 <p>Após uma breve pesquisa encontrei uma <a href="https://gohugo.io/tools/search/">página de documentação</a> do Hugo descrevendo as principais estratégias para implementar um sistema de busca para um blog com Hugo.</p>
@@ -402,8 +403,8 @@
 }];
 </code></pre></div><p>Com esses dados em mãos, podemos usar o Lunr.js para gerar um índice de busca:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">idx</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">lunr</span>(<span style="color:#66d9ef">function</span> () {
-  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">ref</span>(<span style="color:#e6db74">&#39;uri&#39;</span>);
-  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">field</span>(<span style="color:#e6db74">&#39;title&#39;</span>);
+  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">ref</span>(<span style="color:#e6db74">&#39;uri&#39;</span>); <span style="color:#75715e">// esta é a informação identifica que identifica o post nos resultados
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">field</span>(<span style="color:#e6db74">&#39;title&#39;</span>);
   <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">field</span>(<span style="color:#e6db74">&#39;content&#39;</span>);
   <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">field</span>(<span style="color:#e6db74">&#39;tags&#39;</span>);
 
@@ -470,7 +471,7 @@
 <h3 id="os-metadados">Os metadados</h3>
 <p>Logo depois de ter publicado com sucesso a primeira versão do blog com o JSON de índice, comecei a implementação do tão sonhado sistema de busca.</p>
 <p>Não demorou muito e descobri que faltava mais uma peça do quebra-cabeças: o arquivo do índice não preserva o conteúdo do dataset, então a única informação retornada era a <code>uri</code> do post. Infelizmente isso não era suficiente para gerar uma página de resultados. Eu precisava de metadados.</p>
-<p>Então adicionei uma última rotina para gerar um dataset menor para ser distribuído junto com índice. Este JSON é basicamente igual ao dataset original, mas contendo apenas informações essencias para montar uma view minimamente decente:</p>
+<p>Então adicionei uma rotina para gerar um dataset menor para ser distribuído junto com índice. Este JSON é bastante semelhante ao dataset original, mas contendo apenas informações essencias para montar uma view minimamente decente:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">posts</span> <span style="color:#f92672">=</span> [{
   <span style="color:#e6db74">&#34;uri&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;/posts/arquitetura-gritante&#34;</span>,
   <span style="color:#e6db74">&#34;title&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Arquitetura Gritante&#34;</span>,
