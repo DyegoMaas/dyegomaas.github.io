@@ -375,10 +375,10 @@
 <h4 id="lunrjs">Lunr.js</h4>
 
 <div class="figure-wrapper">
-    
-    <figure class="embed ">
+    <figure class="embed">
         
-            <img src="/posts/como-implementei-busca-offline-blog/img/moon.jpg" alt="Fluxograma descrevendo o funcionamento da busca, com a geração do índice durante o processo de integração contínua e publicação do json gerado junto com o site" />
+        
+            <img class="" src="/posts/como-implementei-busca-offline-blog/img/moon.jpg" alt="Fluxograma descrevendo o funcionamento da busca, com a geração do índice durante o processo de integração contínua e publicação do json gerado junto com o site" />
         
         
     </figure>
@@ -433,10 +433,10 @@
 <p>Para contextualizar, o conteúdo do blog é estruturado da seguinte forma:</p>
 
 <div class="figure-wrapper">
-    
-    <figure class="embed ">
+    <figure class="embed">
         
-            <img src="/posts/como-implementei-busca-offline-blog/img/estrutura-diretorio-posts.png" alt="Árvore de arquivos de posts seguindo o padrão content/posts/nome-post/index.md" />
+        
+            <img class="" src="/posts/como-implementei-busca-offline-blog/img/estrutura-diretorio-posts.png" alt="Árvore de arquivos de posts seguindo o padrão content/posts/nome-post/index.md" />
         
         
         <figcaption><p>Árvore de arquivos dos posts</p> </figcaption>
@@ -449,10 +449,10 @@
 <p>O plano então era implementar o seguinte:</p>
 
 <div class="figure-wrapper">
-    
-    <figure class="embed eighty-p">
+    <figure class="embed">
         
-            <img src="/posts/como-implementei-busca-offline-blog/img/fluxograma-geracao-indice.jpg" alt="Fluxograma descrevendo o funcionamento da busca, com a geração do índice durante o processo de integração contínua e publicação do json gerado junto com o site" />
+        
+            <img class="eighty-p" src="/posts/como-implementei-busca-offline-blog/img/fluxograma-geracao-indice.jpg" alt="Fluxograma descrevendo o funcionamento da busca, com a geração do índice durante o processo de integração contínua e publicação do json gerado junto com o site" />
         
         
         <figcaption><p>Funcionamento do sistema de busca</p> </figcaption>
@@ -467,10 +467,10 @@
 <p>Para agendar um post, eu configuro uma data de publicação futura, e o processo de entrega contínua no GitHub Actions está configurado para rodar todos os dias às 8 horas da manhã. Por padrão. Como por padrão o Hugo não inclui posts com datas futuras, no dia que a data da postagem deixa de ser futuro, ela é automaticamente incluída no post. Mas até lá não.</p>
 
 <div class="figure-wrapper">
-    
-    <figure class="embed fifty-p">
+    <figure class="embed">
         
-            <img src="/posts/como-implementei-busca-offline-blog/img/fluxograma-publicacao-agendada.png" alt="Publicação do site todos os dias às 8h. Uma bola de papel amassado representa os posts agendados." />
+        
+            <img class="fifty-p" src="/posts/como-implementei-busca-offline-blog/img/fluxograma-publicacao-agendada.png" alt="Publicação do site todos os dias às 8h. Uma bola de papel amassado representa os posts agendados." />
         
         
     </figure>
@@ -586,10 +586,10 @@
 </code></pre></div><p>E é assim que foi implementado o sistema de busca deste blog. No futuro pretendo fazer algumas melhorias, talvez algum plugin para o Lunr.</p>
 
 <div class="figure-wrapper">
-    
-    <figure class="embed ">
+    <figure class="embed">
         
-            <img src="/posts/como-implementei-busca-offline-blog/img/resultados-buscas.png" alt="Imagem do modal de resultados." />
+        
+            <img class="" src="/posts/como-implementei-busca-offline-blog/img/resultados-buscas.png" alt="Imagem do modal de resultados." />
         
         
     </figure>
@@ -598,10 +598,10 @@
 <p>Um dos problemas que o sistema de busca atual apresenta é que não é possível pesquisar símbolos especiais. Se você pesquisar <code>C#</code>, por exemplo, não vai encontrar nada, pois o analisador léxico do Lunr removeu o &ldquo;#&quot;.</p>
 
 <div class="figure-wrapper">
-    
-    <figure class="embed ">
+    <figure class="embed">
         
-            <img src="/posts/como-implementei-busca-offline-blog/img/nenhum-resultado-encontrado.png" alt="Imagem do modal de resultados, sem nenhum resultado." />
+        
+            <img class="" src="/posts/como-implementei-busca-offline-blog/img/nenhum-resultado-encontrado.png" alt="Imagem do modal de resultados, sem nenhum resultado." />
         
         
     </figure>
