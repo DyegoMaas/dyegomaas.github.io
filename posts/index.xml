@@ -13,7 +13,7 @@
     
     
     <item>
-      <title>Apprenticeship Patternsx</title>
+      <title>Apprenticeship Patterns</title>
       <link>https://blog.dyegomaas.com.br/posts/resenha-apprenticeship-patterns/</link>
       <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
       
@@ -35,7 +35,7 @@
     </item>
     
     <item>
-      <title>Como implementei a busca offline para o meu site estático feito em Hugox</title>
+      <title>Como implementei a busca offline para o meu site estático feito em Hugo</title>
       <link>https://blog.dyegomaas.com.br/posts/como-implementei-busca-offline-blog/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -58,7 +58,7 @@ Mas nem por isso ele precisa ser muito restrito em funcionalidades. Não é a fa
     </item>
     
     <item>
-      <title>Como visualizar o desenvolvimento de projetos com Gourcex</title>
+      <title>Como visualizar o desenvolvimento de projetos com Gource</title>
       <link>https://blog.dyegomaas.com.br/posts/como-visualizar-desenvolvimento-com-gource/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -81,7 +81,7 @@ Por exemplo, esta é uma visualização de quase 2 horas de toda a história de 
     </item>
     
     <item>
-      <title>Arquitetura Gritantex</title>
+      <title>Arquitetura Gritante</title>
       <link>https://blog.dyegomaas.com.br/posts/arquitetura-gritante/</link>
       <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -100,7 +100,7 @@ O conceito é muito simples, mas certamente nos faz refletir sobre como estrutur
     </item>
     
     <item>
-      <title>Pattern matching no C# 8.0x</title>
+      <title>Pattern matching no C# 8.0</title>
       <link>https://blog.dyegomaas.com.br/posts/pattern-matching-csharp/</link>
       <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
       
@@ -118,7 +118,7 @@ Como os recursos de pattern matching do C# 8.</description>
     </item>
     
     <item>
-      <title>Como implementar Health Checks para sua aplicação usando as extensões do ASP.NET Core 3.0x</title>
+      <title>Como implementar Health Checks para sua aplicação usando as extensões do ASP.NET Core 3.0</title>
       <link>https://blog.dyegomaas.com.br/posts/healthchecks-aspnetcore3/</link>
       <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
       
@@ -135,7 +135,7 @@ Um endpoint de Health Check bem implementado pode nos ajudar de inúmeras formas
     </item>
     
     <item>
-      <title>Testes de integração mais rápidos com Docker e MongoDB em memóriax</title>
+      <title>Testes de integração mais rápidos com Docker e MongoDB em memória</title>
       <link>https://blog.dyegomaas.com.br/posts/testes-mais-rapidos-com-mongodb-inmemory/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
@@ -157,7 +157,7 @@ Os sistemas de arquivo tmpfs não armazenam os dados em dispositivos de armazena
     </item>
     
     <item>
-      <title>Testes de mutação com Stryker.NETx</title>
+      <title>Testes de mutação com Stryker.NET</title>
       <link>https://blog.dyegomaas.com.br/posts/testes-mutacao-stryker-net/</link>
       <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
       
@@ -179,7 +179,7 @@ Os testes unitários são uma das principais ferramentas do desenvolvedor para g
     </item>
     
     <item>
-      <title>Entrega contínua de blogs Hugo com GitHub Actionsx</title>
+      <title>Entrega contínua de blogs Hugo com GitHub Actions</title>
       <link>https://blog.dyegomaas.com.br/posts/continuous-delivery-blog-com-hugo/</link>
       <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
       
@@ -201,7 +201,7 @@ A partir do momento que o blog estiver todo configurado, com todos os templates 
     </item>
     
     <item>
-      <title>Boas práticas para implementar Test Data Builders em C#x</title>
+      <title>Boas práticas para implementar Test Data Builders em C#</title>
       <link>https://blog.dyegomaas.com.br/posts/test-builders-csharp-boas-praticas/</link>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
       
@@ -219,7 +219,7 @@ Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns
     </item>
     
     <item>
-      <title>Simplificando setup de testes em C# com Test Data Buildersx</title>
+      <title>Simplificando setup de testes em C# com Test Data Builders</title>
       <link>https://blog.dyegomaas.com.br/posts/test-builders-csharp-intro/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
       

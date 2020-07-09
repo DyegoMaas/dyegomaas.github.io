@@ -13,7 +13,7 @@
     
     
     <item>
-      <title>Pattern matching no C# 8.0x</title>
+      <title>Pattern matching no C# 8.0</title>
       <link>https://blog.dyegomaas.com.br/posts/pattern-matching-csharp/</link>
       <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
       
@@ -31,7 +31,7 @@ Como os recursos de pattern matching do C# 8.</description>
     </item>
     
     <item>
-      <title>Como implementar Health Checks para sua aplicação usando as extensões do ASP.NET Core 3.0x</title>
+      <title>Como implementar Health Checks para sua aplicação usando as extensões do ASP.NET Core 3.0</title>
       <link>https://blog.dyegomaas.com.br/posts/healthchecks-aspnetcore3/</link>
       <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
       
@@ -48,7 +48,7 @@ Um endpoint de Health Check bem implementado pode nos ajudar de inúmeras formas
     </item>
     
     <item>
-      <title>Testes de mutação com Stryker.NETx</title>
+      <title>Testes de mutação com Stryker.NET</title>
       <link>https://blog.dyegomaas.com.br/posts/testes-mutacao-stryker-net/</link>
       <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
       
@@ -70,7 +70,7 @@ Os testes unitários são uma das principais ferramentas do desenvolvedor para g
     </item>
     
     <item>
-      <title>Boas práticas para implementar Test Data Builders em C#x</title>
+      <title>Boas práticas para implementar Test Data Builders em C#</title>
       <link>https://blog.dyegomaas.com.br/posts/test-builders-csharp-boas-praticas/</link>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
       
@@ -88,7 +88,7 @@ Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns
     </item>
     
     <item>
-      <title>Simplificando setup de testes em C# com Test Data Buildersx</title>
+      <title>Simplificando setup de testes em C# com Test Data Builders</title>
       <link>https://blog.dyegomaas.com.br/posts/test-builders-csharp-intro/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
       

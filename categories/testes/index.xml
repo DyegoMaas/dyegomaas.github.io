@@ -13,7 +13,7 @@
     
     
     <item>
-      <title>Testes de integração mais rápidos com Docker e MongoDB em memóriax</title>
+      <title>Testes de integração mais rápidos com Docker e MongoDB em memória</title>
       <link>https://blog.dyegomaas.com.br/posts/testes-mais-rapidos-com-mongodb-inmemory/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
@@ -35,7 +35,7 @@ Os sistemas de arquivo tmpfs não armazenam os dados em dispositivos de armazena
     </item>
     
     <item>
-      <title>Testes de mutação com Stryker.NETx</title>
+      <title>Testes de mutação com Stryker.NET</title>
       <link>https://blog.dyegomaas.com.br/posts/testes-mutacao-stryker-net/</link>
       <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
       
@@ -57,7 +57,7 @@ Os testes unitários são uma das principais ferramentas do desenvolvedor para g
     </item>
     
     <item>
-      <title>Boas práticas para implementar Test Data Builders em C#x</title>
+      <title>Boas práticas para implementar Test Data Builders em C#</title>
       <link>https://blog.dyegomaas.com.br/posts/test-builders-csharp-boas-praticas/</link>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
       
@@ -75,7 +75,7 @@ Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns
     </item>
     
     <item>
-      <title>Simplificando setup de testes em C# com Test Data Buildersx</title>
+      <title>Simplificando setup de testes em C# com Test Data Builders</title>
       <link>https://blog.dyegomaas.com.br/posts/test-builders-csharp-intro/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
       
