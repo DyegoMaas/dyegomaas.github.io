@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+    
+
+
+    <head itemscope itemtype="https://blog.dyegomaas.com.br/">
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/blog.dyegomaas.com.br\/"
+    },
+    "articleSection" : "posts",
+    "name" : "Entrega contínua de blogs Hugo com GitHub Actions",
+    "headline" : "Entrega contínua de blogs Hugo com GitHub Actions",
+    "description" : "Aprenda a agilizar o worflow de publicação do seu blog feito com Hugo usando entrega contínua (continuous delivery) com GitHub Actions para atualizar automaticamente a página no GitHub Pages.",
+    "inLanguage" : "pt-BR",
+    "author" : {
+        "@type": "Person",
+        "name": "Dyego Maas"
+    }, 
+    "creator" : "Dyego Maas",
+    "publisher": "Dyego Maas",
+    "accountablePerson" : "Dyego Maas",
+    "copyrightHolder" : "Dyego Maas",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-04-29",
+    "dateModified" : "2020-04-29",
+    "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/artigo-continuous-delivery-blog-com-hugo\/",
+    "wordCount" : "1174",
+    "keywords" : [ "hugo","continuous delivery","github actions","github.io","github pages","Blog" ]
+}
+</script>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+<meta name="yandex-verification" content="20d83aeccd3b80c2" />
+<base href="https://blog.dyegomaas.com.br/posts/artigo-continuous-delivery-blog-com-hugo/">
+<meta name="generator" content="Hugo 0.69.0" />
+
+    
+    
+    
+
+<title itemprop="name">Entrega contínua de blogs Hugo com GitHub Actions - Blog Dyego Maas</title>
+<meta property="description" content="Aprenda a agilizar o worflow de publicação do seu blog feito com Hugo usando entrega contínua (continuous delivery) com GitHub Actions para atualizar automaticamente a página no GitHub Pages." />
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+
+
+<meta name="keywords" content="hugo,continuous-delivery,github-actions,github.io,github-pages" />
+<link rel="canonical" href="https://blog.dyegomaas.com.br/posts/artigo-continuous-delivery-blog-com-hugo/" itemprop="url" />
+<meta name="url" content="https://blog.dyegomaas.com.br/posts/artigo-continuous-delivery-blog-com-hugo/" />
+<meta property="og:site_name" content="Blog - Dyego Maas" />
+<meta property="og:title" content="Entrega contínua de blogs Hugo com GitHub Actions" />
+<meta property="og:description" content="Aprenda a agilizar o worflow de publicação do seu blog feito com Hugo usando entrega contínua (continuous delivery) com GitHub Actions para atualizar automaticamente a página no GitHub Pages." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.dyegomaas.com.br/posts/artigo-continuous-delivery-blog-com-hugo/" /><meta property="og:image" content="/posts/artigo-continuous-delivery-blog-com-hugo/img/cover.png"/>
+<meta property="og:image:secure_url" content="https://blog.dyegomaas.com.br/posts/artigo-continuous-delivery-blog-com-hugo/img/cover.png"/>
+<meta property="article:published_time" content="2020-04-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-29T00:00:00+00:00" />
+
+<meta name="theme-color" content="#000000" />
+<meta name="msapplication-TileColor" content="#000000" />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="Blog - Dyego Maas" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" />
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" crossorigin="anonymous" media="print">
+
+
+<link rel="stylesheet" href="/css/custom.69cb553f8fdb841923fb0042f13bb1a617b61a9c30b020d16fa9175995e8c089.css" integrity="sha256-actVP4/bhBkj&#43;wBC8Tuxphe2GpwwsCDRb6kXWZXowIk=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/overrides.188421855fb48cd44e36b22976f3f17f4c4322978c83b5ef92a1c8604e1772f7.css" integrity="sha256-GIQhhV&#43;0jNRONrIpdvPxf0xDIpeMg7XvkqHIYE4Xcvc=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/modal.3f2d773b192584d4c72931c90be47bfbc2296a638ed5354962252cab96b3dbb3.css" integrity="sha256-Py13OxklhNTHKTHJC&#43;R7&#43;8IpamOO1TVJYiUsq5az27M=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/custom.3e8609b6efbfd1fee7b6531514f17304d18ff8cebda6c439740359e699220932.css" integrity="sha256-PoYJtu&#43;/0f7ntlMVFPFzBNGP&#43;M69psQ5dANZ5pkiCTI=" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=" crossorigin="anonymous">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js" defer></script>
+<script src="https://unpkg.com/lunr/lunr.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.pt.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" defer></script>
+
+<script src="/js/layout-adjustments.js" defer></script><script src="/js/custom-search.js" defer></script>
+
+<script async>
+  document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+      adjustLayout();
+      initializeSearch('/search-index.json', '/search-data-companion.json');
+   }
+ }
+</script>
+</head>
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://blog.dyegomaas.com.br/">Blog Dyego Maas</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://blog.dyegomaas.com.br/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         Arquiteto de software e Escritor 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Blog Dyego Maas</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		
+		
+			 
+				<li>
+					<a href="/posts/">
+						<span>Blog</span>
+					</a>
+				</li>
+			
+		
+		<li>
+			<a href="https://dyegomaas.com.br/">
+				<span>Sobre<span>
+			</a>
+		</li>
+		<li>
+			<a id="search-button" rel="search" style="cursor: pointer;">
+    <i class="fa fa-search" aria-hidden="true"></i>
+</a>
+
+<div id="search-results-modal" class="modal display-none">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close">&times;</span>
+        <h2>O que você procura?</h2>
+      </div>
+      <div class="modal-body">
+        <input type="search" id="search-input" results="10" placeholder="Pesquisar... (pressione Enter)">
+        <div>
+            <ul id="search-results"></ul>
+        </div>
+      </div>
+      
+    </div>
+</div>
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/DyegoMaas" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/DyegoAlekssander" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/Dyegomaas" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/dyego-maas" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:dyego.maas@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="index.xml" rel="me"><i class="fas fa-rss fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Entrega contínua de blogs Hugo com GitHub Actions</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 29
+
+
+  
+
+  
+
+  
+
+  
+    Abr, 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+2020
+    
+    
+    
+      
+      
+          em
+          
+          
+              <a class="badge badge-category" href="/categories/blogging">BLOGGING</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/hugo">hugo</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/continuous-delivery">continuous delivery</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/github-actions">github actions</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/github.io">github.io</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/github-pages">github pages</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 6 min de leitura
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Tabela de Conteúdo</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  <div class="post">
+    <p>O <a href="https://gohugo.io">Hugo</a> é hoje um dos melhores e mais populares geradores de sites estáticos. Já o GitHub Pages oferece um excelente serviço para distribuir gratuitamente conteúdos estáticos, o que é perfeito para blogs. Logo, é natural que as duas ferramentas sejam comumente usadas em conjunto.</p>
+<p>A partir do momento que o blog estiver todo configurado, com todos os templates customizados da forma como queremos, o dia-a-dia do blog passa a revolver em torno da criação de conteúdo.</p>
+<p>Existem várias formas de trabalhar, mas qualquer <em>workflow</em> escolhido terá um mínimo de passos comuns:</p>
+<ul>
+<li>Criar um novo conteúdo (como posts, artigos, imagens, etc)</li>
+<li>Rodar o comando <code>hugo</code> com alguma parametrização para gerar o conteúdo estático atualizado</li>
+<li>Publicar o novo conteúdo estático no repositório <code>&lt;nomeusuario&gt;.github.io</code></li>
+</ul>
+<p>O restante deste artigo vai tratar de configurar um workflow usando GitHub Actions para automatizar o processo de gerar conteúdo estático e publicá-lo. Ao final, teremos um processo de <strong>entrega contínua</strong> para nosso blog.</p>
+<p>Nosso esquema será esse:
+<strong>Commit na master</strong> -&gt; <strong>Workflow GitHub Actions</strong> -&gt; <strong>Blog github.io atualizado</strong></p>
+<p>A única ação necessária será um commit no branch <code>master</code> contendo as alterações desejadas. Estou usando este fluxo de trabalho e o considero bem fácil e prático.</p>
+<p>O tutorial abaixo assume que você está usando dois repositórios:</p>
+<ol>
+<li>Repositório com o template do Hugo e o conteúdo</li>
+<li>Repositório <code>&lt;nomeusuario&gt;.github.io</code></li>
+</ol>
+<p>E tudo o que você precisa para implementá-lo é seguir os passos descritos abaixo.</p>
+<h2 id="configuração-do-workflow-de-cicd-com-github-actions">Configuração do workflow de CI/CD com GitHub Actions</h2>
+<p>Até uns dias atrás, eu nunca tinha trabalho com as ferramentas de CI/CD do GitHub. Mas o GitHub Actions se mostrou bastante fácil de aprender, especialmente para quem já tem alguma experiência com ferramentas de CI/CD como o Circle CI ou Travis.</p>
+<p>O GitHub Actions chama os pipelines de <em>workflows</em>. Para criar um novo workflow, primeiro você deve criar, na raiz do repositório do seu blog (onde fica seu template), a seguinte estrutura de diretórios:</p>
+<pre><code>.github/workflows
+</code></pre>
+<p>Dentro você terá de adicionar um arquivo de workflow. Ele pode ter qualquer nome, e deve terminar com a extensão <code>.yml</code> ou <code>.yaml</code>.</p>
+<p>Abaixo, podemos ver o workflow que estou usando no meu blog atualmente, já comentado. Você também pode baixar ele <a href="https://gist.github.com/DyegoMaas/8c6e330dc4e314a650325d611d392c11">aqui</a>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: Deploy para &lt;nomeusuario&gt;.github.io
+<span style="color:#66d9ef">on</span>:
+  <span style="color:#66d9ef">push</span>:
+    <span style="color:#66d9ef">branches</span>:
+      - master <span style="color:#75715e"># somente commits no branch master geram deploys</span>
+  <span style="color:#75715e"># Também pode rodar um deploy automaticamente todos os dias</span>
+  <span style="color:#75715e"># para publicar posts agendados (com datas futuras)</span>
+  <span style="color:#66d9ef">schedule</span>:
+    - <span style="color:#66d9ef">cron</span>: <span style="color:#e6db74">&#39;0 8 * * *&#39;</span> <span style="color:#75715e"># 08:00 am UTC</span>
+
+<span style="color:#66d9ef">jobs</span>:
+  <span style="color:#75715e"># O job &#34;build&#34; é responsável por baixar o template, o hugo e</span>
+  <span style="color:#75715e"># compilar o site estático</span>
+  <span style="color:#66d9ef">build</span>:
+    <span style="color:#66d9ef">name</span>: Gerar conteúdo estático
+    <span style="color:#66d9ef">runs-on</span>: ubuntu-latest
+    <span style="color:#66d9ef">steps</span>:
+        <span style="color:#75715e"># Primeiro, fazemos checkout do repositório</span>
+      - <span style="color:#66d9ef">uses</span>: actions/checkout@master
+        <span style="color:#75715e"># Depois, usamos uma action para clonar o repositório do tema</span>
+        <span style="color:#75715e"># Substitua o endereço e o diretório por um de sua preferência</span>
+      - <span style="color:#66d9ef">name</span>: Atualizar template
+        <span style="color:#66d9ef">uses</span>: <span style="color:#e6db74">&#34;srt32/git-actions@v0.0.3&#34;</span>
+        <span style="color:#66d9ef">with</span>:
+          <span style="color:#66d9ef">args</span>: <span style="color:#e6db74">&#34;git clone https://github.com/htr3n/hyde-hyde.git themes/hyde-hyde&#34;</span>
+        <span style="color:#75715e"># Permite instalar qualquer versão do hugo que você precisar</span>
+      - <span style="color:#66d9ef">name</span>: Setup Hugo
+        <span style="color:#66d9ef">uses</span>: peaceiris/actions-hugo@v2
+        <span style="color:#66d9ef">with</span>:
+          <span style="color:#66d9ef">hugo-version</span>: <span style="color:#e6db74">&#39;0.69.0&#39;</span> <span style="color:#75715e"># se quiser a última, pode usar &#39;latest&#39;</span>
+          <span style="color:#66d9ef">extended</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># permite compilar SCSS e SASS</span>
+      - <span style="color:#66d9ef">name</span>: Build
+        <span style="color:#66d9ef">run</span>: hugo <span style="color:#75715e"># gera os arquivos estáticos</span>
+        <span style="color:#75715e"># Esta action faz upload do diretório /public como artefato</span>
+        <span style="color:#75715e"># do job &#34;build&#34;</span>
+      - <span style="color:#66d9ef">name</span>: Upload dos artefatos
+        <span style="color:#66d9ef">uses</span>: actions/upload-artifact@v1
+        <span style="color:#66d9ef">with</span>:
+          <span style="color:#66d9ef">name</span>: public
+          <span style="color:#66d9ef">path</span>: ./public
+  <span style="color:#66d9ef">publish</span>:
+    <span style="color:#66d9ef">name</span>: Publish to &lt;nomeusuario&gt;.github.io
+    <span style="color:#66d9ef">runs-on</span>: ubuntu-latest
+    <span style="color:#66d9ef">needs</span>: build <span style="color:#75715e"># o job &#34;publish&#34; só roda se deu tudo certo durante o &#34;build&#34;</span>
+    <span style="color:#66d9ef">steps</span>:
+        <span style="color:#75715e"># Primeiro fazemos checkout do nosso repositório github.io</span>
+        <span style="color:#75715e"># no diretório static-site</span>
+      - <span style="color:#66d9ef">uses</span>: actions/checkout@v2
+        <span style="color:#66d9ef">with</span>:
+          <span style="color:#66d9ef">repository</span>: <span style="color:#e6db74">&#39;&lt;nomeusuario&gt;/&lt;nomeusuario&gt;.github.io&#39;</span>
+          <span style="color:#75715e"># token com as permissões necessárias</span>
+          <span style="color:#66d9ef">token</span>: ${{ secrets.CD_BLOG_TOKEN }}
+          <span style="color:#66d9ef">path</span>: static-site
+        <span style="color:#75715e"># Fazemos download dos artefatos do job &#34;build&#34; para o</span>
+        <span style="color:#75715e"># diretório /public</span>
+      - <span style="color:#66d9ef">name</span>: Download dos artefatos
+        <span style="color:#66d9ef">uses</span>: actions/download-artifact@v1
+        <span style="color:#66d9ef">with</span>:
+          <span style="color:#66d9ef">name</span>: public
+        <span style="color:#75715e"># Copiamos os novos arquivos estáticos em /public para /static-site</span>
+      - <span style="color:#66d9ef">name</span>: Aplicar atualização
+        <span style="color:#66d9ef">shell</span>: bash
+        <span style="color:#66d9ef">run</span>: <span style="color:#e6db74">|
+</span><span style="color:#e6db74">          cp -r ./public/* ./static-site</span>
+        <span style="color:#75715e"># Adicionamos as alterações e geramos um commit</span>
+      - <span style="color:#66d9ef">name</span>: Commit files
+        <span style="color:#66d9ef">run</span>: <span style="color:#e6db74">|
+</span><span style="color:#e6db74">          cd static-site</span>
+          git config --local user.email <span style="color:#e6db74">&#34;&lt;email-valido&gt;&#34;</span>
+          git config --local user.name <span style="color:#e6db74">&#34;GitHub Action - Deploy&#34;</span>
+          git add .
+          git commit -m <span style="color:#e6db74">&#34;Add changes&#34;</span> -a
+        <span style="color:#75715e"># Por último, precisamos fazer um push para o repositório github.io</span>
+        <span style="color:#75715e"># de destino</span>
+      - <span style="color:#66d9ef">name</span>: Push changes
+        <span style="color:#66d9ef">uses</span>: ad-m/github-push-action@master
+        <span style="color:#66d9ef">with</span>:
+          <span style="color:#66d9ef">repository</span>: <span style="color:#e6db74">&#39;&lt;nomeusuario&gt;/&lt;nomeusuario&gt;.github.io&#39;</span>
+          <span style="color:#66d9ef">github_token</span>: ${{ secrets.CD_BLOG_TOKEN }}
+          <span style="color:#66d9ef">directory</span>: static-site
+</code></pre></div><p>Sera necessário subsituir algumas variáveis no template, como o <code>&lt;nomeusuario&gt;</code>, o <code>&lt;email-valido&gt;</code>, e o template utilizado.</p>
+<p>Além disso, você deve ter notado que em dois momentos precisamos de um token do GitHub, como nesta linha: <code>github_token: ${{ secrets.CD_BLOG_TOKEN }}</code>. É bem fácil gerar e cadastrar este token.</p>
+<p><img src="/posts/continuous-delivery-blog-com-hugo/img/caminho-gerar-token.png" alt="Settings/Developer settings/Personal access tokens/Generate new token"></p>
+<p><img src="/posts/continuous-delivery-blog-com-hugo/img/new-personal-access-token.png" alt="Permissões do token, habilitando a opção repo"></p>
+<p>Provavelmente, habitalando somente a opção &ldquo;public_repo&rdquo; já deve funcionar, mas não testei esta opção. Se você quiser testar, pode deixar um comentário contando se funcionou.</p>
+<p>Feito isso, clique em <code>Generate token</code> e uma tela vai abrir. Salve este token, ele é importante. Agora, precisaremos criar um Secret no nosso repositório.</p>
+<p>Navegue para as configurações do seu repositório, e na seção Secrets, cadastre um secret com o nome <code>CD_BLOG_TOKEN</code>, com o token como valor.</p>
+<p>Feito isso, basta fazer um commit na master e o workflow será disparado. Você pode acompanhar o resultado em Actions:</p>
+<p><img src="/posts/continuous-delivery-blog-com-hugo/img/actions-menu.png" alt="Lista de execuções dos workflows"></p>
+<p>Se o processo ocorrer sem problemas, você vai ver todos os jobs com sucesso e o seu blog vai estar atualizado.</p>
+<p><img src="/posts/continuous-delivery-blog-com-hugo/img/visao-build.png" alt="Lista de execuções dos workflows"></p>
+<h3 id="agendamento-de-posts">Agendamento de posts</h3>
+<p>Esta abordagem também permite a publicação automática de posts agendados. A resposta está no começo do workflow. Podemos configurar um agendamento através de uma <a href="https://en.wikipedia.org/wiki/Cron">expressão cron</a> simples, como esta:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">schedule</span>:
+  - <span style="color:#66d9ef">cron</span>:  <span style="color:#e6db74">&#39;0 0 5 * *&#39;</span>
+</code></pre></div><p>Esta expressão descreve a frequência de deploy nos seguintes termos:</p>
+<pre><code>┌───────────── minuto (0 - 59)
+│ ┌───────────── hora (0 - 23)
+│ │ ┌───────────── dia do mês (1 - 31)
+│ │ │ ┌───────────── mês (1 - 12 ou JAN-DEZ)
+│ │ │ │ ┌───────────── dia da semana (0 - 6 ou DOM-SAB)
+│ │ │ │ │
+│ │ │ │ │
+│ │ │ │ │
+* * * * *
+</code></pre>
+<p>Assim, nossa expressão <code>0 0 5 * *</code> significa que o workflow deve ser disparado todos os dias, de todos os meses, às 5 horas da manhã.</p>
+<p>No cabeçalho dos nossos posts, precisamos definir a data de postagem:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-toml" data-lang="toml"><span style="color:#960050;background-color:#1e0010">+++</span>
+<span style="color:#a6e22e">author</span> = <span style="color:#e6db74">&#34;John Connor&#34;</span>
+<span style="color:#a6e22e">title</span> = <span style="color:#e6db74">&#34;Post agendado para o futuro longínquo&#34;</span>
+<span style="color:#a6e22e">date</span> = <span style="color:#e6db74">&#34;2032-07-03&#34;</span>
+<span style="color:#960050;background-color:#1e0010">+++</span>
+</code></pre></div><p>Se publicarmos este post com data futura para o branch <code>master</code>, por padrão o Hugo não vai incluí-lo na geração do site. O workflow será executado todos os dias às 5 horas da manhã, até o dia 3 de julho de 2032, a data agendada para esta postagem, e ela será incluída na publicação do site deste dia em diante.</p>
+<h3 id="trabalhando-com-branches">Trabalhando com branches</h3>
+<p>Por fim, esta abordagem também nos permite escrever os posts em branches individuais, sem marcar os posts com <code>draft = true</code>. Eu crio branches no formato <code>post/nome-do-branch</code>. Quando está pronto, é só fazer merge para o branch <code>master</code> que o processo vai ser disparado.</p>
+<p>E é isso. Espero que essas dicas sejam úteis. E se você usa alguma outra estratégia ou tem alguma dica útil, compartilhe nos comentários.</p>
+
+  </div>
+  <style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+position: relative;
+text-align: left;
+height: 36px;
+width: 32px;
+float: left;
+text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="color: silver;">Compartilhe: </span><div id="share-buttons">
+<div class="facebook" title="Compartilhe no Facebook" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-continuous-delivery-blog-com-hugo\/', 'sharer', 'width=626,height=436');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+<div class="twitter" title="Compartilhe no Twitter" onclick="window.open('http://twitter.com/share?text=Entrega contínua de blogs Hugo com GitHub Actions&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-continuous-delivery-blog-com-hugo\/&hashtags=hugo,continuous-delivery,github-actions,github.io,github-pages');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+<div class="linkedin" title="Compartilhe no Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-continuous-delivery-blog-com-hugo\/&title=Entrega contínua de blogs Hugo com GitHub Actions', 'sharer', 'width=626,height=700');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+<div class="mail" title="Compartilhe por Email" onclick="window.open('mailto:?&body=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-continuous-delivery-blog-com-hugo\/');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/artigo-test-builders-csharp-boas-praticas/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Boas práticas para implementar Test Data Builders em C#</span>
+    </a>
+    
+    
+    <a href="/posts/artigo-testes-mutacao-stryker-net/" class="navigation-next">
+      <span class="navigation-tittle">Testes de mutação com Stryker.NET</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'blogdyegomaas';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111956442-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/yaml.min.js"></script>
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/toml.min.js"></script>
+            
+        
+    <script type="text/javascript">
+        
+        hljs.configure({languages: ["yaml, toml"]});
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>

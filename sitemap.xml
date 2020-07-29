@@ -3,6 +3,61 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://blog.dyegomaas.com.br/</loc>
+    <lastmod>2020-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/categories/</loc>
+    <lastmod>2020-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/pair-programming/</loc>
+    <lastmod>2020-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/ping-pong/</loc>
+    <lastmod>2020-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/posts/artigo-ping-pong-pair-programming/</loc>
+    <lastmod>2020-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/posts/</loc>
+    <lastmod>2020-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/produtividade/</loc>
+    <lastmod>2020-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/python/</loc>
+    <lastmod>2020-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/</loc>
+    <lastmod>2020-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/tdd/</loc>
+    <lastmod>2020-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/categories/testes/</loc>
+    <lastmod>2020-07-29T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://blog.dyegomaas.com.br/posts/resenha-apprenticeship-patterns/</loc>
     <lastmod>2020-07-09T00:00:00+00:00</lastmod>
   </url>
@@ -18,17 +73,7 @@
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/</loc>
-    <lastmod>2020-07-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.dyegomaas.com.br/tags/carreira/</loc>
-    <lastmod>2020-07-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.dyegomaas.com.br/categories/</loc>
     <lastmod>2020-07-09T00:00:00+00:00</lastmod>
   </url>
   
@@ -38,17 +83,7 @@
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/posts/</loc>
-    <lastmod>2020-07-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.dyegomaas.com.br/categories/resenha/</loc>
-    <lastmod>2020-07-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.dyegomaas.com.br/tags/</loc>
     <lastmod>2020-07-09T00:00:00+00:00</lastmod>
   </url>
   
@@ -63,7 +98,7 @@
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/posts/como-implementei-busca-offline-blog/</loc>
+    <loc>https://blog.dyegomaas.com.br/posts/artigo-como-implementei-busca-offline-blog/</loc>
     <lastmod>2020-06-17T00:00:00+00:00</lastmod>
   </url>
   
@@ -88,7 +123,7 @@
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/posts/como-visualizar-desenvolvimento-com-gource/</loc>
+    <loc>https://blog.dyegomaas.com.br/posts/artigo-como-visualizar-desenvolvimento-com-gource/</loc>
     <lastmod>2020-06-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -123,7 +158,7 @@
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/posts/arquitetura-gritante/</loc>
+    <loc>https://blog.dyegomaas.com.br/posts/artigo-arquitetura-gritante/</loc>
     <lastmod>2020-06-03T00:00:00+00:00</lastmod>
   </url>
   
@@ -158,7 +193,7 @@
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/posts/pattern-matching-csharp/</loc>
+    <loc>https://blog.dyegomaas.com.br/posts/artigo-pattern-matching-csharp/</loc>
     <lastmod>2020-05-27T00:00:00+00:00</lastmod>
   </url>
   
@@ -188,7 +223,7 @@
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/posts/healthchecks-aspnetcore3/</loc>
+    <loc>https://blog.dyegomaas.com.br/posts/artigo-healthchecks-aspnetcore3/</loc>
     <lastmod>2020-05-20T00:00:00+00:00</lastmod>
   </url>
   
@@ -213,12 +248,7 @@
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/categories/testes/</loc>
-    <lastmod>2020-05-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.dyegomaas.com.br/posts/testes-mais-rapidos-com-mongodb-inmemory/</loc>
+    <loc>https://blog.dyegomaas.com.br/posts/artigo-testes-mais-rapidos-com-mongodb-inmemory/</loc>
     <lastmod>2020-05-13T00:00:00+00:00</lastmod>
   </url>
   
@@ -248,7 +278,7 @@
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/posts/testes-mutacao-stryker-net/</loc>
+    <loc>https://blog.dyegomaas.com.br/posts/artigo-testes-mutacao-stryker-net/</loc>
     <lastmod>2020-05-06T00:00:00+00:00</lastmod>
   </url>
   
@@ -258,7 +288,7 @@
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/posts/continuous-delivery-blog-com-hugo/</loc>
+    <loc>https://blog.dyegomaas.com.br/posts/artigo-continuous-delivery-blog-com-hugo/</loc>
     <lastmod>2020-04-29T00:00:00+00:00</lastmod>
   </url>
   
@@ -278,7 +308,7 @@
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/posts/test-builders-csharp-boas-praticas/</loc>
+    <loc>https://blog.dyegomaas.com.br/posts/artigo-test-builders-csharp-boas-praticas/</loc>
     <lastmod>2020-04-22T00:00:00+00:00</lastmod>
   </url>
   
@@ -293,7 +323,7 @@
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/posts/test-builders-csharp-intro/</loc>
+    <loc>https://blog.dyegomaas.com.br/posts/artigo-test-builders-csharp-intro/</loc>
     <lastmod>2020-04-19T00:00:00+00:00</lastmod>
   </url>
   

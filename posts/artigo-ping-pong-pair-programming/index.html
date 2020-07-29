@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+    
+
+
+    <head itemscope itemtype="https://blog.dyegomaas.com.br/">
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/blog.dyegomaas.com.br\/"
+    },
+    "articleSection" : "posts",
+    "name" : "Ping-pong Pair Programming",
+    "headline" : "Ping-pong Pair Programming",
+    "description" : "Neste artigo, falo sobre como tornar mais eficazes as suas sessões de pair programming aplicando o pareamento ping-pong! E também, como usá-lo para treinar e para ensidar TDD.",
+    "inLanguage" : "pt-BR",
+    "author" : {
+        "@type": "Person",
+        "name": "Dyego Maas"
+    }, 
+    "creator" : "Dyego Maas",
+    "publisher": "Dyego Maas",
+    "accountablePerson" : "Dyego Maas",
+    "copyrightHolder" : "Dyego Maas",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-07-29",
+    "dateModified" : "2020-07-29",
+    "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/artigo-ping-pong-pair-programming\/",
+    "wordCount" : "2124",
+    "keywords" : [ "pair programming","ping pong","produtividade","tdd","python","Blog" ]
+}
+</script>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+<meta name="yandex-verification" content="20d83aeccd3b80c2" />
+<base href="https://blog.dyegomaas.com.br/posts/artigo-ping-pong-pair-programming/">
+<meta name="generator" content="Hugo 0.69.0" />
+
+    
+    
+    
+
+<title itemprop="name">Ping-pong Pair Programming - Blog Dyego Maas</title>
+<meta property="description" content="Neste artigo, falo sobre como tornar mais eficazes as suas sessões de pair programming aplicando o pareamento ping-pong! E também, como usá-lo para treinar e para ensidar TDD." />
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+
+
+<meta name="keywords" content="pair-programming,ping-pong,produtividade,tdd,python" />
+<link rel="canonical" href="https://blog.dyegomaas.com.br/posts/artigo-ping-pong-pair-programming/" itemprop="url" />
+<meta name="url" content="https://blog.dyegomaas.com.br/posts/artigo-ping-pong-pair-programming/" />
+<meta property="og:site_name" content="Blog - Dyego Maas" />
+<meta property="og:title" content="Ping-pong Pair Programming" />
+<meta property="og:description" content="Neste artigo, falo sobre como tornar mais eficazes as suas sessões de pair programming aplicando o pareamento ping-pong! E também, como usá-lo para treinar e para ensidar TDD." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.dyegomaas.com.br/posts/artigo-ping-pong-pair-programming/" /><meta property="og:image" content="/posts/artigo-ping-pong-pair-programming/img/cover-tdd-cycle.png"/>
+<meta property="og:image:secure_url" content="https://blog.dyegomaas.com.br/posts/artigo-ping-pong-pair-programming/img/cover-tdd-cycle.png"/>
+<meta property="article:published_time" content="2020-07-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-29T00:00:00+00:00" />
+
+<meta name="theme-color" content="#000000" />
+<meta name="msapplication-TileColor" content="#000000" />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="Blog - Dyego Maas" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" />
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" crossorigin="anonymous" media="print">
+
+
+<link rel="stylesheet" href="/css/custom.69cb553f8fdb841923fb0042f13bb1a617b61a9c30b020d16fa9175995e8c089.css" integrity="sha256-actVP4/bhBkj&#43;wBC8Tuxphe2GpwwsCDRb6kXWZXowIk=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/overrides.188421855fb48cd44e36b22976f3f17f4c4322978c83b5ef92a1c8604e1772f7.css" integrity="sha256-GIQhhV&#43;0jNRONrIpdvPxf0xDIpeMg7XvkqHIYE4Xcvc=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/modal.3f2d773b192584d4c72931c90be47bfbc2296a638ed5354962252cab96b3dbb3.css" integrity="sha256-Py13OxklhNTHKTHJC&#43;R7&#43;8IpamOO1TVJYiUsq5az27M=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/custom.3e8609b6efbfd1fee7b6531514f17304d18ff8cebda6c439740359e699220932.css" integrity="sha256-PoYJtu&#43;/0f7ntlMVFPFzBNGP&#43;M69psQ5dANZ5pkiCTI=" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=" crossorigin="anonymous">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js" defer></script>
+<script src="https://unpkg.com/lunr/lunr.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.pt.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" defer></script>
+
+<script src="/js/layout-adjustments.js" defer></script><script src="/js/custom-search.js" defer></script>
+
+<script async>
+  document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+      adjustLayout();
+      initializeSearch('/search-index.json', '/search-data-companion.json');
+   }
+ }
+</script>
+</head>
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://blog.dyegomaas.com.br/">Blog Dyego Maas</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://blog.dyegomaas.com.br/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         Arquiteto de software e Escritor 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Blog Dyego Maas</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		
+		
+			 
+				<li>
+					<a href="/posts/">
+						<span>Blog</span>
+					</a>
+				</li>
+			
+		
+		<li>
+			<a href="https://dyegomaas.com.br/">
+				<span>Sobre<span>
+			</a>
+		</li>
+		<li>
+			<a id="search-button" rel="search" style="cursor: pointer;">
+    <i class="fa fa-search" aria-hidden="true"></i>
+</a>
+
+<div id="search-results-modal" class="modal display-none">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close">&times;</span>
+        <h2>O que você procura?</h2>
+      </div>
+      <div class="modal-body">
+        <input type="search" id="search-input" results="10" placeholder="Pesquisar... (pressione Enter)">
+        <div>
+            <ul id="search-results"></ul>
+        </div>
+      </div>
+      
+    </div>
+</div>
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/DyegoMaas" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/DyegoAlekssander" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/Dyegomaas" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/dyego-maas" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:dyego.maas@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="index.xml" rel="me"><i class="fas fa-rss fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Ping-pong Pair Programming</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 29
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    Jul, 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+2020
+    
+    
+    
+      
+      
+          em
+          
+          
+              <a class="badge badge-category" href="/categories/testes">TESTES</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/pair-programming">pair programming</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ping-pong">ping pong</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/produtividade">produtividade</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/tdd">tdd</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/python">python</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 10 min de leitura
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Tabela de Conteúdo</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  <div class="post">
+    <p>Duas cabeças pensam melhor que uma, já dizia o ditado. E muitas vezes é verdade mesmo. Por isso, a prática da programação em par, ou <a href="https://martinfowler.com/articles/on-pair-programming.html"><em>pair programming</em></a> tem ganhado tanta força mundo afora.</p>
+<h2 id="pair-programming">Pair programming</h2>
+<p>A ideia básica é simples: tal como no rally, em que o piloto e o navegador colaboram para vencer a corrida, no pair programming a dupla colabora numa dinâmica parecida.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-ping-pong-pair-programming/img/pair-programming.jpeg" alt="Dinâmica de Pair Programming, com piloto e navegador" />
+        
+        
+    </figure>
+</div>
+
+<p>Um programador assume o papel de piloto (e o teclado), e o outro de navegador, responsável por acompanhar o desenvolvimento e antecipar os próximos passos. De tempos em tempos, os dois trocam de papel.</p>
+<p>Infelizmente, apesar do potencial enorme para trazer bons resultados, é bastante frequente presenciarmos cenas como esta:</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-ping-pong-pair-programming/img/pair-programming-sleep.png" alt="Um programador codando, outro dormindo" />
+        
+        
+    </figure>
+</div>
+
+<p>Ou então, depois de alguns minutos codificando você olha para o lado para pedir a opinião do seu colega só para encontrá-lo distraído no celular, e ele nem sabe mais o que está acontecendo. É uma situação bastante desagradável, e pode ter vários motivos.</p>
+<p>Pode ser que as duas pessoas não saibam trabalhar juntas, pode ser que uma delas está num dia ruim, mas um motivo muito mais frequente é a falta de disciplina de pelo menos um dos praticantes, ou a falta de conhecimento de uma forma eficaz de trabalhar em par.</p>
+<p>E é aí que entra a metadologia conhecida como <em>Ping-pong Pair Programming</em>.</p>
+<h2 id="ping-pong-pair-programming">Ping-pong Pair Programming</h2>
+<p>O Ping-pong Pair Programming é, na minha humilde opinião, uma metodologia incrível. De todos os formatos de pareamento que já testei, essa foi a única que se mostrou infalível em manter a dupla focada durante o processo de desenvolvimento.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-ping-pong-pair-programming/img/ping-pong-pairing.png" alt="Duas raquetes de ping-pong, rebatendo a bolinha do ciclo TDD" />
+        
+        
+    </figure>
+</div>
+
+<p>Ao invés de trocar os papéis de tempos em tempos, num intervalo definido, a dinâmica do ping-pong toma vantagem do processo de desenvolvimento do <a href="https://cio-wiki.org/wiki/Test_Driven_Development_(TDD)">TDD</a> (Test Driven Development). O ciclo de vida do TDD atua como um cronômetro, ditando o momento das trocas de papel.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="fifty-p" src="/posts/artigo-ping-pong-pair-programming/img/tdd-cycle.jpg" alt="Diagrama do ciclo de TDD, compreendendo as etapas Red, Green e Refactor" />
+        
+        
+        <figcaption><p><a href="http://www.agilenutshell.com/test_driven_development"> Fonte: Agile in a Nutshell</a> </p> </figcaption>
+        
+    </figure>
+</div>
+
+<p>Ao implementar uma nova funcionalidade usando TDD, a dupla vai naturalmente repetir as três fases do ciclo.</p>
+<p>Para quem não conhece o TDD, vou deixar alguns materiais de referência no fim do artigo. Mas resumidamente, a prática consiste em guiar o desenvolvimento pelos testes, ou seja, primeira a gente escreve os testes, e só depois o código de produção, mas somente a quantidade necessária para fazer o teste passar.</p>
+<p>No ciclo de vida do TDD, começamos escrevendo um teste, que naturalmente não vai passar (e no começo, nem mesmo compilar). Este teste é responsável por guiar a implementação, e nele expressamos o resultado que esperamos do código que vamos escrever em seguida. Se pararmos para refletir por um momento, não tem como escrever o teste antes sem compreender a regra de negócio que precisamos implementar. E a melhor parte, é que isso acaba com aquele impulso de sair escrevendo código sem um plano claro.</p>
+<p>Escrito um teste que falha por aguardar a implementação, chegamos ao fim da fase vermelha (Red), e é hora de trocar de papéis. Para assumir o papel de piloto, e poder implementar o código necesssário para fazer o teste passar, o outro programador precisa estar prestando atenção, participando ativamente, ou vai ficar perdido quando chegar a sua vez. O trabalho dele é escrever o mínimo código necessário para fazer o teste passar, chegando ao fim da etapa verde (Green). É o momento de refatorar aquilo que não ficou bacana, tanto no código produtivo, quanto nos testes.</p>
+<p>E então, chega a hora de escrever um novo teste, deixar ele quebrando, e passar a bola para o colega, e ir repetindo este ciclo.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="fifty-p" src="/posts/artigo-ping-pong-pair-programming/img/tdd-cycle-roles.jpg" alt="Diagrama do ciclo de TDD, compreendendo as etapas Red, Green e Refactor" />
+        
+        
+        <figcaption><p>Troca de papéis com ping-pong pair programming</p> </figcaption>
+        
+    </figure>
+</div>
+
+<h3 id="um-exemplo-prático-passo-a-passo">Um exemplo prático, passo-a-passo</h3>
+<p>Nada melhor que um pouco código para ajudar a visualizar o processo de desenvolvimento com pareamento ping-pong. A seguir veremos o comecinho do processo de implementação de uma função para calcular a sequência de Fibonacci, codificada em Python.</p>
+<p>A primeira atividade que a dupla (<em>Fulano e Ciclano</em>) deve executar, é entender a regra de negócio que pretende implementar. <a href="https://pt.wikipedia.org/wiki/Sequ%C3%AAncia_de_Fibonacci">Pesquisando na Wikipédia</a>, eles entendem que <em>a sequência de Fibonacci é uma sequência de números inteiros, que começa com 0 e 1, e cujo cada número subsequente é a soma dos dois anteriores</em>.</p>
+<h4 id="fulano-começa-ping">Fulano começa (PING)</h4>
+<p>A dupla escolhe o piloto, e ele se responsibiliza por começar a implementação. Seguindo a boa prática de baby steps, ele implementa o menor teste que pode conceber:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> unittest
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FibonacciTests</span>(unittest<span style="color:#f92672">.</span>TestCase):
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_o_primeiro_valor_eh_zero</span>(self):
+        valor <span style="color:#f92672">=</span> fibonacci(pos<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>) <span style="color:#75715e"># &lt;-- essa função ainda nem existe!</span>
+
+        self<span style="color:#f92672">.</span>assertEqual(valor, <span style="color:#ae81ff">0</span>)
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    unittest<span style="color:#f92672">.</span>main()
+</code></pre></div><p>Sabendo que a regra dita que o primeiro valor retornado pela sequência é zero, o piloto escreveu um simples teste, que chama a futura função <code>fibonacci</code>, passando a <code>pos</code> 0, esperando que o valor retornado seja 0. Chegando ao fim da etapa <code>RED</code> do ciclo do TDD, ele passa a bola.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-ping-pong-pair-programming/img/exemplo-primeiro-teste-falhando.png" alt="Primeiro teste falhando" />
+        
+        
+    </figure>
+</div>
+
+<h4 id="ciclano-assume-pong">Ciclano assume (PONG)</h4>
+<p>Ciclano também está ciente dos baby steps, e escreve a menor implementação possível para fazer passar os testes, e chegar à fase <code>GREEN</code> do ciclo do TDD:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fibonacci</span>(pos):
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</code></pre></div><p>Ele roda os testes, e está passando. Excelente.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-ping-pong-pair-programming/img/exemplo-primeiro-teste-passando.png" alt="Primeiro teste passando" />
+        
+        
+    </figure>
+</div>
+
+<p>E então chega a hora de refatorar (etapa <code>REFACTOR</code>). Ele olha para Fulano, e chega à conclusão de que ainda é cedo pra isso, e parte para escrever o segundo teste:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_o_segundo_valor_eh_um</span>(self):
+    valor <span style="color:#f92672">=</span> fibonacci(pos<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+
+    self<span style="color:#f92672">.</span>assertEqual(valor, <span style="color:#ae81ff">1</span>)
+</code></pre></div>
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-ping-pong-pair-programming/img/exemplo-segundo-teste-falhando.png" alt="Segundo teste falhando" />
+        
+        
+    </figure>
+</div>
+
+<p>Ele roda o teste, e o mesmo falha (<code>RED</code>). É hora de passar a bola. O código ficou assim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> unittest
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fibonacci</span>(pos):
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FibonacciTests</span>(unittest<span style="color:#f92672">.</span>TestCase):
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_o_primeiro_valor_eh_zero</span>(self):
+        valor <span style="color:#f92672">=</span> fibonacci(<span style="color:#ae81ff">0</span>)
+
+        self<span style="color:#f92672">.</span>assertEqual(valor, <span style="color:#ae81ff">0</span>)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_o_segundo_valor_eh_um</span>(self):
+        valor <span style="color:#f92672">=</span> fibonacci(pos<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+
+        self<span style="color:#f92672">.</span>assertEqual(valor, <span style="color:#ae81ff">1</span>)
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    unittest<span style="color:#f92672">.</span>main()
+</code></pre></div><h4 id="fulano-assume-ping">Fulano assume (PING)</h4>
+<p>Primeiro, ele faz o mínimo para o novo teste passar (<code>GREEN</code>):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fibonacci</span>(pos):
+    <span style="color:#66d9ef">if</span> pos <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+</code></pre></div><p>Essa foi rápida. Acabou o aquecimento. Os dois poderiam ficar nesse loop de adicionar um valor por vez por toda a eterninadade, mas isso não seria muito produtivo. É hora de deixar as coisas interessantes e <strong>tacar lenha na fogueira!</strong> Então Fulano escreve o próximo teste, forçando o colega a implementar uma versão do algoritmo que atenda os próximos valores da sequência (<code>RED</code>):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> unittest.mock <span style="color:#f92672">import</span> patch
+
+<span style="color:#75715e"># ...</span>
+
+<span style="color:#a6e22e">@patch</span>(<span style="color:#e6db74">&#39;builtins.input&#39;</span>, return_value<span style="color:#f92672">=</span>[(<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>), (<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>), (<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">3</span>), (<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">5</span>), (<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">8</span>), (<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">13</span>)])
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_o_proximo_valor_eh_a_soma_dos_dois_anteriores</span>(self, retornos):
+    <span style="color:#66d9ef">for</span> par <span style="color:#f92672">in</span> retornos():
+        posicao, valor_esperado <span style="color:#f92672">=</span> par
+        valor <span style="color:#f92672">=</span> fibonacci(posicao)
+
+        self<span style="color:#f92672">.</span>assertEqual(valor, valor_esperado)
+</code></pre></div>
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-ping-pong-pair-programming/img/exemplo-terceiro-teste-falhando.png" alt="Terceiro teste falhando" />
+        
+        
+    </figure>
+</div>
+
+<h4 id="ciclano-assume-pong-1">Ciclano assume (PONG)</h4>
+<p>Agora as coisas ficaram mais divertidas, e essa rodada talvez seja um pouco mais demorada. Após refletir por uns instantes, decide implementar o algoritmo com uma abordagem procedural, e chega neste resultado:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fibonacci</span>(pos):
+    anterior <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    proximo <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+
+    <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, pos):
+        proximo <span style="color:#f92672">=</span> proximo <span style="color:#f92672">+</span> anterior
+        anterior <span style="color:#f92672">=</span> proximo <span style="color:#f92672">-</span> anterior
+        <span style="color:#66d9ef">if</span>(proximo <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>):
+            proximo <span style="color:#f92672">=</span> proximo <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+    
+    <span style="color:#66d9ef">return</span> proximo
+</code></pre></div>
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-ping-pong-pair-programming/img/exemplo-terceiro-teste-passando.png" alt="Terceiro teste passando" />
+        
+        
+    </figure>
+</div>
+
+<p>Ele roda os testes e estão passando (<code>GREEN</code>). Ele decise refatorar levemente o código (<code>REFACTOR</code>), renomeando a variável <code>pos</code> para <code>posicao</code>. O código ficou assim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fibonacci</span>(posicao):
+    anterior <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+    proximo <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+
+    <span style="color:#66d9ef">for</span> _ <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, posicao):
+        proximo <span style="color:#f92672">=</span> proximo <span style="color:#f92672">+</span> anterior
+        anterior <span style="color:#f92672">=</span> proximo <span style="color:#f92672">-</span> anterior
+        <span style="color:#66d9ef">if</span>(proximo <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>):
+            proximo <span style="color:#f92672">=</span> proximo <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+    
+    <span style="color:#66d9ef">return</span> proximo
+
+<span style="color:#75715e"># e os testes também:</span>
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_o_primeiro_valor_eh_zero</span>(self):
+    valor <span style="color:#f92672">=</span> fibonacci(posicao<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+
+    self<span style="color:#f92672">.</span>assertEqual(valor, <span style="color:#ae81ff">0</span>)
+
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_o_segundo_valor_eh_um</span>(self):
+    valor <span style="color:#f92672">=</span> fibonacci(posicao<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+
+    self<span style="color:#f92672">.</span>assertEqual(valor, <span style="color:#ae81ff">1</span>)
+</code></pre></div><p>O piloto está um pouco indeciso sobre qual teste escrever em seguida. Ele pergunta para o copiloto Fulano se tem alguma ideia, e o amigo o lembra que a sequência de Fibonacci só compreende números positivos. Eles decidem que nesses casos, a função deve retornar zero. Então Ciclano escreve este teste:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_deve_retornar_zero_para_posicoes_negativas</span>(self):
+    valor <span style="color:#f92672">=</span> fibonacci(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+
+    self<span style="color:#f92672">.</span>assertEqual(valor, <span style="color:#ae81ff">0</span>)
+</code></pre></div><p>Ao rodar este teste, ele passa, porque coincidentemente o <code>for</code> não é processado. Então não conta como <code>RED</code> e ainda não pode passar a bola para o amigo.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-ping-pong-pair-programming/img/exemplo-quarto-teste-passando.png" alt="Quarto teste passando" />
+        
+        
+    </figure>
+</div>
+
+<p>Olhando para o artigo na Wikipedia, ele decide que talvez não caiba escrever novos testes. Adiciona mais alguns casos no teste <code>test_o_proximo_valor_eh_a_soma_dos_dois_anteriores</code> e decide desafiar o colega a refatorar a função para a versão recursiva. O colega topa. Eles continuam na etapa <code>REFACTOR</code>.</p>
+<h4 id="fulano-assume-ping-1">Fulano assume (PING)</h4>
+<p>Ele começa a refatorar a função, e chega a esta versão, que atende a todos os testes já escritos:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fibonacci</span>(posicao):
+    <span style="color:#66d9ef">if</span> posicao <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>:
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">if</span> posicao <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">return</span> fibonacci(posicao <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> fibonacci(posicao <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>)
+</code></pre></div><p>Os dois olham um para o outro com um aceno de que fizeram um bom trabalho. Fulano decide mover a função para um módulo <code>fib.py</code> e estão prontos. Já podem ir tomar um café. :)</p>
+<p>O arquivo <code>fib.py</code> ficou assim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">fibonacci</span>(posicao):
+    <span style="color:#66d9ef">if</span> posicao <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>:
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">if</span> posicao <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>:
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">return</span> fibonacci(posicao <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) <span style="color:#f92672">+</span> fibonacci(posicao <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>)
+</code></pre></div><p>E o arquivo de testes ficou assim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> unittest
+<span style="color:#f92672">from</span> unittest.mock <span style="color:#f92672">import</span> patch
+<span style="color:#f92672">from</span> fib <span style="color:#f92672">import</span> fibonacci
+
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FibonacciTests</span>(unittest<span style="color:#f92672">.</span>TestCase):
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_o_primeiro_valor_eh_zero</span>(self):
+        valor <span style="color:#f92672">=</span> fibonacci(posicao<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+
+        self<span style="color:#f92672">.</span>assertEqual(valor, <span style="color:#ae81ff">0</span>)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_o_segundo_valor_eh_um</span>(self):
+        valor <span style="color:#f92672">=</span> fibonacci(posicao<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+
+        self<span style="color:#f92672">.</span>assertEqual(valor, <span style="color:#ae81ff">1</span>)
+
+    <span style="color:#a6e22e">@patch</span>(<span style="color:#e6db74">&#39;builtins.input&#39;</span>, return_value<span style="color:#f92672">=</span>[
+        (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>), (<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>), (<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">3</span>), (<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">5</span>), (<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">8</span>),
+        (<span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">13</span>), (<span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">21</span>), (<span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">34</span>), (<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">55</span>)])
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_o_proximo_valor_eh_a_soma_dos_dois_anteriores</span>(self, retornos):
+        <span style="color:#66d9ef">for</span> par <span style="color:#f92672">in</span> retornos():
+            posicao, valor_esperado <span style="color:#f92672">=</span> par
+            valor <span style="color:#f92672">=</span> fibonacci(posicao)
+
+            self<span style="color:#f92672">.</span>assertEqual(valor, valor_esperado)
+
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_deve_retornar_zero_para_posicoes_negativas</span>(self):
+        valor <span style="color:#f92672">=</span> fibonacci(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+
+        self<span style="color:#f92672">.</span>assertEqual(valor, <span style="color:#ae81ff">0</span>)
+
+<span style="color:#66d9ef">if</span> __name__ <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;__main__&#39;</span>:
+    unittest<span style="color:#f92672">.</span>main()
+</code></pre></div><p>Todo o código mostrado aqui, e também a sequência de commits realizada pela dupla fictícia, podem ser encontradas <strong><a href="https://github.com/DyegoMaas/ping-pong-article-companion">neste repositório</a></strong>.</p>
+<h3 id="cuidado-com-os-exageros">Cuidado com os exageros!</h3>
+<p>Programar em par é uma atividade intensa, e exige muito das duas pessoas. Exige coordenação e atenção redobrada. Se exagerarmos na dose, pode ser exaustivo. E como a dinâmica ping-pong é uma das mais mais intensas e que mais exigem do programador.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-ping-pong-pair-programming/img/programmer_tired.jpg" alt="Um programador cansado, dormindo sobre o teclado" />
+        
+        
+        <figcaption><p>O que acontece quando a gente exagera</p> </figcaption>
+        
+    </figure>
+</div>
+
+<p>Não se engane: os resultados podem ser incríveis. Inclusive, na melhor sessão de pair programming que experimentei até hoje, apliquei essa dinâmica com meu amigo Fernando Medeiros na HBSIS, em 2017. Foi uma experiência ao mesmo tempo fluida e produtiva. E também um tanto cansativa. Mas nós sabíamos que era necesssário manter um balanço saudável nas nossas rotinas para suportar esse nível de trabalho.</p>
+<p>É uma ilusão achar que duas pessoas vão conseguir trabalhar em par o dia inteiro (eu mesmo cometi esse erro uns anos antes), pois um programador tem muitas outras atividades para fazer além de programar. Precisa separar tempo para ler e-mails, revisar códigos dos colegas, participar de reuniões, e também para atividades pessoais.</p>
+<p>Então a dica é evitar sessões muito longas. Duas ou três horas de ping-pong pair programming seguidas são mais que suficientes para render bons frutos.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-ping-pong-pair-programming/img/coffee-cup.jpg" alt="Uma xícara cheia de café preto" />
+        
+        
+    </figure>
+</div>
+
+<p>Outra dica é planejar pausas de tempos em tempos, para aliviar a tensão. Se possível, faça uma pequena pausa a cada meia hora. Isso vai ajudar a manter a mente tranquila e focada.</p>
+<h3 id="deixe-o-colega-respirar">Deixe o colega respirar</h3>
+<p>Existem pessoas impacientes, e existem pessoas pró-ativas. Alguns programadores são ambos, e não conseguem ver o colega parar de digitar por alguns segundos que já correm pra dar pitaco e &ldquo;ajudar o colega a desempacar&rdquo;.</p>
+<p>É importante ajudar, com certeza, e estar atento caso sua dupla trave, mas muitas vezes, tudo o que o colega precisa é de uns 10 segundos para formular seu pensamento e planejar o próximo passo. É importante dar esse espaço para que a experiência seja agradável para ambos.</p>
+<h3 id="como-usar-ping-pong-pair-programming-para-treinar-tdd">Como usar ping-pong pair programming para treinar TDD?</h3>
+<p>Todo praticante de TDD sabe que o começo é difícil, e para cair a ficha, é necessário treinar muito. E demora mais ainda para que programar desta forma se torne praticamente sua segunda natureza.</p>
+<p>Seguir o ciclo do TDD, para quem está começando, é contra-intuitivo. Nosso instinto diz para ir lá e escrever aquele código logo. Ele diz <em>&ldquo;depois a gente escreve os testes&rdquo;</em>.</p>
+<p>O pareamento ping-pong pode ser usado para combater esse impulso, e treinar TDD até que se torne natural. Há dois cenários em que esta estratégia de pareamento pode ajudar:</p>
+<ul>
+<li>Par entre um praticante experiente em TDD e um iniciante</li>
+<li>Par entre dois iniciantes em TDD</li>
+</ul>
+<p>No primeiro cenário, um programador experiente em TDD pode acelerar em muito o aprendizado de um iniciante, com dicas, boas práticas, e discutindo as estratégias de desenvolvimento. Será ótimo para o iniciante observar o <em>modus operandi</em> do colega mais experiente.</p>
+<p>Se você é um praticante experiente, então esta é a forma ideal para ensinar outros e passar a prática adiante.</p>
+<p>Nem sempre temos um colega experiente em TDD à disposição para parear, mas tudo o que um iniciante empolgado precisa é encontrar outro. Vai ser um pouco mais difícil e vai exigir atenção redobrada, mas os dois podem &ldquo;vigiar&rdquo; o processo e colher grandes resultados. Com um tanto de dedicação, aos poucos, o ciclo do TDD se tornará cada vez mais natural.</p>
+<h2 id="finalizando">Finalizando</h2>
+<p>Espero que este breve artigo inspire algumas pessoas a investir no TDD, e outras ainda a difundir essa prática por aí, como venho fazendo desde que fui introduzido a ela quando comecei a trabalhar na Inventti em 2013. Foi quando virei fã do TDD.</p>
+
+  </div>
+  <style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+position: relative;
+text-align: left;
+height: 36px;
+width: 32px;
+float: left;
+text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="color: silver;">Compartilhe: </span><div id="share-buttons">
+<div class="facebook" title="Compartilhe no Facebook" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-ping-pong-pair-programming\/', 'sharer', 'width=626,height=436');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+<div class="twitter" title="Compartilhe no Twitter" onclick="window.open('http://twitter.com/share?text=Ping-pong Pair Programming&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-ping-pong-pair-programming\/&hashtags=pair-programming,ping-pong,produtividade,tdd,python');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+<div class="linkedin" title="Compartilhe no Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-ping-pong-pair-programming\/&title=Ping-pong Pair Programming', 'sharer', 'width=626,height=700');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+<div class="mail" title="Compartilhe por Email" onclick="window.open('mailto:?&body=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-ping-pong-pair-programming\/');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/resenha-apprenticeship-patterns/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Apprenticeship Patterns</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'blogdyegomaas';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111956442-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/python.min.js"></script>
+            
+        
+    <script type="text/javascript">
+        
+        hljs.configure({languages: ["python"]});
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>

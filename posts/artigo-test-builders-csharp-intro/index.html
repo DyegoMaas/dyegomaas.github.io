@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+    
+
+
+    <head itemscope itemtype="https://blog.dyegomaas.com.br/">
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/blog.dyegomaas.com.br\/"
+    },
+    "articleSection" : "posts",
+    "name" : "Simplificando setup de testes em C# com Test Data Builders",
+    "headline" : "Simplificando setup de testes em C# com Test Data Builders",
+    "description" : "O setup dos seus testes é chato e repetitivo? Facilite sua vida usando Test Data Builders! Neste artigo mostramos como funcionam e simplificam seus testes.",
+    "inLanguage" : "pt-BR",
+    "author" : {
+        "@type": "Person",
+        "name": "Dyego Maas"
+    }, 
+    "image": {
+        "@type": "imageObject",
+        "url": "https://blog.dyegomaas.com.br/img/posts/post-csharp.png"
+    },
+    
+    "creator" : "Dyego Maas",
+    "publisher": "Dyego Maas",
+    "accountablePerson" : "Dyego Maas",
+    "copyrightHolder" : "Dyego Maas",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-04-19",
+    "dateModified" : "2020-04-19",
+    "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/artigo-test-builders-csharp-intro\/",
+    "wordCount" : "1673",
+    "keywords" : [ "csharp","test data builders","builder pattern","Blog" ]
+}
+</script>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+<meta name="yandex-verification" content="20d83aeccd3b80c2" />
+<base href="https://blog.dyegomaas.com.br/posts/artigo-test-builders-csharp-intro/">
+<meta name="generator" content="Hugo 0.69.0" />
+
+    
+    
+    
+
+<title itemprop="name">Simplificando setup de testes em C# com Test Data Builders - Blog Dyego Maas</title>
+<meta property="description" content="O setup dos seus testes é chato e repetitivo? Facilite sua vida usando Test Data Builders! Neste artigo mostramos como funcionam e simplificam seus testes." />
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+
+
+<meta name="keywords" content="csharp,test-data-builders,builder-pattern" />
+<link rel="canonical" href="https://blog.dyegomaas.com.br/posts/artigo-test-builders-csharp-intro/" itemprop="url" />
+<meta name="url" content="https://blog.dyegomaas.com.br/posts/artigo-test-builders-csharp-intro/" />
+<meta property="og:site_name" content="Blog - Dyego Maas" />
+<meta property="og:title" content="Simplificando setup de testes em C# com Test Data Builders" />
+<meta property="og:description" content="O setup dos seus testes é chato e repetitivo? Facilite sua vida usando Test Data Builders! Neste artigo mostramos como funcionam e simplificam seus testes." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.dyegomaas.com.br/posts/artigo-test-builders-csharp-intro/" /><meta property="og:image" content="/img/posts/post-csharp.png" />
+<meta property="og:image:secure_url" content="https://blog.dyegomaas.com.br/img/posts/post-csharp.png" />
+<meta property="article:published_time" content="2020-04-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-04-19T00:00:00+00:00" />
+
+<meta name="theme-color" content="#000000" />
+<meta name="msapplication-TileColor" content="#000000" />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="Blog - Dyego Maas" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" />
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" crossorigin="anonymous" media="print">
+
+
+<link rel="stylesheet" href="/css/custom.69cb553f8fdb841923fb0042f13bb1a617b61a9c30b020d16fa9175995e8c089.css" integrity="sha256-actVP4/bhBkj&#43;wBC8Tuxphe2GpwwsCDRb6kXWZXowIk=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/overrides.188421855fb48cd44e36b22976f3f17f4c4322978c83b5ef92a1c8604e1772f7.css" integrity="sha256-GIQhhV&#43;0jNRONrIpdvPxf0xDIpeMg7XvkqHIYE4Xcvc=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/modal.3f2d773b192584d4c72931c90be47bfbc2296a638ed5354962252cab96b3dbb3.css" integrity="sha256-Py13OxklhNTHKTHJC&#43;R7&#43;8IpamOO1TVJYiUsq5az27M=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/custom.3e8609b6efbfd1fee7b6531514f17304d18ff8cebda6c439740359e699220932.css" integrity="sha256-PoYJtu&#43;/0f7ntlMVFPFzBNGP&#43;M69psQ5dANZ5pkiCTI=" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=" crossorigin="anonymous">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js" defer></script>
+<script src="https://unpkg.com/lunr/lunr.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.pt.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" defer></script>
+
+<script src="/js/layout-adjustments.js" defer></script><script src="/js/custom-search.js" defer></script>
+
+<script async>
+  document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+      adjustLayout();
+      initializeSearch('/search-index.json', '/search-data-companion.json');
+   }
+ }
+</script>
+</head>
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://blog.dyegomaas.com.br/">Blog Dyego Maas</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://blog.dyegomaas.com.br/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         Arquiteto de software e Escritor 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Blog Dyego Maas</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		
+		
+			 
+				<li>
+					<a href="/posts/">
+						<span>Blog</span>
+					</a>
+				</li>
+			
+		
+		<li>
+			<a href="https://dyegomaas.com.br/">
+				<span>Sobre<span>
+			</a>
+		</li>
+		<li>
+			<a id="search-button" rel="search" style="cursor: pointer;">
+    <i class="fa fa-search" aria-hidden="true"></i>
+</a>
+
+<div id="search-results-modal" class="modal display-none">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close">&times;</span>
+        <h2>O que você procura?</h2>
+      </div>
+      <div class="modal-body">
+        <input type="search" id="search-input" results="10" placeholder="Pesquisar... (pressione Enter)">
+        <div>
+            <ul id="search-results"></ul>
+        </div>
+      </div>
+      
+    </div>
+</div>
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/DyegoMaas" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/DyegoAlekssander" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/Dyegomaas" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/dyego-maas" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:dyego.maas@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="index.xml" rel="me"><i class="fas fa-rss fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Simplificando setup de testes em C# com Test Data Builders</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 19
+
+
+  
+
+  
+
+  
+
+  
+    Abr, 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+2020
+    
+    
+    
+      
+      
+          em
+          
+          
+              <a class="badge badge-category" href="/categories/testes">TESTES</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/csharp">csharp</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/test-data-builders">test data builders</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/builder-pattern">builder pattern</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 8 min de leitura
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Tabela de Conteúdo</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  <div class="post">
+    <p>Implementar uma boa suíte de testes unitários para nossos projetos pode ser muito recompensador, e na maioria dos casos, é indispensável. Mas, se não tomarmos certos cuidados, a manutenção desta suíte pode se tornar tediosa e até terrivelmente trabalhosa.</p>
+<p>Vejamos um cenário muito comum, e que pode ser resolvido facilmente com o <em>design pattern <a href="https://pt.wikipedia.org/wiki/Builder"><strong>Builder</strong></a></em> aplicado a testes para obter o que chamamos de <em>test data builders</em>, ou simplesmente <em>test builders</em>. Ao longo deste artigo e de eventuais outros, vou chamar esses construtores de <em>test builders</em>.</p>
+<p>Existem bibliotecas muito boas que podem nos ajudar a configurar esses <em>builders</em>, como o <a href="https://github.com/nbuilder/nbuilder">NBuilder</a>, mas neste artigo vamos focar na escrita artesanal de <em>builders</em> especialmente desenhados para a aplicação.</p>
+<h2 id="testes-repetitivos">Testes repetitivos</h2>
+<p>Digamos que no nosso sistema imaginário, temos um objeto de negócio como este:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cliente</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Codigo { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Nome { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Cpf { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+}
+</code></pre></div><p>Uma classe real que representa um cliente provavelmente seria muito maior, mas esta será suficiente para o nosso exercício.</p>
+<p>Agora imaginemos um cenário de teste simples que precisa passar um cliente para uma rotina.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#a6e22e">[Fact]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Deve_persistir_um_novo_cliente()
+{
+    <span style="color:#66d9ef">var</span> cliente = <span style="color:#66d9ef">new</span> Cliente
+    {
+        Nome = <span style="color:#e6db74">&#34;John Doe&#34;</span>,
+        Cpf = <span style="color:#e6db74">&#34;071.777.111-89&#34;</span>
+    };
+
+    <span style="color:#66d9ef">var</span> codigo = _repositorio.Salvar(cliente);
+
+    <span style="color:#75715e">//... algum código de validação
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>À medida em que nossa aplicação vai crescendo, surgem mais e mais cenários que precisam instanciar um cliente para testar alguma regra de negócio. A configuração do cliente é muito parecido em todos eles, mas dependendo do dia, do desenvolvedor, e do alinhamento dos astros, as configurações
+começam a divergir, e talvez nem todos os cenários sejam realmente válidos.</p>
+<p>Como podemos ver no exemplo a seguir, algumas semanas e muitos testes depois daquele primeiro cenário de teste que vimos um pouco acima, um desenvolvedor escreveu um novo teste para validar o CPF de um cliente.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#a6e22e">[Fact]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Deve_garantir_que_o_cliente_possui_cpf_valido()
+{
+    <span style="color:#66d9ef">var</span> cliente = <span style="color:#66d9ef">new</span> Cliente
+    {
+        Codigo = <span style="color:#ae81ff">2</span>,
+        Nome = <span style="color:#e6db74">&#34;Terminator&#34;</span>,
+        Cpf = <span style="color:#e6db74">&#34;07166611189&#34;</span>
+    };
+
+    <span style="color:#66d9ef">var</span> cpfValido = _validadorCpfCliente.Validar(cliente);
+
+    cpfValido.Should().BeTrue();
+}
+</code></pre></div><p>Podemos ver que já existem divergências na forma como a propriedade CPF é configurada em cada cenário: algumas possuem CPFs formatados, outras não; alguns CPFs talvez sejam válidos, mas a maioria não é.</p>
+<p>E então chega o dia em que o time decide que para resolver inconsistências nos tratamentos do CPF do cliente, vão implementar um objeto rico do tipo CPF, que vai se autovalidar.</p>
+<p>A classe <code>CPF</code> é mais ou menos assim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CPF</span>
+{
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> <span style="color:#66d9ef">long</span> _valor;
+
+    <span style="color:#66d9ef">public</span> CPF(<span style="color:#66d9ef">long</span> cpf)
+    {
+        ValidarCpf(cpf);
+        _valor = cpf;
+    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ValidarCpf(<span style="color:#66d9ef">long</span> cpf) {...}
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">string</span> ToString() {...}
+}
+</code></pre></div><p>O time está contente com essa implementação e decide que a propriedade CPF do cliente deverá ser alterada de <code>string</code> para <code>CPF</code>.</p>
+<p>Mas então se dão conta de que o objeto cliente é instanciado em 652 testes, e de diferentes formas.</p>
+<p>Alguém sugere que poderiam fazer esse ajuste facilmente com uma operação de substituição (CTRL+H), mas então se dá conta que a classe CPF é instanciada a partir de um <code>long</code>, e não de uma <code>String</code>, e que vão ter que ajustar na mão todos os 652 testes.</p>
+<p>O problema que eles eles estão enfrentando é fruto do alto <strong>acoplamento entre os cenários de teste de o código de produção</strong>.</p>
+<p>Este é o típico cenário que o uso de <strong>Test Builders</strong> poderia ter evitado uma grande dor de cabeça.</p>
+<h2 id="test-builders">Test Builders</h2>
+<p>Os Test Builders podem nos ajudar de várias formas:</p>
+<ul>
+<li>Evitando duplicação na configuração de testes</li>
+<li>Garantindo a consistência dos objetos construídos</li>
+<li>Melhorando legibilidade dos cenários de teste</li>
+</ul>
+<p>A seguir, vamos investigar de que formas um <em>Test Builder</em> bem construído pode nos ajudar, e como eles afetam nossas suítes de testes.</p>
+<h3 id="evitando-duplicação-com-test-builders">Evitando duplicação com Test Builders</h3>
+<p>Vamos começar imaginando como teria sido se o time fictício do cenário anterior tivesse usado um Test Builder desde o segundo ou terceiro cenário em que precisaram instanciar um cliente num cenário de teste.</p>
+<p>Na sua forma mais simples, um <code>ClienteBuilder</code> não passa de uma <em>factory simples</em>, que retorna uma instância padronizada de <code>Cliente</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClienteBuilder</span>
+{
+    <span style="color:#66d9ef">public</span> ClienteBuilder()
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Cliente
+        {
+            Codigo = <span style="color:#ae81ff">0</span>,
+            Nome = <span style="color:#e6db74">&#34;Terminator&#34;</span>,
+            Cpf = <span style="color:#e6db74">&#34;722.111.333-64&#34;</span>
+        };
+    }
+}
+</code></pre></div><p>Então todos os cenários estariam instanciando novos clientes assim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#a6e22e">[Fact]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Teste_que_nao_se_importa_com_o_cpf()
+{
+    <span style="color:#66d9ef">var</span> cliente = <span style="color:#66d9ef">new</span> ClienteBuilder().Construir();
+    <span style="color:#75715e">//... resto do cenário de teste
+</span><span style="color:#75715e"></span>}
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">[Fact]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Teste_que_precisa_configurar_um_cpf_especifico()
+{
+    <span style="color:#66d9ef">var</span> cliente = <span style="color:#66d9ef">new</span> ClienteBuilder()
+        .ComCpf(<span style="color:#e6db74">&#34;071.722.111-90&#34;</span>)
+        .Construir();
+    <span style="color:#75715e">//... teste que valida CPF
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>Se agora o time tomar a decisão de transformar a propriedade CPF do cliente de <code>String</code> para <code>CPF</code>, será muito simples, pois basta fazer este ajuste no próprio <em>builder</em>, uma única vez:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClienteBuilder</span>
+{
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> cpf;
+
+    <span style="color:#66d9ef">public</span> ClienteBuilder()
+    {
+        <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">string</span> cpfValidoString = <span style="color:#e6db74">&#34;946.549.990-00&#34;</span>;
+        <span style="color:#66d9ef">var</span> cpfString = (cpf ?? cpfValidoString)
+            .Replace(<span style="color:#e6db74">&#34;.&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)
+            .Replace(<span style="color:#e6db74">&#34;-&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>);
+
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Cliente
+        {
+            Codigo = <span style="color:#ae81ff">0</span>,
+            Nome = <span style="color:#e6db74">&#34;Terminator&#34;</span>,
+            Cpf = <span style="color:#66d9ef">new</span> CPF(valor: <span style="color:#66d9ef">long</span>.Parse(cpfString))
+        };
+    }
+
+    <span style="color:#66d9ef">public</span> ClienteBuilder ComCpf(<span style="color:#66d9ef">string</span> cpf){
+        <span style="color:#66d9ef">this</span>._cpf = cpf;
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>;
+    }
+}
+</code></pre></div><p>E se algum teste passar a quebrar, provavelmente será porque o CPF informado não era válido em primeiro lugar.</p>
+<p>Por fim, imaginemos que o time decidiu que a classe Cliente não deve mais ter setters públicos, e que todos os campos serão preenchidos via construtor:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cliente</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Codigo { <span style="color:#66d9ef">get</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Nome { <span style="color:#66d9ef">get</span>; }
+    <span style="color:#66d9ef">public</span> CPF Cpf { <span style="color:#66d9ef">get</span>; }
+
+    <span style="color:#66d9ef">public</span> Cliente(<span style="color:#66d9ef">int</span> codigo, <span style="color:#66d9ef">string</span> nome, CPF cpf)
+    {
+        Codigo = codigo;
+        Nome = nome;
+        Cpf = cpf;
+    }
+}
+</code></pre></div><p>Não fosse pelo uso de Test Builders (ou pelo menos algum tipo de <em>factory</em>), teríamos que ajustar todos os cenários de teste. Mas como temos nosso <code>ClienteBuilder</code>, somente ele precisará ser alterado, e todos os cenários de testes passam ilesos pela alteração.</p>
+<p>Abaixo, temos um ClienteBuilder totalmente customizável, usando este novo construtor:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClienteBuilder</span>
+{
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int?</span> _codigo;
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> nome;
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> cpf;
+
+    <span style="color:#66d9ef">public</span> ClienteBuilder()
+    {
+        <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">string</span> cpfValidoString = <span style="color:#e6db74">&#34;946.549.990-00&#34;</span>;
+        <span style="color:#66d9ef">var</span> cpfString = (cpf ?? cpfValidoString)
+            .Replace(<span style="color:#e6db74">&#34;.&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)
+            .Replace(<span style="color:#e6db74">&#34;-&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>);
+
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> Cliente(
+            codigo: _codigo ?? <span style="color:#ae81ff">0</span>,
+            nome: nome ?? <span style="color:#e6db74">&#34;Terminator&#34;</span>,
+            cpf: <span style="color:#66d9ef">new</span> CPF(valor: <span style="color:#66d9ef">long</span>.Parse(cpfString))
+        );
+    }
+
+    <span style="color:#66d9ef">public</span> ClienteBuilder ComCodigo(<span style="color:#66d9ef">int</span> codigo){
+        <span style="color:#66d9ef">this</span>._codigo = codigo;
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>;
+    }
+
+    <span style="color:#66d9ef">public</span> ClienteBuilder ComNome(<span style="color:#66d9ef">string</span> nome){
+        <span style="color:#66d9ef">this</span>._nome = nome;
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>;
+    }
+
+    <span style="color:#66d9ef">public</span> ClienteBuilder ComCpf(<span style="color:#66d9ef">string</span> cpf){
+        <span style="color:#66d9ef">this</span>._cpf = cpf;
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>;
+    }
+}
+</code></pre></div><p>E um teste que configura todos os campos de uma forma legível e fácil de acompanhar:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#a6e22e">[Fact]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Teste_que_precisa_configurar_um_cpf_especifico()
+{
+    <span style="color:#66d9ef">var</span> cliente = <span style="color:#66d9ef">new</span> ClienteBuilder()
+        .ComCodigo(<span style="color:#ae81ff">42</span>)
+        .ComNome(<span style="color:#e6db74">&#34;Pensador Profundo&#34;</span>)
+        .ComCpf(<span style="color:#e6db74">&#34;049.908.620-15&#34;</span>)
+        .Construir();
+    <span style="color:#75715e">//... alguma lógica de teste
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>Como pudemos ver nos exemplos acima, o uso de <em>test builders</em> bem implementados ajuda a desacoplar os testes do código testado, ao mesmo tempo em que resulta em cenários de teste mais consistentes e fáceis de ler.</p>
+<h3 id="construindo-objetos-consistentes-com-test-builders">Construindo objetos consistentes com Test Builders</h3>
+<p><em>Builders</em> também podem ser usados para evitar a criação de objetos que sejam negocialmente inválidos, e isso acaba tendo um efeito colateral benéfico para nossos testes: eles ficam mais realistas.</p>
+<p>Um exemplo corriqueiro é o de propriedades que precisam ser configuradas juntas para fazerem sentido.</p>
+<p>Vamos para um exemplo fácil de visualizar: precisamos simular uma requisição HTTP para um sistema legado que retorna um objeto do tipo <code>PrecoResponse</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PrecoResponse</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> CodigoProduto { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">float</span> Valor { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Tipo { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> DescricaoTipo { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> CodigoTabela { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> InicioFaixa { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> FimFaixa { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+}
+</code></pre></div><p>Vamos supor ainda que tenhamos duas regras para observar nessa integração:</p>
+<ol>
+<li><code>Tipo</code> e <code>DescricaoTipo</code> são sempre atualizados juntos. Existem três tipos de preço, dos quais os dois primeiros são tabelados;</li>
+<li>Alguns preços fazem parte de uma tabela de preços aplicada por quantidade. Estes tipos, que obedece a uma faixa de quantidade de produtos vendidos. Quando <code>CodigoTabela</code> for zero, <code>InicioFaixa</code> e <code>FimFaixa</code> também serão.</li>
+</ol>
+<p>Esta regra de negócio é um pouco complicada, e se nosso <em>builder</em> não for implementado com cuidado, essas regras não vão ficar claras nos testes, ou pior ainda, vários cenários podem não fazer sentido nenhum!</p>
+<p>Podemos garantir que todos os cenários sejam construídos de acordo com estas regras simplesmente traduzindo-as para a interface do <code>PrecoResponseBuilder</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> TipoPreco
+{
+    Praticado = <span style="color:#ae81ff">1</span>, <span style="color:#75715e">// tabelado
+</span><span style="color:#75715e"></span>    Previsto = <span style="color:#ae81ff">2</span>, <span style="color:#75715e">// tabelado
+</span><span style="color:#75715e"></span>    Minimo = <span style="color:#ae81ff">3</span>
+}
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PrecoResponseBuilder</span>
+{
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int?</span> _codigoProduto = <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">float?</span> _valor = <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">private</span> TipoPreco? _tipo = <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">string</span> _descricaoTipo = <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int?</span> _codigoTabela = <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int?</span> _inicioFaixa = <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int?</span> _fimFaixa = <span style="color:#66d9ef">null</span>;
+
+    <span style="color:#66d9ef">public</span> PrecoResponseBuilder Construir()
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> PrecoResponseBuilder
+        {
+            CodigoProduto = _codigoProduto ?? <span style="color:#ae81ff">1</span>,
+            Valor = _valor ?? <span style="color:#ae81ff">100f</span>,
+            Tipo = (<span style="color:#66d9ef">int</span>)(_tipo ?? TipoPreco.Praticado),
+            DescricaoTipo = _descricaoTipo ?? <span style="color:#e6db74">&#34;PREVISTO&#34;</span>,
+            CodigoTabela = _codigoTabela ?? <span style="color:#ae81ff">1</span>,
+            InicioFaixa = _inicioFaixa ?? <span style="color:#ae81ff">1</span>,
+            FimFaixa = _fimFaixa ?? <span style="color:#ae81ff">100</span>
+        };
+    }
+
+    <span style="color:#66d9ef">public</span> PrecoResponseBuilder DoTipoMinimo()
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.DoTipo(TipoPreco.Minimo);
+    }
+
+    <span style="color:#66d9ef">public</span> PrecoResponseBuilder DoTipoPraticado(
+        <span style="color:#66d9ef">int</span> codigoTabela,
+        <span style="color:#66d9ef">int</span> inicioFaixa, <span style="color:#66d9ef">int</span> fimFaixa)
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>
+            .DoTipo(TipoPreco.Praticado)
+            .ComTabelaPrecos(codigoTabela, inicioFaixa, fimFaixa);
+    }
+
+    <span style="color:#66d9ef">public</span> PrecoResponseBuilder DoTipoPrevisto(
+        <span style="color:#66d9ef">int</span> codigoTabela,
+        <span style="color:#66d9ef">int</span> inicioFaixa, <span style="color:#66d9ef">int</span> fimFaixa)
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>
+            .DoTipo(TipoPreco.Previsto)
+            .ComTabelaPrecos(codigoTabela, inicioFaixa, fimFaixa);
+    }
+
+    <span style="color:#66d9ef">private</span> PrecoResponseBuilder DoTipo(TipoPreco tipoPreco)
+    {
+        <span style="color:#66d9ef">this</span>._tipoPreco = TipoPreco.Praticado;
+        <span style="color:#66d9ef">this</span>._descricaoPreco = TipoPreco.Praticado.ToString();
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>;
+    }
+
+    <span style="color:#66d9ef">private</span> PrecoResponseBuilder ComTabelaPrecos(
+        <span style="color:#66d9ef">int</span> codigoTabela,
+        <span style="color:#66d9ef">int</span> inicioFaixa, <span style="color:#66d9ef">int</span> fimFaixa)
+    {
+        <span style="color:#66d9ef">this</span>._codigoTabela = codigoTabela;
+        <span style="color:#66d9ef">this</span>._inicioFaixa = inicioFaixa;
+        <span style="color:#66d9ef">this</span>._fimFaixa = fimFaixa;
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>;
+    }
+}
+</code></pre></div><p>Como podemos ver no exemplo acima, será muito difícil criar estados inválidos usando esse <code>PrecoResponseBuilder</code>. Cada configuração de preço atualiza em conjunto as propriedades <code>Tipo</code> e <code>DescricaoTipo</code>. Além disso, apenas os métodos para configurar preços dos tipos Praticado e Previsto permitem configurar tabelas de preço, conforme a regra de negócio.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#a6e22e">[Fact]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Teste_que_utiliza_dtos_de_resposta_de_preco()
+{
+    <span style="color:#66d9ef">var</span> precoMinimo = <span style="color:#66d9ef">new</span> PrecoResponseBuilder()
+        .DoTipoMinimo()
+        .Construir();
+    <span style="color:#66d9ef">var</span> precoPrevisto = <span style="color:#66d9ef">new</span> PrecoResponseBuilder()
+        .DoTipoPrevisto(codigoTabela: <span style="color:#ae81ff">1</span>, inicioFaixa: <span style="color:#ae81ff">1</span>, fimFaixa: <span style="color:#ae81ff">10</span>)
+        .Construir();
+    <span style="color:#66d9ef">var</span> precoPraticado = <span style="color:#66d9ef">new</span> PrecoResponseBuilder()
+        .DoTipoPraticado(codigoTabela: <span style="color:#ae81ff">1</span>, inicioFaixa: <span style="color:#ae81ff">1</span>, fimFaixa: <span style="color:#ae81ff">10</span>)
+        .Construir();
+
+    <span style="color:#75715e">//... alguma lógica de teste
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>Como pudemos ver, os <em>builders</em> podem ser extremamente benéficos para nossas suítes de testes e ajudam a proteger nossos testes de mudanças nos nossos sistemas, simplificando muito nosso dia-a-dia.</p>
+
+  </div>
+  <style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+position: relative;
+text-align: left;
+height: 36px;
+width: 32px;
+float: left;
+text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="color: silver;">Compartilhe: </span><div id="share-buttons">
+<div class="facebook" title="Compartilhe no Facebook" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-test-builders-csharp-intro\/', 'sharer', 'width=626,height=436');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+<div class="twitter" title="Compartilhe no Twitter" onclick="window.open('http://twitter.com/share?text=Simplificando setup de testes em C# com Test Data Builders&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-test-builders-csharp-intro\/&hashtags=csharp,test-data-builders,builder-pattern');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+<div class="linkedin" title="Compartilhe no Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-test-builders-csharp-intro\/&title=Simplificando setup de testes em C# com Test Data Builders', 'sharer', 'width=626,height=700');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+<div class="mail" title="Compartilhe por Email" onclick="window.open('mailto:?&body=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-test-builders-csharp-intro\/');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+  
+
+<div class="navigation navigation-single">
+    
+    
+    <a href="/posts/artigo-test-builders-csharp-boas-praticas/" class="navigation-next">
+      <span class="navigation-tittle">Boas práticas para implementar Test Data Builders em C#</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'blogdyegomaas';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111956442-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/cs.min.js"></script>
+            
+        
+    <script type="text/javascript">
+        
+        hljs.configure({languages: ["cs"]});
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>

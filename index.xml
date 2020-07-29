@@ -7,10 +7,33 @@
     <description>Recent content on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 08 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ping-pong Pair Programming</title>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-ping-pong-pair-programming/</link>
+      <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-ping-pong-pair-programming/</guid>
+      <description>Duas cabeças pensam melhor que uma, já dizia o ditado. E muitas vezes é verdade mesmo. Por isso, a prática da programação em par, ou pair programming tem ganhado tanta força mundo afora.
+Pair programming A ideia básica é simples: tal como no rally, em que o piloto e o navegador colaboram para vencer a corrida, no pair programming a dupla colabora numa dinâmica parecida.
+  Um programador assume o papel de piloto (e o teclado), e o outro de navegador, responsável por acompanhar o desenvolvimento e antecipar os próximos passos.</description>
+
+      
+      
+      
+      
+      
+        
+        
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-ping-pong-pair-programming/img/cover-tdd-cycle.png" type="image/png"/>      
+    </item>
     
     <item>
       <title>Apprenticeship Patterns</title>
@@ -36,10 +59,10 @@
     
     <item>
       <title>Como implementei a busca offline para o meu site estático feito em Hugo</title>
-      <link>https://blog.dyegomaas.com.br/posts/como-implementei-busca-offline-blog/</link>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-como-implementei-busca-offline-blog/</link>
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.dyegomaas.com.br/posts/como-implementei-busca-offline-blog/</guid>
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-como-implementei-busca-offline-blog/</guid>
       <description>Este blog começou como um experimento e um objetivo: não custar nada no fim do mês.
 Por isso decidi criar um site estático com um gerador chamado Hugo. Isso significa que não existe um backend para o blog; não existe uma arquitetura Cliente/Servidor, apenas o cliente, e todo o conteúdo do site é pré-renderizado.
 Mas nem por isso ele precisa ser muito restrito em funcionalidades. Não é a falta de um servidor que impediria ter um recurso de busca de conteúdo no site.</description>
@@ -54,15 +77,15 @@ Mas nem por isso ele precisa ser muito restrito em funcionalidades. Não é a fa
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/como-implementei-busca-offline-blog/img/cover-lunr.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-como-implementei-busca-offline-blog/img/cover-lunr.png" type="image/png"/>      
     </item>
     
     <item>
       <title>Como visualizar o desenvolvimento de projetos com Gource</title>
-      <link>https://blog.dyegomaas.com.br/posts/como-visualizar-desenvolvimento-com-gource/</link>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-como-visualizar-desenvolvimento-com-gource/</link>
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.dyegomaas.com.br/posts/como-visualizar-desenvolvimento-com-gource/</guid>
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-como-visualizar-desenvolvimento-com-gource/</guid>
       <description>O Gource é uma ferramenta open-source que permite visualizar o desenvolvimento de projetos de software com base num sistema de controle de versão como Git, Mercurial, Bazaar and SVN.
 Por exemplo, esta é uma visualização de quase 2 horas de toda a história de desenvolvimento do kernel do Linux de 1991 a 2015:
   Esse tipo de visualização pode ter várias utilidades. Para um projeto open-source, pode servir como reconhecimento ao trabalho de uma comunidade engajada.</description>
@@ -77,15 +100,15 @@ Por exemplo, esta é uma visualização de quase 2 horas de toda a história de 
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/como-visualizar-desenvolvimento-com-gource/img/cover-gource.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-como-visualizar-desenvolvimento-com-gource/img/cover-gource.png" type="image/png"/>      
     </item>
     
     <item>
       <title>Arquitetura Gritante</title>
-      <link>https://blog.dyegomaas.com.br/posts/arquitetura-gritante/</link>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-arquitetura-gritante/</link>
       <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.dyegomaas.com.br/posts/arquitetura-gritante/</guid>
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-arquitetura-gritante/</guid>
       <description>Um dos meus capítulos preferidos do livro Arquitetura Limpa, do Robert C. Martin (o Uncle Bob) é um chamado Arquitetura Gritante.
 O conceito é muito simples, mas certamente nos faz refletir sobre como estruturamos nossas aplicações, e como a estrutura escolhida dá uma cara para uma aplicação.
  O tema da aplicação deve ser evidente na sua estrutura.
@@ -101,10 +124,10 @@ O conceito é muito simples, mas certamente nos faz refletir sobre como estrutur
     
     <item>
       <title>Pattern matching no C# 8.0</title>
-      <link>https://blog.dyegomaas.com.br/posts/pattern-matching-csharp/</link>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-pattern-matching-csharp/</link>
       <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.dyegomaas.com.br/posts/pattern-matching-csharp/</guid>
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-pattern-matching-csharp/</guid>
       <description>A partir do C# 7.0 a linguagem começou a receber funcionalidades que fazem uso de um recurso de programação funcional chamado pattern matching. A maioria desses recursos é derivada do F# e a introdução deles no C# visa facilitar a vida do desenvolvedor e solução de certos tipos de problemas.
 São recursos muito poderosos e que simplificam em muito alguns tipos de construções.
 Como os recursos de pattern matching do C# 8.</description>
@@ -119,10 +142,10 @@ Como os recursos de pattern matching do C# 8.</description>
     
     <item>
       <title>Como implementar Health Checks para sua aplicação usando as extensões do ASP.NET Core 3.0</title>
-      <link>https://blog.dyegomaas.com.br/posts/healthchecks-aspnetcore3/</link>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-healthchecks-aspnetcore3/</link>
       <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.dyegomaas.com.br/posts/healthchecks-aspnetcore3/</guid>
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-healthchecks-aspnetcore3/</guid>
       <description>O ASP.NET Core 3.0 fornece uma forma bastante prática de implementar um endpoint para checar a saúde de uma aplicação.
 Um endpoint de Health Check bem implementado pode nos ajudar de inúmeras formas a manter uma aplicação rodando. Podemos usá-los em conjunto com o liveness probes do Kubernetes, por exemplo, para que ele possa verificar a saúde de um serviço e assim poder reiniciá-lo caso as coisas dêem errado. Ferramentas de monitoramento também podem fazer uso desses endpoints para gerar alertas e estatísticas.</description>
 
@@ -136,10 +159,10 @@ Um endpoint de Health Check bem implementado pode nos ajudar de inúmeras formas
     
     <item>
       <title>Testes de integração mais rápidos com Docker e MongoDB em memória</title>
-      <link>https://blog.dyegomaas.com.br/posts/testes-mais-rapidos-com-mongodb-inmemory/</link>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-testes-mais-rapidos-com-mongodb-inmemory/</link>
       <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.dyegomaas.com.br/posts/testes-mais-rapidos-com-mongodb-inmemory/</guid>
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-testes-mais-rapidos-com-mongodb-inmemory/</guid>
       <description>A forma mais fácil de configurar o MongoDB para rodar em memória é utilizando um sistema de arquivos do tipo tmpfs.
 Os sistemas de arquivo tmpfs não armazenam os dados em dispositivos de armazenamento permanentes, como HDs, pendrives, etc. Ao invés disso, manipulam os dados diretamente na memória RAM, ou seja, são voláteis. Por isso, muitas distribuições Unix os utilizam para diretório temporário /tmp ou até para compartilhamento de memória.</description>
 
@@ -153,15 +176,15 @@ Os sistemas de arquivo tmpfs não armazenam os dados em dispositivos de armazena
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/testes-mais-rapidos-com-mongodb-inmemory/img/cover.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-testes-mais-rapidos-com-mongodb-inmemory/img/cover.png" type="image/png"/>      
     </item>
     
     <item>
       <title>Testes de mutação com Stryker.NET</title>
-      <link>https://blog.dyegomaas.com.br/posts/testes-mutacao-stryker-net/</link>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-testes-mutacao-stryker-net/</link>
       <pubDate>Wed, 06 May 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.dyegomaas.com.br/posts/testes-mutacao-stryker-net/</guid>
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-testes-mutacao-stryker-net/</guid>
       <description>A realidade do desenvolvimento nos dias atuais demanda agir rápido. Nossos produtos precisam ser capazes de mudar quase tão rapidamente quanto o comportamento e as demandas dos nossos clientes. Precisamos ser capazes de correr. De entregar rápido e errar rápido. De aprender com os erros e seguir em frente. E a única forma segura de seguir em frente num ritmo alucinante é seguir com qualidade.
 Os testes unitários são uma das principais ferramentas do desenvolvedor para garantir um desenvolvimento com qualidade.</description>
 
@@ -175,15 +198,15 @@ Os testes unitários são uma das principais ferramentas do desenvolvedor para g
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/testes-mutacao-stryker-net/img/cover.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-testes-mutacao-stryker-net/img/cover.png" type="image/png"/>      
     </item>
     
     <item>
       <title>Entrega contínua de blogs Hugo com GitHub Actions</title>
-      <link>https://blog.dyegomaas.com.br/posts/continuous-delivery-blog-com-hugo/</link>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-continuous-delivery-blog-com-hugo/</link>
       <pubDate>Wed, 29 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.dyegomaas.com.br/posts/continuous-delivery-blog-com-hugo/</guid>
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-continuous-delivery-blog-com-hugo/</guid>
       <description>O Hugo é hoje um dos melhores e mais populares geradores de sites estáticos. Já o GitHub Pages oferece um excelente serviço para distribuir gratuitamente conteúdos estáticos, o que é perfeito para blogs. Logo, é natural que as duas ferramentas sejam comumente usadas em conjunto.
 A partir do momento que o blog estiver todo configurado, com todos os templates customizados da forma como queremos, o dia-a-dia do blog passa a revolver em torno da criação de conteúdo.</description>
 
@@ -197,15 +220,15 @@ A partir do momento que o blog estiver todo configurado, com todos os templates 
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/continuous-delivery-blog-com-hugo/img/cover.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-continuous-delivery-blog-com-hugo/img/cover.png" type="image/png"/>      
     </item>
     
     <item>
       <title>Boas práticas para implementar Test Data Builders em C#</title>
-      <link>https://blog.dyegomaas.com.br/posts/test-builders-csharp-boas-praticas/</link>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-test-builders-csharp-boas-praticas/</link>
       <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.dyegomaas.com.br/posts/test-builders-csharp-boas-praticas/</guid>
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-test-builders-csharp-boas-praticas/</guid>
       <description>Neste post, vamos explorar algumas boas práticas na escrita de Test Data Builders. Mas para entender o que são &amp;ldquo;bons&amp;rdquo; builders, primeiro precisamos entender o que são builders &amp;ldquo;ruins&amp;rdquo;.
 &amp;ldquo;Bom&amp;rdquo; e &amp;ldquo;ruim&amp;rdquo; são distinções claramente subjetivas, e os exemplos que listei abaixo são baseados na minha experiência pessoal e refletem a minha opinião apenas.
 Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns cuidados. Vamos ver alguns antipatterns comuns que já observei muitas pessoas fazendo (inclusive eu).</description>
@@ -220,10 +243,10 @@ Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns
     
     <item>
       <title>Simplificando setup de testes em C# com Test Data Builders</title>
-      <link>https://blog.dyegomaas.com.br/posts/test-builders-csharp-intro/</link>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-test-builders-csharp-intro/</link>
       <pubDate>Sun, 19 Apr 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.dyegomaas.com.br/posts/test-builders-csharp-intro/</guid>
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-test-builders-csharp-intro/</guid>
       <description>Implementar uma boa suíte de testes unitários para nossos projetos pode ser muito recompensador, e na maioria dos casos, é indispensável. Mas, se não tomarmos certos cuidados, a manutenção desta suíte pode se tornar tediosa e até terrivelmente trabalhosa.
 Vejamos um cenário muito comum, e que pode ser resolvido facilmente com o design pattern Builder aplicado a testes para obter o que chamamos de test data builders, ou simplesmente test builders.</description>
 

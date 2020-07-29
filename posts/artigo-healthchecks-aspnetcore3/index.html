@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+    
+
+
+    <head itemscope itemtype="https://blog.dyegomaas.com.br/">
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/blog.dyegomaas.com.br\/"
+    },
+    "articleSection" : "posts",
+    "name" : "Como implementar Health Checks para sua aplicação usando as extensões do ASP.NET Core 3.0",
+    "headline" : "Como implementar Health Checks para sua aplicação usando as extensões do ASP.NET Core 3.0",
+    "description" : "Aprenda a implementar Health Checks com as extensões do ASP.NET Core 3.0. Muito útil para configurar liveness probes do Kubernetes!",
+    "inLanguage" : "pt-BR",
+    "author" : {
+        "@type": "Person",
+        "name": "Dyego Maas"
+    }, 
+    "image": {
+        "@type": "imageObject",
+        "url": "https://blog.dyegomaas.com.br/img/posts/post-csharp.png"
+    },
+    
+    "creator" : "Dyego Maas",
+    "publisher": "Dyego Maas",
+    "accountablePerson" : "Dyego Maas",
+    "copyrightHolder" : "Dyego Maas",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-05-20",
+    "dateModified" : "2020-05-20",
+    "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/artigo-healthchecks-aspnetcore3\/",
+    "wordCount" : "1227",
+    "keywords" : [ "aspnetcore","healthcheck","csharp","Blog" ]
+}
+</script>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+<meta name="yandex-verification" content="20d83aeccd3b80c2" />
+<base href="https://blog.dyegomaas.com.br/posts/artigo-healthchecks-aspnetcore3/">
+<meta name="generator" content="Hugo 0.69.0" />
+
+    
+    
+    
+
+<title itemprop="name">Como implementar Health Checks para sua aplicação usando as extensões do ASP.NET Core 3.0 - Blog Dyego Maas</title>
+<meta property="description" content="Aprenda a implementar Health Checks com as extensões do ASP.NET Core 3.0. Muito útil para configurar liveness probes do Kubernetes!" />
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+
+
+<meta name="keywords" content="aspnetcore,healthcheck,csharp" />
+<link rel="canonical" href="https://blog.dyegomaas.com.br/posts/artigo-healthchecks-aspnetcore3/" itemprop="url" />
+<meta name="url" content="https://blog.dyegomaas.com.br/posts/artigo-healthchecks-aspnetcore3/" />
+<meta property="og:site_name" content="Blog - Dyego Maas" />
+<meta property="og:title" content="Como implementar Health Checks para sua aplicação usando as extensões do ASP.NET Core 3.0" />
+<meta property="og:description" content="Aprenda a implementar Health Checks com as extensões do ASP.NET Core 3.0. Muito útil para configurar liveness probes do Kubernetes!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.dyegomaas.com.br/posts/artigo-healthchecks-aspnetcore3/" /><meta property="og:image" content="/img/posts/post-csharp.png" />
+<meta property="og:image:secure_url" content="https://blog.dyegomaas.com.br/img/posts/post-csharp.png" />
+<meta property="article:published_time" content="2020-05-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-20T00:00:00+00:00" />
+
+<meta name="theme-color" content="#000000" />
+<meta name="msapplication-TileColor" content="#000000" />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="Blog - Dyego Maas" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" />
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" crossorigin="anonymous" media="print">
+
+
+<link rel="stylesheet" href="/css/custom.69cb553f8fdb841923fb0042f13bb1a617b61a9c30b020d16fa9175995e8c089.css" integrity="sha256-actVP4/bhBkj&#43;wBC8Tuxphe2GpwwsCDRb6kXWZXowIk=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/overrides.188421855fb48cd44e36b22976f3f17f4c4322978c83b5ef92a1c8604e1772f7.css" integrity="sha256-GIQhhV&#43;0jNRONrIpdvPxf0xDIpeMg7XvkqHIYE4Xcvc=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/modal.3f2d773b192584d4c72931c90be47bfbc2296a638ed5354962252cab96b3dbb3.css" integrity="sha256-Py13OxklhNTHKTHJC&#43;R7&#43;8IpamOO1TVJYiUsq5az27M=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/custom.3e8609b6efbfd1fee7b6531514f17304d18ff8cebda6c439740359e699220932.css" integrity="sha256-PoYJtu&#43;/0f7ntlMVFPFzBNGP&#43;M69psQ5dANZ5pkiCTI=" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=" crossorigin="anonymous">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js" defer></script>
+<script src="https://unpkg.com/lunr/lunr.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.pt.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" defer></script>
+
+<script src="/js/layout-adjustments.js" defer></script><script src="/js/custom-search.js" defer></script>
+
+<script async>
+  document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+      adjustLayout();
+      initializeSearch('/search-index.json', '/search-data-companion.json');
+   }
+ }
+</script>
+</head>
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://blog.dyegomaas.com.br/">Blog Dyego Maas</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://blog.dyegomaas.com.br/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         Arquiteto de software e Escritor 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Blog Dyego Maas</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		
+		
+			 
+				<li>
+					<a href="/posts/">
+						<span>Blog</span>
+					</a>
+				</li>
+			
+		
+		<li>
+			<a href="https://dyegomaas.com.br/">
+				<span>Sobre<span>
+			</a>
+		</li>
+		<li>
+			<a id="search-button" rel="search" style="cursor: pointer;">
+    <i class="fa fa-search" aria-hidden="true"></i>
+</a>
+
+<div id="search-results-modal" class="modal display-none">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close">&times;</span>
+        <h2>O que você procura?</h2>
+      </div>
+      <div class="modal-body">
+        <input type="search" id="search-input" results="10" placeholder="Pesquisar... (pressione Enter)">
+        <div>
+            <ul id="search-results"></ul>
+        </div>
+      </div>
+      
+    </div>
+</div>
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/DyegoMaas" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/DyegoAlekssander" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/Dyegomaas" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/dyego-maas" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:dyego.maas@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="index.xml" rel="me"><i class="fas fa-rss fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Como implementar Health Checks para sua aplicação usando as extensões do ASP.NET Core 3.0</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 20
+
+
+  
+
+  
+
+  
+
+  
+
+  
+    Mai, 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+2020
+    
+    
+    
+      
+      
+          em
+          
+          
+              <a class="badge badge-category" href="/categories/aspnetcore">ASPNETCORE</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/aspnetcore">aspnetcore</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/healthcheck">healthcheck</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/csharp">csharp</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 6 min de leitura
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Tabela de Conteúdo</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  <div class="post">
+    <p>O <code>ASP.NET Core 3.0</code> fornece uma forma bastante prática de implementar um endpoint para checar a saúde de uma aplicação.</p>
+<p>Um endpoint de Health Check bem implementado pode nos ajudar de inúmeras formas a manter uma aplicação rodando. Podemos usá-los em conjunto com o <em>liveness probes</em> do Kubernetes, por exemplo, para que ele possa verificar a saúde de um serviço e assim poder reiniciá-lo caso as coisas dêem errado. Ferramentas de monitoramento também podem fazer uso desses endpoints para gerar alertas e estatísticas.</p>
+<p>O pacote <code>Microsoft.Extensions.Diagnostics.HealthChecks</code> traz uma abstração simples de implementar e colocar para funcionar na aplicação. Trata-se da interface <code>IHealthCheck</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RecursoImportanteHealthCheck</span> : IHealthCheck
+{
+    <span style="color:#66d9ef">public</span> Task&lt;HealthCheckResult&gt; CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = <span style="color:#66d9ef">new</span> CancellationToken())
+    {
+        <span style="color:#75715e">// checagem da saúde do recurso
+</span><span style="color:#75715e"></span>    }
+    <span style="color:#75715e">//...
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>Como podemos ver no <em>snippet</em> acima, o método <code>CheckHealthAsync</code> recebe um objeto que representa o contexto da checagem de saúde da aplicação, do tipo <code>HealthCheckContext</code>, e espera um resultado do tipo <code>HealthCheckResult</code>.</p>
+<p>Vamos nos ater primeiro ao retorno, que será mais comumente usado. Existem três status possíveis para a checagem:</p>
+<ul>
+<li>Healthy</li>
+<li>Degraded</li>
+<li>Unhealthy</li>
+</ul>
+<p>O status <code>Healthy</code> dispensa explicações, já que tudo está OK. Já o status <code>Unhealthy</code> indica uma falha e pode inda detalhar a natureza dos erros identificados:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">HealthCheckResult.Unhealthy(
+    description: <span style="color:#e6db74">&#34;detalhamento do problema&#34;</span>,
+    exception: e,
+    data: <span style="color:#66d9ef">new</span> Dictionary&lt;<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">object</span>&gt;() {
+        {<span style="color:#e6db74">&#34;chave1&#34;</span>, <span style="color:#e6db74">&#34;valor1&#34;</span>},
+        {<span style="color:#e6db74">&#34;chave2&#34;</span>, <span style="color:#e6db74">&#34;valor2&#34;</span>},
+    }
+);
+</code></pre></div><p>Como todos os argumentos são opcionais, podemos montar uma resposta dessas simplesmente assim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">HealthCheckResult.Unhealthy();
+</code></pre></div><p>O status <code>Degraded</code> funciona exatamente da mesma forma. A diferença está no seu significado: o recurso está respondendo, mas a qualidade do serviço está abaixo do esperado, está degradada.</p>
+<h2 id="implementando-um-ihealthcheck">Implementando um IHealthCheck</h2>
+<p>Vamos tomar por exemplo uma integração com um serviço externo do qual nossa aplicação depende. A implementação de uma validação dessas pode ser bastante simples, como esta a seguir, que toma a decisão com base numa requisição GET ao serviço externo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ServicoExternoHealthCheck</span> : IHealthCheck
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;HealthCheckResult&gt; CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = <span style="color:#66d9ef">new</span> CancellationToken())
+    {
+        <span style="color:#66d9ef">var</span> result = <span style="color:#66d9ef">await</span> <span style="color:#66d9ef">new</span> HttpClient().GetAsync(<span style="color:#e6db74">&#34;http://servicoX.com/api&#34;</span>, cancellationToken);
+        <span style="color:#66d9ef">if</span> (result.IsSuccessStatusCode)
+        {
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> Task.FromResult(HealthCheckResult.Healthy());
+        }
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> Task.FromResult(HealthCheckResult.Unhealthy());
+    }
+}
+</code></pre></div><p>Um caso de uso mais elaborado poderia decidir se a saúde do serviço está degradada de acordo com o tempo de resposta. Para isso, podemos utilizar a classe <code>Stopwatch</code> como timer e assim tomar uma decisão:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;HealthCheckResult&gt; CheckHealthAsync(HealthCheckContext context, CancellationToken cancellationToken = <span style="color:#66d9ef">new</span> CancellationToken())
+{
+    <span style="color:#66d9ef">try</span>
+    {
+        <span style="color:#66d9ef">var</span> stopwatch = Stopwatch.StartNew();
+        <span style="color:#66d9ef">var</span> resultado = <span style="color:#66d9ef">await</span> <span style="color:#66d9ef">new</span> HttpClient().GetAsync(<span style="color:#e6db74">&#34;http://servicoX.com/api&#34;</span>, cancellationToken);
+        stopwatch.Stop();
+
+        <span style="color:#66d9ef">var</span> healthCheckResult = (resultado.IsSuccessStatusCode, stopwatch.Elapsed) <span style="color:#66d9ef">switch</span>
+        {
+            (<span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">var</span> duracao) when duracao &lt;= TimeSpan.FromSeconds(<span style="color:#ae81ff">5</span>) =&gt; HealthCheckResult.Healthy(),
+            (<span style="color:#66d9ef">true</span>, _) =&gt; HealthCheckResult.Degraded(),
+            (<span style="color:#66d9ef">false</span>, _) =&gt; HealthCheckResult.Unhealthy(),
+        };
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> Task.FromResult(healthCheckResult);
+    }
+    <span style="color:#66d9ef">catch</span> (Exception excecao)
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> Task.FromResult(<span style="color:#66d9ef">new</span> HealthCheckResult(context.Registration.FailureStatus, exception: excecao));
+    }
+}
+</code></pre></div><p>O exemplo acima e bem próximo de uma implementação que fiz no trabalho e possui alguns detalhes interessantes para analisarmos. O primeiro ponto é o uso da sintaxe de <em>pattern matching</em> do C# 8 para selecionar o resultado da checagem com base em dois parâmetros: 1) o sucesso ou insucesso na consulta ao serviço externo, e 2) o tempo de resposta do serviço.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">var</span> healthCheckResult = (result.IsSuccessStatusCode, stopwatch.Elapsed) <span style="color:#66d9ef">switch</span>
+{
+    (<span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">var</span> tempoResposta) when tempoResposta &lt;= TimeSpan.FromSeconds(<span style="color:#ae81ff">5</span>) =&gt; HealthCheckResult.Healthy(),
+    (<span style="color:#66d9ef">true</span>, _) =&gt; HealthCheckResult.Degraded(),
+    (<span style="color:#66d9ef">false</span>, _) =&gt; HealthCheckResult.Unhealthy(),
+};
+</code></pre></div><p>Esta é uma forma bem compacta de tratar todos os casos. Gosto dessa sintaxe porque fica muito fácil de identificar as combinações de entradas que levam a cada saída. Num post futuro, abordarei o <em>pattern matching</em> do C# em mais detalhes.</p>
+<p>Seguindo no exemplo, se obtivermos sucesso na requisição (o primeiro parâmetro de cada tupla) <strong>e</strong> <em>o tempo de resposta for de até 5 segundos</em>, então consideramos que o serviço está saudável e retornamos <code>HealthCheckResult.Healthy()</code>.</p>
+<p>Já caso obtivermos sucesso, <em>mas o tempo de resposta for superior a 5 segundos</em>, então consideramos que está lento demais e retornamos <code>HealthCheckResult.Degraded()</code>.</p>
+<p>Se, no entanto, o status code retornado não for de sucesso, retornamos que não está saudável com <code>HealthCheckResult.Unhealthy()</code>.</p>
+<p>Além disso, temos um tratamento de exceção no código completo mais acima. Ele é <em>totalmente opcional</em>. Caso a checagem atire uma exceção, a API saberá que o serviço está <code>Unhealthy</code> e vai retornar uma resposta de acordo.</p>
+<p>Ainda assim, o <code>HealthCheckResult</code> é construído de uma forma um pouco diferente aqui, usando o próprio construtor da classe:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">try</span>
+{
+    <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>}
+<span style="color:#66d9ef">catch</span> (Exception excecao)
+{
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> Task.FromResult(<span style="color:#66d9ef">new</span> HealthCheckResult(context.Registration.FailureStatus, exception: excecao));
+}
+</code></pre></div><p>Note que o primeiro argumento que passamos é o status de falha do contexto. A propriedade <code>FailureStatus</code> terá o valor padrão <code>Unhealthy</code>, a não ser que informado outro valor ao registrar este HealthCheck. E esta é uma oportunidade para explorarmos como é feito o registro do <code>ServicoExternoHealthCheck</code>.</p>
+<h2 id="registrando-um-endpoint-de-health-check">Registrando um endpoint de Health Check</h2>
+<p>A configuração dos health checks é bastante simples e é feita em duas etapas. A primeira trata de registrar nossas implementações da interface <code>IHealthCheck</code>. Isto é feito no método <code>ConfigureServices</code> da classe <code>Startup</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services)
+{
+    services.AddHealthChecks()
+        .AddCheck&lt;ServicoExternoHealthCheck&gt;(<span style="color:#e6db74">&#34;ServicoTerceiro&#34;</span>);
+    <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>Neste momento, podemos fazer algumas configurações adicionais para personalizar nosso health check. Por exemplo, podemos definir qual será o status quando ocorrer uma falha na verificação, como vimos um pouco acima.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">services.AddHealthChecks()
+    .AddCheck&lt;ServicoExternoHealthCheck&gt;(<span style="color:#e6db74">&#34;ServicoTerceiro&#34;</span>, failureStatus: HealthStatus.Unhealthy);
+</code></pre></div><p>Outra opção é passar uma coleção de tags para serem utilizadas durante a verificação de saúde do serviço:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">services.AddHealthChecks()
+    .AddCheck&lt;ServicoExternoHealthCheck&gt;(<span style="color:#e6db74">&#34;teste&#34;</span>, tags: <span style="color:#66d9ef">new</span> [] {<span style="color:#e6db74">&#34;feature1&#34;</span>, <span style="color:#e6db74">&#34;feature2&#34;</span>});
+</code></pre></div><p>Por fim, na segunda etapa da configuração, precisamos associar um endpoint para consulta. Isto é feito no método <code>Configure</code>, ainda na classe <code>Startup</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Configure(IApplicationBuilder app, IWebHostEnvironment env)
+{
+    app.UseEndpoints(endpoints =&gt;
+    {
+        <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>        endpoints.MapHealthChecks(<span style="color:#e6db74">&#34;/health&#34;</span>);
+    });
+    <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>E estamos prontos para testar! Basta subir a aplicação e fazer uma requisição GET no endpoint <code>/health</code>. No caso de o status ser Healthy, note que a resposta tem Status HTTP 200 (OK):</p>
+<p><img src="/posts/healthchecks-aspnetcore3/img/healthy_200.png" alt="Chamada do endpoint /health com status 200 e corpo contendo a palavra Healthy"></p>
+<p>Para o Degraded é a mesma coisa:</p>
+<p><img src="/posts/healthchecks-aspnetcore3/img/degraded_200.png" alt="Chamada do endpoint /health com status 200 e corpo contendo a palavra Degraded"></p>
+<p>Já quando o serviço retorna Unhealthy, o Status HTTP retornado é o 503 (Serviço Indisponível):</p>
+<p><img src="/posts/healthchecks-aspnetcore3/img/unhealthy_503.png" alt="Chamada do endpoint /health com status 503 e corpo contendo a palavra Unhealthy"></p>
+<h3 id="como-modificar-o-comportamento-do-health-check">Como modificar o comportamento do Health Check</h3>
+<p>Ao registrar o endpoint de Health Check, também é possível informar um objeto do tipo <code>HealthCheckOptions</code>.</p>
+<p>Uma das opções mais interessantes que ele fornece é poder mudar o HTTP Status Code retornado para cada um dos três status de saúde (Healthy, Degraded e Unhealthy).</p>
+<p>Se quisermos retornar um status 599 para Unhealthy, por exemplo, basta fazer assim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">app.UseEndpoints(endpoints =&gt;
+{
+    <span style="color:#66d9ef">var</span> healthCheckOptions = <span style="color:#66d9ef">new</span> HealthCheckOptions();
+    healthCheckOptions.ResultStatusCodes[HealthStatus.Unhealthy] = <span style="color:#ae81ff">599</span>;
+    endpoints.MapHealthChecks(<span style="color:#e6db74">&#34;/health&#34;</span>, healthCheckOptions);
+});
+</code></pre></div><p>Outra opção, é fornecer um filtro que decide dinamicamente quais Health Checks serão executados:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">app.UseEndpoints(endpoints =&gt;
+{
+    <span style="color:#66d9ef">var</span> healthCheckOptions = <span style="color:#66d9ef">new</span> HealthCheckOptions();
+    <span style="color:#75715e">// este exemplo não é lá muito realista :)
+</span><span style="color:#75715e"></span>    healthCheckOptions.Predicate = registration =&gt; registration.Name.StartsWith(<span style="color:#e6db74">&#34;M&#34;</span>);
+    endpoints.MapHealthChecks(<span style="color:#e6db74">&#34;/health&#34;</span>, healthCheckOptions);
+});
+</code></pre></div><p>Também podemos customizar a resposta. Abaixo, temos um exemplo de configuração para retornar um JSON, mas poderíamos facilmente montar uma página de relatório HTML:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">app.UseEndpoints(endpoints =&gt;
+{
+    <span style="color:#66d9ef">var</span> healthCheckOptions = <span style="color:#66d9ef">new</span> HealthCheckOptions();
+    healthCheckOptions.ResponseWriter = <span style="color:#66d9ef">async</span> (context, report) =&gt;
+    {
+        context.Response.ContentType = <span style="color:#e6db74">&#34;application/json&#34;</span>;
+
+        <span style="color:#66d9ef">var</span> result = JsonConvert.SerializeObject(<span style="color:#66d9ef">new</span>
+        {
+            status = report.Status.ToString(),
+            errors = report.Entries
+                .Select(e =&gt; <span style="color:#66d9ef">new</span>
+                {
+                    key = e.Key,
+                    <span style="color:#66d9ef">value</span> = e.Value.Status.ToString()
+                })
+        });
+        <span style="color:#66d9ef">await</span> context.Response.WriteAsync(result);
+    };
+    endpoints.MapHealthChecks(<span style="color:#e6db74">&#34;/health&#34;</span>, healthCheckOptions);
+});
+</code></pre></div><p>Felizmente, a biblioteca <code>AspNetCore.HealthChecks.UI</code> já faz o trabalho de gerar um dashboard de acompanhamento. Não vou entrar em detalhes da configuração dessa ferramenta neste artigo, mas é bem simples.</p>
+<p><img src="/posts/healthchecks-aspnetcore3/img/ui-home.png" alt="Dashboard do AspNetCore.HealthChecks.UI"></p>
+<p>E é isso. Se você conhece outras formas de implementar um endpoint de health check, compartilhe nos comentários. E se este post foi útil pra você, deixe um comentário ou compartilhe nas redes sociais!</p>
+
+  </div>
+  <style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+position: relative;
+text-align: left;
+height: 36px;
+width: 32px;
+float: left;
+text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="color: silver;">Compartilhe: </span><div id="share-buttons">
+<div class="facebook" title="Compartilhe no Facebook" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-healthchecks-aspnetcore3\/', 'sharer', 'width=626,height=436');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+<div class="twitter" title="Compartilhe no Twitter" onclick="window.open('http://twitter.com/share?text=Como implementar Health Checks para sua aplicação usando as extensões do ASP.NET Core 3.0&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-healthchecks-aspnetcore3\/&hashtags=aspnetcore,healthcheck,csharp');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+<div class="linkedin" title="Compartilhe no Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-healthchecks-aspnetcore3\/&title=Como implementar Health Checks para sua aplicação usando as extensões do ASP.NET Core 3.0', 'sharer', 'width=626,height=700');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+<div class="mail" title="Compartilhe por Email" onclick="window.open('mailto:?&body=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-healthchecks-aspnetcore3\/');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/artigo-testes-mais-rapidos-com-mongodb-inmemory/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Testes de integração mais rápidos com Docker e MongoDB em memória</span>
+    </a>
+    
+    
+    <a href="/posts/artigo-pattern-matching-csharp/" class="navigation-next">
+      <span class="navigation-tittle">Pattern matching no C# 8.0</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'blogdyegomaas';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111956442-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/cs.min.js"></script>
+            
+        
+    <script type="text/javascript">
+        
+        hljs.configure({languages: ["cs"]});
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>

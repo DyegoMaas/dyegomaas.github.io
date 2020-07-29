@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+    
+
+
+    <head itemscope itemtype="https://blog.dyegomaas.com.br/">
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/blog.dyegomaas.com.br\/"
+    },
+    "articleSection" : "posts",
+    "name" : "Pattern matching no C# 8.0",
+    "headline" : "Pattern matching no C# 8.0",
+    "description" : "Pattern matching em C#? Neste post exploramos como este recurso de programação funcional pode melhorar nossos programas em C# 8.0.",
+    "inLanguage" : "pt-BR",
+    "author" : {
+        "@type": "Person",
+        "name": "Dyego Maas"
+    }, 
+    "image": {
+        "@type": "imageObject",
+        "url": "https://blog.dyegomaas.com.br/img/posts/post-csharp.png"
+    },
+    
+    "creator" : "Dyego Maas",
+    "publisher": "Dyego Maas",
+    "accountablePerson" : "Dyego Maas",
+    "copyrightHolder" : "Dyego Maas",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-05-27",
+    "dateModified" : "2020-05-27",
+    "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/artigo-pattern-matching-csharp\/",
+    "wordCount" : "1485",
+    "keywords" : [ "csharp","pattern matching","type matching","programação funcional","Blog" ]
+}
+</script>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+<meta name="yandex-verification" content="20d83aeccd3b80c2" />
+<base href="https://blog.dyegomaas.com.br/posts/artigo-pattern-matching-csharp/">
+<meta name="generator" content="Hugo 0.69.0" />
+
+    
+    
+    
+
+<title itemprop="name">Pattern matching no C# 8.0 - Blog Dyego Maas</title>
+<meta property="description" content="Pattern matching em C#? Neste post exploramos como este recurso de programação funcional pode melhorar nossos programas em C# 8.0." />
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+
+
+<meta name="keywords" content="csharp,pattern-matching,type-matching,programação-funcional" />
+<link rel="canonical" href="https://blog.dyegomaas.com.br/posts/artigo-pattern-matching-csharp/" itemprop="url" />
+<meta name="url" content="https://blog.dyegomaas.com.br/posts/artigo-pattern-matching-csharp/" />
+<meta property="og:site_name" content="Blog - Dyego Maas" />
+<meta property="og:title" content="Pattern matching no C# 8.0" />
+<meta property="og:description" content="Pattern matching em C#? Neste post exploramos como este recurso de programação funcional pode melhorar nossos programas em C# 8.0." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.dyegomaas.com.br/posts/artigo-pattern-matching-csharp/" /><meta property="og:image" content="/img/posts/post-csharp.png" />
+<meta property="og:image:secure_url" content="https://blog.dyegomaas.com.br/img/posts/post-csharp.png" />
+<meta property="article:published_time" content="2020-05-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-27T00:00:00+00:00" />
+
+<meta name="theme-color" content="#000000" />
+<meta name="msapplication-TileColor" content="#000000" />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="Blog - Dyego Maas" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" />
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" crossorigin="anonymous" media="print">
+
+
+<link rel="stylesheet" href="/css/custom.69cb553f8fdb841923fb0042f13bb1a617b61a9c30b020d16fa9175995e8c089.css" integrity="sha256-actVP4/bhBkj&#43;wBC8Tuxphe2GpwwsCDRb6kXWZXowIk=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/overrides.188421855fb48cd44e36b22976f3f17f4c4322978c83b5ef92a1c8604e1772f7.css" integrity="sha256-GIQhhV&#43;0jNRONrIpdvPxf0xDIpeMg7XvkqHIYE4Xcvc=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/modal.3f2d773b192584d4c72931c90be47bfbc2296a638ed5354962252cab96b3dbb3.css" integrity="sha256-Py13OxklhNTHKTHJC&#43;R7&#43;8IpamOO1TVJYiUsq5az27M=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/custom.3e8609b6efbfd1fee7b6531514f17304d18ff8cebda6c439740359e699220932.css" integrity="sha256-PoYJtu&#43;/0f7ntlMVFPFzBNGP&#43;M69psQ5dANZ5pkiCTI=" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=" crossorigin="anonymous">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js" defer></script>
+<script src="https://unpkg.com/lunr/lunr.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.pt.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" defer></script>
+
+<script src="/js/layout-adjustments.js" defer></script><script src="/js/custom-search.js" defer></script>
+
+<script async>
+  document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+      adjustLayout();
+      initializeSearch('/search-index.json', '/search-data-companion.json');
+   }
+ }
+</script>
+</head>
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://blog.dyegomaas.com.br/">Blog Dyego Maas</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://blog.dyegomaas.com.br/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         Arquiteto de software e Escritor 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Blog Dyego Maas</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		
+		
+			 
+				<li>
+					<a href="/posts/">
+						<span>Blog</span>
+					</a>
+				</li>
+			
+		
+		<li>
+			<a href="https://dyegomaas.com.br/">
+				<span>Sobre<span>
+			</a>
+		</li>
+		<li>
+			<a id="search-button" rel="search" style="cursor: pointer;">
+    <i class="fa fa-search" aria-hidden="true"></i>
+</a>
+
+<div id="search-results-modal" class="modal display-none">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close">&times;</span>
+        <h2>O que você procura?</h2>
+      </div>
+      <div class="modal-body">
+        <input type="search" id="search-input" results="10" placeholder="Pesquisar... (pressione Enter)">
+        <div>
+            <ul id="search-results"></ul>
+        </div>
+      </div>
+      
+    </div>
+</div>
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/DyegoMaas" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/DyegoAlekssander" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/Dyegomaas" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/dyego-maas" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:dyego.maas@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="index.xml" rel="me"><i class="fas fa-rss fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Pattern matching no C# 8.0</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 27
+
+
+  
+
+  
+
+  
+
+  
+
+  
+    Mai, 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+2020
+    
+    
+    
+      
+      
+          em
+          
+          
+              <a class="badge badge-category" href="/categories/programacao">PROGRAMACAO</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/csharp">csharp</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/pattern-matching">pattern matching</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/type-matching">type matching</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/programa%C3%A7%C3%A3o-funcional">programação funcional</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 7 min de leitura
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Tabela de Conteúdo</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  <div class="post">
+    <p>A partir do C# 7.0 a linguagem começou a receber funcionalidades que fazem uso de um recurso de programação funcional chamado <em>pattern matching</em>. A maioria desses recursos é derivada do F# e a introdução deles no C# visa facilitar a vida do desenvolvedor e solução de certos tipos de problemas.</p>
+<p>São recursos muito poderosos e que simplificam em muito alguns tipos de construções.</p>
+<p>Como os recursos de pattern matching do C# 8.0 são extensões daqueles instroduzidos no C# 7.0, vou apresentá-los na mesma ordem para simplificar o entendimento.</p>
+<h2 id="patterns-introduzidos-no-c-70">Patterns introduzidos no C# 7.0</h2>
+<p>No C# 7.0 o operador <strong>is</strong> e a declaração <strong>switch</strong> foram melhoradas com a adição de alguns novos padrões: <em>const pattern</em>, <em>type pattern</em> e <em>var pattern</em>.</p>
+<h3 id="const-pattern">Const pattern</h3>
+<p>Vejamos a seguinte função, que recebe um objeto <code>o</code> como argumento:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Is(<span style="color:#66d9ef">object</span> o)
+{
+    <span style="color:#66d9ef">if</span> (o <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">null</span>) Console.WriteLine(<span style="color:#e6db74">&#34;o é null!&#34;</span>);
+    <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>Antes do C# 7.0, teríamos que escrever essa verificação usando o operador <code>==</code>, mas agora podemos fazer a mesma validação com o operador <strong>is</strong>.</p>
+<p>Este padrão também vale para inteiros ou outros valores constantes:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">if</span> (o <span style="color:#66d9ef">is</span> <span style="color:#ae81ff">42</span>) Console.WriteLine(<span style="color:#e6db74">&#34;A resposta é 42!&#34;</span>);
+</code></pre></div><h3 id="type-pattern">Type pattern</h3>
+<p>O <em>type pattern</em> pode ser um pouco mais útil. Com ele podemos extrair uma variável ao verificar o tipo, tanto com o operador <strong>is</strong> quanto com o <strong>switch</strong>.</p>
+<p>Este padrão sempre tem sucesso quando o tipo aferido é o mesmo da variável.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Is(<span style="color:#66d9ef">object</span> o)
+{
+    <span style="color:#66d9ef">if</span> (o <span style="color:#66d9ef">is</span> Pessoa pessoa)
+        Console.WriteLine(<span style="color:#e6db74">$&#34;O nome é {pessoa.Nome}&#34;</span>);
+    <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>Com o tipo identificado, também é possível usá-lo na mesma expressão para filtrar ainda mais o objeto:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">if</span> (o <span style="color:#66d9ef">is</span> Pessoa p &amp;&amp; p.Idade &lt; <span style="color:#ae81ff">18</span>)
+    Console.WriteLine(<span style="color:#e6db74">$&#34;{p.Nome} é menor de idade.&#34;</span>);
+</code></pre></div><h3 id="var-pattern">Var pattern</h3>
+<p>O <em>var pattern</em> sempre é avaliado com sucesso, pois toda variável tem um tipo.</p>
+<p>Ele é bastante útil para obter uma variável já convertida para o seu tipo verdadeiro.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Is(<span style="color:#66d9ef">object</span> o)
+{
+    <span style="color:#66d9ef">if</span> (o <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">var</span> x) {
+        <span style="color:#66d9ef">var</span> nomeTipo = x?.GetType()?.Name;
+        Console.WriteLine(<span style="color:#e6db74">$&#34;O tipo de &#39;x&#39; é {nomeTipo}&#34;</span>);
+    }
+    <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>}
+</code></pre></div><p>Então, se passarmos uma variável do tipo <code>Pessoa</code> para a variável <code>x</code> no exemplo acima, a saída será <code>O tipo de 'x' é Pessoa</code>.</p>
+<h3 id="usando-a-declaração-switch-com-pattern-matching">Usando a declaração switch com Pattern Matching</h3>
+<p>Todos os três padrões acima são utilizáveis numa declaração do tipo <em>switch</em>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">switch</span>(o)
+{
+    <span style="color:#66d9ef">case</span> Humano humano: 
+        Console.WriteLine(<span style="color:#e6db74">$&#34;Nome do humano: {humano.Nome}&#34;</span>);
+        <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">case</span> AnimalSelvagem animal:
+        Console.WriteLine(<span style="color:#e6db74">$&#34;Nome do animal: {animal.Nome}&#34;</span>);
+        <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">case</span> <span style="color:#66d9ef">int</span> resposta:
+        Console.WriteLine(<span style="color:#e6db74">$&#34;A resposta é {resposta}&#34;</span>);
+        <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">case</span> <span style="color:#66d9ef">var</span> x:
+        Console.WriteLine(<span style="color:#e6db74">$&#34;x não é incógnita! É do tipo {x.GetType().Name}!&#34;</span>);
+        <span style="color:#66d9ef">break</span>;
+}
+</code></pre></div><p>Como o <em>var pattern</em> sempre dá match, pode até ser usado como <code>default</code>.</p>
+<h2 id="recursos-introduzidos-no-c-80">Recursos introduzidos no C# 8.0</h2>
+<p>Já no C# 8.0, foi introduzido um pattern matching bem mais poderoso, mais parecido com o encontrado em linguagens como F# e Scala.</p>
+<p>Antes de ver um exemplo completo, é interessante fazermos uma rápida revisão de tuplas tal como são usadas a partir do C# 7.0.</p>
+<p>Uma tupla pode ser declarada assim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">var</span> tupla = (<span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">true</span>); <span style="color:#75715e">// tupla do tipo (int, bool)
+</span></code></pre></div><p>E uma tupla pode ser facilmente decomposta desta forma:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">(<span style="color:#66d9ef">var</span> entrada, <span style="color:#66d9ef">var</span> saida = (<span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">true</span>);
+<span style="color:#75715e">// ou
+</span><span style="color:#75715e"></span>(<span style="color:#66d9ef">int</span> entrada, <span style="color:#66d9ef">bool</span> saida = (<span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">true</span>);
+</code></pre></div><p>O primeiro valor da tupla é atribuído à primeira variável, e o segundo valor é atribuído à segunda variável.</p>
+<p>Outro aspecto importante, é a possibilidade de utilizar o <em>operador de descarte</em> <code>_</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">(<span style="color:#66d9ef">var</span> a, _) = (x, y);
+</code></pre></div><p>Neste caso, comunicamos ao compilador que não estamos interessados no segundo valor da tupla, e que ele pode ser descartado.</p>
+<h3 id="full-pattern-matching">Full pattern matching!</h3>
+<p>No C# 8.0, é possível escrever uma declaração <em>switch</em> em que cada caso é uma expressão que será avaliada em tempo de execução.</p>
+<p>Vejamos um exemplo para selecionar uma classe CSS com base no valor de uma variável do tipo <code>bool?</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">bool?</span> visivel = <span style="color:#66d9ef">false</span>;
+<span style="color:#66d9ef">var</span> classeCss = visivel <span style="color:#66d9ef">switch</span>
+{
+  <span style="color:#66d9ef">true</span> =&gt; <span style="color:#e6db74">&#34;Visible&#34;</span>,
+  <span style="color:#66d9ef">false</span> =&gt; <span style="color:#e6db74">&#34;Hidden&#34;</span>,
+  <span style="color:#66d9ef">null</span> =&gt; <span style="color:#e6db74">&#34;Blink&#34;</span>
+};
+</code></pre></div><p>Neste exemplo, ao rodar este código, cada uma das expressões será avaliada, na ordem em que foram declaradas. A primeira que for verdadeira (der match) será executada.</p>
+<p>Há dois pontos interessantes para notar: o primeiro é que neste caso a expressão <code>switch</code> possui um retorno que pode ser atribuído a uma variável ou retornado. O segundo ponto é que ela está usando o <em>const pattern</em> que vimos mais acima.</p>
+<p>A entrada de uma expressão swtich com pattern matching pode ser uma tupla, e cada caso pode ser decomposto. Este padrão é chamado de <em>tuple pattern</em>. Vamos a um exemplo mais complexo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">int</span> a = A(); <span style="color:#75715e">// valor entre 1 e 3
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> b = B(); <span style="color:#75715e">// valor entre 1 e 3
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> c = HabilitarAvaliacao();
+<span style="color:#66d9ef">bool</span> resultado = (a, b, c) <span style="color:#66d9ef">switch</span>
+{
+    (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">false</span>) =&gt; Ok(),
+    (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#66d9ef">false</span>) =&gt; Ok(),
+    (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#66d9ef">false</span>) =&gt; Ok(),
+    (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">false</span>) =&gt; Ok(),
+    (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">2</span>, <span style="color:#66d9ef">false</span>) =&gt; Ok(),
+    (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#66d9ef">false</span>) =&gt; Ok(),
+    (<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">false</span>) =&gt; Ok(),
+    (<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>, <span style="color:#66d9ef">false</span>) =&gt; Ok(),
+    (<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#66d9ef">false</span>) =&gt; Ok(),    
+    (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">3</span>, <span style="color:#66d9ef">true</span>) =&gt; Ok(),
+    (<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#66d9ef">true</span>) =&gt; Ok(),
+    (<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">3</span>, <span style="color:#66d9ef">true</span>) =&gt; Ok(),
+    (_, _, _) =&gt; Nok()
+};
+</code></pre></div><p>Neste exemplo, estamos tratando várias combinações de variáveis que resultam numa avaliação <code>Ok()</code>, e em outros casos resultam num <code>Nok()</code>;</p>
+<p>Este código pode ser fácil de ler e entender, mas pode ser simplificado com a introdução de outro recurso, as <em>guardas</em>. Vejamos um exemplo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">var</span> resultado = (<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>) <span style="color:#66d9ef">switch</span>
+{
+    (<span style="color:#66d9ef">var</span> a, <span style="color:#66d9ef">var</span> b) when a &gt; <span style="color:#ae81ff">10</span> =&gt; a * b,
+    (<span style="color:#66d9ef">var</span> a, <span style="color:#66d9ef">var</span> b) when b &lt; <span style="color:#ae81ff">1</span> =&gt; a + b,
+    (_, _) =&gt; <span style="color:#66d9ef">return</span> a - b 
+};
+</code></pre></div><p>Neste caso, apesar de termos dois casos aparentemente idênticos <code>(var a, var b)</code>, o primeiro só será executado quando <code>a</code> for maior que <code>10</code>. Caso não for, o segundo poderá ser executado quando <code>b</code> for menor que <code>1</code>.</p>
+<p>Assim, o exemplo anterior poderia ser reescrito, tomando vantagem das guardas:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">int</span> a = A(); <span style="color:#75715e">// valor entre 1 e 3
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">int</span> b = B(); <span style="color:#75715e">// valor entre 1 e 3
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">bool</span> c = HabilitarAvaliacao();
+<span style="color:#66d9ef">bool</span> resultado = (a, b, c) <span style="color:#66d9ef">switch</span>
+{
+    (_, _, <span style="color:#66d9ef">false</span>) =&gt; Ok(),
+    (_, <span style="color:#ae81ff">3</span>, <span style="color:#66d9ef">true</span>) =&gt; Ok(),
+    (_, _, _) =&gt; Nok()
+};
+</code></pre></div><p>Vamos a um exemplo mais prático, em que fazemos um tratamento para checar a saúde de um serviço, e avaliação toma dois argumentos: 1) o sucesso na checagem e 2) o tempo de resposta do serviço:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">var</span> healthCheckResult = (sucesso, tempoRespostaMilissegundos) <span style="color:#66d9ef">switch</span>
+{
+    (<span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">var</span> ms) when ms &lt;= <span style="color:#ae81ff">5000</span> =&gt; HealthCheckResult.Healthy(),
+    (<span style="color:#66d9ef">true</span>, _) =&gt; HealthCheckResult.Degraded(),
+    (<span style="color:#66d9ef">false</span>, _) =&gt; HealthCheckResult.Unhealthy(),
+};
+</code></pre></div><p>No cenário acima, temos um uso interessante da <em>guarda</em>: o serviço só será considerado saudável quando o tempo de resposta for de até 5 segundos.</p>
+<p>Esta é uma forma bastante compacta e concisa de representar vários cenários num código expressivo e fácil de ler, e é particularmente útil para reescrever cadeias complexas ou confusas de <code>if</code>s.</p>
+<h3 id="implementando-máquinas-de-estado">Implementando máquinas de estado</h3>
+<p>Esta abordagem também é bastante útil para descrever máquinas de estado.</p>
+<p>Por exemplo, uma máquina de estado para um portão eletrônico poderia ser algo mais ou menos assim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">var</span> newState = (currentState, action, key.IsValid) <span style="color:#66d9ef">switch</span> {
+    (GateState.Locked, GateAction.Open, <span style="color:#66d9ef">true</span>) =&gt; GateState.Opened,
+    (GateState.Opened, GateAction.Open, _) =&gt; <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> InvalidOperationException(<span style="color:#e6db74">&#34;Não se pode abrir um portão aberto&#34;</span>),
+    (GateState.Opened, GateAction.Lock, <span style="color:#66d9ef">true</span>) =&gt; GateState.Locked,
+    (GateState.Locked, GateAction.Open, <span style="color:#66d9ef">false</span>) =&gt; GateState.Locked,
+    (GateState.Closed, GateAction.Lock, <span style="color:#66d9ef">true</span>) =&gt; GateState.Locked,
+    (GateState.Closed, GateAction.Close, _) =&gt; <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> InvalidOperationException(<span style="color:#e6db74">&#34;Não se pode fechar um portão fechado&#34;</span>),
+    _ =&gt; currentState
+};
+</code></pre></div><h3 id="desconstrução-de-tipos">Desconstrução de tipos</h3>
+<p>Um último recurso que eu gostaria de mostrar aqui é a desconstrução de tipos, ou seja, é um <em>structure pattern</em>.</p>
+<p>Para exemplificar, veja esses dois structs que representam respectivamente pontos em sistemas de coordenadas 2D e 3D:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Point2D</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">float</span> X { <span style="color:#66d9ef">get</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">float</span> Y { <span style="color:#66d9ef">get</span>; }
+
+    <span style="color:#66d9ef">public</span> Point2D(<span style="color:#66d9ef">float</span> x, <span style="color:#66d9ef">float</span> y)
+    {
+        X = x;
+        Y = y;
+    }
+}
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Point3D</span>
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">float</span> X { <span style="color:#66d9ef">get</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">float</span> Y { <span style="color:#66d9ef">get</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">float</span> Z { <span style="color:#66d9ef">get</span>; }
+
+    <span style="color:#66d9ef">public</span> Point3D(<span style="color:#66d9ef">float</span> x, <span style="color:#66d9ef">float</span> y, <span style="color:#66d9ef">float</span> z)
+    {
+        X = x;
+        Y = y;
+        Z = z;
+    }
+}
+</code></pre></div><p>Ambos possuem as coordenadas <code>X</code> e <code>Y</code>, mas somente o <code>Point3D</code> possui a coordenada <code>Z</code>. Assim, podemos usar pattern matching para avaliar a estrutura dos objetos e reagir de acordo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">object</span> ponto = ObterPonto(); 
+<span style="color:#66d9ef">var</span> estaNaOrigem = ponto <span style="color:#66d9ef">switch</span>
+{
+    Point3D {X: <span style="color:#ae81ff">0</span>, Y: <span style="color:#ae81ff">0</span>, Z: <span style="color:#ae81ff">0</span>} =&gt; <span style="color:#66d9ef">true</span>,
+    Point2D {X: <span style="color:#ae81ff">0</span>, Y: <span style="color:#ae81ff">0</span>} =&gt; <span style="color:#66d9ef">true</span>,
+    <span style="color:#66d9ef">null</span> =&gt; <span style="color:#66d9ef">false</span>
+};
+</code></pre></div><p>E se o objeto for de um tipo conhecido, o tipo não precisa nem ser citado:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">var</span> ponto = <span style="color:#66d9ef">new</span> Point3D(x: <span style="color:#ae81ff">0</span>, y: <span style="color:#ae81ff">2</span>, z: <span style="color:#ae81ff">3</span>); 
+<span style="color:#66d9ef">var</span> planoAlinhado = ponto <span style="color:#66d9ef">switch</span>
+{
+    {X: <span style="color:#ae81ff">0</span>, Z: <span style="color:#ae81ff">0</span>} =&gt; Plano.XZ,
+    {X: <span style="color:#ae81ff">0</span>, Y: <span style="color:#ae81ff">0</span>} =&gt; Plano.XY,
+    {Y: <span style="color:#ae81ff">0</span>, Z: <span style="color:#ae81ff">0</span>} =&gt; Plano.YZ,
+    _ =&gt; Plano.Nenhum
+};
+</code></pre></div><p>Por hoje é isso. Se você conhece outras formas interessantes de aplicar pattern matching em C# ou outra linguagem de programação que você goste, deixe um comentário.</p>
+
+  </div>
+  <style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+position: relative;
+text-align: left;
+height: 36px;
+width: 32px;
+float: left;
+text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="color: silver;">Compartilhe: </span><div id="share-buttons">
+<div class="facebook" title="Compartilhe no Facebook" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-pattern-matching-csharp\/', 'sharer', 'width=626,height=436');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+<div class="twitter" title="Compartilhe no Twitter" onclick="window.open('http://twitter.com/share?text=Pattern matching no C# 8.0&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-pattern-matching-csharp\/&hashtags=csharp,pattern-matching,type-matching,programação-funcional');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+<div class="linkedin" title="Compartilhe no Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-pattern-matching-csharp\/&title=Pattern matching no C# 8.0', 'sharer', 'width=626,height=700');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+<div class="mail" title="Compartilhe por Email" onclick="window.open('mailto:?&body=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-pattern-matching-csharp\/');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/artigo-healthchecks-aspnetcore3/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Como implementar Health Checks para sua aplicação usando as extensões do ASP.NET Core 3.0</span>
+    </a>
+    
+    
+    <a href="/posts/artigo-arquitetura-gritante/" class="navigation-next">
+      <span class="navigation-tittle">Arquitetura Gritante</span>
+      <i aria-hidden="true" class="fa fa-chevron-right"></i>
+    </a>
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'blogdyegomaas';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111956442-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/cs.min.js"></script>
+            
+        
+    <script type="text/javascript">
+        
+        hljs.configure({languages: ["cs"]});
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>
