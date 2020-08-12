@@ -469,11 +469,11 @@
     <span style="color:#75715e">// ...
 </span><span style="color:#75715e"></span>}
 </code></pre></div><p>E estamos prontos para testar! Basta subir a aplicação e fazer uma requisição GET no endpoint <code>/health</code>. No caso de o status ser Healthy, note que a resposta tem Status HTTP 200 (OK):</p>
-<p><img src="/posts/healthchecks-aspnetcore3/img/healthy_200.png" alt="Chamada do endpoint /health com status 200 e corpo contendo a palavra Healthy"></p>
+<p><img src="/posts/artigo-healthchecks-aspnetcore3/img/healthy_200.png" alt="Chamada do endpoint /health com status 200 e corpo contendo a palavra Healthy"></p>
 <p>Para o Degraded é a mesma coisa:</p>
-<p><img src="/posts/healthchecks-aspnetcore3/img/degraded_200.png" alt="Chamada do endpoint /health com status 200 e corpo contendo a palavra Degraded"></p>
+<p><img src="/posts/artigo-healthchecks-aspnetcore3/img/degraded_200.png" alt="Chamada do endpoint /health com status 200 e corpo contendo a palavra Degraded"></p>
 <p>Já quando o serviço retorna Unhealthy, o Status HTTP retornado é o 503 (Serviço Indisponível):</p>
-<p><img src="/posts/healthchecks-aspnetcore3/img/unhealthy_503.png" alt="Chamada do endpoint /health com status 503 e corpo contendo a palavra Unhealthy"></p>
+<p><img src="/posts/artigo-healthchecks-aspnetcore3/img/unhealthy_503.png" alt="Chamada do endpoint /health com status 503 e corpo contendo a palavra Unhealthy"></p>
 <h3 id="como-modificar-o-comportamento-do-health-check">Como modificar o comportamento do Health Check</h3>
 <p>Ao registrar o endpoint de Health Check, também é possível informar um objeto do tipo <code>HealthCheckOptions</code>.</p>
 <p>Uma das opções mais interessantes que ele fornece é poder mudar o HTTP Status Code retornado para cada um dos três status de saúde (Healthy, Degraded e Unhealthy).</p>
@@ -515,7 +515,7 @@
     endpoints.MapHealthChecks(<span style="color:#e6db74">&#34;/health&#34;</span>, healthCheckOptions);
 });
 </code></pre></div><p>Felizmente, a biblioteca <code>AspNetCore.HealthChecks.UI</code> já faz o trabalho de gerar um dashboard de acompanhamento. Não vou entrar em detalhes da configuração dessa ferramenta neste artigo, mas é bem simples.</p>
-<p><img src="/posts/healthchecks-aspnetcore3/img/ui-home.png" alt="Dashboard do AspNetCore.HealthChecks.UI"></p>
+<p><img src="/posts/artigo-healthchecks-aspnetcore3/img/ui-home.png" alt="Dashboard do AspNetCore.HealthChecks.UI"></p>
 <p>E é isso. Se você conhece outras formas de implementar um endpoint de health check, compartilhe nos comentários. E se este post foi útil pra você, deixe um comentário ou compartilhe nas redes sociais!</p>
 
   </div>

@@ -422,7 +422,7 @@
 </code></pre></div><p>Temos assim uma coleção de mutantes. Na sequência, para cada mutante gerado, a ferramenta roda a nossa suíte de testes e avalia os resultados.</p>
 <p>A lógica aplicada é bem simples: se <strong>algum teste falhou</strong>, o mutante foi morto e não precisamos nos preocupar com ele. Agora, se <strong>nenhum teste falhou</strong>, então o mutante sobreviveu.</p>
 <p>O diagrama a seguir pode ajudar a visualizar este processo:</p>
-<p><img src="/posts/testes-mutacao-stryker-net/img/fluxograma_testes_de_mutacao.png" alt="Fluxograma do processo de execução dos testes de mutação"></p>
+<p><img src="/posts/artigo-testes-mutacao-stryker-net/img/fluxograma_testes_de_mutacao.png" alt="Fluxograma do processo de execução dos testes de mutação"></p>
 <p>Ao final do processo, a ferramenta vai gerar um relatório detalhando quais mutantes foram mortos e quais sobreviveram. Este relatório vai incluir uma métrica muito importante: a <em>Mutation Score</em>.</p>
 <h3 id="mutation-score">Mutation Score</h3>
 <p>Com base na relação de mutantes mortos e sobreviventes, a métrica é calculada segundo a seguinte fórmula:</p>
@@ -664,15 +664,15 @@
 <p>Um detalhe importante é que o campo <code>project-file</code> deve ser o arquivo de um projeto referenciado pelo projeto de testes.</p>
 <p>Enfim, uma vale a pena dar uma olhada atenta à documentação do projeto, pois ele está cheio de opções interessantes.</p>
 <p>Feito isso, basta executar o comando <code>dotnet-stryker</code> a partir da raiz do projeto de testes.</p>
-<p><img src="/posts/testes-mutacao-stryker-net/img/stryker-console.png" alt="Exemplo da execução do Stryker no bash"></p>
+<p><img src="/posts/artigo-testes-mutacao-stryker-net/img/stryker-console.png" alt="Exemplo da execução do Stryker no bash"></p>
 <p>Como podemos ver na imagem acima, como três <em>reporters</em>, obtivemos três saídas. Primeiro, o relatório de progresso no próprio console. E depois, um relatório em formato JSON e outro no formato HTML.</p>
 <p>O relatório JSON pode ser útil para processamento por outras ferramentas ou até para criação de views customizadas.</p>
 <p>Mas é no relatório HTML que encontramos maior insight.</p>
-<p><img src="/posts/testes-mutacao-stryker-net/img/stryker-html-full.png" alt="Relatório dos testes de mutação para a classe FaixaRiscoDoencaX"></p>
+<p><img src="/posts/artigo-testes-mutacao-stryker-net/img/stryker-html-full.png" alt="Relatório dos testes de mutação para a classe FaixaRiscoDoencaX"></p>
 <p>Podemos ver quais mutantes foram mortos:</p>
-<p><img src="/posts/testes-mutacao-stryker-net/img/stryker-html-killed.png" alt="Exemplo de um mutante que foi morto, que mutou && em ||"></p>
+<p><img src="/posts/artigo-testes-mutacao-stryker-net/img/stryker-html-killed.png" alt="Exemplo de um mutante que foi morto, que mutou && em ||"></p>
 <p>Mas o mais importante, são os mutantes sobreviventes, pois eles são indicativos de testes que estão faltando na nossa suíte. E como podemos ver, são justamente os cenários nos limites das faixas, aqueles pontos que segundo a <em>Hipótese do Programador Competente</em> têm a maior probablidade de concentrar os pequenos problemas que levam a falhas nos nossos softwares.</p>
-<p><img src="/posts/testes-mutacao-stryker-net/img/stryker-html-survived.png" alt="Exemplo de um mutante que sobrevivou, que mutou o >= 18 por > 18"></p>
+<p><img src="/posts/artigo-testes-mutacao-stryker-net/img/stryker-html-survived.png" alt="Exemplo de um mutante que sobrevivou, que mutou o >= 18 por > 18"></p>
 <p>Como vimos neste artigo, os testes de mutação podem ter um papel muito importante tanto para avaliar a qualidade das nossas suítes de teste quanto durante o desenvolvimento, para guiar o desenvolvedor na elaboração de novos cenários.</p>
 <p>Os exemplos acima são super simples, mas em projetos reais, a quantidade de combinações de cenários pode crescer de forma explosiva, e os testes de mutação podem ser nossos aliados para entregar com mais qualidade.</p>
 <p><em>O código do exemplo acima está disponível num <a href="https://github.com/DyegoMaas/stryker-net-sample">repositório do GitHub</a>.</em></p>

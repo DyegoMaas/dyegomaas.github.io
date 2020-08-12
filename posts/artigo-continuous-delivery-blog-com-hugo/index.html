@@ -470,15 +470,15 @@
           <span style="color:#66d9ef">directory</span>: static-site
 </code></pre></div><p>Sera necessário subsituir algumas variáveis no template, como o <code>&lt;nomeusuario&gt;</code>, o <code>&lt;email-valido&gt;</code>, e o template utilizado.</p>
 <p>Além disso, você deve ter notado que em dois momentos precisamos de um token do GitHub, como nesta linha: <code>github_token: ${{ secrets.CD_BLOG_TOKEN }}</code>. É bem fácil gerar e cadastrar este token.</p>
-<p><img src="/posts/continuous-delivery-blog-com-hugo/img/caminho-gerar-token.png" alt="Settings/Developer settings/Personal access tokens/Generate new token"></p>
-<p><img src="/posts/continuous-delivery-blog-com-hugo/img/new-personal-access-token.png" alt="Permissões do token, habilitando a opção repo"></p>
+<p><img src="/posts/artigo-continuous-delivery-blog-com-hugo/img/caminho-gerar-token.png" alt="Settings/Developer settings/Personal access tokens/Generate new token"></p>
+<p><img src="/posts/artigo-continuous-delivery-blog-com-hugo/img/new-personal-access-token.png" alt="Permissões do token, habilitando a opção repo"></p>
 <p>Provavelmente, habitalando somente a opção &ldquo;public_repo&rdquo; já deve funcionar, mas não testei esta opção. Se você quiser testar, pode deixar um comentário contando se funcionou.</p>
 <p>Feito isso, clique em <code>Generate token</code> e uma tela vai abrir. Salve este token, ele é importante. Agora, precisaremos criar um Secret no nosso repositório.</p>
 <p>Navegue para as configurações do seu repositório, e na seção Secrets, cadastre um secret com o nome <code>CD_BLOG_TOKEN</code>, com o token como valor.</p>
 <p>Feito isso, basta fazer um commit na master e o workflow será disparado. Você pode acompanhar o resultado em Actions:</p>
-<p><img src="/posts/continuous-delivery-blog-com-hugo/img/actions-menu.png" alt="Lista de execuções dos workflows"></p>
+<p><img src="/posts/artigo-continuous-delivery-blog-com-hugo/img/actions-menu.png" alt="Lista de execuções dos workflows"></p>
 <p>Se o processo ocorrer sem problemas, você vai ver todos os jobs com sucesso e o seu blog vai estar atualizado.</p>
-<p><img src="/posts/continuous-delivery-blog-com-hugo/img/visao-build.png" alt="Lista de execuções dos workflows"></p>
+<p><img src="/posts/artigo-continuous-delivery-blog-com-hugo/img/visao-build.png" alt="Lista de execuções dos workflows"></p>
 <h3 id="agendamento-de-posts">Agendamento de posts</h3>
 <p>Esta abordagem também permite a publicação automática de posts agendados. A resposta está no começo do workflow. Podemos configurar um agendamento através de uma <a href="https://en.wikipedia.org/wiki/Cron">expressão cron</a> simples, como esta:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">schedule</span>:

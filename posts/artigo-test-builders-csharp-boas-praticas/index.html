@@ -362,7 +362,7 @@
 <p>Builders ajudam bastante, mas temos que tomar alguns cuidados. Vamos ver alguns <em>antipatterns</em> comuns que já observei muitas pessoas fazendo (inclusive eu).</p>
 <h3 id="tentar-prever-o-futuro">Tentar prever o futuro</h3>
 <p>Um erro comum que muitos desenvolvedores cometem ao implementar novo <em>builder</em> para testes é tentar prever o futuro. Eles fazem isso <strong>criando métodos para configurar cada propriedade</strong> do objeto em questão, mesmo quando no momento, só precisam customizar uma ou duas propriedades, como no exemplo abaixo: com um monte de código basicamente inútil, e que pode não ser nem útil quando essas propriedades vierem a ser customizadas.</p>
-<p><img src="/posts/test-builders-csharp-boas-praticas/img/builder-com-lixo.png" alt="Test builder com lixo"></p>
+<p><img src="/posts/artigo-test-builders-csharp-boas-praticas/img/builder-com-lixo.png" alt="Test builder com lixo"></p>
 <p>Nessas horas é bom nos lembrarmos do princípio <a href="https://pt.wikipedia.org/wiki/YAGNI">YAGNI</a>, ou <em>You aren&rsquo;t gonna need it!</em> (Você não vai precisar disso!), que tende a ser bastante verdadeiro. Desenvolvedores, como qualque outro ser humano, são péssimos em adivinhar o futuro. A recomendação aqui é simples: implemente customizações apenas para o que for necessário.</p>
 <h3 id="inicializar-os-valores-padrão-direto-nos-fields">Inicializar os valores padrão direto nos fields</h3>
 <p>Outro erro muito fácil de cometer e ser tentado a jogar os valores padrão direto nos <em>fields</em>, como é feito na imagem abaixo.</p>
