@@ -7,10 +7,26 @@
     <description>Recent content in Categories on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 29 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Arquitetura</title>
+      <link>https://blog.dyegomaas.com.br/categories/arquitetura/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/categories/arquitetura/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/categories/img/posts/social-media.png" type="image/png"/>      
+    </item>
     
     <item>
       <title>Testes</title>
@@ -66,22 +82,6 @@
       <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/categories/tutorial/</guid>
-      <description></description>
-
-      
-      
-      
-      
-      
-      <enclosure url="https://blog.dyegomaas.com.br/categories/img/posts/social-media.png" type="image/png"/>      
-    </item>
-    
-    <item>
-      <title>Arquitetura</title>
-      <link>https://blog.dyegomaas.com.br/categories/arquitetura/</link>
-      <pubDate>Wed, 03 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.dyegomaas.com.br/categories/arquitetura/</guid>
       <description></description>
 
       

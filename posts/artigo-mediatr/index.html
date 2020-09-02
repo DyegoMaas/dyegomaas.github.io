@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+    
+
+
+    <head itemscope itemtype="https://blog.dyegomaas.com.br/">
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/blog.dyegomaas.com.br\/"
+    },
+    "articleSection" : "posts",
+    "name" : "Explorando o MediatR",
+    "headline" : "Explorando o MediatR",
+    "description" : "Neste artigo, apresento o funcionamento da biblioteca MediatR, e também formas como ela pode ajudar a estruturar nossas aplicações mais voltadas ao negócio.",
+    "inLanguage" : "pt-BR",
+    "author" : {
+        "@type": "Person",
+        "name": "Dyego Maas"
+    }, 
+    "image": {
+        "@type": "imageObject",
+        "url": "https://blog.dyegomaas.com.br/img/posts/post-csharp.png"
+    },
+    
+    "creator" : "Dyego Maas",
+    "publisher": "Dyego Maas",
+    "accountablePerson" : "Dyego Maas",
+    "copyrightHolder" : "Dyego Maas",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-09-02",
+    "dateModified" : "2020-09-02",
+    "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/artigo-mediatr\/",
+    "wordCount" : "1217",
+    "keywords" : [ "dotnet","mediatr","design patterns","csharp","Blog" ]
+}
+</script>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+<meta name="yandex-verification" content="20d83aeccd3b80c2" />
+<base href="https://blog.dyegomaas.com.br/posts/artigo-mediatr/">
+<meta name="generator" content="Hugo 0.69.0" />
+
+    
+    
+    
+
+<title itemprop="name">Explorando o MediatR - Blog Dyego Maas</title>
+<meta property="description" content="Neste artigo, apresento o funcionamento da biblioteca MediatR, e também formas como ela pode ajudar a estruturar nossas aplicações mais voltadas ao negócio." />
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+
+
+<meta name="keywords" content="dotnet,mediatr,design-patterns,csharp" />
+<link rel="canonical" href="https://blog.dyegomaas.com.br/posts/artigo-mediatr/" itemprop="url" />
+<meta name="url" content="https://blog.dyegomaas.com.br/posts/artigo-mediatr/" />
+<meta property="og:site_name" content="Blog - Dyego Maas" />
+<meta property="og:title" content="Explorando o MediatR" />
+<meta property="og:description" content="Neste artigo, apresento o funcionamento da biblioteca MediatR, e também formas como ela pode ajudar a estruturar nossas aplicações mais voltadas ao negócio." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.dyegomaas.com.br/posts/artigo-mediatr/" /><meta property="og:image" content="/img/posts/post-csharp.png" />
+<meta property="og:image:secure_url" content="https://blog.dyegomaas.com.br/img/posts/post-csharp.png" />
+<meta property="article:published_time" content="2020-09-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-02T00:00:00+00:00" />
+
+<meta name="theme-color" content="#000000" />
+<meta name="msapplication-TileColor" content="#000000" />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="Blog - Dyego Maas" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" />
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" crossorigin="anonymous" media="print">
+
+
+<link rel="stylesheet" href="/css/custom.69cb553f8fdb841923fb0042f13bb1a617b61a9c30b020d16fa9175995e8c089.css" integrity="sha256-actVP4/bhBkj&#43;wBC8Tuxphe2GpwwsCDRb6kXWZXowIk=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/overrides.188421855fb48cd44e36b22976f3f17f4c4322978c83b5ef92a1c8604e1772f7.css" integrity="sha256-GIQhhV&#43;0jNRONrIpdvPxf0xDIpeMg7XvkqHIYE4Xcvc=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/modal.3f2d773b192584d4c72931c90be47bfbc2296a638ed5354962252cab96b3dbb3.css" integrity="sha256-Py13OxklhNTHKTHJC&#43;R7&#43;8IpamOO1TVJYiUsq5az27M=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/custom.3e8609b6efbfd1fee7b6531514f17304d18ff8cebda6c439740359e699220932.css" integrity="sha256-PoYJtu&#43;/0f7ntlMVFPFzBNGP&#43;M69psQ5dANZ5pkiCTI=" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=" crossorigin="anonymous">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js" defer></script>
+<script src="https://unpkg.com/lunr/lunr.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.pt.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" defer></script>
+
+<script src="/js/layout-adjustments.js" defer></script><script src="/js/custom-search.js" defer></script>
+
+<script async>
+  document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+      adjustLayout();
+      initializeSearch('/search-index.json', '/search-data-companion.json');
+   }
+ }
+</script>
+</head>
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://blog.dyegomaas.com.br/">Blog Dyego Maas</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://blog.dyegomaas.com.br/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         Arquiteto de software e Escritor 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Blog Dyego Maas</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		
+		
+			 
+				<li>
+					<a href="/posts/">
+						<span>Blog</span>
+					</a>
+				</li>
+			
+		
+		<li>
+			<a href="https://dyegomaas.com.br/">
+				<span>Sobre<span>
+			</a>
+		</li>
+		<li>
+			<a id="search-button" rel="search" style="cursor: pointer;">
+    <i class="fa fa-search" aria-hidden="true"></i>
+</a>
+
+<div id="search-results-modal" class="modal display-none">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close">&times;</span>
+        <h2>O que você procura?</h2>
+      </div>
+      <div class="modal-body">
+        <input type="search" id="search-input" results="10" placeholder="Pesquisar... (pressione Enter)">
+        <div>
+            <ul id="search-results"></ul>
+        </div>
+      </div>
+      
+    </div>
+</div>
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/DyegoMaas" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/DyegoAlekssander" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/Dyegomaas" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/dyego-maas" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:dyego.maas@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="index.xml" rel="me"><i class="fas fa-rss fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Explorando o MediatR</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 02
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    Set, 
+  
+
+  
+
+  
+
+  
+
+
+2020
+    
+    
+    
+      
+      
+          em
+          
+          
+              <a class="badge badge-category" href="/categories/arquitetura">ARQUITETURA</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/dotnet">dotnet</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/mediatr">mediatr</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/design-patterns">design patterns</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/csharp">csharp</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 6 min de leitura
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Tabela de Conteúdo</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  <div class="post">
+    <p>O <a href="https://github.com/jbogard/MediatR">MediatR</a> é uma biblioteca pouco ambiciosa, feita para resolver um problema bem específico: como, dentro de um processo, desacoplar o envio de mensagens do manuseio das mesmas? E o MediatR faz isso de forma simples e elegante.</p>
+<h2 id="mediatr">MediatR</h2>
+<p>A biblioteca foi criada por <a href="https://jimmybogard.com">Jimmy Bogard</a>, o mesmo autor do <a href="https://automapper.org">AutoMapper</a>, e está atualmente na sua quinta versão. Um item bacana é que a biblioteca não tem dependências.</p>
+<h3 id="requests-e-handlers">Requests e Handlers</h3>
+<p>O que eu mais gosto do MediatR é a forma como ele facilita mover toda lógica de negócio da camada de apresentação para a camada de aplicação.</p>
+<p>Por exemplo, imagine que um microserviço tenha uma funcionalidade de <em>adicionar um item ao carrinho</em>. Neste caso podemos imaginar um endpoint parecido com este:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CarrinhoComprasController</span> : ControllerBase
+{
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> IMediator _mediator;
+
+    <span style="color:#75715e">// NOTE QUE O MEDIATOR É INJETADO NO CONSTRUTOR.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// BEM PADRÃO NO ASP.NET Core.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> CarrinhoComprasController(IMediator mediator)
+    {
+        _mediator = mediator;
+    }
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [HttpGet]</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;ProdutosViewModel&gt; AdicionarItemNoCarrinho(
+<span style="color:#a6e22e">        [FromBody]</span>AdicionarItemCarrinhoRequest request)
+    {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> _mediator.Send(request); <span style="color:#75715e">// AQUI, DESPACHAMOS UM REQUEST PARA O MEDIATOR
+</span><span style="color:#75715e"></span>    }
+}
+</code></pre></div><p>Como o nome implica, o MediatR é um mediador, ou seja, ele vai encaminhar o Request para quaisquer Handlers interessados. Vamos agora dar uma olhada na definição de um Request do MediatR:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AdicionarItemCarrinhoRequest</span> : IRequest&lt;ItemAdicionadoCarrinhoViewModel&gt;
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> IdProduto { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Referrer { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+}
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ItemAdicionadoCarrinhoViewModel</span>
+{
+    <span style="color:#66d9ef">public</span> Guid IdItemCarrinho { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+}
+</code></pre></div><p>No snippet acima, podemos ver que <code>AdicionarItemCarrinhoRequest</code> é um <code>IRequest</code>. Esta é uma interface do MediatR que simplesmente associada entrada e saída num contrato. Ou seja, <code>AdicionarItemCarrinhoRequest</code> é um request que deve retornar um <code>ItemAdicionadoCarrinhoViewModel</code>.</p>
+<p>Já um handler terá essa cara:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AdicionarItemCarrinhoRequestHandler</span>
+    : IRequestHandler&lt;AdicionarItemCarrinhoRequest, ItemAdicionadoCarrinhoViewModel&gt;
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;ItemAdicionadoCarrinhoViewModel&gt; Handle(AdicionarItemCarrinhoRequest request, CancellationToken cancellationToken)
+    {
+        <span style="color:#75715e">// aqui vai lógica de negócio do caso de uso para listar os produtos
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// o retorno abaixo é só para simplificar o exemplo
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> Task.FromResult(<span style="color:#66d9ef">new</span> ItemAdicionadoCarrinhoViewModel
+        {
+            IdItemCarrinho = Guid.NewGuid()
+        });
+    }
+}
+</code></pre></div><p>Por fim, para habilitar o MediatR num projeto ASP.NET Core usando o container de injeção de dependência padrão, basta fazer isso no <code>Startup.cs</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ConfigureServices(IServiceCollection services)
+{
+  services.AddMvc();
+
+  <span style="color:#75715e">// o tipo passado aqui é do assembly onde estiverem os Requests e Handlers
+</span><span style="color:#75715e"></span>  services.AddMediatR(<span style="color:#66d9ef">typeof</span>(Startup));
+}
+</code></pre></div><p>A <a href="https://github.com/jbogard/MediatR/wiki">wiki do MediatR</a> tem exemplos de configuração para todos os containers mais populares.</p>
+<h3 id="behaviours">Behaviours</h3>
+<p>Quando nossas aplicações vão crescendo, também cresce a necessidade de maior instrumentação. Logs padronizados entre todos os request, um tratamento de exceções mais uniforme, medição de performance e geração de métricas são apenas alguns exemplos de interesses transversais (cross-cutting concerns) que se mostram cada vez mais necessários.</p>
+<p>Os Behaviours permitem abstrair justamente essa parte. Eles funcionam de forma semelhante aos Middlewares do ASP.NET Core. A seguir podemos ver um exemplo que loga o payload de qualquer Request se o log estiver em nível Debug:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RequestPayloadLoggingBehaviour</span>&lt;TRequest, TResponse&gt; : IPipelineBehavior&lt;TRequest, TResponse&gt;
+{
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> ILogger _logger;
+
+    <span style="color:#66d9ef">public</span> RequestPayloadLoggingBehaviour(
+        ILogger&lt;RequestPayloadLoggingBehaviour&lt;TRequest, TResponse&gt;&gt; logger)
+    {
+        _logger = logger;
+    }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;TResponse&gt; Handle(TRequest request, CancellationToken cancellationToken,
+        RequestHandlerDelegate&lt;TResponse&gt; next)
+    {
+        <span style="color:#66d9ef">if</span> (_logger.IsEnabled(LogLevel.Debug))
+        {
+            <span style="color:#66d9ef">var</span> requestName = <span style="color:#66d9ef">typeof</span>(TRequest).Name;
+            <span style="color:#66d9ef">var</span> stringPayload = JsonConvert.SerializeObject(request);
+            _logger.LogDebug(<span style="color:#e6db74">$&#34;New request with payload of {requestName} as {stringPayload}&#34;</span>);
+        }
+
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">await</span> next(); <span style="color:#75715e">// EXECUTA O PRÓXIMO BEHAVIOUR OU HANDLER
+</span><span style="color:#75715e"></span>    }
+}
+</code></pre></div><p>Outro exemplo muito útil, e que costumo usar nos meus projetos, é um Behaviour para validar o Request usando o FluentValidation antes de mandar ele para os Handlers:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RequestValidationBehavior</span>&lt;TRequest, TResponse&gt; : IPipelineBehavior&lt;TRequest, TResponse&gt;
+    <span style="color:#66d9ef">where</span> TRequest : IRequest&lt;TResponse&gt;
+{
+    <span style="color:#75715e">// Validators registrados para um determinado request
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> IEnumerable&lt;IValidator&lt;TRequest&gt;&gt; _validators;
+
+    <span style="color:#66d9ef">public</span> RequestValidationBehavior(IEnumerable&lt;IValidator&lt;TRequest&gt;&gt; validators)
+    {
+        _validators = validators;
+    }
+
+    <span style="color:#66d9ef">public</span> Task&lt;TResponse&gt; Handle(TRequest request, CancellationToken cancellationToken,
+        RequestHandlerDelegate&lt;TResponse&gt; next)
+    {
+        <span style="color:#66d9ef">if</span> (_validators.Any())
+        {
+            <span style="color:#66d9ef">var</span> context = <span style="color:#66d9ef">new</span> ValidationContext(request);
+
+            <span style="color:#66d9ef">var</span> failures = _validators
+                .Select(v =&gt; v.Validate(context))
+                .SelectMany(result =&gt; result.Errors)
+                .Where(f =&gt; f != <span style="color:#66d9ef">null</span>)
+                .ToList();
+
+            <span style="color:#66d9ef">if</span> (failures.Count != <span style="color:#ae81ff">0</span>)
+            {
+                <span style="color:#75715e">// ABORTA O PROCESSO SE O REQUEST NÃO FOR VÁLIDO
+</span><span style="color:#75715e"></span>                <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ValidationException(failures);
+            }
+        }
+
+        <span style="color:#75715e">// EXECUTA O PRÓXIMO BEHAVIOUR OU HANDLER COM UM REQUEST VÁLIDO
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> next();
+    }
+}
+</code></pre></div><p>Este Behaviour vai garantir que apenas Requests válidos seguem para processamento. Por fim, vejamos um exemplo básico de benchmark:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">BenchmarkBehavior</span>&lt;TRequest, TResponse&gt; : IPipelineBehavior&lt;TRequest, TResponse&gt;
+    <span style="color:#66d9ef">where</span> TRequest : IRequest&lt;TResponse&gt;
+{
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">readonly</span> ILogger _logger;
+
+    <span style="color:#66d9ef">public</span> BenchmarkBehavior(ILogger&lt;BenchmarkBehavior&lt;TRequest, TResponse&gt;&gt; logger)
+    {
+        _logger = logger;
+    }
+
+    <span style="color:#66d9ef">public</span> Task&lt;TResponse&gt; Handle(TRequest request, CancellationToken cancellationToken,
+        RequestHandlerDelegate&lt;TResponse&gt; next)
+    {
+        <span style="color:#66d9ef">var</span> stopwatch = <span style="color:#66d9ef">new</span> Stopwatch();
+        stopwatch.Start();
+
+        <span style="color:#75715e">// NOTE QUE A EXECUÇÃO DO HANDLER ACONTECE AQUI NO MEIO
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">var</span> response = next();
+
+        stopwatch.Stop();
+        _logger.LogInformation(<span style="color:#e6db74">$&#34;Request {request.GetType().Name} took {stopwatch.Elapsed}&#34;</span>);
+
+        <span style="color:#66d9ef">return</span> response;
+    }
+}
+</code></pre></div><p>A figura a seguir representa a sequência de execução de processamento dos behaviours. Cada Behaviour tem a oportunidade de implementar lógica antes e depois da execução do próximo.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-mediatr/img/sequencia-execucao-behaviours.jpg" alt="Sequência de execução dos behaviours e handlers" />
+        
+        
+        <figcaption><p>Sequência de execução dos Behaviours e Handlers</p> </figcaption>
+        
+    </figure>
+</div>
+
+<p>A ordem de execução dos Behaviours é determinada durante o registro dos mesmos no container de injeção de dependência:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">cfg.For(<span style="color:#66d9ef">typeof</span>(IPipelineBehavior&lt;,&gt;)).Add(<span style="color:#66d9ef">typeof</span>(OuterBehavior&lt;,&gt;));
+cfg.For(<span style="color:#66d9ef">typeof</span>(IPipelineBehavior&lt;,&gt;)).Add(<span style="color:#66d9ef">typeof</span>(InnerBehavior&lt;,&gt;));
+cfg.For(<span style="color:#66d9ef">typeof</span>(IPipelineBehavior&lt;,&gt;)).Add(<span style="color:#66d9ef">typeof</span>(ConstrainedBehavior&lt;,&gt;));
+</code></pre></div><h3 id="testes">Testes</h3>
+<p>Outro ponto que é bastante beneficiado pelo uso do MediatR são os testes. Um teste de unidade ou integração pode ser tão simples quanto este a seguir:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#a6e22e">[Fact]</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task Deve_adicionar_o_produto_123_no_carrinho()
+{
+    <span style="color:#75715e">// ARRANGE
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> request = <span style="color:#66d9ef">new</span> AdicionarItemCarrinhoRequest
+    {
+        IdProduto = <span style="color:#e6db74">&#34;123&#34;</span>,
+        Referrer = <span style="color:#e6db74">&#34;062d516d-356f-45be-a63c-d723e752d6f0&#34;</span>
+    };
+
+    <span style="color:#75715e">// ACT
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">var</span> viewModel = <span style="color:#66d9ef">await</span> <span style="color:#66d9ef">new</span> AdicionarItemCarrinhoRequestHandler(logger)
+        .Handle(request, CancellationToken.None);
+
+    <span style="color:#75715e">// ASSERT
+</span><span style="color:#75715e"></span>    viewModel.IdItemCarrinho.Should().NotBe(Guid.Empty);
+    <span style="color:#75715e">// outros asserts
+</span><span style="color:#75715e"></span>}
+</code></pre></div><h2 id="questões-estilísticas">Questões estilísticas</h2>
+<p>Uma forma de facilitar a navegação e a legibilidade do código dos Requests, é juntar Request e Handler no mesmo arquivo. Uma das opções é fazer assim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AdicionarItemCarrinhoRequest</span> : IRequest&lt;ItemAdicionadoCarrinhoViewModel&gt;
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> IdProduto { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Referrer { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+}
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AdicionarItemCarrinhoRequestHandler</span>
+    : IRequestHandler&lt;AdicionarItemCarrinhoRequest, ItemAdicionadoCarrinhoViewModel&gt;
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;ItemAdicionadoCarrinhoViewModel&gt; Handle(AdicionarItemCarrinhoRequest request, CancellationToken cancellationToken)
+    {
+        <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>    }
+}
+</code></pre></div><p>Mas me parece melhor ainda aninhar o Handler dentro da classe Request. Essa foi uma dica do próprio Jimmy Bogard numa das palestras dele:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AdicionarItemCarrinhoRequest</span> : IRequest&lt;ItemAdicionadoCarrinhoViewModel&gt;
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> IdProduto { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Referrer { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AdicionarItemCarrinhoRequestHandler</span>
+        : IRequestHandler&lt;AdicionarItemCarrinhoRequest, ItemAdicionadoCarrinhoViewModel&gt;
+    {
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">async</span> Task&lt;ItemAdicionadoCarrinhoViewModel&gt; Handle(AdicionarItemCarrinhoRequest request, CancellationToken cancellationToken)
+        {
+            <span style="color:#75715e">// ...
+</span><span style="color:#75715e"></span>        }
+    }
+}
+</code></pre></div><p>Desta forma, podemos ver rapidamente no que consiste o Request (seus parâmetros), e como será processado (o handler).</p>
+<h2 id="alguns-pensamentos">Alguns pensamentos</h2>
+<p>Microserviços podem variar muito em termos de complexidade e sofisticação. Por definição, a ideia é que sejam pequenos; mas o tamanho reduzido não os livra de ter que lidar com vários aspectos da vida em meio a um ecossistema de microserviços.</p>
+<p>E é justamente por isso que um microserviço muitas vezes precisa conversar com outros para cumprir sua tarefa. Essas comunicações ocorrem majoritariamente em duas categorias: chamadas síncronas com alguma tecnologia de <em>RPC</em> (Remote Procedure Call) como REST, Thrift ou gRPC, ou assíncronas, usando algum broker como RabbitMQ ou Amazon SNS.</p>
+<p>E nada impede que um mesmo serviço disponibilize endpoints REST, gRPC e ainda consuma mensagens de algum broker. E neste caso, é sempre interessante ser capaz de processar as regras de negócio de forma padronizada, independente do gatilho. E para isso, o MediatR cai como uma luva.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-mediatr/img/multiplos-inputs-um-comportamento.jpg" alt="Endpoints REST, gRPC e consumidores de evento, todos usando o MediatR para delegar o tratamento para a camada de application" />
+        
+        
+        <figcaption><p>Múltiplas fontes, tratamento padronizado dos requests</p> </figcaption>
+        
+    </figure>
+</div>
+
+<p>O diagrama acima mostra um cenário em que os Behaviours do MediatR acabam apresentando uma grande vantagem em relação aos middlewares do ASP.NET Core, pois permitem qualquer tipo de entrada do serviço, desde as mais comuns, suportadas nativamente pelo ASP.NET Core, até as mais exóticas, feitas in-house.</p>
+
+  </div>
+  <style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+position: relative;
+text-align: left;
+height: 36px;
+width: 32px;
+float: left;
+text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="color: silver;">Compartilhe: </span><div id="share-buttons">
+<div class="facebook" title="Compartilhe no Facebook" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-mediatr\/', 'sharer', 'width=626,height=436');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+<div class="twitter" title="Compartilhe no Twitter" onclick="window.open('http://twitter.com/share?text=Explorando o MediatR&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-mediatr\/&hashtags=dotnet,mediatr,design-patterns,csharp');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+<div class="linkedin" title="Compartilhe no Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-mediatr\/&title=Explorando o MediatR', 'sharer', 'width=626,height=700');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+<div class="mail" title="Compartilhe por Email" onclick="window.open('mailto:?&body=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-mediatr\/');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/artigo-ping-pong-pair-programming/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Ping-pong Pair Programming</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'blogdyegomaas';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111956442-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/cs.min.js"></script>
+            
+        
+    <script type="text/javascript">
+        
+        hljs.configure({languages: ["cs"]});
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>
