@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+    
+
+
+    <head itemscope itemtype="https://blog.dyegomaas.com.br/">
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/blog.dyegomaas.com.br\/"
+    },
+    "articleSection" : "posts",
+    "name" : "Arquitetura Gritante com MediatR",
+    "headline" : "Arquitetura Gritante com MediatR",
+    "description" : "Neste artigo, apresento uma forma de aplicar o conceito de Arquitetura Gritante nas nossas aplicações usando o MediatR, de modo a ressaltar o valor de negócio.",
+    "inLanguage" : "pt-BR",
+    "author" : {
+        "@type": "Person",
+        "name": "Dyego Maas"
+    }, 
+    "image": {
+        "@type": "imageObject",
+        "url": "https://blog.dyegomaas.com.br/img/posts/post-csharp.png"
+    },
+    
+    "creator" : "Dyego Maas",
+    "publisher": "Dyego Maas",
+    "accountablePerson" : "Dyego Maas",
+    "copyrightHolder" : "Dyego Maas",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-09-09",
+    "dateModified" : "2020-09-09",
+    "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/artigo-arquitetura-gritante-com-mediatr\/",
+    "wordCount" : "539",
+    "keywords" : [ "arquitetura gritante","vertical slicing","mediatr","csharp","Blog" ]
+}
+</script>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+<meta name="yandex-verification" content="20d83aeccd3b80c2" />
+<base href="https://blog.dyegomaas.com.br/posts/artigo-arquitetura-gritante-com-mediatr/">
+<meta name="generator" content="Hugo 0.69.0" />
+
+    
+    
+    
+
+<title itemprop="name">Arquitetura Gritante com MediatR - Blog Dyego Maas</title>
+<meta property="description" content="Neste artigo, apresento uma forma de aplicar o conceito de Arquitetura Gritante nas nossas aplicações usando o MediatR, de modo a ressaltar o valor de negócio." />
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+
+
+<meta name="keywords" content="arquitetura-gritante,vertical-slicing,mediatr,csharp" />
+<link rel="canonical" href="https://blog.dyegomaas.com.br/posts/artigo-arquitetura-gritante-com-mediatr/" itemprop="url" />
+<meta name="url" content="https://blog.dyegomaas.com.br/posts/artigo-arquitetura-gritante-com-mediatr/" />
+<meta property="og:site_name" content="Blog - Dyego Maas" />
+<meta property="og:title" content="Arquitetura Gritante com MediatR" />
+<meta property="og:description" content="Neste artigo, apresento uma forma de aplicar o conceito de Arquitetura Gritante nas nossas aplicações usando o MediatR, de modo a ressaltar o valor de negócio." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.dyegomaas.com.br/posts/artigo-arquitetura-gritante-com-mediatr/" /><meta property="og:image" content="/img/posts/post-csharp.png" />
+<meta property="og:image:secure_url" content="https://blog.dyegomaas.com.br/img/posts/post-csharp.png" />
+<meta property="article:published_time" content="2020-09-09T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-09-09T00:00:00+00:00" />
+
+<meta name="theme-color" content="#000000" />
+<meta name="msapplication-TileColor" content="#000000" />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="Blog - Dyego Maas" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" />
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" crossorigin="anonymous" media="print">
+
+
+<link rel="stylesheet" href="/css/custom.69cb553f8fdb841923fb0042f13bb1a617b61a9c30b020d16fa9175995e8c089.css" integrity="sha256-actVP4/bhBkj&#43;wBC8Tuxphe2GpwwsCDRb6kXWZXowIk=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/overrides.73094aff5dda311fa6c021c59280236a897472de92cef7dfb84647725a50aa69.css" integrity="sha256-cwlK/13aMR&#43;mwCHFkoAjaol0ct6SzvffuEZHclpQqmk=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/modal.4f5c06ac0ef1f6e01698ce4414a787894af1e820bde8696463abda7e530ea5ab.css" integrity="sha256-T1wGrA7x9uAWmM5EFKeHiUrx6CC96GlkY6vaflMOpas=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/custom.bdcce6a5b268ad0db1ae6dd1e3c7400aaf23f8fc0a63620a496a64ab68cdcf11.css" integrity="sha256-vczmpbJorQ2xrm3R48dACq8j&#43;PwKY2IKSWpkq2jNzxE=" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=" crossorigin="anonymous">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js" defer></script>
+<script src="https://unpkg.com/lunr/lunr.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.pt.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" defer></script>
+
+<script src="/js/layout-adjustments.js" defer></script><script src="/js/custom-search.js" defer></script>
+
+<script async>
+  document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+      adjustLayout();
+      initializeSearch('/search-index.json', '/search-data-companion.json');
+   }
+ }
+</script>
+</head>
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://blog.dyegomaas.com.br/">Blog Dyego Maas</a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://blog.dyegomaas.com.br/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         Arquiteto de software e Escritor 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Blog Dyego Maas</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		
+		
+			 
+				<li>
+					<a href="/posts/">
+						<span>Blog</span>
+					</a>
+				</li>
+			
+		
+		<li>
+			<a href="https://dyegomaas.com.br/">
+				<span>Sobre<span>
+			</a>
+		</li>
+		<li>
+			<a id="search-button" rel="search" style="cursor: pointer;">
+    <i class="fa fa-search" aria-hidden="true"></i>
+</a>
+
+<div id="search-results-modal" class="modal display-none">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close">&times;</span>
+        <h2>O que você procura?</h2>
+      </div>
+      <div class="modal-body">
+        <input type="search" id="search-input" results="10" placeholder="Pesquisar... (pressione Enter)">
+        <div>
+            <ul id="search-results"></ul>
+        </div>
+      </div>
+      
+    </div>
+</div>
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/DyegoMaas" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/DyegoAlekssander" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/Dyegomaas" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/dyego-maas" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:dyego.maas@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="index.xml" rel="me"><i class="fas fa-rss fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Arquitetura Gritante com MediatR</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 09
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    Set, 
+  
+
+  
+
+  
+
+  
+
+
+2020
+    
+    
+    
+      
+      
+          em
+          
+          
+              <a class="badge badge-category" href="/categories/arquitetura">ARQUITETURA</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/arquitetura-gritante">arquitetura gritante</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/vertical-slicing">vertical slicing</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/mediatr">mediatr</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/csharp">csharp</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 3 min de leitura
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Tabela de Conteúdo</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  <div class="post">
+    <p>Em artigos anteriores, falei sobre o conceito de <a href="/posts/artigo-arquitetura-gritante">Arquitetura Gritante</a> e sobre a biblioteca <a href="/posts/artigo-mediatr">MediatR</a>. Neste arquivo vou mostrar como podemos usar o MediatR para pôr em prática os conceitos de Arquitetura Gritante, resultando numa camada de aplicação mais voltada às operações de negócio.</p>
+<h2 id="estrutura-de-aplicação">Estrutura de aplicação</h2>
+<p>Uma estrutura de aplicação que tenho testado e gostado bastante, é baseada no modelo apresentado por <a href="https://www.youtube.com/watch?v=5OtUm1BLmG0">Jason Taylor no NDC Sydney 2019</a>, que aplica Arquitetura Limpa a um projeto com ASP.NET Core. Aliás, em breve vou escrever um post falando sobre Arquitetura Limpa aqui no blog.</p>
+<p>A estrutura da solution, conforme estamos usando em alguns projetos na HBSIS é a seguinte:</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-arquitetura-gritante-com-mediatr/img/estrutura-solution.png" alt="Estrutura da solution de um microserviço, com quatro projetos: Clientes.Presentation, Clientes.Infrastructure, Clientes.Application e Clientes.Domain" />
+        
+        
+        <figcaption><p>Estrutura da solution de um microserviço</p> </figcaption>
+        
+    </figure>
+</div>
+
+<p>Nessa estrutura, a camada Application fica responsável pelas operações de negócio que a aplicação suporta, e mapeia os casos de uso que implementa. Ela trabalha em conjunto com o Domain para executar as operações necessárias e seu foco é gerar valor de negócio para o cliente. Abaixo, podemos ver como é organizado o projeto Application:</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-arquitetura-gritante-com-mediatr/img/estrutura-application-expandido.png" alt="Estrutura do projeto Application, sendo as pastas de primeiro nível as entidades impactadas, e dentro de cada uma, as pastas de segundo nível, casos de uso, com os respectivos Requests do MediatR" />
+        
+        
+        <figcaption><p>Organização das operações de negócio no projeto Application</p> </figcaption>
+        
+    </figure>
+</div>
+
+<p>A seguir, vamos explorar como essa estrutura ressalta as operações de negócio.</p>
+<h3 id="primeiro-nível-de-pastas---entidades-impactadas">Primeiro nível de pastas - Entidades impactadas</h3>
+<p>Como podemos ver, temos as pastas de primeiro nível discriminando as entidades que serão impactadas. Normalmente, essas pastas acabarão sendo um mapeamento direto das entidades do domínio. Exemplos são Clientes, Pedidos, CarrinhoCompras, etc.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-arquitetura-gritante-com-mediatr/img/estrutura-application-pastas-primeiro-nivel.png" alt="Projeto Application, com a pasta Clientes selecionada, contraída" />
+        
+        
+        <figcaption><p>Pastas de primeiro nível</p> </figcaption>
+        
+    </figure>
+</div>
+
+<p>A única exceção, como pode ser visto, é a pasta <code>Common</code>, que contém infrasestrutura do próprio projeto Application, como configuração do FluentValidation e afins.</p>
+<h3 id="segundo-nível-de-pastas---operações-de-negócio">Segundo nível de pastas - Operações de negócio</h3>
+<p>Já as pastas de segundo nível são responsáveis por descrever operações de negócio disponibilizadas pela aplicação. Essas operações costumam mapear muito bem para Casos de Uso, como discutido no <a href="/posts/artigo-arquitetura-gritante">artigo sobre Arquitetura Gritante</a>, pois são descritos do ponto de vista do usuário da aplicação. Independente de o usuário ser uma pessoa ou outro serviço, as operações aqui são descritas do ponto de vista do usuário. São pequenos serviços que a aplicação presta.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-arquitetura-gritante-com-mediatr/img/estrutura-application-pastas-segundo-nivel.png" alt="Projeto Application, com a pasta Clientes expandida, revelando os casos de uso Cadastrar Cliente, Inativar Cliente, Reativar Cliente, Listar Clientes e Obter Detalhes do Cliente" />
+        
+        
+        <figcaption><p>Pastas de segundo nível</p> </figcaption>
+        
+    </figure>
+</div>
+
+<p>Esta noção de recortar a aplicação por operações de negócio, também conversa com um conceito chamado <em>Vertical Slicing</em>, e é explorado <a href="https://www.youtube.com/watch?v=SUiWfhAhgQw">nessa palestra do Jimmy Bogard no NDC Sydney 2018</a>.</p>
+<h3 id="terceiro-nível---implementação-das-operações-de-negócio">Terceiro nível - Implementação das operações de negócio</h3>
+<p>Tudo o que tiver dentro de uma pasta de segundo nível, trata de realizar aquela operação de negócio. Como podemos ver na imagem a seguir, temos um Request do MediatR, uma validação desse request usando FluentValidation, e mais um namespace com outras classes necessárias para realizar a operação.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-arquitetura-gritante-com-mediatr/img/estrutura-application-terceiro-nivel.png" alt="Exemplo de uma operação de negócio, InativarCliente, com um InativarClienteRequest dentro, e mais alguns arquivos" />
+        
+        
+        <figcaption><p>Terceiro nível</p> </figcaption>
+        
+    </figure>
+</div>
+
+<p>Se você quiser ver como é a implementação de um desses requests do MediatR, pode conferir <a href="/posts/artigo-mediatr">meu artigo sobre ele</a>.</p>
+<h3 id="conclusão">Conclusão</h3>
+<p>Seguindo esta estrutura, os diretórios de primeiro e segundo nível do projeto Application passam a expressar valor de negócio. Eles são um mapa de tudo que a aplicação é responsável por fazer, e de quais entidades eles impactam.</p>
+<p>A maior vantagem desta abordagem é a clareza que ela proporciona. Tudo o que a aplicação faz, e também o que ela não faz, fica óbvio numa inspeção rápida. Tal qual uma planta de apartamento, está tudo ali. A aplicação <strong>grita</strong> o que faz e seu valor fica óbvio de imediato.</p>
+
+  </div>
+  <style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+position: relative;
+text-align: left;
+height: 36px;
+width: 32px;
+float: left;
+text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="color: silver;">Compartilhe: </span><div id="share-buttons">
+<div class="facebook" title="Compartilhe no Facebook" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-arquitetura-gritante-com-mediatr\/', 'sharer', 'width=626,height=436');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+<div class="twitter" title="Compartilhe no Twitter" onclick="window.open('http://twitter.com/share?text=Arquitetura Gritante com MediatR&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-arquitetura-gritante-com-mediatr\/&hashtags=arquitetura-gritante,vertical-slicing,mediatr,csharp');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+<div class="linkedin" title="Compartilhe no Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-arquitetura-gritante-com-mediatr\/&title=Arquitetura Gritante com MediatR', 'sharer', 'width=626,height=700');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+<div class="mail" title="Compartilhe por Email" onclick="window.open('mailto:?&body=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-arquitetura-gritante-com-mediatr\/');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/artigo-mediatr/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Explorando o MediatR</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'blogdyegomaas';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111956442-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/all.js" integrity="sha384-b3ua1l97aVGAPEIe48b4TC60WUQbQaGi2jqAWM90y0OZXZeyaTCWtBTKtjW2GXG1" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>
