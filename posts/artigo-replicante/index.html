@@ -36,7 +36,7 @@
     "datePublished": "2020-11-18",
     "dateModified" : "2020-11-18",
     "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/artigo-replicante\/",
-    "wordCount" : "1411",
+    "wordCount" : "1450",
     "keywords" : [ "Ferramentas","replicante","gluegun","processador de templates","Blog"]
 }
 </script>
@@ -443,7 +443,7 @@
 </span><span style="color:#ae81ff"></span>  c:/projects/template <span style="color:#ae81ff">\ </span><span style="color:#75715e"># caminho para a pasta do template</span>
   c:/receitas/receita-bk.json <span style="color:#ae81ff">\ </span><span style="color:#75715e"># caminho para a receita</span>
   --target<span style="color:#f92672">=</span>c:/projects/bk <span style="color:#75715e"># caminho de destino, onde será gerado o projeto</span>
-</code></pre></div><h3 id="humanizer---martianizer">Humanizer -&gt; Martianizer</h3>
+</code></pre></div><h3 id="exemplo-lúdico-humanizer---martianizer">Exemplo lúdico: Humanizer -&gt; Martianizer</h3>
 <p>Que tal um exemplo mais excêntrico? Digamos que os autores da biblioteca <a href="https://github.com/Humanizr/Humanizer">Humanizer</a> (excelente biblioteca, aliás) acordassem um dia com a brilhante ideia de renomear a biblitoeca para Martianizer (já pensando nos nossos amigos marcianos).</p>
 <p>Isso implica que todas as APIs teriam que ser ajustadas, e os projetos renomeados. Nessa biblioteca, o termo <strong>Humanize</strong> está para todo lado. Nos métodos, nomes das classes, namespaces, nomes de arquivos, projeto, solution e arquivos de configuração.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">using</span> System;
@@ -474,13 +474,13 @@
   <span style="color:#f92672">&#34;fileNameReplacements&#34;</span>: [
     { <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;Human&#34;</span>, <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;Martian&#34;</span> }
   ],
-  <span style="color:#f92672">&#34;sourceCodeReplacements&#34;</span>: [
-    { <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;HUMAN&#34;</span>, <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;MARTIAN&#34;</span> },
+  <span style="color:#f92672">&#34;sourceCodeReplacements&#34;</span>: [    
+    { <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;HUMAN&#34;</span>, <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;MARTIAN&#34;</span> }, 
     { <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;Human&#34;</span>, <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;Martian&#34;</span> },
     { <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;human&#34;</span>, <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;martian&#34;</span> }
   ]
 }
-</code></pre></div><p>E os resultados seriam bem promissores. O projeto já nasce correto e compilando:</p>
+</code></pre></div><p>Essas poucas substituições cobrem todas as ocorrências no repositório de termos como <em>humanize</em>, <em>humanizing</em>, <em>humanizer</em>, <em>humanization</em>, <em>dehumanization</em>, <em>humanized</em> e <em>Humanizr</em>. E os resultados são bem promissores. O projeto já nasce correto, compilando, e &ldquo;marcianizado&rdquo;:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">using</span> System;
 <span style="color:#66d9ef">using</span> System.Collections.Generic;
 <span style="color:#66d9ef">using</span> Martianizer.Configuration;
@@ -502,7 +502,21 @@
         }
 
         <span style="color:#75715e">//...
-</span></code></pre></div><h3 id="tipos-comuns-de-ajuste">Tipos comuns de ajuste</h3>
+</span></code></pre></div><p>E a árvore de arquivos sai correta, com todas as transformações aplicadas:</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="seventy-p" src="/posts/artigo-replicante/img/martianizer-file-tree.png" alt="Árvore de arquivos marcianizada" />
+        
+        
+        <figcaption><p>Árvore de arquivos marcianizada</p> </figcaption>
+        
+    </figure>
+</div>
+
+<h3 id="tipos-comuns-de-ajuste">Tipos comuns de ajuste</h3>
 <p>Existem várias situações e vários tipos de arquivo que precisamos ajustar para transformar um template num projeto novo, como:</p>
 <ul>
 <li>Arquivos fontes</li>
