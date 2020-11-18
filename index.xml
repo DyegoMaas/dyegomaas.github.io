@@ -7,10 +7,28 @@
     <description>Recent content on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 04 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Acelerando a criação de aplicações e serviços com Replicante</title>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-replicante/</link>
+      <pubDate>Wed, 18 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-replicante/</guid>
+      <description>Neste artigo, pretendo apresentar uma nova ferramenta para facilitar a geração de projetos a partir de templates. Um processador de templates chamado Replicante. Meu primeiro projeto open-source.
+Nos parágrafos abaixo, vou tentar explicar as motivações que me levaram a implementar esse projeto, e como ele pode ser usado para facilitar a vida em algumas tarefas banais que acabam consumindo nosso tempo.
+CTRL+C, CTRL+V De vez em quando temos que começar um novo projeto de software.</description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png"/>      
+    </item>
     
     <item>
       <title>Criando uma CLI com Gluegun</title>

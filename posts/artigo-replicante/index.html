@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+    
+
+
+    <head itemscope itemtype="https://blog.dyegomaas.com.br/">
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/blog.dyegomaas.com.br\/"
+    },
+    "articleSection" : "posts",
+    "name" : "Acelerando a criação de aplicações e serviços com Replicante",
+    "headline" : "Acelerando a criação de aplicações e serviços com Replicante",
+    "description" : "Neste artigo, apresento em detalhes o Replicante, um processador de templates de projetos de software totalmente agnóstico de tecnologia.",
+    "inLanguage" : "pt-BR",
+    "author" : {
+        "@type": "Person",
+        "name": "Dyego Maas"
+    }, 
+    "image": {
+        "@type": "imageObject",
+        "url": "https://blog.dyegomaas.com.br/img/posts/social-media.png"
+    },
+    
+    "creator" : "Dyego Maas",
+    "publisher": "Dyego Maas",
+    "accountablePerson" : "Dyego Maas",
+    "copyrightHolder" : "Dyego Maas",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-11-18",
+    "dateModified" : "2020-11-18",
+    "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/artigo-replicante\/",
+    "wordCount" : "1411",
+    "keywords" : [ "Ferramentas","replicante","gluegun","processador de templates","Blog"]
+}
+</script>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+<meta name="yandex-verification" content="20d83aeccd3b80c2" />
+<base href="https://blog.dyegomaas.com.br/posts/artigo-replicante/">
+<meta name="generator" content="Hugo 0.69.0" />
+
+    
+    
+    
+
+<title itemprop="name">Acelerando a criação de aplicações e serviços com Replicante - Blog Dyego Maas</title>
+<meta property="description" content="Neste artigo, apresento em detalhes o Replicante, um processador de templates de projetos de software totalmente agnóstico de tecnologia." />
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+
+
+<meta name="keywords" content="replicante,gluegun,processador-de-templates" />
+<link rel="canonical" href="https://blog.dyegomaas.com.br/posts/artigo-replicante/" itemprop="url" />
+<meta name="url" content="https://blog.dyegomaas.com.br/posts/artigo-replicante/" />
+<meta property="og:site_name" content="Blog - Dyego Maas" />
+<meta property="og:title" content="Acelerando a criação de aplicações e serviços com Replicante" />
+<meta property="twitter:title" content="Acelerando a criação de aplicações e serviços com Replicante" />
+<meta property="og:description" content="Neste artigo, apresento em detalhes o Replicante, um processador de templates de projetos de software totalmente agnóstico de tecnologia." />
+<meta property="twitter:description" content="Neste artigo, apresento em detalhes o Replicante, um processador de templates de projetos de software totalmente agnóstico de tecnologia." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.dyegomaas.com.br/posts/artigo-replicante/" /><meta property="og:image" content="/img/posts/social-media.png" />
+<meta property="og:image:secure_url" content="https://blog.dyegomaas.com.br/img/posts/social-media.png" />
+<meta property="twitter:image" content="https://blog.dyegomaas.com.br/img/posts/social-media.png" />
+<meta property="article:published_time" content="2020-11-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-11-18T00:00:00+00:00" />
+<meta property="article:section" content="posts" />
+
+<meta property="article:tag" content="Ferramentas" />
+
+<meta property="article:tag" content="replicante" /><meta property="article:tag" content="gluegun" /><meta property="article:tag" content="processador de templates" />
+
+
+<meta name="theme-color" content="#000000" />
+<meta name="msapplication-TileColor" content="#000000" />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="Blog - Dyego Maas" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" />
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" crossorigin="anonymous" media="print">
+
+
+<link rel="stylesheet" href="/css/custom.69cb553f8fdb841923fb0042f13bb1a617b61a9c30b020d16fa9175995e8c089.css" integrity="sha256-actVP4/bhBkj&#43;wBC8Tuxphe2GpwwsCDRb6kXWZXowIk=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/overrides.188421855fb48cd44e36b22976f3f17f4c4322978c83b5ef92a1c8604e1772f7.css" integrity="sha256-GIQhhV&#43;0jNRONrIpdvPxf0xDIpeMg7XvkqHIYE4Xcvc=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/modal.3f2d773b192584d4c72931c90be47bfbc2296a638ed5354962252cab96b3dbb3.css" integrity="sha256-Py13OxklhNTHKTHJC&#43;R7&#43;8IpamOO1TVJYiUsq5az27M=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/custom.2dc927322d19178d958e1dac4fba0aae9756b1dda9cde1c14fec89061fe09734.css" integrity="sha256-LcknMi0ZF42Vjh2sT7oKrpdWsd2pzeHBT&#43;yJBh/glzQ=" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=" crossorigin="anonymous">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js" defer></script>
+<script src="https://unpkg.com/lunr/lunr.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.pt.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" defer></script>
+
+<script src="/js/layout-adjustments.js" defer></script><script src="/js/custom-search.js" defer></script>
+
+<script async>
+  document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+      adjustLayout();
+      initializeSearch('/search-index.json', '/search-data-companion.json');
+   }
+ }
+</script>
+</head>
+
+    <body class=" ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://blog.dyegomaas.com.br/">
+        
+          Blog Dyego Maas
+        
+        </a>
+      </span>
+      
+        
+        
+        
+        <div class="author-image">
+          <img src="https://blog.dyegomaas.com.br/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+        </div>
+        
+      
+      
+      <p class="site__description">
+         Arquiteto de software e Escritor 
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">Blog Dyego Maas</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		
+		
+			 
+				<li>
+					<a href="/posts/">
+						<span>Blog</span>
+					</a>
+				</li>
+			
+		
+		<li>
+			<a href="https://dyegomaas.com.br/">
+				<span>Sobre<span>
+			</a>
+		</li>
+		<li>
+			<a id="search-button" rel="search" style="cursor: pointer;">
+    <i class="fa fa-search" aria-hidden="true"></i>
+</a>
+
+<div id="search-results-modal" class="modal display-none">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close">&times;</span>
+        <h2>O que você procura?</h2>
+      </div>
+      <div class="modal-body">
+        <input type="search" id="search-input" results="10" placeholder="Pesquisar... (pressione Enter)">
+        <div>
+            <ul id="search-results"></ul>
+        </div>
+      </div>
+      
+    </div>
+</div>
+		</li>
+	</ul>
+</div>
+
+        <section class="social">
+	
+	<a href="https://twitter.com/DyegoMaas" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/DyegoAlekssander" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/Dyegomaas" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/dyego-maas" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:dyego.maas@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="index.xml" rel="me"><i class="fas fa-rss fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Acelerando a criação de aplicações e serviços com Replicante</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 18
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    Nov, 
+  
+
+  
+
+
+2020
+    
+    
+    
+      
+      
+          em
+          
+          
+              <a class="badge badge-category" href="/categories/ferramentas">FERRAMENTAS</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/replicante">replicante</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/gluegun">gluegun</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/processador-de-templates">processador de templates</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 7 min de leitura
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Tabela de Conteúdo</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  <div class="post">
+    <p>Neste artigo, pretendo apresentar uma nova ferramenta para facilitar a geração de projetos a partir de templates. Um processador de templates chamado <a href="https://github.com/DyegoMaas/Replicante">Replicante</a>. Meu primeiro projeto open-source.</p>
+<p>Nos parágrafos abaixo, vou tentar explicar as motivações que me levaram a implementar esse projeto, e como ele pode ser usado para facilitar a vida em algumas tarefas banais que acabam consumindo nosso tempo.</p>
+<h2 id="ctrlc-ctrlv">CTRL+C, CTRL+V</h2>
+<p>De vez em quando temos que começar um novo projeto de software. E muitas vezes é empolgante: é uma oportunidade de fazer diferente, de testar novas abordagens, novas ferramentas e tecnologias.</p>
+<p>Mas algumas vezes o novo projeto é muito parecido com outro que fizemos no passado, e usá-lo como template é tentador. É só um CTRL+C e um CTRL+V, e uns <em>replaces</em>, e depois apagar o que for irrelevante para o novo projeto.</p>
+<p>Muita gente faz isso, e eu mesmo fiz esse processo inúmeras vezes. E mesmo que você crie um projeto <em>template</em>, fazer esse processo de cópia manualmente é chato, trabalhoso, e suscetível a falhas.</p>
+<p>Reconhecendo que este é um padrão recorrente no mundo do software, apesar de são comentado, comecei a refletir se não seria possível automatizar os passos desse processo, tornando-o quase trivial.</p>
+<h2 id="automatizando-a-transformação-de-templates">Automatizando a transformação de templates</h2>
+<p>Imagine que você trabalha numa agência que produz sites e outros projetos de software. Você quer que cada projeto seja único, mas tem que pagar as contas. E então, você quer reaproveitar o máximo de trabalho possível de projetos anteriores.</p>
+<p>Uma abordagem bem provável seria deixar preparado um boilerplate muito completo, totalmente customizável, e se basear nele toda vez que for começar um projeto novo. O cenário de um freelancer não é muito diferente disso.</p>
+<p>Cada stack tem ferramentas particulares para geração de projetos. NodeJS, Ruby, Python, Go, C#, Java. Cada uma funciona de um jeito.</p>
+<p>Mas e se pudéssemos implementar um projeto template, em qualquer tecnologia, e usar uma <strong>ferramenta externa</strong> para gerar nossos projetos?</p>
+<p>E se essa ferramenta fosse fácil de usar?</p>
+<p>E se ela fosse fácil de integrar aos nossos pipelines de integração contínua?</p>
+<h2 id="replicante">Replicante</h2>
+<p>E assim surgiu o <a href="https://github.com/DyegoMaas/Replicante">Replicante</a>, um processador de templates fácil de usar, que roda direto no seu terminal.</p>
+<p>Um dos objetivos iniciais do projeto foi que ele deveria operar totalmente via configuração. O processo teria que ser declarativo.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="seventy-p" src="/posts/artigo-replicante/img/replicante-create.jpg" alt="Diagrama representando o processo básico do replicante, aplicando uma receita a um template para gerar um novo projeto" />
+        
+        
+        <figcaption><p>Replicação de um template</p> </figcaption>
+        
+    </figure>
+</div>
+
+<p>Por isso, todo processo de <strong>replicação</strong> começa com um projeto template e uma <strong>receita</strong> como esta:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;replicantName&#34;</span>: <span style="color:#e6db74">&#34;NovoSuperProjeto&#34;</span>,
+  <span style="color:#f92672">&#34;fileNameReplacements&#34;</span>: [],
+  <span style="color:#f92672">&#34;sourceCodeReplacements&#34;</span>: []
+}
+</code></pre></div><p>Como podemos ver, o novo projeto é denominado <strong>replicante</strong>, e tem um nome. Além disso temos outras duas coleções: as substituições em nomes de arquivos, e as de código fonte.</p>
+<p>Cada uma delas é alimentada elementos que indicam regras de substituição, como esse:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{ <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;TermoOriginal&#34;</span>, <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;NovoTermo&#34;</span> }
+</code></pre></div><p>As regras definidas na coleção <code>fileNameReplacements</code> afetarão nomes de arquivos e pastas. Vejamos um exemplo simples: digamos que nosso template possui uma pasta chamada <em>ClienteX</em>, que funciona como namespace para todos os fontes lá dentro. Num projeto C#, seria algo assim:</p>
+<pre><code>`ClienteX
+|---Services
+|---Controllers
+|---...
+</code></pre><p>E para complementar cada arquivo fonte <code>.cs</code> dentro da pasta cliente vai incluir o diretório nos namespaces assim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">namespace</span> ClienteX.Services
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeuServico</span>{...}
+}
+</code></pre></div><p>Se quisermos que todo novo projeto tenha o nome do cliente como namespace, é só fazer a seguinte configuração e voilà:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;replicantName&#34;</span>: <span style="color:#e6db74">&#34;NovoSuperProjeto&#34;</span>,
+  <span style="color:#f92672">&#34;fileNameReplacements&#34;</span>: [
+      { <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;ClienteX&#34;</span>, <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;BurgerKing&#34;</span> }
+  ],
+  <span style="color:#f92672">&#34;sourceCodeReplacements&#34;</span>: [
+      { <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;ClienteX&#34;</span>, <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;BurgerKing&#34;</span> }
+  ]
+}
+</code></pre></div><p>A aplicação desta receita vai resultar no seguinte:</p>
+<pre><code>`BurguerKing
+|---Services
+|---Controllers
+|---...
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">namespace</span> BurguerKing.Services
+{
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MeuServico</span> {...}
+}
+</code></pre></div><p>A ferramenta em si é um app de linha de comando implementado com um mix de Javascript e TypeScript usando um toolkit chamado Gluegun. Você pode conferir <a href="/posts/artigo-criando-uma-cli-com-gluegun">meu artigo anterior</a> onde falo sobre como foi implementar o Replicante com Gluegun.</p>
+<p>A utilização dele é bem simples:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">replicante create <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  c:/projects/template <span style="color:#ae81ff">\ </span><span style="color:#75715e"># caminho para a pasta do template</span>
+  c:/receitas/receita-bk.json <span style="color:#ae81ff">\ </span><span style="color:#75715e"># caminho para a receita</span>
+  --target<span style="color:#f92672">=</span>c:/projects/bk <span style="color:#75715e"># caminho de destino, onde será gerado o projeto</span>
+</code></pre></div><h3 id="humanizer---martianizer">Humanizer -&gt; Martianizer</h3>
+<p>Que tal um exemplo mais excêntrico? Digamos que os autores da biblioteca <a href="https://github.com/Humanizr/Humanizer">Humanizer</a> (excelente biblioteca, aliás) acordassem um dia com a brilhante ideia de renomear a biblitoeca para Martianizer (já pensando nos nossos amigos marcianos).</p>
+<p>Isso implica que todas as APIs teriam que ser ajustadas, e os projetos renomeados. Nessa biblioteca, o termo <strong>Humanize</strong> está para todo lado. Nos métodos, nomes das classes, namespaces, nomes de arquivos, projeto, solution e arquivos de configuração.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">using</span> System;
+<span style="color:#66d9ef">using</span> System.Collections.Generic;
+<span style="color:#66d9ef">using</span> Humanizer.Configuration;
+
+<span style="color:#66d9ef">namespace</span> Humanizer
+{
+    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// Humanizes an IEnumerable into a human readable list
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CollectionHumanizeExtensions</span>
+    {
+        <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// Formats the collection for display, calling ToString() on each object and
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// using the default separator for the current culture.
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> Humanize&lt;T&gt;(<span style="color:#66d9ef">this</span> IEnumerable&lt;T&gt; collection)
+        {
+            <span style="color:#66d9ef">return</span> Configurator.CollectionFormatter.Humanize(collection);
+        }
+    
+        <span style="color:#75715e">//...
+</span></code></pre></div><p>Para transformar esse projeto no <strong>Martianizer</strong>, bastaria aplicar a seguinte receita:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;replicantName&#34;</span>: <span style="color:#e6db74">&#34;Martianizer&#34;</span>,
+  <span style="color:#f92672">&#34;templateName&#34;</span>: <span style="color:#e6db74">&#34;martianizr-generator&#34;</span>,
+  <span style="color:#f92672">&#34;fileNameReplacements&#34;</span>: [
+    { <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;Human&#34;</span>, <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;Martian&#34;</span> }
+  ],
+  <span style="color:#f92672">&#34;sourceCodeReplacements&#34;</span>: [
+    { <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;HUMAN&#34;</span>, <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;MARTIAN&#34;</span> },
+    { <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;Human&#34;</span>, <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;Martian&#34;</span> },
+    { <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;human&#34;</span>, <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;martian&#34;</span> }
+  ]
+}
+</code></pre></div><p>E os resultados seriam bem promissores. O projeto já nasce correto e compilando:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">using</span> System;
+<span style="color:#66d9ef">using</span> System.Collections.Generic;
+<span style="color:#66d9ef">using</span> Martianizer.Configuration;
+
+<span style="color:#66d9ef">namespace</span> Martianizer
+{
+    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// Martianizes an IEnumerable into a human readable list
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CollectionMartianizeExtensions</span>
+    {
+        <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// Formats the collection for display, calling ToString() on each object and
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// using the default separator for the current culture.
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">string</span> Martianize&lt;T&gt;(<span style="color:#66d9ef">this</span> IEnumerable&lt;T&gt; collection)
+        {
+            <span style="color:#66d9ef">return</span> Configurator.CollectionFormatter.Martianize(collection);
+        }
+
+        <span style="color:#75715e">//...
+</span></code></pre></div><h3 id="tipos-comuns-de-ajuste">Tipos comuns de ajuste</h3>
+<p>Existem várias situações e vários tipos de arquivo que precisamos ajustar para transformar um template num projeto novo, como:</p>
+<ul>
+<li>Arquivos fontes</li>
+<li>Arquivos de configuração</li>
+<li>Arquivos de pipeline de CI/CD</li>
+</ul>
+<p>Todos esses casos podem se beneficiar dessas regras de substituição.</p>
+<h3 id="processamento-de-templates">Processamento de templates</h3>
+<p>O Replicante processa os templates em duas etapas, como podemos ver no diagrama a seguir:</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="seventy-p" src="/posts/artigo-replicante/img/replication-process.jpg" alt="Diagrama mostrando as etapas de processamento de um template" />
+        
+        
+        <figcaption><p>Processamento de um template</p> </figcaption>
+        
+    </figure>
+</div>
+
+<p>Na primeira etapa, ele gera um projeto virtual, em que cada arquivo tem seu caminho transformado num template para processamento posterior, como no exemplo a seguir:</p>
+<p><code>ClienteX/Services/MeuServico</code> -&gt; <code>BurgerKing/Services/MeuServico</code></p>
+<p>Esse passo pode parecer desnecessário à primeira vista, mas é permite a adição de funcionalidades mais avançadas, como o uso de variáveis no template.</p>
+<p>Por exemplo, o nome do replicante é disponibilizado como uma variável <code>&lt;&lt;: name :&gt;&gt;</code>, e pode ser usado assim:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;replicantName&#34;</span>: <span style="color:#e6db74">&#34;BurgerKing&#34;</span>,
+  <span style="color:#f92672">&#34;fileNameReplacements&#34;</span>: [
+      { <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;ClienteX&#34;</span>, <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;&lt;&lt;: name :&gt;&gt;&#34;</span> }
+  ],
+  <span style="color:#f92672">&#34;sourceCodeReplacements&#34;</span>: [
+      { <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;ClienteX&#34;</span>, <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;&lt;&lt;: name :&gt;&gt;&#34;</span> }
+  ]
+}
+</code></pre></div><p>Além da variável <code>&lt;&lt;: name :&gt;&gt;</code>, também há outras variações, como <code>nameLower</code>, <code>nameUpper</code>, entre outras.</p>
+<p>No momento, estas são as únicas variáveis suportadas, mas no futuro outras podem ser adicionadas, como datas, por exemplo.</p>
+<p>Por fim, na segunda etapa, estas variáveis são substituídas por seus valores finais, permitindo a cópia dos arquivos para o destino final.</p>
+<p>Uma vez copiados, são aplicadas as regras de substituição de conteúdo nesses arquivos.</p>
+<p>Por fim, os arquivos estáticos são copiados para lá.</p>
+<h3 id="qualquer-projeto-é-um-template">Qualquer projeto é um template</h3>
+<p>Dada a natureza de funcionamento do Replicante, criar um template pode até ser desnecessário.</p>
+<p>Uma alternativa passa a ser copiar um projeto anterior, provavelmente o mais parecido com o que desejamos criar, e modificá-lo a partir daí. Ou seja, <strong>qualquer projeto pode servir como template</strong>.</p>
+<p>Basta entender quais termos precisamos ajustar, criar uma receita, e aplicar.</p>
+<h3 id="templates-vivos">Templates vivos</h3>
+<p>Uma abordagem que podemos facilitando adotar, é a criação de uma aplicação template. Esta aplicação pode então servir de base para a criação de outras.</p>
+<p>Mas ela não é apenas um template, mas o que eu chamo de <strong>template vivo</strong>, que possui todos os testes automatizados necessários, com exemplos de implementação dos principais recursos, pipeline de CI/CD, análise estática de código, com ferramentas como SonarQube, por exemplo, e documentação.</p>
+<p>Já está claro neste ponto, que qualquer aplicação pode servir como um template vivo, mas criar uma aplicação exclusivamente com este propósito pode ser uma boa ideia. Tudo vai depender do cenário.</p>
+<h2 id="finalizando">Finalizando</h2>
+<p>O Replicante pode ser instalado via NPM usando o comando <code>npm i -g replicante</code>, e o comando de ajuda vai te guiar pelo processo.</p>
+<p>Implementar essa ferramenta me trouxe vários aprendizados, entre eles, a humildade de admitir que as vezes a gente realmente faz esses CTRL+C, CTRL+V descarados para ganhar tempo.</p>
+<p>Já integrei o replicante num pipeline do Azure DevOps para criar gerar novos microserviços com base em um template de <a href="/posts/artigo-arquitetura-gritante">Arquitetura Limpa</a>, e funciona lindamente.</p>
+
+  </div>
+  <style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+position: relative;
+text-align: left;
+height: 36px;
+width: 32px;
+float: left;
+text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="color: silver;">Compartilhe: </span><div id="share-buttons">
+<div class="facebook" title="Compartilhe no Facebook" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-replicante\/', 'sharer', 'width=626,height=436');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+<div class="twitter" title="Compartilhe no Twitter" onclick="window.open('http://twitter.com/share?text=Acelerando a criação de aplicações e serviços com Replicante&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-replicante\/&hashtags=replicante,gluegun,processador-de-templates');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+<div class="linkedin" title="Compartilhe no Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-replicante\/&title=Acelerando a criação de aplicações e serviços com Replicante', 'sharer', 'width=626,height=700');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+<div class="mail" title="Compartilhe por Email" onclick="window.open('mailto:?&body=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-replicante\/');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/artigo-criando-uma-cli-com-gluegun/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Criando uma CLI com Gluegun</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'blogdyegomaas';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111956442-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/json.min.js"></script>
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/csharp.min.js"></script>
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/bash.min.js"></script>
+            
+        
+    <script type="text/javascript">
+        
+        hljs.configure({languages: ["json, csharp, bash"]});
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>
