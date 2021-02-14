@@ -20,7 +20,7 @@
       <guid>https://blog.dyegomaas.com.br/posts/artigo-replicante/</guid>
       <description>Neste artigo, pretendo apresentar uma nova ferramenta para facilitar a geração de projetos a partir de templates. Um processador de templates chamado Replicante. Meu primeiro projeto open-source.
 Nos parágrafos abaixo, vou tentar explicar as motivações que me levaram a implementar esse projeto, e como ele pode ser usado para facilitar a vida em algumas tarefas banais que acabam consumindo nosso tempo.
-CTRL+C, CTRL+V De vez em quando temos que começar um novo projeto de software.</description>
+CTRL+C, CTRL+V Plus De vez em quando temos que começar um novo projeto de software.</description>
 
       
       
