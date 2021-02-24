@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+    
+
+
+    <head itemscope itemtype="https://blog.dyegomaas.com.br/">
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/blog.dyegomaas.com.br\/"
+    },
+    "articleSection" : "posts",
+    "name" : "Acelerando desenvolvimento para Kubernetes com Tilt",
+    "headline" : "Acelerando desenvolvimento para Kubernetes com Tilt",
+    "description" : "Neste artigo, apresento um overview de como a ferramenta Tilt pode acelerar o loop de desenvolvimento de apps com Kubernetes usando um cluster K8s local.",
+    "inLanguage" : "pt-BR",
+    "author" : {
+        "@type": "Person",
+        "name": "Dyego Maas"
+    }, 
+    "creator" : "Dyego Maas",
+    "publisher": "Dyego Maas",
+    "accountablePerson" : "Dyego Maas",
+    "copyrightHolder" : "Dyego Maas",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-02-24",
+    "dateModified" : "2021-02-24",
+    "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/artigo-tilt\/",
+    "wordCount" : "1733",
+    "keywords" : [ "Kubernetes","tilt","kubernetes","dev","kind","Blog"]
+}
+</script>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+<meta name="yandex-verification" content="20d83aeccd3b80c2" />
+<base href="https://blog.dyegomaas.com.br/posts/artigo-tilt/">
+<meta name="generator" content="Hugo 0.69.0" />
+
+    
+    
+    
+
+<title itemprop="name">Acelerando desenvolvimento para Kubernetes com Tilt - Blog Dyego Maas</title>
+<meta property="description" content="Neste artigo, apresento um overview de como a ferramenta Tilt pode acelerar o loop de desenvolvimento de apps com Kubernetes usando um cluster K8s local." />
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+
+
+<meta name="keywords" content="tilt,kubernetes,dev,kind" />
+<link rel="canonical" href="https://blog.dyegomaas.com.br/posts/artigo-tilt/" itemprop="url" />
+<meta name="url" content="https://blog.dyegomaas.com.br/posts/artigo-tilt/" />
+<meta property="og:site_name" content="Blog - Dyego Maas" />
+<meta property="og:title" content="Acelerando desenvolvimento para Kubernetes com Tilt" />
+<meta property="twitter:title" content="Acelerando desenvolvimento para Kubernetes com Tilt" />
+<meta property="og:description" content="Neste artigo, apresento um overview de como a ferramenta Tilt pode acelerar o loop de desenvolvimento de apps com Kubernetes usando um cluster K8s local." />
+<meta property="twitter:description" content="Neste artigo, apresento um overview de como a ferramenta Tilt pode acelerar o loop de desenvolvimento de apps com Kubernetes usando um cluster K8s local." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.dyegomaas.com.br/posts/artigo-tilt/" /><meta property="og:image" content="/posts/artigo-tilt/img/cover.jpg"/>
+<meta property="og:image:secure_url" content="https://blog.dyegomaas.com.br/posts/artigo-tilt/img/cover.jpg"/>
+<meta property="twitter:image" content="https://blog.dyegomaas.com.br/posts/artigo-tilt/img/cover.jpg"/>
+<meta property="article:published_time" content="2021-02-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-02-24T00:00:00+00:00" />
+<meta property="article:section" content="posts" />
+
+<meta property="article:tag" content="Kubernetes" />
+
+<meta property="article:tag" content="tilt" /><meta property="article:tag" content="kubernetes" /><meta property="article:tag" content="dev" /><meta property="article:tag" content="kind" />
+
+
+<meta name="theme-color" content="#000000" />
+<meta name="msapplication-TileColor" content="#000000" />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="Blog - Dyego Maas" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" />
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" crossorigin="anonymous" media="print">
+
+
+<link rel="stylesheet" href="/css/custom.69cb553f8fdb841923fb0042f13bb1a617b61a9c30b020d16fa9175995e8c089.css" integrity="sha256-actVP4/bhBkj&#43;wBC8Tuxphe2GpwwsCDRb6kXWZXowIk=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/overrides.188421855fb48cd44e36b22976f3f17f4c4322978c83b5ef92a1c8604e1772f7.css" integrity="sha256-GIQhhV&#43;0jNRONrIpdvPxf0xDIpeMg7XvkqHIYE4Xcvc=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/modal.3f2d773b192584d4c72931c90be47bfbc2296a638ed5354962252cab96b3dbb3.css" integrity="sha256-Py13OxklhNTHKTHJC&#43;R7&#43;8IpamOO1TVJYiUsq5az27M=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/custom.00a459a45b15f15264ad8c74e629bb18f62c704f8efe4b1adc01239e99f08202.css" integrity="sha256-AKRZpFsV8VJkrYx05im7GPYscE&#43;O/ksa3AEjnpnwggI=" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=" crossorigin="anonymous">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js" defer></script>
+<script src="https://unpkg.com/lunr/lunr.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.pt.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" defer></script>
+
+<script src="/js/layout-adjustments.js" defer></script><script src="/js/custom-search.js" defer></script>
+
+<script async>
+  document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+      adjustLayout();
+      initializeSearch('/search-index.json', '/search-data-companion.json');
+   }
+ }
+</script>
+</head>
+
+    <body class=" ">
+    
+<div class="sidebar">
+    <div class="container ">
+      <div class="sidebar-about">
+        <span class="site__title">
+          <a href="https://blog.dyegomaas.com.br/">Blog Dyego Maas</a>
+        </span>
+        
+          
+          
+          
+          <div class="author-image">
+            <img src="https://blog.dyegomaas.com.br/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+          </div>
+          
+        
+        
+        <p class="site__description">
+           Arquiteto de software e Escritor 
+        </p>
+      </div>
+      <div class="collapsible-menu">
+        <input type="checkbox" id="menuToggle">
+        <label for="menuToggle">Blog Dyego Maas</label>
+        <div class="menu-content">
+          <div>
+	<ul class="sidebar-nav">
+		
+		
+			 
+				<li>
+					<a href="/posts/">
+						<span>Blog</span>
+					</a>
+				</li>
+			
+		
+		<li>
+			<a href="https://dyegomaas.com.br/">
+				<span>Sobre<span>
+			</a>
+		</li>
+		<li>
+			<a id="search-button" rel="search" style="cursor: pointer;">
+    <i class="fa fa-search" aria-hidden="true"></i>
+</a>
+
+<div id="search-results-modal" class="modal display-none">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close">&times;</span>
+        <h2>O que você procura?</h2>
+      </div>
+      <div class="modal-body">
+        <input type="search" id="search-input" results="10" placeholder="Pesquisar... (pressione Enter)">
+        <div>
+            <ul id="search-results"></ul>
+        </div>
+      </div>
+      
+    </div>
+</div>
+		</li>
+	</ul>
+</div>
+
+          <section class="social">
+	
+	<a href="https://twitter.com/DyegoMaas" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/DyegoAlekssander" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/Dyegomaas" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/dyego-maas" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:dyego.maas@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="index.xml" rel="me"><i class="fas fa-rss fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+          
+<div class="sponsored-image-container">
+    
+    <img src="" class="sponsored-image">
+    
+</div>
+
+        </div>
+      </div>
+      
+
+
+    </div>
+  </div>
+  
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>Acelerando desenvolvimento para Kubernetes com Tilt</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 24
+
+
+  
+
+  
+    Fev, 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+2021
+    
+    
+    
+      
+      
+          em
+          
+          
+              <a class="badge badge-category" href="/categories/kubernetes">KUBERNETES</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/tilt">tilt</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/kubernetes">kubernetes</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/dev">dev</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/kind">kind</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 9 min de leitura
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Tabela de Conteúdo</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  <div class="post">
+    <p><strong>É fácil testar localmente uma aplicação destinada a rodar num cluster Kubernetes?</strong></p>
+<p>Na maioria dos casos a resposta é não, e o motivo é simples: o Kubernetes é uma plataforma especialmente adequada para a arquitetura de microserviços, e microserviços geralmente vivem num ecossistema complexo, em meio a outros serviços, <em>load balancers</em>, <em>ingress</em>, mecanismos de <em>auto-scaling</em> e muito mais.</p>
+<p>Testar um serviço ou alguns poucos serviços localmente pode ser feito facilmente com o auxílio do Docker Compose, mas a verdade é que este &ldquo;ambiente local&rdquo; não é nada parecido com a realidade de um cluster Kubernetes.</p>
+<p>Se os nossos manifestos Kubernetes tiverem erros, é muito provável que só descubramos esse erro ao tentar fazer deploy de uma versão num cluster de testes. E o mesmo vale para templates escritos com as ferramentas Helm ou Skaffold.</p>
+<p><strong>Mas e se testar apps para Kubernetes localmente fosse fácil? E se fosse uma experiência agradável e super produtiva?</strong></p>
+<p>Essa é a proposta do <a href="https://tilt.dev">Tilt</a>.</p>
+<h2 id="tilt">Tilt</h2>
+<p>O Tilt é uma ferramenta de produtividade para desenvolvimento de apps para Kubernetes. E a proposta é bastante interessante: reinventar a experiência de desenvolver com Kubernetes, tomando vantagem das suas potencialidades de maneiras inovadoras.</p>
+<p>Assim como o <a href="https://garden.io">Garden</a>, o Tilt permite a criação de workflows de desenvolvimento em ambientes Kubernetes individuais para cada desenvolvedor. Mas diferente do Garden, que tem o foco em clusters remoto, o time por trás do Tilt dá ênfase facilitar a configuração e uso de um <strong>cluster local</strong> para desenvolvimento.</p>
+<h3 id="tiltfile">Tiltfile</h3>
+<p>Os workflows do Tilt são definidos em arquivos chamados <code>Tiltfile</code>, e escritos em <a href="https://github.com/bazelbuild/starlark">Starlark</a>, um subset do Python originalmente criado para o sistema de build <a href="https://bazel.build">Bazel</a>, e frequentemente utilizado como <strong>linguagem de configuração</strong>.</p>
+<p>O time do Tilt desenvolveu uma <a href="https://pt.wikipedia.org/wiki/Linguagem_de_dom%C3%ADnio_espec%C3%ADfico">DSL</a> (linguagem de domínio específico) desenhada para facilitar a criação desses workflows.</p>
+<p>A seguir vamos explorar rapidamente um exemplo da própria documentação do Tilt: uma simples aplicação WebAPI implementada em C#, que pode ser <a href="https://github.com/tilt-dev/tilt-example-csharp/blob/master/0-base">encontrada aqui</a>.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-tilt/img/example-0_file-tree.png" alt="Árvore de arquivos de uma solução .NET, com um arquivo hello-tilt.sln na raiz, e um Tiltfile" />
+        
+        
+        <figcaption><p>Árvore de arquivos do exemplo</p> </figcaption>
+        
+    </figure>
+</div>
+
+<p>Para que o Tilt seja capaz de rodar esta simples aplicação no nosso cluster, primeiro precisamos informar alguns detalhes importantes, como pode ser visto no <em>Tiltfile</em> abaixo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">docker_build(<span style="color:#e6db74">&#39;hello-tilt&#39;</span>, <span style="color:#e6db74">&#39;./hello-tilt&#39;</span>)
+k8s_yaml(<span style="color:#e6db74">&#39;kubernetes.yaml&#39;</span>)
+k8s_resource(<span style="color:#e6db74">&#39;hello-tilt&#39;</span>, port_forwards<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;8080:80&#39;</span>)
+</code></pre></div><p>Primeiro, precisamos declarar o contexto de build do Docker. Como podemos ver na árvore de arquivos mais acima, o Dockerfile fica na pasta <code>hello-tilt</code>, então esse é o contexto que declaramos com o comando <code>docker_build</code>.</p>
+<p>Em seguida, com o comando <code>k8s_yaml</code> podemos declarar o manifesto Kubernetes que o Tilt deve aplicar no cluster. Como podemos ver abaixo, o conteúdo do arquivo <code>kubernetes.yaml</code> declara um Deployment:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">apiVersion</span>: apps/v1
+<span style="color:#66d9ef">kind</span>: Deployment
+<span style="color:#66d9ef">metadata</span>:
+  <span style="color:#66d9ef">name</span>: hello-tilt
+<span style="color:#66d9ef">spec</span>:
+  <span style="color:#66d9ef">selector</span>:
+    <span style="color:#66d9ef">matchLabels</span>:
+      <span style="color:#66d9ef">app</span>: hello-tilt
+  <span style="color:#66d9ef">replicas</span>: <span style="color:#ae81ff">1</span>
+  <span style="color:#66d9ef">template</span>:
+    <span style="color:#66d9ef">metadata</span>:
+      <span style="color:#66d9ef">labels</span>:
+        <span style="color:#66d9ef">app</span>: hello-tilt
+    <span style="color:#66d9ef">spec</span>:
+      <span style="color:#66d9ef">containers</span>:
+      - <span style="color:#66d9ef">name</span>: hello-tilt
+        <span style="color:#66d9ef">image</span>: hello-tilt
+        <span style="color:#66d9ef">ports</span>:
+        - <span style="color:#66d9ef">containerPort</span>: <span style="color:#ae81ff">80</span>
+</code></pre></div><p>Por fim, usando o comando <code>k8s_resource</code>, dizemos para o Tilt que, dos recursos criados dentro do cluster, estamos interessados no recurso chamado <code>hello-tilt</code>.</p>
+<p><strong>Certo, mas o que o Tilt vai fazer com todas essas informações?</strong></p>
+<p>Vamos rodar o comando <code>tilt up</code> e descobrir.</p>
+<h3 id="a-ui-mágica-do-tilt">A UI mágica do Tilt</h3>
+<p>Assim que rodamos o comando, nos deparamos com este menu:</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-tilt/img/example-0_tilt-up.png" alt="Menu inicial do Tilt, com as opções para abrir a UI no browser, no console, ou fazer stream dos logs" />
+        
+        
+    </figure>
+</div>
+
+<p>Pressionando a tecla <code>espaço</code>, o Tilt abre uma UI bem bacana:</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-tilt/img/example-0_tilt-ui.png" alt="Tela inicial do Tilt, mostrando que os recursos Tiltfile e hello-tilt foram processados com sucesso" />
+        
+        
+    </figure>
+</div>
+
+<p>Clicando sobre um recurso, podemos ver mais detalhes sobre ele:</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="seventy-p" src="/posts/artigo-tilt/img/example-0_resource-details.png" alt="Detalhes do recurso hello-tilt, incluindo URL e nome do pod" />
+        
+        
+    </figure>
+</div>
+
+<p>E os logs de tudo que está rodando lá dentro, é fácil de ver? Sim. O Tilt não apenas exibe os logs dos contêineres rodando no cluster, como também formata  de forma fácil de entender cada etapa de build da imagem docker, colore os logs por nível de severidade e indenta tudo de forma fácil de ler.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-tilt/img/example-0_logs.png" alt="Logs do container" />
+        
+        
+    </figure>
+</div>
+
+<p>E é aqui que as coisas começam a ficar interessantes. Cada recurso declarado nos nossos tiltfiles podem ser disparados manualmente através da interface:</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-tilt/img/example-0_run-button.png" alt="Botão para disparar manualmente um recurso declarado no Tiltfile" />
+        
+        
+    </figure>
+</div>
+
+<p>Podemos verificar que tudo está rodando corretamente no Kubernetes usando o comando <code>kubectl get all</code>:</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-tilt/img/example-0_kubectl-get-all.png" alt="Listagem dos pods, deployments e replica set do hello-tilt" />
+        
+        
+    </figure>
+</div>
+
+<p>E acessando <code>http://localhost:8080</code> no navegador, podemos verificar que o serviço está rodando corretamente:</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-tilt/img/example-0_localhost.png" alt="Página escrito Hello Cats!" />
+        
+        
+    </figure>
+</div>
+
+<p>Na próxima seção, vamos explorar formas de montar workflows avançados. Vamos rodar scripts localmente, e até implementar um live update de backend C#!</p>
+<h3 id="live-update-de-backend-c-ou-go-java-c-etc">Live update de backend C#? (ou Go, Java, C++, etc)</h3>
+<p><strong>Live update do backend para linguagens compiladas</strong> costuma ser algo bastante difícil de concretizar, e por isso não faz parte do dia-a-dia da maioria dos desenvolvedores.</p>
+<p>Mas o Tilt oferece recursos para mudarmos essa realidade, e tudo começa com o conceito de <em>recursos locais</em>.</p>
+<p>Assim como declaramos para o Tilt os recursos que nos interessam no cluster Kubernetes através do comando <code>k8s_resource</code>, também podemos declarar <strong>recursos locais</strong>. Para visualizar isso, vou utilizar um <a href="https://github.com/tilt-dev/tilt-example-csharp/tree/master/3-live-update">exemplo mais avançado da documentação do Tilt</a>.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-tilt/img/example-3_file-tree.png" alt="Árvore de arquivos do projeto, semelhante ao anterior, mas com a adição de um script Python" />
+        
+        
+        <figcaption><p>Árvore de arquivos do exemplo avançado</p> </figcaption>
+        
+    </figure>
+</div>
+
+<h4 id="recursos-locais">Recursos locais</h4>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-tilt/img/example-3_resources.png" alt="Recursos do exemplo avançado, listando Tiltfile, hello-tilt, deploy e build" />
+        
+        
+        <figcaption><p>Árvore de arquivos do exemplo avançado</p> </figcaption>
+        
+    </figure>
+</div>
+
+<p>Como podemos ver na imagem acima, este exemplo avançado inclui dois novos recursos, listados como &ldquo;Local Script&rdquo;.</p>
+<p>Esses recursos permitem a execução de scripts locais, tanto através da interface no navegador, quando como parte de uma árvore de build.</p>
+<p>Esses recursos são declarados com o comando <code>local_resource</code>, como no exemplo abaixo:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">local_resource(
+    <span style="color:#e6db74">&#39;deploy&#39;</span>,
+    <span style="color:#e6db74">&#39;python ./record-start-time.py&#39;</span>,
+    deps<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;./record-start-time.py&#39;</span>],
+)
+</code></pre></div><p>No exemplo acima, declaramos um recurso chamado &ldquo;deploy&rdquo;, que executa um script python presente na raiz do projeto. O parâmetro <code>deps</code> indica que o Tilt deve observar mudanças no arquivo <code>record-start-time.py</code>, e caso ele mude, disparar automaticamente o script.</p>
+<p>O parâmetro <code>deps</code> é opcional, e se omitido, o recurso ainda poderá ser executado manualmente ou como parte da árvore de build. Só não vai executar automaticamente.</p>
+<p>Se observarmos o Tiltfile deste exemplo avançado, nos deparamos com alguns conceitos novos:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- mode: Python -*-</span>
+
+<span style="color:#75715e"># For more on Extensions, see: https://docs.tilt.dev/extensions.html</span>
+load(<span style="color:#e6db74">&#39;ext://restart_process&#39;</span>, <span style="color:#e6db74">&#39;docker_build_with_restart&#39;</span>)
+
+local_resource(
+    <span style="color:#e6db74">&#39;deploy&#39;</span>,
+    <span style="color:#e6db74">&#39;python ./record-start-time.py&#39;</span>,
+    deps<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;./record-start-time.py&#39;</span>],
+)
+
+local_resource(
+    <span style="color:#e6db74">&#39;build&#39;</span>,
+    <span style="color:#e6db74">&#39;dotnet publish -c Release -o out&#39;</span>,
+    deps<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;hello-tilt&#39;</span>],
+    ignore<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;hello-tilt/obj&#39;</span>],
+    resource_deps<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;deploy&#39;</span>],
+)
+
+docker_build_with_restart(
+    <span style="color:#e6db74">&#39;hello-tilt&#39;</span>,
+    <span style="color:#e6db74">&#39;out&#39;</span>,
+    entrypoint<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;dotnet&#39;</span>, <span style="color:#e6db74">&#39;hello-tilt.dll&#39;</span>],
+    dockerfile<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Dockerfile&#39;</span>,
+    live_update<span style="color:#f92672">=</span>[
+        sync(<span style="color:#e6db74">&#39;out&#39;</span>, <span style="color:#e6db74">&#39;/app/out&#39;</span>),
+    ],
+)
+
+k8s_yaml(<span style="color:#e6db74">&#39;kubernetes.yaml&#39;</span>)
+k8s_resource(<span style="color:#e6db74">&#39;hello-tilt&#39;</span>, port_forwards<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;8080:80&#39;</span>, resource_deps<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;build&#39;</span>])
+</code></pre></div><p>O segundo <code>local_resource</code>, o &ldquo;build&rdquo;, publica a aplicação web numa pasta &ldquo;out&rdquo; rodando o comando <code>dotnet publish</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">local_resource(
+    <span style="color:#e6db74">&#39;build&#39;</span>,
+    <span style="color:#e6db74">&#39;dotnet publish -c Release -o out&#39;</span>,
+    deps<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;hello-tilt&#39;</span>],
+    ignore<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;hello-tilt/obj&#39;</span>],
+    resource_deps<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;deploy&#39;</span>],
+)
+</code></pre></div><p>Podemos ver através do parâmetro <code>deps</code> que ele vai executar automaticamente sempre que algo mudar dentro da pasta &ldquo;hello-tilt&rdquo;. Ou seja, sempre que o desenvolvedor mudar algo na aplicação, o recurso &ldquo;build&rdquo; será executado automaticamente.</p>
+<p>O Tilt também é instruído a ignorar artefatos binários gerados na pasta &ldquo;hello-tilt/obj&rdquo;, a fim de evitar atualizações desnecessárias.</p>
+<p>E um parâmetro muito importante aqui é o <code>resource_deps</code>. Ele indica que o recurso &ldquo;build&rdquo; depende do recurso &ldquo;deploy&rdquo;, o que implica uma <strong>cadeia de execução</strong>: sempre que o recurso &ldquo;deploy&rdquo; for executado, o recurso &ldquo;build&rdquo; deve ser executado na sequência.</p>
+<p>Essas cadeias de execução estão presentes em todas as ferramentas de build, como MSBuild, Maven, Make, Fake e Bazel.</p>
+<p>Ao inspecionar o Tiltfile, podemos ver que há duas declarações de dependência de recurso:</p>
+<ul>
+<li>&ldquo;build&rdquo; depende de &ldquo;deploy&rdquo;</li>
+<li>&ldquo;hello-tilt&rdquo; depende de &ldquo;build&rdquo;</li>
+</ul>
+<p>Esta configuração implica a seguinte cadeia de execução:</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-tilt/img/example-3_dependency-tree.png" alt="Roda primeiro deploy, depois build, depois hello-tilt" />
+        
+        
+    </figure>
+</div>
+
+<p>E como podemos ver na imagem abaixo, ao clicar em deploy, toda a cadeia é executada, como esperado:</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-tilt/img/example-3_execution-sequence.jpg" alt="hello-tilt executando pendente de executar quando build terminar" />
+        
+        
+    </figure>
+</div>
+
+<h4 id="atualizando-os-pods-rapidamente-com-live-updates">Atualizando os pods rapidamente com live updates</h4>
+<p>O último elemento que faltou analisar é o comando <code>docker_build_with_restart</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">docker_build_with_restart(
+    <span style="color:#e6db74">&#39;hello-tilt&#39;</span>,
+    <span style="color:#e6db74">&#39;out&#39;</span>, <span style="color:#75715e"># contexto de sincronização</span>
+    entrypoint<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;dotnet&#39;</span>, <span style="color:#e6db74">&#39;hello-tilt.dll&#39;</span>],
+    dockerfile<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;Dockerfile&#39;</span>,
+    live_update<span style="color:#f92672">=</span>[
+        sync(<span style="color:#e6db74">&#39;out&#39;</span>, <span style="color:#e6db74">&#39;/app/out&#39;</span>),
+    ],
+)
+</code></pre></div><p>Como pode ser visto no começo do script, este comando é importado de uma extensão do Tilt:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">load(<span style="color:#e6db74">&#39;ext://restart_process&#39;</span>, <span style="color:#e6db74">&#39;docker_build_with_restart&#39;</span>)
+</code></pre></div><p>O que ele permite fazer, é atualizar o container Docker mais rapidamente. E para isso, o Tilt dispõe de um mecanismo bastante interessante: cada pod criado através do Tilt recebe um sidecar chamado Synclet.</p>
+<p>Este Synclet pode <strong>atualizar o conteúdo de contêineres existentes</strong>, sem a necessidade de iniciar novos pods. Assim, o <strong>pod é atualizado em segundos</strong>, ao invés de minutos.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-tilt/img/pod-updated-in-seconds.jpg" alt="hello-tilt atualizado em 0,2 segundos depois do build local" />
+        
+        
+    </figure>
+</div>
+
+<p>Então, o comando <code>docker_build_with_restart</code> é executado quando a pasta &ldquo;out&rdquo; for atualizada. Como vimos mais acima, o recurso &ldquo;build&rdquo; publica a aplicação web na pasta out.</p>
+<p>Como podemos ver abaixo, o Dockerfile desta aplicação copia o diretório para a pasta /app/out:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-dockerfile" data-lang="dockerfile"><span style="color:#66d9ef">FROM</span><span style="color:#e6db74"> mcr.microsoft.com/dotnet/core/aspnet:3.1-alpine</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . /app/out<span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span><span style="color:#e6db74"> /app/out</span><span style="color:#960050;background-color:#1e0010">
+</span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">ENTRYPOINT</span> [<span style="color:#e6db74">&#34;dotnet&#34;</span>, <span style="color:#e6db74">&#34;hello-tilt.dll&#34;</span>]<span style="color:#960050;background-color:#1e0010">
+</span></code></pre></div><p>O parâmetro <code>live_update</code> determina que a pasta &ldquo;out&rdquo; gerada pelo &ldquo;build&rdquo; seja sincronizada dentro no pod, na pasta &ldquo;app/out&rdquo;.</p>
+<p>E por fim, após sincronizar os arquivos, ele vai sobrescrever o entrypoint do container, efetivamente reiniciando a aplicação quase que instantaneamente.</p>
+<p>Vale notar que a extensão <code>docker_build_with_restart</code> só é necessária se houver necessidade de reiniciar a aplicação após atualizar os arquivos, como é o caso da maioria das linguagens de programação compiladas. Mas num projeto com linguagens interpretadas, como NodeJS ou Python, podemos usar o próprio comando <code>docker_build</code> com o parâmetro <code>live_reload</code> e obter o mesmo resultado.</p>
+<h3 id="erros-de-compilação">Erros de compilação</h3>
+<p>Se eu remover o &ldquo;;&rdquo; de um comando C# como este abaixo, em menos de dois segundos o painel do Tilt vai identificar o problema:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> DateTime end = DateTime.Now; <span style="color:#75715e">// &lt;- este &#34;;&#34; aqui
+</span></code></pre></div>
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-tilt/img/example-3_build-error.jpg" alt="O recurso build aparece com status de erro na UI, e ao lado, o log de erro do C#, devidamente formato para fácil leitura" />
+        
+        
+    </figure>
+</div>
+
+<p>Corrigindo o problema, rapidamente, e o pod é atualizado:</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-tilt/img/example-3_build-success.jpg" alt="Tudo verde novamente" />
+        
+        
+    </figure>
+</div>
+
+<h2 id="pensamentos-finais">Pensamentos finais</h2>
+<blockquote>
+<p>O Tilt como ferramenta, é fantástico. Permite criar workflows dinâmicos e acelera o loop de feedback de desenvolvimento.</p>
+</blockquote>
+<h3 id="pontos-de-atenção">Pontos de atenção</h3>
+<p>Em primeiro lugar, rodar um cluster Kubernetes localmente pode consumir muitos recursos de máquina, e a escolha do cluster pode influenciar bastante esta questão.</p>
+<p>Já testei o MiniKube, o K3d e o Kind. O Kind, em particular, é o meu preferido: fácil de usar, e suficientemente leve para usar no notebook do trabalho.</p>
+<p>No entanto, para que tudo rode rapidamente, precisamos de um registry do Docker local. E num projeto real, as imagens podem consumir disco rapidamente. Já me aconteceu de o registro do Docker alcançar 50GB e acabar o espaço em disco, corrompendo o cluster.</p>
+<p>Mas se espaço em disco e memória não forem um problema, vá em frente e teste. Vale a pena.</p>
+<h3 id="configurando-um-cluster-local">Configurando um cluster local</h3>
+<p>Se você tiver interesse de ver como fiz a configuração de um cluster Kind local, <a href="/posts/artigo-criando-um-cluster-k8s-local-com-kind">confira este outro artigo</a>, onde eu mostro em detalhes como configurar o ambiente.</p>
+<h3 id="docker-registries-privados">Docker registries privados</h3>
+<p>Ao desenvolver um Tiltfile para uma aplicação real, muitas vezes as imagens Docker dos nossos serviços vão depender de uma imagem base armazenada num registry privado que exige autenticação.</p>
+<p>Nesses casos, podemos tentar configurar essas credenciais no nosso cluster, mas não cheguei a explorar esta opção, pois parece bem difícil.</p>
+<p>Ao invés disso, podemos carregar a imagem base de duas formas:</p>
+<ol>
+<li>Carregando a imagem no cluster: no caso do Kind, podemos rodar o comando <code>kind load docker-image &lt;nome-imagem-base:tag&gt;</code></li>
+<li>Fazendo um push para o <em>local registry</em> usando o comando <code>docker push localhost:&lt;porta-registry&gt;/nome-imagem-base:tag</code></li>
+</ol>
+<h3 id="ganhos-de-produtividade">Ganhos de produtividade</h3>
+<p>Para mim, o loop de feedback mais rápido que um workflow com Tilt pode proporcionar já justifica investir tempo em ao menos testar a ferramenta.</p>
+
+  </div>
+  <style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+position: relative;
+text-align: left;
+height: 36px;
+width: 32px;
+float: left;
+text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="color: silver;">Compartilhe: </span><div id="share-buttons">
+<div class="facebook" title="Compartilhe no Facebook" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-tilt\/', 'sharer', 'width=626,height=436');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+<div class="twitter" title="Compartilhe no Twitter" onclick="window.open('http://twitter.com/share?text=Acelerando desenvolvimento para Kubernetes com Tilt&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-tilt\/&hashtags=tilt,kubernetes,dev,kind');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+<div class="linkedin" title="Compartilhe no Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-tilt\/&title=Acelerando desenvolvimento para Kubernetes com Tilt', 'sharer', 'width=626,height=700');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+<div class="mail" title="Compartilhe por Email" onclick="window.open('mailto:?&body=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-tilt\/');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/artigo-criando-um-cluster-k8s-local-com-kind/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Criando um cluster K8s local com Kind</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'blogdyegomaas';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111956442-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/yaml.min.js"></script>
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/python.min.js"></script>
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/cs.min.js"></script>
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/dockerfile.min.js"></script>
+            
+        
+    <script type="text/javascript">
+        
+        hljs.configure({languages: ["yaml, python, cs, dockerfile"]});
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>

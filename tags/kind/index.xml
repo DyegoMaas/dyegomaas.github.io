@@ -7,10 +7,33 @@
     <description>Recent content in kind on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 17 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/tags/kind/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Acelerando desenvolvimento para Kubernetes com Tilt</title>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-tilt/</link>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-tilt/</guid>
+      <description>É fácil testar localmente uma aplicação destinada a rodar num cluster Kubernetes?
+Na maioria dos casos a resposta é não, e o motivo é simples: o Kubernetes é uma plataforma especialmente adequada para a arquitetura de microserviços, e microserviços geralmente vivem num ecossistema complexo, em meio a outros serviços, load balancers, ingress, mecanismos de auto-scaling e muito mais.
+Testar um serviço ou alguns poucos serviços localmente pode ser feito facilmente com o auxílio do Docker Compose, mas a verdade é que este &amp;ldquo;ambiente local&amp;rdquo; não é nada parecido com a realidade de um cluster Kubernetes.</description>
+
+      
+      
+      
+      
+      
+        
+        
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-tilt/img/cover.jpg" type="image/png"/>      
+    </item>
     
     <item>
       <title>Criando um cluster K8s local com Kind</title>

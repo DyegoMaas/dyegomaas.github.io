@@ -7,7 +7,7 @@
     <description>Recent content in Categories on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 17 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Kubernetes</title>
       <link>https://blog.dyegomaas.com.br/categories/kubernetes/</link>
-      <pubDate>Wed, 17 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/categories/kubernetes/</guid>
       <description></description>
