@@ -7,7 +7,7 @@
     <description>Recent content in Tags on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 24 Feb 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Apr 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,9 +15,25 @@
     <item>
       <title>dev</title>
       <link>https://blog.dyegomaas.com.br/tags/dev/</link>
-      <pubDate>Wed, 24 Feb 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/dev/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>tech talk</title>
+      <link>https://blog.dyegomaas.com.br/tags/tech-talk/</link>
+      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/tech-talk/</guid>
       <description></description>
 
       

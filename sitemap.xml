@@ -3,22 +3,47 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/posts/artigo-tilt/</loc>
-    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.dyegomaas.com.br/</loc>
-    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.dyegomaas.com.br/categories/</loc>
-    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.dyegomaas.com.br/tags/dev/</loc>
+    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/posts/</loc>
+    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/</loc>
+    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/categories/team-building/</loc>
+    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/tech-talk/</loc>
+    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/posts/artigo-construindo-um-time-que-nao-tem-medo-de-aprender-e-ensinar/</loc>
+    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/posts/artigo-tilt/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url>
   
@@ -34,16 +59,6 @@
   
   <url>
     <loc>https://blog.dyegomaas.com.br/tags/kubernetes/</loc>
-    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.dyegomaas.com.br/posts/</loc>
-    <lastmod>2021-02-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.dyegomaas.com.br/tags/</loc>
     <lastmod>2021-02-24T00:00:00+00:00</lastmod>
   </url>
   
