@@ -4,31 +4,56 @@
   
   <url>
     <loc>https://blog.dyegomaas.com.br/tags/ambev-tech/</loc>
-    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.dyegomaas.com.br/</loc>
-    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.dyegomaas.com.br/categories/</loc>
-    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/tags/dev/</loc>
-    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
+    <loc>https://blog.dyegomaas.com.br/posts/artigo-criando-um-gerador-microservicos-com-replicante/</loc>
+    <lastmod>2021-04-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/categories/ferramentas/</loc>
+    <lastmod>2021-04-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/gerador/</loc>
+    <lastmod>2021-04-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/microservi%C3%A7os/</loc>
+    <lastmod>2021-04-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.dyegomaas.com.br/posts/</loc>
-    <lastmod>2021-04-14T00:00:00+00:00</lastmod>
+    <lastmod>2021-04-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/replicante/</loc>
+    <lastmod>2021-04-21T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.dyegomaas.com.br/tags/</loc>
+    <lastmod>2021-04-21T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/dev/</loc>
     <lastmod>2021-04-14T00:00:00+00:00</lastmod>
   </url>
   
@@ -88,22 +113,12 @@
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/categories/ferramentas/</loc>
-    <lastmod>2020-11-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.dyegomaas.com.br/tags/gluegun/</loc>
     <lastmod>2020-11-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.dyegomaas.com.br/tags/processador-de-templates/</loc>
-    <lastmod>2020-11-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.dyegomaas.com.br/tags/replicante/</loc>
     <lastmod>2020-11-18T00:00:00+00:00</lastmod>
   </url>
   

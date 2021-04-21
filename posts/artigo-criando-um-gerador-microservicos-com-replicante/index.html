@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+    
+
+
+    <head itemscope itemtype="https://blog.dyegomaas.com.br/">
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/blog.dyegomaas.com.br\/"
+    },
+    "articleSection" : "posts",
+    "name" : "Como criar um gerador de microservicos usando o Replicante",
+    "headline" : "Como criar um gerador de microservicos usando o Replicante",
+    "description" : "Quer saber uma forma simples de criar um gerador de microserviços? Neste artigo eu mostro como usar a ferramenta Replicante para isso.",
+    "inLanguage" : "pt-BR",
+    "author" : {
+        "@type": "Person",
+        "name": "Dyego Maas"
+    }, 
+    "image": {
+        "@type": "imageObject",
+        "url": "https://blog.dyegomaas.com.br/img/posts/social-media.png"
+    },
+    
+    "creator" : "Dyego Maas",
+    "publisher": "Dyego Maas",
+    "accountablePerson" : "Dyego Maas",
+    "copyrightHolder" : "Dyego Maas",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-04-21",
+    "dateModified" : "2021-04-21",
+    "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/artigo-criando-um-gerador-microservicos-com-replicante\/",
+    "wordCount" : "1233",
+    "keywords" : [ "Ferramentas","gerador","microserviços","ambev tech","replicante","Blog"]
+}
+</script>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+<meta name="yandex-verification" content="20d83aeccd3b80c2" />
+<base href="https://blog.dyegomaas.com.br/posts/artigo-criando-um-gerador-microservicos-com-replicante/">
+<meta name="generator" content="Hugo 0.69.0" />
+
+    
+    
+    
+
+<title itemprop="name">Como criar um gerador de microservicos usando o Replicante - Blog Dyego Maas</title>
+<meta property="description" content="Quer saber uma forma simples de criar um gerador de microserviços? Neste artigo eu mostro como usar a ferramenta Replicante para isso." />
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+
+
+<meta name="keywords" content="gerador,microserviços,ambev-tech,replicante" />
+<link rel="canonical" href="https://blog.dyegomaas.com.br/posts/artigo-criando-um-gerador-microservicos-com-replicante/" itemprop="url" />
+<meta name="url" content="https://blog.dyegomaas.com.br/posts/artigo-criando-um-gerador-microservicos-com-replicante/" />
+<meta property="og:site_name" content="Blog - Dyego Maas" />
+<meta property="og:title" content="Como criar um gerador de microservicos usando o Replicante" />
+<meta property="twitter:title" content="Como criar um gerador de microservicos usando o Replicante" />
+<meta property="og:description" content="Quer saber uma forma simples de criar um gerador de microserviços? Neste artigo eu mostro como usar a ferramenta Replicante para isso." />
+<meta property="twitter:description" content="Quer saber uma forma simples de criar um gerador de microserviços? Neste artigo eu mostro como usar a ferramenta Replicante para isso." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.dyegomaas.com.br/posts/artigo-criando-um-gerador-microservicos-com-replicante/" /><meta property="og:image" content="/img/posts/social-media.png" />
+<meta property="og:image:secure_url" content="https://blog.dyegomaas.com.br/img/posts/social-media.png" />
+<meta property="twitter:image" content="https://blog.dyegomaas.com.br/img/posts/social-media.png" />
+<meta property="article:published_time" content="2021-04-21T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-04-21T00:00:00+00:00" />
+<meta property="article:section" content="posts" />
+
+<meta property="article:tag" content="Ferramentas" />
+
+<meta property="article:tag" content="gerador" /><meta property="article:tag" content="microserviços" /><meta property="article:tag" content="ambev tech" /><meta property="article:tag" content="replicante" />
+
+
+<meta name="theme-color" content="#000000" />
+<meta name="msapplication-TileColor" content="#000000" />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="Blog - Dyego Maas" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" />
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" crossorigin="anonymous" media="print">
+
+
+<link rel="stylesheet" href="/css/custom.69cb553f8fdb841923fb0042f13bb1a617b61a9c30b020d16fa9175995e8c089.css" integrity="sha256-actVP4/bhBkj&#43;wBC8Tuxphe2GpwwsCDRb6kXWZXowIk=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/overrides.0f197a81b5f43bb1307ce597b6181c6b5c129a7071cea5b95f9de4b28e4558ab.css" integrity="sha256-Dxl6gbX0O7EwfOWXthgca1wSmnBxzqW5X53kso5FWKs=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/modal.47695aa0f03ffad84cdb0eccb713627a9367db4a4d0b0d460178b6b0edb11643.css" integrity="sha256-R2laoPA/&#43;thM2w7MtxNiepNn20pNCw1GAXi2sO2xFkM=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/custom.900a045b45beba39424d56d86214ca11ce9ba0de879024cb36a07a5a378e1152.css" integrity="sha256-kAoEW0W&#43;ujlCTVbYYhTKEc6boN6HkCTLNqB6WjeOEVI=" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=" crossorigin="anonymous">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js" defer></script>
+<script src="https://unpkg.com/lunr/lunr.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.pt.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" defer></script>
+
+<script src="/js/layout-adjustments.js" defer></script><script src="/js/custom-search.js" defer></script>
+
+<script async>
+  document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+      adjustLayout();
+      initializeSearch('/search-index.json', '/search-data-companion.json');
+   }
+ }
+</script>
+</head>
+
+    <body class=" ">
+    
+<div class="sidebar">
+    <div class="container ">
+      <div class="sidebar-about">
+        <span class="site__title">
+          <a href="https://blog.dyegomaas.com.br/">Blog Dyego Maas</a>
+        </span>
+        
+          
+          
+          
+          <div class="author-image">
+            <img src="https://blog.dyegomaas.com.br/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+          </div>
+          
+        
+        
+        <p class="site__description">
+           Arquiteto de software e Escritor 
+        </p>
+      </div>
+      <div class="collapsible-menu">
+        <input type="checkbox" id="menuToggle">
+        <label for="menuToggle">Blog Dyego Maas</label>
+        <div class="menu-content">
+          <div>
+	<ul class="sidebar-nav">
+		
+		
+			 
+				<li>
+					<a href="/posts/">
+						<span>Blog</span>
+					</a>
+				</li>
+			
+		
+		<li>
+			<a href="https://dyegomaas.com.br/">
+				<span>Sobre<span>
+			</a>
+		</li>
+		<li>
+			<a id="search-button" rel="search" style="cursor: pointer;">
+    <i class="fa fa-search" aria-hidden="true"></i>
+</a>
+
+<div id="search-results-modal" class="modal display-none">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close">&times;</span>
+        <h2>O que você procura?</h2>
+      </div>
+      <div class="modal-body">
+        <input type="search" id="search-input" results="10" placeholder="Pesquisar... (pressione Enter)">
+        <div>
+            <ul id="search-results"></ul>
+        </div>
+      </div>
+      
+    </div>
+</div>
+		</li>
+	</ul>
+</div>
+
+          <section class="social">
+	
+	<a href="https://twitter.com/DyegoMaas" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/DyegoAlekssander" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/Dyegomaas" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/dyego-maas" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:dyego.maas@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="index.xml" rel="me"><i class="fas fa-rss fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+          
+<div class="sponsored-image-container">
+    
+    <img src="" class="sponsored-image">
+    
+</div>
+
+        </div>
+      </div>
+      
+
+
+    </div>
+  </div>
+  
+        <div class="content container">
+            
+    
+<article class="real">
+  <header>
+    <h1>Como criar um gerador de microservicos usando o Replicante</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 21
+
+
+  
+
+  
+
+  
+
+  
+    Abr, 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+2021
+    
+    
+    
+      
+      
+          em
+          
+          
+              <a class="badge badge-category" href="/categories/ferramentas">FERRAMENTAS</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/gerador">gerador</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/microservi%C3%A7os">microserviços</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/ambev-tech">ambev tech</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/replicante">replicante</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 6 min de leitura
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">Tabela de Conteúdo</label>
+      
+        <div class="toc" id="TableOfContents"></div>
+      
+    </div>
+  
+  
+  <div class="post">
+    <p><strong>Em cada organização, há uma estratégia diferente para agilizar a criação de novos microserviços.</strong> O espectro é bem amplo, indo de padronização global até a liberadade total.</p>
+<p>Na maioria dos lugares, a estratégia da <strong>estrada pavimentada</strong> ainda não é uma realidade, e não há geradores de serviços, nem bibliotecas prontas para facilitar muitas das situações do dia-a-dia. Mas existem formas de agilizar a criação de novos microserviços que não exigem tanto esforço e podem ser implementadas rapidamente.</p>
+<p>Uma delas, é <strong>criar seu próprio gerador de microserviços</strong>. E a parte mais importante é, <strong>um gerador de serviços não precisa ser complicado!</strong> Neste artigo, vou mostrar como utilizar uma ferramenta de código aberto para criar o seu.</p>
+<blockquote>
+<p>Nossa estratégia é simples: nosso gerador vai aplicar algumas transformações a um template, e assim gerar o novo serviço.</p>
+</blockquote>
+<h2 id="criando-um-gerador-de-microserviços">Criando um gerador de microserviços</h2>
+<p>O primeiro passo para fazer um gerador de serviços, é ter um modelo de serviço a seguir. Precisa haver um ponto de partida, e é necessário tomar algumas decisões.</p>
+<p>Essas decisões envolvem decisões arquiteturais envolvendo <em>expertise</em> do time, arquitetura de aplicação, tecnologias envolvidas, entre outros.</p>
+<p>A título de exemplo, nosso serviço modelo terá as seguintes características:</p>
+<ul>
+<li>Plataforma: C#/.NET 5</li>
+<li>Arquitetura de aplicação: Clean Architecture</li>
+<li>Banco de dados padrão: MongoDB</li>
+<li>Message broker padrão: RabbitMQ</li>
+<li>Testes de unidade, integração e mutação</li>
+</ul>
+<p>Assim, criamos um serviço chamado <code>TemplateCleanArchitecture</code>, que implementa a versão ideal do conjunto de características da lista acima. Nós costumamos dizer que ele <strong>não é apenas um exemplo, mas um serviço exemplar</strong>.</p>
+<p>E qual é a nossa estratégia para um gerador? Não poderia ser mais simples: <strong>copiar nosso serviço exemplar, aplicando pequenas transformações.</strong> Foi para isso que o <a href="https://github.com/DyegoMaas/Replicante">Replicante</a> criado.</p>
+<h3 id="replicando-um-serviço">Replicando um serviço</h3>
+<p>Tenho um artigo aqui no blog dedicado à criação do Replicante, que você pode <a href="/posts/artigo-replicante">conferir aqui</a>. Em termos gerais, o Replicante processa copia um projeto aplicando duas fases de transformação:</p>
+<ol>
+<li>Substituição de termos na estrutura de diretórios (nomes de arquivos e pastas)</li>
+<li>Substituições do conteúdo de arquivos</li>
+</ol>
+<p>Se quisermos reutilizar um serviço C#, temos que tomar alguns cuidados:</p>
+<ul>
+<li>Renomear namespaces dentro dos arquivos fonte e de projeto</li>
+<li>Ajustar termos nos arquivos de configuração, pipelines, Dockerfiles, etc.</li>
+<li>Renomear diretórios para refletir a nova estrutura de namespaces</li>
+</ul>
+<p>Fazer isso manualmente está sujeito a muitos erros, e o Replicante permite fazer todas essas etapas num único passo. Para fins de exemplo, segue um pipeline do Azure DevOps que usa o Replicante para gerar um novo serviço usando a CLI do Replicante:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: <span style="color:#e6db74">&#39;1.0.0&#39;</span>
+
+<span style="color:#66d9ef">parameters</span>:
+  - <span style="color:#66d9ef">name</span>: <span style="color:#e6db74">&#39;ServiceName&#39;</span>
+    <span style="color:#66d9ef">type</span>: <span style="color:#e6db74">&#39;string&#39;</span>
+    <span style="color:#66d9ef">displayName</span>: <span style="color:#e6db74">&#39;Nome do serviço&#39;</span>
+
+<span style="color:#66d9ef">variables</span>:
+- <span style="color:#66d9ef">name</span>: <span style="color:#e6db74">&#39;TemplateWorkingDirectory&#39;</span>
+  <span style="color:#66d9ef">value</span>: <span style="color:#e6db74">&#39;$(System.DefaultWorkingDirectory)/Services/CleanArchitectureTemplate&#39;</span>
+
+<span style="color:#66d9ef">stages</span>:
+  - <span style="color:#66d9ef">stage</span>: <span style="color:#e6db74">&#39;GenerateNewCSharpService&#39;</span>
+    <span style="color:#66d9ef">displayName</span>: <span style="color:#e6db74">&#39;Generate new CSharp service&#39;</span>
+    <span style="color:#66d9ef">jobs</span>:
+      - <span style="color:#66d9ef">job</span>: <span style="color:#e6db74">&#39;GenerateNewCSharpServiceJob&#39;</span>
+        <span style="color:#66d9ef">steps</span>:
+          - <span style="color:#66d9ef">task</span>: NodeTool@<span style="color:#ae81ff">0</span>
+            <span style="color:#66d9ef">displayName</span>: <span style="color:#e6db74">&#39;Using Node&#39;</span>
+            <span style="color:#66d9ef">inputs</span>:
+              <span style="color:#66d9ef">versionSpec</span>: <span style="color:#e6db74">&#39;14.16&#39;</span>
+
+          - <span style="color:#66d9ef">script</span>: <span style="color:#e6db74">|
+</span><span style="color:#e6db74">              npm install -g replicante@1.1.1</span>
+
+              sed -i <span style="color:#e6db74">&#39;s/%ReplicantName%/${{ parameters.ServiceName }}/g&#39;</span> replicante-recipe.json
+
+              replicante create $(TemplateWorkingDirectory) replicante-recipe.json --target=$(Build.ArtifactStagingDirectory)
+            <span style="color:#66d9ef">displayName</span>: <span style="color:#e6db74">&#39;Replicating template service&#39;</span>
+
+          - <span style="color:#66d9ef">task</span>: PublishPipelineArtifact@<span style="color:#ae81ff">1</span>
+            <span style="color:#66d9ef">displayName</span>: <span style="color:#e6db74">&#39;Publish pipeline artifact&#39;</span>
+            <span style="color:#66d9ef">inputs</span>:
+              <span style="color:#66d9ef">artifactName</span>: <span style="color:#e6db74">&#39;${{ parameters.ServiceName }}&#39;</span>
+              <span style="color:#66d9ef">targetPath</span>: <span style="color:#e6db74">&#39;$(Build.ArtifactStagingDirectory)&#39;</span>
+</code></pre></div><p>Ao rodar este pipeline, precisamos informar o nome do nosso serviço, que vai definir o valor do parâmetro <code>ServiceName</code>. No exemplo da imagem, definimos que nosso novo serviço será o <code>MeuNovoServico</code>:</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="fifty-p" src="/posts/artigo-criando-um-gerador-microservicos-com-replicante/img/run-pipeline.jpg" alt="Tela Run Pipeline, com o parâmetro obrigatório Nome do Serviço" />
+        
+        
+    </figure>
+</div>
+
+<p>Como podemos ver no script, usamos o comando <code>sed</code> para substituir o termo <code>%ReplicantName%</code> pelo valor de <code>ServiceName</code> dentro do arquivo <code>replicante-recipe.json</code>.</p>
+<p>Este é o arquivo que centraliza nossa estratégia de transformação do serviço exemplo no novo serviço <code>MeuNovoServico</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;replicantName&#34;</span>: <span style="color:#e6db74">&#34;%ReplicantName%&#34;</span>,
+  <span style="color:#f92672">&#34;templateName&#34;</span>: <span style="color:#e6db74">&#34;clean-ms-gen&#34;</span>,
+  <span style="color:#f92672">&#34;fileNameReplacements&#34;</span>: [
+    { <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;TemplateCleanArchitecture&#34;</span>, <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;&lt;&lt;: replicantName :&gt;&gt;&#34;</span> },
+    { <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;templatecleanarchitecture&#34;</span>, <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;&lt;&lt;: replicantNameLowerCase :&gt;&gt;&#34;</span> }
+  ],
+  <span style="color:#f92672">&#34;sourceCodeReplacements&#34;</span>: [
+    { <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;TemplateCleanArchitecture&#34;</span>, <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;&lt;&lt;: replicantName :&gt;&gt;&#34;</span> },
+    { <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;templatecleanarchitecture&#34;</span>, <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;&lt;&lt;: replicantNameLowerCase :&gt;&gt;&#34;</span> },
+    { <span style="color:#f92672">&#34;from&#34;</span>: <span style="color:#e6db74">&#34;TEMPLATECLEANARCHITECTURE&#34;</span>, <span style="color:#f92672">&#34;to&#34;</span>: <span style="color:#e6db74">&#34;&lt;&lt;: replicantNameUpperCase :&gt;&gt;&#34;</span> }
+  ],
+  <span style="color:#f92672">&#34;ignoreArtifacts&#34;</span>: [<span style="color:#e6db74">&#34;.git&#34;</span>, <span style="color:#e6db74">&#34;.idea&#34;</span>, <span style="color:#e6db74">&#34;.vs&#34;</span>, <span style="color:#e6db74">&#34;.vscode&#34;</span>, <span style="color:#e6db74">&#34;docs&#34;</span>, <span style="color:#e6db74">&#34;bin&#34;</span>, <span style="color:#e6db74">&#34;obj&#34;</span>]
+}
+</code></pre></div><p>Como podemos ver acima, as instruções na seção <code>fileNameReplacements</code> correspondem à primeira etapa, onde os termos <code>from</code> serão substituídos por variações do nome do serviço, definimos como <code>to</code>.</p>
+<p>Ao mesmo tempo, as instruções na seção <code>sourceCodeReplacements</code>, farão essas substituições nos conteúdos dos arquivos, respondendo assim por alterações em namespaces, arquivos de configuração, pipelines, entre outros.</p>
+<p>Na sequência, o script roda executa o CLI do Replicante informando a receita de transformação, o diretório do template, e o diretório de saída.</p>
+<p>O próximo passo do pipeline é publicar um artefato com o novo serviço. A transformação pode ser vista a seguir:</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-criando-um-gerador-microservicos-com-replicante/img/solution-antes.jpg" alt="Printscreen mostrando o solution explorer do TemplateCleanArchitecture, mostrando que este termo está presente no nome dos projetos, da solution, e dos namespaces" />
+        
+        
+        <figcaption><p>Solução TemplateCleanArchitecture.sln</p> </figcaption>
+        
+    </figure>
+</div>
+
+<p>E o resultado do processo de replicação:</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-criando-um-gerador-microservicos-com-replicante/img/solution-depois.jpg" alt="Printscreen mostrando o solution explorer do MeuNovoServico, mostrando que o novo serviço nasceu com todos esses itens ajustados" />
+        
+        
+        <figcaption><p>Solução MeuNovoServico.sln</p> </figcaption>
+        
+    </figure>
+</div>
+
+<h3 id="vantagens-de-copiar-um-serviço-exemplar">Vantagens de copiar um <strong>Serviço Exemplar</strong></h3>
+<p>Um aspecto importante dessa abordagem, é que estamo lidando não apenas com um template de serviço que pode ser copiado para gerar novos serviços, mas com um template que pode ser tratado como um <strong>serviço vivo</strong>.</p>
+<p>Um serviço vivo pode:</p>
+<ul>
+<li>Seu pipeline de integração contínua pode rodar normalmente, como qualquer outro serviço</li>
+<li>Ser implantado dele em ambientes não-produtivos</li>
+<li>Concentrar boas práticas e tomar proveito das expertises do time</li>
+</ul>
+<p>Para tirar o máximo de um &ldquo;template vivo&rdquo;, temos que garantir que ele proporcione um começo suave e rápido para o desenvolvimento de novos serviços. A seguir, vou listar algumas dicas baseadas no aprendizado do meu time ao usar essa abordagem na Ambev Tech.</p>
+<h4 id="alta-cobertura-de-código">Alta cobertura de código</h4>
+<p>É muito importante que todo o código do template tenha um índice de cobertura bastante alto. No nosso caso, buscamos manter a <strong>cobertura do template mais alta que a dos serviços produtivos</strong>. Isso porque é mais fácil manter a cobertura alta, do que fazê-la subir.</p>
+<p>Se você está usando uma ferramenta como o SonarQube, também recomendo manter o número de code smells o menor possível, e evitar quaisquer problemas de segurança.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-criando-um-gerador-microservicos-com-replicante/img/sonar-qube.jpg" alt="Resultado de análise do SonarQube com 96,5% de cobertura, 9 code smells e 0 problemas de segurança" />
+        
+        
+        <figcaption><p>Resultado de análise do SonarQube com um Quality Gate exigente</p> </figcaption>
+        
+    </figure>
+</div>
+
+<h4 id="bom-score-de-mutação">Bom score de mutação</h4>
+<p>A maioria dos times não utiliza testes de mutação nos seus projetos. Mas como ele é um indicativo da qualidade da suíte de testes, ele pode ser mais efetivo em apontar problemas num projeto do que a própria cobertura.</p>
+<p>Por isso é interessante que, se o seu time decidir utilizar testes de mutação, cada novo projeto já nasça com eles. Para isso, é importante que o serviço template tenha testes de mutação rodando em seu pipeline.</p>
+<p>Se você quiser saber mais sobre testes de mutação, pode conferir <a href="/posts/artigo-testes-mutacao-stryker-net">meu artigo sobre testes de mutação com Stryker.Net</a>.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="" src="/posts/artigo-criando-um-gerador-microservicos-com-replicante/img/mutation-score.jpg" alt="Relatório dos testes de mutação com Stryker.Net, mostrando uma pontuação acima de 80%" />
+        
+        
+        <figcaption><p>Relatório dos testes de mutação com Stryker.Net</p> </figcaption>
+        
+    </figure>
+</div>
+
+<h4 id="análise-de-dependências">Análise de dependências</h4>
+<p>Se o seu time ou a sua empresa utilizam uma ferramenta de análise de dependências, como o Dependency Check ou Snyk, ela precisa estar rodando no pipeline de integração contínua do serviço template.</p>
+
+<div class="figure-wrapper">
+    <figure class="embed">
+        
+        
+            <img class="forty-p" src="/posts/artigo-criando-um-gerador-microservicos-com-replicante/img/dependency-track.jpg" alt="Dashboard do Dependency Track" />
+        
+        
+        <figcaption><p>Dashboard do Dependency Track</p> </figcaption>
+        
+    </figure>
+</div>
+
+<p>Isso vale para dependências de bibliotecas no backend, no frontend, e também para dependências de imagens Docker.</p>
+<p>Isso vai garantir que os novos serviços nasçam com dependências atualizadas, que têm menor probabilidade de estarem vulneráveis a brechas de segurança.</p>
+<h4 id="documentação">Documentação</h4>
+<p>Uma boa estrutura para documentação no template vai ajudar o time a manter a documentação dos novos serviços atualizada.</p>
+<p>Por isso, é interessante que o template forneça uma estrutura mínima de documentação que se espera de um novo serviço.</p>
+<h2 id="pensamentos-finais">Pensamentos finais</h2>
+<p>Resumindo, apenas dois elementos são necessários para fazer um gerador simples de serviços:</p>
+<ol>
+<li>Um serviço base, que será nosso template</li>
+<li>Um pipeline capaz de fazer alguns ajustes no template para gerar o novo serviço. O Replicante ajuda a fazer isso.</li>
+</ol>
+<p>Esta abordagem pode agilizar bastante o start de um novo serviço. Basta rodar o pipeline, e importar o pipeline ajustado.</p>
+<p>Nós usamos uma abordagem parecida no meu time, e ela tem se mostrado eficiente na medida certa.</p>
+
+  </div>
+  <style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+position: relative;
+text-align: left;
+height: 36px;
+width: 32px;
+float: left;
+text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="color: silver;">Compartilhe: </span><div id="share-buttons">
+<div class="facebook" title="Compartilhe no Facebook" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-criando-um-gerador-microservicos-com-replicante\/', 'sharer', 'width=626,height=436');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+<div class="twitter" title="Compartilhe no Twitter" onclick="window.open('http://twitter.com/share?text=Como criar um gerador de microservicos usando o Replicante&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-criando-um-gerador-microservicos-com-replicante\/&hashtags=gerador,microserviços,ambev-tech,replicante');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+<div class="linkedin" title="Compartilhe no Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-criando-um-gerador-microservicos-com-replicante\/&title=Como criar um gerador de microservicos usando o Replicante', 'sharer', 'width=626,height=700');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+<div class="mail" title="Compartilhe por Email" onclick="window.open('mailto:?&body=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-criando-um-gerador-microservicos-com-replicante\/');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/artigo-construindo-um-time-que-nao-tem-medo-de-aprender-e-ensinar/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Uma estratégia para nivelar o conhecimento de um time em tempo recorde</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'blogdyegomaas';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111956442-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/yaml.min.js"></script>
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/json.min.js"></script>
+            
+        
+    <script type="text/javascript">
+        
+        hljs.configure({languages: ["yaml, json"]});
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>

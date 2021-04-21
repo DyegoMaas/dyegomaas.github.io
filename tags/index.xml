@@ -7,7 +7,7 @@
     <description>Recent content in Tags on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 14 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Apr 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,9 +15,57 @@
     <item>
       <title>ambev tech</title>
       <link>https://blog.dyegomaas.com.br/tags/ambev-tech/</link>
-      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/ambev-tech/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>gerador</title>
+      <link>https://blog.dyegomaas.com.br/tags/gerador/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/gerador/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>microserviços</title>
+      <link>https://blog.dyegomaas.com.br/tags/microservi%C3%A7os/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/microservi%C3%A7os/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>replicante</title>
+      <link>https://blog.dyegomaas.com.br/tags/replicante/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/replicante/</guid>
       <description></description>
 
       
@@ -146,22 +194,6 @@
       <pubDate>Wed, 18 Nov 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/processador-de-templates/</guid>
-      <description></description>
-
-      
-      
-      
-      
-      
-      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
-    </item>
-    
-    <item>
-      <title>replicante</title>
-      <link>https://blog.dyegomaas.com.br/tags/replicante/</link>
-      <pubDate>Wed, 18 Nov 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.dyegomaas.com.br/tags/replicante/</guid>
       <description></description>
 
       
