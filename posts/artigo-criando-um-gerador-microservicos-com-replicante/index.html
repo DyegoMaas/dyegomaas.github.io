@@ -36,7 +36,7 @@
     "datePublished": "2021-04-21",
     "dateModified" : "2021-04-21",
     "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/artigo-criando-um-gerador-microservicos-com-replicante\/",
-    "wordCount" : "1233",
+    "wordCount" : "1300",
     "keywords" : [ "Ferramentas","gerador","microserviços","ambev tech","replicante","Blog"]
 }
 </script>
@@ -360,7 +360,7 @@
     
     
     <br/>
-    <i class="fas fa-clock"></i> 6 min de leitura
+    <i class="fas fa-clock"></i> 7 min de leitura
 </div>
 
 
@@ -379,26 +379,26 @@
   
   <div class="post">
     <p><strong>Em cada organização, há uma estratégia diferente para agilizar a criação de novos microserviços.</strong> O espectro é bem amplo, indo de padronização global até a liberadade total.</p>
-<p>Na maioria dos lugares, a estratégia da <strong>estrada pavimentada</strong> ainda não é uma realidade, e não há geradores de serviços, nem bibliotecas prontas para facilitar muitas das situações do dia-a-dia. Mas existem formas de agilizar a criação de novos microserviços que não exigem tanto esforço e podem ser implementadas rapidamente.</p>
+<p>Em muitos lugares, a estratégia da <strong>estrada pavimentada</strong> ainda não é uma realidade, e não há geradores de serviços, nem muitas bibliotecas prontas para facilitar muitas das situações do dia-a-dia. Mas existem formas de agilizar a criação de novos microserviços que não exigem tanto esforço e podem ser implementadas rapidamente.</p>
 <p>Uma delas, é <strong>criar seu próprio gerador de microserviços</strong>. E a parte mais importante é, <strong>um gerador de serviços não precisa ser complicado!</strong> Neste artigo, vou mostrar como utilizar uma ferramenta de código aberto para criar o seu.</p>
 <blockquote>
 <p>Nossa estratégia é simples: nosso gerador vai aplicar algumas transformações a um template, e assim gerar o novo serviço.</p>
 </blockquote>
 <h2 id="criando-um-gerador-de-microserviços">Criando um gerador de microserviços</h2>
-<p>O primeiro passo para fazer um gerador de serviços, é ter um modelo de serviço a seguir. Precisa haver um ponto de partida, e é necessário tomar algumas decisões.</p>
-<p>Essas decisões envolvem decisões arquiteturais envolvendo <em>expertise</em> do time, arquitetura de aplicação, tecnologias envolvidas, entre outros.</p>
+<p>O primeiro passo para fazer um gerador de serviços, é ter um modelo de serviço a seguir. Afinal, precisamos de um ponto de partida. Para montar esse modelo, será necessário tomar algumas decisões.</p>
+<p>Essas decisões envolvem questões arquiteturais, <em>expertise</em> do time, escolha da arquitetura de aplicação, tecnologias envolvidas, entre outros.</p>
 <p>A título de exemplo, nosso serviço modelo terá as seguintes características:</p>
 <ul>
 <li>Plataforma: C#/.NET 5</li>
-<li>Arquitetura de aplicação: Clean Architecture</li>
+<li>Arquitetura de aplicação: em camadas, no modelo Clean Architecture</li>
 <li>Banco de dados padrão: MongoDB</li>
 <li>Message broker padrão: RabbitMQ</li>
 <li>Testes de unidade, integração e mutação</li>
 </ul>
-<p>Assim, criamos um serviço chamado <code>TemplateCleanArchitecture</code>, que implementa a versão ideal do conjunto de características da lista acima. Nós costumamos dizer que ele <strong>não é apenas um exemplo, mas um serviço exemplar</strong>.</p>
-<p>E qual é a nossa estratégia para um gerador? Não poderia ser mais simples: <strong>copiar nosso serviço exemplar, aplicando pequenas transformações.</strong> Foi para isso que o <a href="https://github.com/DyegoMaas/Replicante">Replicante</a> criado.</p>
+<p>Assim, criamos um serviço chamado <code>TemplateCleanArchitecture</code>, que implementa a versão ideal do conjunto de características da lista acima. Costumo dizer que ele <strong>não é apenas um exemplo de serviço, mas um serviço exemplar</strong>.</p>
+<p>E qual é a nossa estratégia para um gerador? Não poderia ser mais simples: <strong>copiar nosso serviço exemplar, aplicando pequenas transformações.</strong> Foi para isso que o <a href="https://github.com/DyegoMaas/Replicante">Replicante</a> foi criado.</p>
 <h3 id="replicando-um-serviço">Replicando um serviço</h3>
-<p>Tenho um artigo aqui no blog dedicado à criação do Replicante, que você pode <a href="/posts/artigo-replicante">conferir aqui</a>. Em termos gerais, o Replicante processa copia um projeto aplicando duas fases de transformação:</p>
+<p>Tenho um artigo aqui no blog dedicado à criação do Replicante, que você pode <a href="/posts/artigo-replicante">conferir aqui</a>. Em termos gerais, o Replicante processa uma cópia de projeto aplicando duas fases de transformação:</p>
 <ol>
 <li>Substituição de termos na estrutura de diretórios (nomes de arquivos e pastas)</li>
 <li>Substituições do conteúdo de arquivos</li>
@@ -409,7 +409,7 @@
 <li>Ajustar termos nos arquivos de configuração, pipelines, Dockerfiles, etc.</li>
 <li>Renomear diretórios para refletir a nova estrutura de namespaces</li>
 </ul>
-<p>Fazer isso manualmente está sujeito a muitos erros, e o Replicante permite fazer todas essas etapas num único passo. Para fins de exemplo, segue um pipeline do Azure DevOps que usa o Replicante para gerar um novo serviço usando a CLI do Replicante:</p>
+<p>Fazer isso manualmente está sujeito a muitos erros, e o Replicante permite fazer todas essas etapas num único passo. Para fins de exemplo, veja a pipeline do Azure DevOps mais abaixo, que usa a CLI do Replicante para gerar um novo serviço com base no template e numa receita:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: <span style="color:#e6db74">&#39;1.0.0&#39;</span>
 
 <span style="color:#66d9ef">parameters</span>:
@@ -457,8 +457,7 @@
     </figure>
 </div>
 
-<p>Como podemos ver no script, usamos o comando <code>sed</code> para substituir o termo <code>%ReplicantName%</code> pelo valor de <code>ServiceName</code> dentro do arquivo <code>replicante-recipe.json</code>.</p>
-<p>Este é o arquivo que centraliza nossa estratégia de transformação do serviço exemplo no novo serviço <code>MeuNovoServico</code>:</p>
+<p>Como podemos ver no script, usamos o comando <code>sed</code> para substituir o termo <code>%ReplicantName%</code> pelo valor de <code>ServiceName</code> dentro do arquivo <code>replicante-recipe.json</code>. Este arquivo é importante, e centraliza nossa estratégia de transformação do serviço exemplar no novo serviço <code>MeuNovoServico</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#f92672">&#34;replicantName&#34;</span>: <span style="color:#e6db74">&#34;%ReplicantName%&#34;</span>,
   <span style="color:#f92672">&#34;templateName&#34;</span>: <span style="color:#e6db74">&#34;clean-ms-gen&#34;</span>,
@@ -473,10 +472,15 @@
   ],
   <span style="color:#f92672">&#34;ignoreArtifacts&#34;</span>: [<span style="color:#e6db74">&#34;.git&#34;</span>, <span style="color:#e6db74">&#34;.idea&#34;</span>, <span style="color:#e6db74">&#34;.vs&#34;</span>, <span style="color:#e6db74">&#34;.vscode&#34;</span>, <span style="color:#e6db74">&#34;docs&#34;</span>, <span style="color:#e6db74">&#34;bin&#34;</span>, <span style="color:#e6db74">&#34;obj&#34;</span>]
 }
-</code></pre></div><p>Como podemos ver acima, as instruções na seção <code>fileNameReplacements</code> correspondem à primeira etapa, onde os termos <code>from</code> serão substituídos por variações do nome do serviço, definimos como <code>to</code>.</p>
-<p>Ao mesmo tempo, as instruções na seção <code>sourceCodeReplacements</code>, farão essas substituições nos conteúdos dos arquivos, respondendo assim por alterações em namespaces, arquivos de configuração, pipelines, entre outros.</p>
-<p>Na sequência, o script roda executa o CLI do Replicante informando a receita de transformação, o diretório do template, e o diretório de saída.</p>
-<p>O próximo passo do pipeline é publicar um artefato com o novo serviço. A transformação pode ser vista a seguir:</p>
+</code></pre></div><p>Como podemos ver acima, as instruções na seção <code>fileNameReplacements</code> correspondem à primeira etapa, onde certos termos serão substituídos por novos, alterando nomes de arquivos e pastas.</p>
+<p>A mesma lógica se aplica à seção <code>sourceCodeReplacements</code>,  que indica as substituições que serão feitas nos conteúdos dos arquivos, alterando namespaces, arquivos de configuração, pipelines, entre outros.</p>
+<p>Na sequência, o script roda executa a CLI do Replicante informando três parâmetros:</p>
+<ul>
+<li>O arquivo da receita de transformação</li>
+<li>O diretório do template, onde está o serviço exemplar</li>
+<li>O diretório de saída, onde será gerado nosso novo serviço</li>
+</ul>
+<p>O próximo passo do pipeline é publicar um artefato com o novo serviço. Para termos uma ideia da transformação que é realizada, podemos conferir as imagens a seguir:</p>
 
 <div class="figure-wrapper">
     <figure class="embed">
@@ -505,17 +509,17 @@
 </div>
 
 <h3 id="vantagens-de-copiar-um-serviço-exemplar">Vantagens de copiar um <strong>Serviço Exemplar</strong></h3>
-<p>Um aspecto importante dessa abordagem, é que estamo lidando não apenas com um template de serviço que pode ser copiado para gerar novos serviços, mas com um template que pode ser tratado como um <strong>serviço vivo</strong>.</p>
-<p>Um serviço vivo pode:</p>
+<p>Um aspecto importante dessa abordagem, é que estamos lidando não apenas com um template de serviço que pode ser copiado livremente para gerar novos serviços, mas com um template que pode ser tratado como um <strong>serviço vivo</strong>.</p>
+<p>Um serviço vivo tem certas características:</p>
 <ul>
-<li>Seu pipeline de integração contínua pode rodar normalmente, como qualquer outro serviço</li>
-<li>Ser implantado dele em ambientes não-produtivos</li>
-<li>Concentrar boas práticas e tomar proveito das expertises do time</li>
+<li>Tem uma pipeline de integração contínua que roda normalmente, como qualquer outro serviço</li>
+<li>Pode ser implantado dele em ambientes não-produtivos</li>
+<li>Pode concentrar boas práticas e tomar proveito das expertises do time</li>
 </ul>
-<p>Para tirar o máximo de um &ldquo;template vivo&rdquo;, temos que garantir que ele proporcione um começo suave e rápido para o desenvolvimento de novos serviços. A seguir, vou listar algumas dicas baseadas no aprendizado do meu time ao usar essa abordagem na Ambev Tech.</p>
+<p>Para tirar o máximo de um &ldquo;template vivo&rdquo;, temos que garantir que ele proporcione um começo suave e rápido para o desenvolvimento de novos serviços. Nas seções a seguir, listo algumas dicas baseadas no aprendizado do meu time ao usar essa abordagem na Ambev Tech.</p>
 <h4 id="alta-cobertura-de-código">Alta cobertura de código</h4>
-<p>É muito importante que todo o código do template tenha um índice de cobertura bastante alto. No nosso caso, buscamos manter a <strong>cobertura do template mais alta que a dos serviços produtivos</strong>. Isso porque é mais fácil manter a cobertura alta, do que fazê-la subir.</p>
-<p>Se você está usando uma ferramenta como o SonarQube, também recomendo manter o número de code smells o menor possível, e evitar quaisquer problemas de segurança.</p>
+<p>É muito importante que todo o código do template tenha um índice de cobertura bastante alto. No nosso caso, buscamos manter a <strong>cobertura do template mais alta que a dos serviços produtivos</strong>. Este item é importante porque é mais fácil manter a cobertura alta, do que fazê-la subir. Assim, todo novo serviço nasce com uma boa cobertura de código.</p>
+<p>Se você está usando uma ferramenta como o SonarQube, também recomendo usá-la para manter o número de code smells o menor possível, e evitar quaisquer problemas de segurança.</p>
 
 <div class="figure-wrapper">
     <figure class="embed">
@@ -530,9 +534,11 @@
 </div>
 
 <h4 id="bom-score-de-mutação">Bom score de mutação</h4>
-<p>A maioria dos times não utiliza testes de mutação nos seus projetos. Mas como ele é um indicativo da qualidade da suíte de testes, ele pode ser mais efetivo em apontar problemas num projeto do que a própria cobertura.</p>
-<p>Por isso é interessante que, se o seu time decidir utilizar testes de mutação, cada novo projeto já nasça com eles. Para isso, é importante que o serviço template tenha testes de mutação rodando em seu pipeline.</p>
+<p>A maioria dos times não utiliza testes de mutação nos seus projetos. Mas como ele é um indicativo da qualidade da suíte de testes, ele pode ser mais efetivo em apontar problemas num projeto de software do que a própria cobertura de testes.</p>
+<p>Por isso é interessante que, se o seu time decidir utilizar testes de mutação, cada novo projeto já nasça com eles. Para isso, é importante que o serviço template tenha testes de mutação rodando na sua pipeline.</p>
+<blockquote>
 <p>Se você quiser saber mais sobre testes de mutação, pode conferir <a href="/posts/artigo-testes-mutacao-stryker-net">meu artigo sobre testes de mutação com Stryker.Net</a>.</p>
+</blockquote>
 
 <div class="figure-wrapper">
     <figure class="embed">
@@ -547,7 +553,7 @@
 </div>
 
 <h4 id="análise-de-dependências">Análise de dependências</h4>
-<p>Se o seu time ou a sua empresa utilizam uma ferramenta de análise de dependências, como o Dependency Check ou Snyk, ela precisa estar rodando no pipeline de integração contínua do serviço template.</p>
+<p>Se o seu time ou a sua empresa utiliza uma ferramenta de análise de dependências, como o Dependency Check ou Snyk, ela precisa estar rodando no pipeline de integração contínua do template.</p>
 
 <div class="figure-wrapper">
     <figure class="embed">
@@ -561,18 +567,18 @@
     </figure>
 </div>
 
-<p>Isso vale para dependências de bibliotecas no backend, no frontend, e também para dependências de imagens Docker.</p>
-<p>Isso vai garantir que os novos serviços nasçam com dependências atualizadas, que têm menor probabilidade de estarem vulneráveis a brechas de segurança.</p>
+<p>Isso vale para dependências de bibliotecas no backend, no frontend, e também, se possível, para dependências de imagens Docker.</p>
+<p>Desta forma, podemos garantir que os novos serviços nasçam com as dependências atualizadas, que têm menor probabilidade de estarem vulneráveis a brechas de segurança.</p>
 <h4 id="documentação">Documentação</h4>
 <p>Uma boa estrutura para documentação no template vai ajudar o time a manter a documentação dos novos serviços atualizada.</p>
 <p>Por isso, é interessante que o template forneça uma estrutura mínima de documentação que se espera de um novo serviço.</p>
 <h2 id="pensamentos-finais">Pensamentos finais</h2>
 <p>Resumindo, apenas dois elementos são necessários para fazer um gerador simples de serviços:</p>
 <ol>
-<li>Um serviço base, que será nosso template</li>
-<li>Um pipeline capaz de fazer alguns ajustes no template para gerar o novo serviço. O Replicante ajuda a fazer isso.</li>
+<li>Um serviço base, que servirá como template</li>
+<li>Uma pipeline capaz de fazer alguns ajustes no template para gerar o novo serviço. O Replicante ajuda a fazer isso.</li>
 </ol>
-<p>Esta abordagem pode agilizar bastante o start de um novo serviço. Basta rodar o pipeline, e importar o pipeline ajustado.</p>
+<p>Esta abordagem pode agilizar bastante o start de um novo serviço. Basta rodar a pipeline de geração do serviço.</p>
 <p>Nós usamos uma abordagem parecida no meu time, e ela tem se mostrado eficiente na medida certa.</p>
 
   </div>

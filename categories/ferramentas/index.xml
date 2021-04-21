@@ -19,7 +19,7 @@
       
       <guid>https://blog.dyegomaas.com.br/posts/artigo-criando-um-gerador-microservicos-com-replicante/</guid>
       <description>Em cada organização, há uma estratégia diferente para agilizar a criação de novos microserviços. O espectro é bem amplo, indo de padronização global até a liberadade total.
-Na maioria dos lugares, a estratégia da estrada pavimentada ainda não é uma realidade, e não há geradores de serviços, nem bibliotecas prontas para facilitar muitas das situações do dia-a-dia. Mas existem formas de agilizar a criação de novos microserviços que não exigem tanto esforço e podem ser implementadas rapidamente.</description>
+Em muitos lugares, a estratégia da estrada pavimentada ainda não é uma realidade, e não há geradores de serviços, nem muitas bibliotecas prontas para facilitar muitas das situações do dia-a-dia. Mas existem formas de agilizar a criação de novos microserviços que não exigem tanto esforço e podem ser implementadas rapidamente.</description>
 
       
       
