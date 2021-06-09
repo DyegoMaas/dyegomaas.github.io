@@ -7,10 +7,28 @@
     <description>Recent content in Programação on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 04 Nov 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Jun 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/categories/programa%C3%A7%C3%A3o/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Versionamento semântico fácil com MinVer</title>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-versionamento-semantico-com-minver/</link>
+      <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-versionamento-semantico-com-minver/</guid>
+      <description>MinVer é uma ferramenta extremamente útil para facilitar o versionamento semântico de assemblies .NET usando Git tags.
+O versionamento semântico, de acordo com o SemVer 2.0.0, segue a seguinte estrutura: [Major].[Minor].[Patch]. Resumindo:
+ Quando a Major sobe, isso indica que ouve uma grande mudança, e possível quebra de compatibilidade com as versões anteriores Quando a Minor sobe, isso indica adição de funcionalidade, sem perda de compatibilidade Quando o Patch sobe, isso indica correções ou melhorias  Versionamento semântico mal feito Tradicionalmente, a forma como controlamos a versão de um assembly é através da tag &amp;lt;PackageVersion&amp;gt;1.</description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/categories/programa%C3%A7%C3%A3o/img/posts/social-media.png" type="image/png"/>      
+    </item>
     
     <item>
       <title>Criando uma CLI com Gluegun</title>

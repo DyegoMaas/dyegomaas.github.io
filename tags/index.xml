@@ -7,10 +7,90 @@
     <description>Recent content in Tags on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 21 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Jun 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>dotnet</title>
+      <link>https://blog.dyegomaas.com.br/tags/dotnet/</link>
+      <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/dotnet/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>foreverfactory</title>
+      <link>https://blog.dyegomaas.com.br/tags/foreverfactory/</link>
+      <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/foreverfactory/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>minver</title>
+      <link>https://blog.dyegomaas.com.br/tags/minver/</link>
+      <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/minver/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>semantic versioning</title>
+      <link>https://blog.dyegomaas.com.br/tags/semantic-versioning/</link>
+      <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/semantic-versioning/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>versionamento semântico</title>
+      <link>https://blog.dyegomaas.com.br/tags/versionamento-sem%C3%A2ntico/</link>
+      <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/versionamento-sem%C3%A2ntico/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
+    </item>
     
     <item>
       <title>ambev tech</title>
@@ -450,22 +530,6 @@
       <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/design-patterns/</guid>
-      <description></description>
-
-      
-      
-      
-      
-      
-      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
-    </item>
-    
-    <item>
-      <title>dotnet</title>
-      <link>https://blog.dyegomaas.com.br/tags/dotnet/</link>
-      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.dyegomaas.com.br/tags/dotnet/</guid>
       <description></description>
 
       

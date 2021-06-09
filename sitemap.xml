@@ -3,17 +3,62 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/tags/ambev-tech/</loc>
-    <lastmod>2021-04-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.dyegomaas.com.br/</loc>
-    <lastmod>2021-04-21T00:00:00+00:00</lastmod>
+    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.dyegomaas.com.br/categories/</loc>
+    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/dotnet/</loc>
+    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/foreverfactory/</loc>
+    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/minver/</loc>
+    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/posts/</loc>
+    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/categories/programa%C3%A7%C3%A3o/</loc>
+    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/semantic-versioning/</loc>
+    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/</loc>
+    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/versionamento-sem%C3%A2ntico/</loc>
+    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/posts/artigo-versionamento-semantico-com-minver/</loc>
+    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.dyegomaas.com.br/tags/ambev-tech/</loc>
     <lastmod>2021-04-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -38,17 +83,7 @@
   </url>
   
   <url>
-    <loc>https://blog.dyegomaas.com.br/posts/</loc>
-    <lastmod>2021-04-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.dyegomaas.com.br/tags/replicante/</loc>
-    <lastmod>2021-04-21T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.dyegomaas.com.br/tags/</loc>
     <lastmod>2021-04-21T00:00:00+00:00</lastmod>
   </url>
   
@@ -139,11 +174,6 @@
   
   <url>
     <loc>https://blog.dyegomaas.com.br/tags/node/</loc>
-    <lastmod>2020-11-18T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.dyegomaas.com.br/categories/programa%C3%A7%C3%A3o/</loc>
     <lastmod>2020-11-18T00:00:00+00:00</lastmod>
   </url>
   
@@ -239,11 +269,6 @@
   
   <url>
     <loc>https://blog.dyegomaas.com.br/tags/design-patterns/</loc>
-    <lastmod>2020-09-02T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.dyegomaas.com.br/tags/dotnet/</loc>
     <lastmod>2020-09-02T00:00:00+00:00</lastmod>
   </url>
   
