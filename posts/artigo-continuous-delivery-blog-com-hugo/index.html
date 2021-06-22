@@ -31,7 +31,7 @@
     "datePublished": "2020-04-29",
     "dateModified" : "2020-04-29",
     "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/artigo-continuous-delivery-blog-com-hugo\/",
-    "wordCount" : "1174",
+    "wordCount" : "1173",
     "keywords" : [ "Blogging","hugo","continuous delivery","github actions","github.io","github pages","Blog"]
 }
 </script>
@@ -44,7 +44,7 @@
 <meta name="googlebot" content="index,follow" />
 <meta name="yandex-verification" content="20d83aeccd3b80c2" />
 <base href="https://blog.dyegomaas.com.br/posts/artigo-continuous-delivery-blog-com-hugo/">
-<meta name="generator" content="Hugo 0.69.0" />
+<meta name="generator" content="Hugo 0.82.0" />
 
     
     
@@ -119,7 +119,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=" crossorigin="anonymous">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" crossorigin="anonymous" media="print">
@@ -128,9 +128,9 @@
 <link rel="stylesheet" href="/css/custom.69cb553f8fdb841923fb0042f13bb1a617b61a9c30b020d16fa9175995e8c089.css" integrity="sha256-actVP4/bhBkj&#43;wBC8Tuxphe2GpwwsCDRb6kXWZXowIk=" crossorigin="anonymous">
 
 
-<link rel="stylesheet" href="/scss/overrides.0f197a81b5f43bb1307ce597b6181c6b5c129a7071cea5b95f9de4b28e4558ab.css" integrity="sha256-Dxl6gbX0O7EwfOWXthgca1wSmnBxzqW5X53kso5FWKs=" crossorigin="anonymous">
-<link rel="stylesheet" href="/scss/modal.47695aa0f03ffad84cdb0eccb713627a9367db4a4d0b0d460178b6b0edb11643.css" integrity="sha256-R2laoPA/&#43;thM2w7MtxNiepNn20pNCw1GAXi2sO2xFkM=" crossorigin="anonymous">
-<link rel="stylesheet" href="/scss/custom.900a045b45beba39424d56d86214ca11ce9ba0de879024cb36a07a5a378e1152.css" integrity="sha256-kAoEW0W&#43;ujlCTVbYYhTKEc6boN6HkCTLNqB6WjeOEVI=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/overrides.e5359e6ec5dc6a3f2a6847c754879df87901e06d0291fa022b8b9d28c2886732.css" integrity="sha256-5TWebsXcaj8qaEfHVIed&#43;HkB4G0CkfoCK4udKMKIZzI=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/modal.a0e35fd42ff2f7a662b18b541e48d2768b83b5498197464e7b1d94d6a5208ee9.css" integrity="sha256-oONf1C/y96ZisYtUHkjSdouDtUmBl0ZOex2U1qUgjuk=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/custom.b6388d36492b00be450766e18af7f31c998f61716d57d2df3b9388fc72f2e923.css" integrity="sha256-tjiNNkkrAL5FB2bhivfzHJmPYXFtV9LfO5OI/HLy6SM=" crossorigin="anonymous">
 
 
 
@@ -192,26 +192,37 @@
         <input type="checkbox" id="menuToggle">
         <label for="menuToggle">Blog Dyego Maas</label>
         <div class="menu-content">
-          <div>
+          <div class="menu-container">
 	<ul class="sidebar-nav">
 		
 		
 			 
 				<li>
+					<a href="/">
+						<span><i class="fas fa-home"></i> Home</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
 					<a href="/posts/">
-						<span>Blog</span>
+						<span><i class="far fa-newspaper"></i> Artigos</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
+					<a href="https://dyegomaas.com.br/">
+						<span><i class="fas fa-address-card"></i> Dyego Maas</span>
 					</a>
 				</li>
 			
 		
 		<li>
-			<a href="https://dyegomaas.com.br/">
-				<span>Sobre<span>
-			</a>
-		</li>
-		<li>
 			<a id="search-button" rel="search" style="cursor: pointer;">
-    <i class="fa fa-search" aria-hidden="true"></i>
+    <i class="fa fa-search" aria-hidden="true"></i> Pesquisar
 </a>
 
 <div id="search-results-modal" class="modal display-none">
@@ -371,9 +382,13 @@
   
     <div class="toc-wrapper">
       <input type="checkbox" id="tocToggle">
-      <label for="tocToggle">Tabela de Conteúdo</label>
+      <label for="tocToggle">
+        <i class="fas fa-list-ul"></i>
+        <span id="toc-title">Nesta página</span>
+      </label>
+      <div id="toc-toggle-cover"></div>
       
-        <div class="toc" id="TableOfContents"></div>
+        <nav class="toc" id="TableOfContents"></nav>
       
     </div>
   
@@ -404,86 +419,86 @@
 </code></pre>
 <p>Dentro você terá de adicionar um arquivo de workflow. Ele pode ter qualquer nome, e deve terminar com a extensão <code>.yml</code> ou <code>.yaml</code>.</p>
 <p>Abaixo, podemos ver o workflow que estou usando no meu blog atualmente, já comentado. Você também pode baixar ele <a href="https://gist.github.com/DyegoMaas/8c6e330dc4e314a650325d611d392c11">aqui</a>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: Deploy para &lt;nomeusuario&gt;.github.io
-<span style="color:#66d9ef">on</span>:
-  <span style="color:#66d9ef">push</span>:
-    <span style="color:#66d9ef">branches</span>:
-      - master <span style="color:#75715e"># somente commits no branch master geram deploys</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy para &lt;nomeusuario&gt;.github.io</span>
+<span style="color:#f92672">on</span>:
+  <span style="color:#f92672">push</span>:
+    <span style="color:#f92672">branches</span>:
+      - <span style="color:#ae81ff">master</span> <span style="color:#75715e"># somente commits no branch master geram deploys</span>
   <span style="color:#75715e"># Também pode rodar um deploy automaticamente todos os dias</span>
   <span style="color:#75715e"># para publicar posts agendados (com datas futuras)</span>
-  <span style="color:#66d9ef">schedule</span>:
-    - <span style="color:#66d9ef">cron</span>: <span style="color:#e6db74">&#39;0 8 * * *&#39;</span> <span style="color:#75715e"># 08:00 am UTC</span>
+  <span style="color:#f92672">schedule</span>:
+    - <span style="color:#f92672">cron</span>: <span style="color:#e6db74">&#39;0 8 * * *&#39;</span> <span style="color:#75715e"># 08:00 am UTC</span>
 
-<span style="color:#66d9ef">jobs</span>:
+<span style="color:#f92672">jobs</span>:
   <span style="color:#75715e"># O job &#34;build&#34; é responsável por baixar o template, o hugo e</span>
   <span style="color:#75715e"># compilar o site estático</span>
-  <span style="color:#66d9ef">build</span>:
-    <span style="color:#66d9ef">name</span>: Gerar conteúdo estático
-    <span style="color:#66d9ef">runs-on</span>: ubuntu-latest
-    <span style="color:#66d9ef">steps</span>:
+  <span style="color:#f92672">build</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Gerar conteúdo estático</span>
+    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+    <span style="color:#f92672">steps</span>:
         <span style="color:#75715e"># Primeiro, fazemos checkout do repositório</span>
-      - <span style="color:#66d9ef">uses</span>: actions/checkout@master
+      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@master</span>
         <span style="color:#75715e"># Depois, usamos uma action para clonar o repositório do tema</span>
         <span style="color:#75715e"># Substitua o endereço e o diretório por um de sua preferência</span>
-      - <span style="color:#66d9ef">name</span>: Atualizar template
-        <span style="color:#66d9ef">uses</span>: <span style="color:#e6db74">&#34;srt32/git-actions@v0.0.3&#34;</span>
-        <span style="color:#66d9ef">with</span>:
-          <span style="color:#66d9ef">args</span>: <span style="color:#e6db74">&#34;git clone https://github.com/htr3n/hyde-hyde.git themes/hyde-hyde&#34;</span>
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Atualizar template</span>
+        <span style="color:#f92672">uses</span>: <span style="color:#e6db74">&#34;srt32/git-actions@v0.0.3&#34;</span>
+        <span style="color:#f92672">with</span>:
+          <span style="color:#f92672">args</span>: <span style="color:#e6db74">&#34;git clone https://github.com/htr3n/hyde-hyde.git themes/hyde-hyde&#34;</span>
         <span style="color:#75715e"># Permite instalar qualquer versão do hugo que você precisar</span>
-      - <span style="color:#66d9ef">name</span>: Setup Hugo
-        <span style="color:#66d9ef">uses</span>: peaceiris/actions-hugo@v2
-        <span style="color:#66d9ef">with</span>:
-          <span style="color:#66d9ef">hugo-version</span>: <span style="color:#e6db74">&#39;0.69.0&#39;</span> <span style="color:#75715e"># se quiser a última, pode usar &#39;latest&#39;</span>
-          <span style="color:#66d9ef">extended</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># permite compilar SCSS e SASS</span>
-      - <span style="color:#66d9ef">name</span>: Build
-        <span style="color:#66d9ef">run</span>: hugo <span style="color:#75715e"># gera os arquivos estáticos</span>
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Hugo</span>
+        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">peaceiris/actions-hugo@v2</span>
+        <span style="color:#f92672">with</span>:
+          <span style="color:#f92672">hugo-version</span>: <span style="color:#e6db74">&#39;0.69.0&#39;</span> <span style="color:#75715e"># se quiser a última, pode usar &#39;latest&#39;</span>
+          <span style="color:#f92672">extended</span>: <span style="color:#66d9ef">true</span> <span style="color:#75715e"># permite compilar SCSS e SASS</span>
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build</span>
+        <span style="color:#f92672">run</span>: <span style="color:#ae81ff">hugo</span> <span style="color:#75715e"># gera os arquivos estáticos</span>
         <span style="color:#75715e"># Esta action faz upload do diretório /public como artefato</span>
         <span style="color:#75715e"># do job &#34;build&#34;</span>
-      - <span style="color:#66d9ef">name</span>: Upload dos artefatos
-        <span style="color:#66d9ef">uses</span>: actions/upload-artifact@v1
-        <span style="color:#66d9ef">with</span>:
-          <span style="color:#66d9ef">name</span>: public
-          <span style="color:#66d9ef">path</span>: ./public
-  <span style="color:#66d9ef">publish</span>:
-    <span style="color:#66d9ef">name</span>: Publish to &lt;nomeusuario&gt;.github.io
-    <span style="color:#66d9ef">runs-on</span>: ubuntu-latest
-    <span style="color:#66d9ef">needs</span>: build <span style="color:#75715e"># o job &#34;publish&#34; só roda se deu tudo certo durante o &#34;build&#34;</span>
-    <span style="color:#66d9ef">steps</span>:
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Upload dos artefatos</span>
+        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/upload-artifact@v1</span>
+        <span style="color:#f92672">with</span>:
+          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">public</span>
+          <span style="color:#f92672">path</span>: <span style="color:#ae81ff">./public</span>
+  <span style="color:#f92672">publish</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Publish to &lt;nomeusuario&gt;.github.io</span>
+    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+    <span style="color:#f92672">needs</span>: <span style="color:#ae81ff">build</span> <span style="color:#75715e"># o job &#34;publish&#34; só roda se deu tudo certo durante o &#34;build&#34;</span>
+    <span style="color:#f92672">steps</span>:
         <span style="color:#75715e"># Primeiro fazemos checkout do nosso repositório github.io</span>
         <span style="color:#75715e"># no diretório static-site</span>
-      - <span style="color:#66d9ef">uses</span>: actions/checkout@v2
-        <span style="color:#66d9ef">with</span>:
-          <span style="color:#66d9ef">repository</span>: <span style="color:#e6db74">&#39;&lt;nomeusuario&gt;/&lt;nomeusuario&gt;.github.io&#39;</span>
+      - <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v2</span>
+        <span style="color:#f92672">with</span>:
+          <span style="color:#f92672">repository</span>: <span style="color:#e6db74">&#39;&lt;nomeusuario&gt;/&lt;nomeusuario&gt;.github.io&#39;</span>
           <span style="color:#75715e"># token com as permissões necessárias</span>
-          <span style="color:#66d9ef">token</span>: ${{ secrets.CD_BLOG_TOKEN }}
-          <span style="color:#66d9ef">path</span>: static-site
+          <span style="color:#f92672">token</span>: <span style="color:#ae81ff">${{ secrets.CD_BLOG_TOKEN }}</span>
+          <span style="color:#f92672">path</span>: <span style="color:#ae81ff">static-site</span>
         <span style="color:#75715e"># Fazemos download dos artefatos do job &#34;build&#34; para o</span>
         <span style="color:#75715e"># diretório /public</span>
-      - <span style="color:#66d9ef">name</span>: Download dos artefatos
-        <span style="color:#66d9ef">uses</span>: actions/download-artifact@v1
-        <span style="color:#66d9ef">with</span>:
-          <span style="color:#66d9ef">name</span>: public
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Download dos artefatos</span>
+        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/download-artifact@v1</span>
+        <span style="color:#f92672">with</span>:
+          <span style="color:#f92672">name</span>: <span style="color:#ae81ff">public</span>
         <span style="color:#75715e"># Copiamos os novos arquivos estáticos em /public para /static-site</span>
-      - <span style="color:#66d9ef">name</span>: Aplicar atualização
-        <span style="color:#66d9ef">shell</span>: bash
-        <span style="color:#66d9ef">run</span>: <span style="color:#e6db74">|
-</span><span style="color:#e6db74">          cp -r ./public/* ./static-site</span>
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Aplicar atualização</span>
+        <span style="color:#f92672">shell</span>: <span style="color:#ae81ff">bash</span>
+        <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">          </span>          <span style="color:#ae81ff">cp -r ./public/* ./static-site</span>
         <span style="color:#75715e"># Adicionamos as alterações e geramos um commit</span>
-      - <span style="color:#66d9ef">name</span>: Commit files
-        <span style="color:#66d9ef">run</span>: <span style="color:#e6db74">|
-</span><span style="color:#e6db74">          cd static-site</span>
-          git config --local user.email <span style="color:#e6db74">&#34;&lt;email-valido&gt;&#34;</span>
-          git config --local user.name <span style="color:#e6db74">&#34;GitHub Action - Deploy&#34;</span>
-          git add .
-          git commit -m <span style="color:#e6db74">&#34;Add changes&#34;</span> -a
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Commit files</span>
+        <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">          cd static-site
+</span><span style="color:#e6db74">          git config --local user.email &#34;&lt;email-valido&gt;&#34;
+</span><span style="color:#e6db74">          git config --local user.name &#34;GitHub Action - Deploy&#34;
+</span><span style="color:#e6db74">          git add .
+</span><span style="color:#e6db74">          git commit -m &#34;Add changes&#34; -a</span>          
         <span style="color:#75715e"># Por último, precisamos fazer um push para o repositório github.io</span>
         <span style="color:#75715e"># de destino</span>
-      - <span style="color:#66d9ef">name</span>: Push changes
-        <span style="color:#66d9ef">uses</span>: ad-m/github-push-action@master
-        <span style="color:#66d9ef">with</span>:
-          <span style="color:#66d9ef">repository</span>: <span style="color:#e6db74">&#39;&lt;nomeusuario&gt;/&lt;nomeusuario&gt;.github.io&#39;</span>
-          <span style="color:#66d9ef">github_token</span>: ${{ secrets.CD_BLOG_TOKEN }}
-          <span style="color:#66d9ef">directory</span>: static-site
+      - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Push changes</span>
+        <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">ad-m/github-push-action@master</span>
+        <span style="color:#f92672">with</span>:
+          <span style="color:#f92672">repository</span>: <span style="color:#e6db74">&#39;&lt;nomeusuario&gt;/&lt;nomeusuario&gt;.github.io&#39;</span>
+          <span style="color:#f92672">github_token</span>: <span style="color:#ae81ff">${{ secrets.CD_BLOG_TOKEN }}</span>
+          <span style="color:#f92672">directory</span>: <span style="color:#ae81ff">static-site</span>
 </code></pre></div><p>Sera necessário subsituir algumas variáveis no template, como o <code>&lt;nomeusuario&gt;</code>, o <code>&lt;email-valido&gt;</code>, e o template utilizado.</p>
 <p>Além disso, você deve ter notado que em dois momentos precisamos de um token do GitHub, como nesta linha: <code>github_token: ${{ secrets.CD_BLOG_TOKEN }}</code>. É bem fácil gerar e cadastrar este token.</p>
 <p><img src="/posts/artigo-continuous-delivery-blog-com-hugo/img/caminho-gerar-token.png" alt="Settings/Developer settings/Personal access tokens/Generate new token"></p>
@@ -497,8 +512,8 @@
 <p><img src="/posts/artigo-continuous-delivery-blog-com-hugo/img/visao-build.png" alt="Lista de execuções dos workflows"></p>
 <h3 id="agendamento-de-posts">Agendamento de posts</h3>
 <p>Esta abordagem também permite a publicação automática de posts agendados. A resposta está no começo do workflow. Podemos configurar um agendamento através de uma <a href="https://en.wikipedia.org/wiki/Cron">expressão cron</a> simples, como esta:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">schedule</span>:
-  - <span style="color:#66d9ef">cron</span>:  <span style="color:#e6db74">&#39;0 0 5 * *&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">schedule</span>:
+  - <span style="color:#f92672">cron</span>:  <span style="color:#e6db74">&#39;0 0 5 * *&#39;</span>
 </code></pre></div><p>Esta expressão descreve a frequência de deploy nos seguintes termos:</p>
 <pre><code>┌───────────── minuto (0 - 59)
 │ ┌───────────── hora (0 - 23)
@@ -650,7 +665,7 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
 
 
     

@@ -44,7 +44,7 @@
 <meta name="googlebot" content="index,follow" />
 <meta name="yandex-verification" content="20d83aeccd3b80c2" />
 <base href="https://blog.dyegomaas.com.br/posts/artigo-criando-uma-cli-com-gluegun/">
-<meta name="generator" content="Hugo 0.69.0" />
+<meta name="generator" content="Hugo 0.82.0" />
 
     
     
@@ -122,7 +122,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=" crossorigin="anonymous">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" crossorigin="anonymous" media="print">
@@ -131,9 +131,9 @@
 <link rel="stylesheet" href="/css/custom.69cb553f8fdb841923fb0042f13bb1a617b61a9c30b020d16fa9175995e8c089.css" integrity="sha256-actVP4/bhBkj&#43;wBC8Tuxphe2GpwwsCDRb6kXWZXowIk=" crossorigin="anonymous">
 
 
-<link rel="stylesheet" href="/scss/overrides.0f197a81b5f43bb1307ce597b6181c6b5c129a7071cea5b95f9de4b28e4558ab.css" integrity="sha256-Dxl6gbX0O7EwfOWXthgca1wSmnBxzqW5X53kso5FWKs=" crossorigin="anonymous">
-<link rel="stylesheet" href="/scss/modal.47695aa0f03ffad84cdb0eccb713627a9367db4a4d0b0d460178b6b0edb11643.css" integrity="sha256-R2laoPA/&#43;thM2w7MtxNiepNn20pNCw1GAXi2sO2xFkM=" crossorigin="anonymous">
-<link rel="stylesheet" href="/scss/custom.900a045b45beba39424d56d86214ca11ce9ba0de879024cb36a07a5a378e1152.css" integrity="sha256-kAoEW0W&#43;ujlCTVbYYhTKEc6boN6HkCTLNqB6WjeOEVI=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/overrides.e5359e6ec5dc6a3f2a6847c754879df87901e06d0291fa022b8b9d28c2886732.css" integrity="sha256-5TWebsXcaj8qaEfHVIed&#43;HkB4G0CkfoCK4udKMKIZzI=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/modal.a0e35fd42ff2f7a662b18b541e48d2768b83b5498197464e7b1d94d6a5208ee9.css" integrity="sha256-oONf1C/y96ZisYtUHkjSdouDtUmBl0ZOex2U1qUgjuk=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/custom.b6388d36492b00be450766e18af7f31c998f61716d57d2df3b9388fc72f2e923.css" integrity="sha256-tjiNNkkrAL5FB2bhivfzHJmPYXFtV9LfO5OI/HLy6SM=" crossorigin="anonymous">
 
 
 
@@ -195,26 +195,37 @@
         <input type="checkbox" id="menuToggle">
         <label for="menuToggle">Blog Dyego Maas</label>
         <div class="menu-content">
-          <div>
+          <div class="menu-container">
 	<ul class="sidebar-nav">
 		
 		
 			 
 				<li>
+					<a href="/">
+						<span><i class="fas fa-home"></i> Home</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
 					<a href="/posts/">
-						<span>Blog</span>
+						<span><i class="far fa-newspaper"></i> Artigos</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
+					<a href="https://dyegomaas.com.br/">
+						<span><i class="fas fa-address-card"></i> Dyego Maas</span>
 					</a>
 				</li>
 			
 		
 		<li>
-			<a href="https://dyegomaas.com.br/">
-				<span>Sobre<span>
-			</a>
-		</li>
-		<li>
 			<a id="search-button" rel="search" style="cursor: pointer;">
-    <i class="fa fa-search" aria-hidden="true"></i>
+    <i class="fa fa-search" aria-hidden="true"></i> Pesquisar
 </a>
 
 <div id="search-results-modal" class="modal display-none">
@@ -377,9 +388,13 @@
   
     <div class="toc-wrapper">
       <input type="checkbox" id="tocToggle">
-      <label for="tocToggle">Tabela de Conteúdo</label>
+      <label for="tocToggle">
+        <i class="fas fa-list-ul"></i>
+        <span id="toc-title">Nesta página</span>
+      </label>
+      <div id="toc-toggle-cover"></div>
       
-        <div class="toc" id="TableOfContents"></div>
+        <nav class="toc" id="TableOfContents"></nav>
       
     </div>
   
@@ -474,12 +489,12 @@
 </div>
 
 <p>Uma peça importante, onde a mágica começa, é o arquivo <code>cli.ts</code>. Ele é responsável por instanciar o <em>runtime</em> que vai rodar a aplicação. Nessa etapa, podemos configurar os plugins, os locais dos fontes e habilitar comandos padrão como <em>help</em> e <em>version</em>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">build</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gluegun&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">build</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;gluegun&#39;</span>)
 
 <span style="color:#75715e">/**
 </span><span style="color:#75715e"> * Create the cli and kick it off
 </span><span style="color:#75715e"> */</span>
-<span style="color:#a6e22e">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">run</span>(<span style="color:#a6e22e">argv</span>) {
+<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">run</span>(<span style="color:#a6e22e">argv</span>) {
   <span style="color:#75715e">// create a CLI runtime
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cli</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">build</span>()
     .<span style="color:#a6e22e">brand</span>(<span style="color:#e6db74">&#39;replicante&#39;</span>)
@@ -491,7 +506,7 @@
   <span style="color:#75715e">// enable the following method if you&#39;d like to skip loading one of these core extensions
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// this can improve performance if they&#39;re not necessary for your project:
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// .exclude([&#39;meta&#39;, &#39;strings&#39;, &#39;print&#39;, &#39;filesystem&#39;, &#39;semver&#39;, &#39;system&#39;, &#39;prompt&#39;, &#39;http&#39;, &#39;template&#39;, &#39;patching&#39;, &#39;package-manager&#39;])
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">toolbox</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">cli</span>.<span style="color:#a6e22e">run</span>(<span style="color:#a6e22e">argv</span>)
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">toolbox</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">cli</span>.<span style="color:#a6e22e">run</span>(<span style="color:#a6e22e">argv</span>)
 
   <span style="color:#75715e">// send it back (for testing, mostly)
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">toolbox</span>
@@ -499,25 +514,25 @@
 
 <span style="color:#66d9ef">module</span><span style="color:#a6e22e">.exports</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">run</span> }
 </code></pre></div><p>Além disso, ele já gera alguns cenários de teste básicos com Jest, no arquivo <code>__tests__/cli-integration.test.ts</code>, contemplando a ajuda, a versão e a geração de arquivos com base em templates. Uma mão na roda para começar:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">system</span>, <span style="color:#a6e22e">filesystem</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gluegun&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">system</span>, <span style="color:#a6e22e">filesystem</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;gluegun&#39;</span>)
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">src</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">filesystem</span>.<span style="color:#a6e22e">path</span>(<span style="color:#a6e22e">__dirname</span>, <span style="color:#e6db74">&#39;..&#39;</span>)
 
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cli</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">cmd</span> <span style="color:#f92672">=&gt;</span>
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cli</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">async</span> <span style="color:#a6e22e">cmd</span> <span style="color:#f92672">=&gt;</span>
   <span style="color:#a6e22e">system</span>.<span style="color:#a6e22e">run</span>(<span style="color:#e6db74">&#39;node &#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">filesystem</span>.<span style="color:#a6e22e">path</span>(<span style="color:#a6e22e">src</span>, <span style="color:#e6db74">&#39;bin&#39;</span>, <span style="color:#e6db74">&#39;replicante&#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">` </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">cmd</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>)
 
-<span style="color:#a6e22e">test</span>(<span style="color:#e6db74">&#39;outputs version&#39;</span>, <span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">cli</span>(<span style="color:#e6db74">&#39;--version&#39;</span>)
+<span style="color:#a6e22e">test</span>(<span style="color:#e6db74">&#39;outputs version&#39;</span>, <span style="color:#66d9ef">async</span> () <span style="color:#f92672">=&gt;</span> {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">cli</span>(<span style="color:#e6db74">&#39;--version&#39;</span>)
   <span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">output</span>).<span style="color:#a6e22e">toContain</span>(<span style="color:#e6db74">&#39;0.0.1&#39;</span>)
 })
 
-<span style="color:#a6e22e">test</span>(<span style="color:#e6db74">&#39;outputs help&#39;</span>, <span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">cli</span>(<span style="color:#e6db74">&#39;--help&#39;</span>)
+<span style="color:#a6e22e">test</span>(<span style="color:#e6db74">&#39;outputs help&#39;</span>, <span style="color:#66d9ef">async</span> () <span style="color:#f92672">=&gt;</span> {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">cli</span>(<span style="color:#e6db74">&#39;--help&#39;</span>)
   <span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">output</span>).<span style="color:#a6e22e">toContain</span>(<span style="color:#e6db74">&#39;0.0.1&#39;</span>)
 })
 
-<span style="color:#a6e22e">test</span>(<span style="color:#e6db74">&#39;generates file&#39;</span>, <span style="color:#a6e22e">async</span> () <span style="color:#f92672">=&gt;</span> {
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">cli</span>(<span style="color:#e6db74">&#39;generate foo&#39;</span>)
+<span style="color:#a6e22e">test</span>(<span style="color:#e6db74">&#39;generates file&#39;</span>, <span style="color:#66d9ef">async</span> () <span style="color:#f92672">=&gt;</span> {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">output</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">cli</span>(<span style="color:#e6db74">&#39;generate foo&#39;</span>)
 
   <span style="color:#a6e22e">expect</span>(<span style="color:#a6e22e">output</span>).<span style="color:#a6e22e">toContain</span>(<span style="color:#e6db74">&#39;Generated file at models/foo-model.ts&#39;</span>)
   <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">foomodel</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">filesystem</span>.<span style="color:#a6e22e">read</span>(<span style="color:#e6db74">&#39;models/foo-model.ts&#39;</span>)
@@ -533,9 +548,9 @@
 <p>Nesta seção, vou falar um pouco sobre como usei o Gluegun para tornar o Replicante uma realidade.</p>
 <p>Resumidamente, o Replicante é um super copiador de projetos. Você diz pra ele em qual dos seus projetos quer se basear, e quais transformações aplicar (geralmente, substituir termos específicos e namespaces), e ele gera um novo com as modificações aplicadas. Muito útil para freelancers que querem reaproveitar projetos anteriores nos seus novos projetos.</p>
 <p>Acho interessante começar pelo <code>cli.ts</code>, e explorar como ele ficou:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">build</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;gluegun&#39;</span>)
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">build</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;gluegun&#39;</span>)
 
-<span style="color:#a6e22e">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">run</span>(<span style="color:#a6e22e">argv</span>) {
+<span style="color:#66d9ef">async</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">run</span>(<span style="color:#a6e22e">argv</span>) {
   <span style="color:#75715e">// create a CLI runtime
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">cli</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">build</span>()
     .<span style="color:#a6e22e">brand</span>(<span style="color:#e6db74">&#39;replicante&#39;</span>)
@@ -548,7 +563,7 @@
     .<span style="color:#a6e22e">create</span>()
   
   <span style="color:#75715e">// run it
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">toolbox</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">cli</span>.<span style="color:#a6e22e">run</span>(<span style="color:#a6e22e">argv</span>)
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">toolbox</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">await</span> <span style="color:#a6e22e">cli</span>.<span style="color:#a6e22e">run</span>(<span style="color:#a6e22e">argv</span>)
 
   <span style="color:#75715e">// send it back (for testing, mostly)
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">toolbox</span>
@@ -573,7 +588,7 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript">  .<span style="color:#a6e22e">exclude</span>([<span style="color:#e6db74">&#39;meta&#39;</span>, <span style="color:#e6db74">&#39;strings&#39;</span>, <span style="color:#e6db74">&#39;print&#39;</span>, <span style="color:#e6db74">&#39;filesystem&#39;</span>, <span style="color:#e6db74">&#39;semver&#39;</span>,
     <span style="color:#e6db74">&#39;system&#39;</span>, <span style="color:#e6db74">&#39;prompt&#39;</span>, <span style="color:#e6db74">&#39;http&#39;</span>, <span style="color:#e6db74">&#39;template&#39;</span>, <span style="color:#e6db74">&#39;patching&#39;</span>, <span style="color:#e6db74">&#39;package-manager&#39;</span>])
 </code></pre></div><p>Criei então um novo comando, chamado <code>create.ts</code> na pasta <code>commands</code>. Na declaração do comando, defini o nome e a descrição do mesmo.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">GluegunCommand</span>, <span style="color:#a6e22e">filesystem</span>, <span style="color:#a6e22e">strings</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;gluegun&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#66d9ef">import</span> { <span style="color:#a6e22e">GluegunCommand</span>, <span style="color:#a6e22e">filesystem</span>, <span style="color:#a6e22e">strings</span> } <span style="color:#66d9ef">from</span> <span style="color:#e6db74">&#39;gluegun&#39;</span>
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">command</span>: <span style="color:#66d9ef">GluegunCommand</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;create&#39;</span>,
@@ -603,9 +618,9 @@
   <span style="color:#a6e22e">description</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;Create a REPLICANT by applying the RECIPE instructions to the SAMPLE&#39;</span>,
   <span style="color:#a6e22e">run</span>: <span style="color:#66d9ef">async</span> <span style="color:#a6e22e">toolbox</span> <span style="color:#f92672">=&gt;</span> {
     <span style="color:#75715e">// esses caras só vão ser carregados se usuário rodar o comando &#34;create&#34;
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>)
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;path&#39;</span>)
-    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">generateReplicant</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;../replication/replication-process&#39;</span>)
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>)
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;path&#39;</span>)
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">generateReplicant</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;../replication/replication-process&#39;</span>)
 
     <span style="color:#66d9ef">const</span> {
       <span style="color:#a6e22e">parameters</span>,
@@ -664,9 +679,9 @@
   <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;create&#39;</span>,
   <span style="color:#a6e22e">description</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;Create a REPLICANT by applying the RECIPE instructions to the SAMPLE&#39;</span>,
   <span style="color:#a6e22e">run</span>: <span style="color:#66d9ef">async</span> <span style="color:#a6e22e">toolbox</span> <span style="color:#f92672">=&gt;</span> {
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>)
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;path&#39;</span>)
-    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">generateReplicant</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;../replication/replication-process&#39;</span>)
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>)
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;path&#39;</span>)
+    <span style="color:#66d9ef">const</span> { <span style="color:#a6e22e">generateReplicant</span> } <span style="color:#f92672">=</span> <span style="color:#66d9ef">require</span>(<span style="color:#e6db74">&#39;../replication/replication-process&#39;</span>)
     <span style="color:#66d9ef">const</span> {
       <span style="color:#a6e22e">parameters</span>,
       <span style="color:#a6e22e">print</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">success</span>, <span style="color:#a6e22e">info</span>, <span style="color:#a6e22e">error</span> },
@@ -855,7 +870,7 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
 
 
     

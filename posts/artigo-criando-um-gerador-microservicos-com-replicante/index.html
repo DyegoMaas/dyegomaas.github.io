@@ -36,7 +36,7 @@
     "datePublished": "2021-04-21",
     "dateModified" : "2021-04-21",
     "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/artigo-criando-um-gerador-microservicos-com-replicante\/",
-    "wordCount" : "1321",
+    "wordCount" : "1320",
     "keywords" : [ "Ferramentas","gerador","microserviços","ambev tech","replicante","Blog"]
 }
 </script>
@@ -49,7 +49,7 @@
 <meta name="googlebot" content="index,follow" />
 <meta name="yandex-verification" content="20d83aeccd3b80c2" />
 <base href="https://blog.dyegomaas.com.br/posts/artigo-criando-um-gerador-microservicos-com-replicante/">
-<meta name="generator" content="Hugo 0.69.0" />
+<meta name="generator" content="Hugo 0.82.0" />
 
     
     
@@ -121,7 +121,7 @@
 
 
 
-<link rel="stylesheet" href="/scss/hyde-hyde.3081c4981fb69a2783dd36ecfdd0e6ba7a158d4cbfdd290ebce8f78ba0469fc6.css" integrity="sha256-MIHEmB&#43;2mieD3Tbs/dDmunoVjUy/3SkOvOj3i6BGn8Y=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/hyde-hyde.71157e768c4e111a23c3531b95e0cbb59bbef3c9e6901d36247cb53d6b6be258.css" integrity="sha256-cRV&#43;doxOERojw1MbleDLtZu&#43;88nmkB02JHy1PWtr4lg=" crossorigin="anonymous">
 
 
 <link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" crossorigin="anonymous" media="print">
@@ -130,9 +130,9 @@
 <link rel="stylesheet" href="/css/custom.69cb553f8fdb841923fb0042f13bb1a617b61a9c30b020d16fa9175995e8c089.css" integrity="sha256-actVP4/bhBkj&#43;wBC8Tuxphe2GpwwsCDRb6kXWZXowIk=" crossorigin="anonymous">
 
 
-<link rel="stylesheet" href="/scss/overrides.0f197a81b5f43bb1307ce597b6181c6b5c129a7071cea5b95f9de4b28e4558ab.css" integrity="sha256-Dxl6gbX0O7EwfOWXthgca1wSmnBxzqW5X53kso5FWKs=" crossorigin="anonymous">
-<link rel="stylesheet" href="/scss/modal.47695aa0f03ffad84cdb0eccb713627a9367db4a4d0b0d460178b6b0edb11643.css" integrity="sha256-R2laoPA/&#43;thM2w7MtxNiepNn20pNCw1GAXi2sO2xFkM=" crossorigin="anonymous">
-<link rel="stylesheet" href="/scss/custom.900a045b45beba39424d56d86214ca11ce9ba0de879024cb36a07a5a378e1152.css" integrity="sha256-kAoEW0W&#43;ujlCTVbYYhTKEc6boN6HkCTLNqB6WjeOEVI=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/overrides.e5359e6ec5dc6a3f2a6847c754879df87901e06d0291fa022b8b9d28c2886732.css" integrity="sha256-5TWebsXcaj8qaEfHVIed&#43;HkB4G0CkfoCK4udKMKIZzI=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/modal.a0e35fd42ff2f7a662b18b541e48d2768b83b5498197464e7b1d94d6a5208ee9.css" integrity="sha256-oONf1C/y96ZisYtUHkjSdouDtUmBl0ZOex2U1qUgjuk=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/custom.b6388d36492b00be450766e18af7f31c998f61716d57d2df3b9388fc72f2e923.css" integrity="sha256-tjiNNkkrAL5FB2bhivfzHJmPYXFtV9LfO5OI/HLy6SM=" crossorigin="anonymous">
 
 
 
@@ -194,26 +194,37 @@
         <input type="checkbox" id="menuToggle">
         <label for="menuToggle">Blog Dyego Maas</label>
         <div class="menu-content">
-          <div>
+          <div class="menu-container">
 	<ul class="sidebar-nav">
 		
 		
 			 
 				<li>
+					<a href="/">
+						<span><i class="fas fa-home"></i> Home</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
 					<a href="/posts/">
-						<span>Blog</span>
+						<span><i class="far fa-newspaper"></i> Artigos</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
+					<a href="https://dyegomaas.com.br/">
+						<span><i class="fas fa-address-card"></i> Dyego Maas</span>
 					</a>
 				</li>
 			
 		
 		<li>
-			<a href="https://dyegomaas.com.br/">
-				<span>Sobre<span>
-			</a>
-		</li>
-		<li>
 			<a id="search-button" rel="search" style="cursor: pointer;">
-    <i class="fa fa-search" aria-hidden="true"></i>
+    <i class="fa fa-search" aria-hidden="true"></i> Pesquisar
 </a>
 
 <div id="search-results-modal" class="modal display-none">
@@ -370,9 +381,13 @@
   
     <div class="toc-wrapper">
       <input type="checkbox" id="tocToggle">
-      <label for="tocToggle">Tabela de Conteúdo</label>
+      <label for="tocToggle">
+        <i class="fas fa-list-ul"></i>
+        <span id="toc-title">Nesta página</span>
+      </label>
+      <div id="toc-toggle-cover"></div>
       
-        <div class="toc" id="TableOfContents"></div>
+        <nav class="toc" id="TableOfContents"></nav>
       
     </div>
   
@@ -410,41 +425,41 @@
 <li>Renomear diretórios para refletir a nova estrutura de namespaces</li>
 </ul>
 <p>Fazer isso manualmente está sujeito a muitos erros, e o Replicante permite fazer todas essas etapas num único passo. Para fins de exemplo, veja a pipeline do Azure DevOps mais abaixo, que usa a CLI do Replicante para gerar um novo serviço com base no template e numa receita:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">name</span>: <span style="color:#e6db74">&#39;1.0.0&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">name</span>: <span style="color:#e6db74">&#39;1.0.0&#39;</span>
 
-<span style="color:#66d9ef">parameters</span>:
-  - <span style="color:#66d9ef">name</span>: <span style="color:#e6db74">&#39;ServiceName&#39;</span>
-    <span style="color:#66d9ef">type</span>: <span style="color:#e6db74">&#39;string&#39;</span>
-    <span style="color:#66d9ef">displayName</span>: <span style="color:#e6db74">&#39;Nome do serviço&#39;</span>
+<span style="color:#f92672">parameters</span>:
+  - <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#39;ServiceName&#39;</span>
+    <span style="color:#f92672">type</span>: <span style="color:#e6db74">&#39;string&#39;</span>
+    <span style="color:#f92672">displayName</span>: <span style="color:#e6db74">&#39;Nome do serviço&#39;</span>
 
-<span style="color:#66d9ef">variables</span>:
-- <span style="color:#66d9ef">name</span>: <span style="color:#e6db74">&#39;TemplateWorkingDirectory&#39;</span>
-  <span style="color:#66d9ef">value</span>: <span style="color:#e6db74">&#39;$(System.DefaultWorkingDirectory)/Services/CleanArchitectureTemplate&#39;</span>
+<span style="color:#f92672">variables</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#39;TemplateWorkingDirectory&#39;</span>
+  <span style="color:#f92672">value</span>: <span style="color:#e6db74">&#39;$(System.DefaultWorkingDirectory)/Services/CleanArchitectureTemplate&#39;</span>
 
-<span style="color:#66d9ef">stages</span>:
-  - <span style="color:#66d9ef">stage</span>: <span style="color:#e6db74">&#39;GenerateNewCSharpService&#39;</span>
-    <span style="color:#66d9ef">displayName</span>: <span style="color:#e6db74">&#39;Generate new CSharp service&#39;</span>
-    <span style="color:#66d9ef">jobs</span>:
-      - <span style="color:#66d9ef">job</span>: <span style="color:#e6db74">&#39;GenerateNewCSharpServiceJob&#39;</span>
-        <span style="color:#66d9ef">steps</span>:
-          - <span style="color:#66d9ef">task</span>: NodeTool@<span style="color:#ae81ff">0</span>
-            <span style="color:#66d9ef">displayName</span>: <span style="color:#e6db74">&#39;Using Node&#39;</span>
-            <span style="color:#66d9ef">inputs</span>:
-              <span style="color:#66d9ef">versionSpec</span>: <span style="color:#e6db74">&#39;14.16&#39;</span>
+<span style="color:#f92672">stages</span>:
+  - <span style="color:#f92672">stage</span>: <span style="color:#e6db74">&#39;GenerateNewCSharpService&#39;</span>
+    <span style="color:#f92672">displayName</span>: <span style="color:#e6db74">&#39;Generate new CSharp service&#39;</span>
+    <span style="color:#f92672">jobs</span>:
+      - <span style="color:#f92672">job</span>: <span style="color:#e6db74">&#39;GenerateNewCSharpServiceJob&#39;</span>
+        <span style="color:#f92672">steps</span>:
+          - <span style="color:#f92672">task</span>: <span style="color:#ae81ff">NodeTool@0</span>
+            <span style="color:#f92672">displayName</span>: <span style="color:#e6db74">&#39;Using Node&#39;</span>
+            <span style="color:#f92672">inputs</span>:
+              <span style="color:#f92672">versionSpec</span>: <span style="color:#e6db74">&#39;14.16&#39;</span>
 
-          - <span style="color:#66d9ef">script</span>: <span style="color:#e6db74">|
-</span><span style="color:#e6db74">              npm install -g replicante@1.1.1</span>
+          - <span style="color:#f92672">script</span>: |<span style="color:#e6db74">
+</span><span style="color:#e6db74">              npm install -g replicante@1.1.1
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">              sed -i &#39;s/%ReplicantName%/${{ parameters.ServiceName }}/g&#39; replicante-recipe.json
+</span><span style="color:#e6db74">
+</span><span style="color:#e6db74">              replicante create $(TemplateWorkingDirectory) replicante-recipe.json --target=$(Build.ArtifactStagingDirectory)</span>              
+            <span style="color:#f92672">displayName</span>: <span style="color:#e6db74">&#39;Replicating template service&#39;</span>
 
-              sed -i <span style="color:#e6db74">&#39;s/%ReplicantName%/${{ parameters.ServiceName }}/g&#39;</span> replicante-recipe.json
-
-              replicante create $(TemplateWorkingDirectory) replicante-recipe.json --target=$(Build.ArtifactStagingDirectory)
-            <span style="color:#66d9ef">displayName</span>: <span style="color:#e6db74">&#39;Replicating template service&#39;</span>
-
-          - <span style="color:#66d9ef">task</span>: PublishPipelineArtifact@<span style="color:#ae81ff">1</span>
-            <span style="color:#66d9ef">displayName</span>: <span style="color:#e6db74">&#39;Publish pipeline artifact&#39;</span>
-            <span style="color:#66d9ef">inputs</span>:
-              <span style="color:#66d9ef">artifactName</span>: <span style="color:#e6db74">&#39;${{ parameters.ServiceName }}&#39;</span>
-              <span style="color:#66d9ef">targetPath</span>: <span style="color:#e6db74">&#39;$(Build.ArtifactStagingDirectory)&#39;</span>
+          - <span style="color:#f92672">task</span>: <span style="color:#ae81ff">PublishPipelineArtifact@1</span>
+            <span style="color:#f92672">displayName</span>: <span style="color:#e6db74">&#39;Publish pipeline artifact&#39;</span>
+            <span style="color:#f92672">inputs</span>:
+              <span style="color:#f92672">artifactName</span>: <span style="color:#e6db74">&#39;${{ parameters.ServiceName }}&#39;</span>
+              <span style="color:#f92672">targetPath</span>: <span style="color:#e6db74">&#39;$(Build.ArtifactStagingDirectory)&#39;</span>
 </code></pre></div><p>Ao rodar este pipeline, precisamos informar o nome do nosso serviço, que vai definir o valor do parâmetro <code>ServiceName</code>. No exemplo da imagem, definimos que nosso novo serviço será o <code>MeuNovoServico</code>:</p>
 
 <div class="figure-wrapper">
@@ -706,7 +721,7 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-<script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js" integrity="sha384-ZbbbT1gw3joYkKRqh0kWyRp32UAvdqkpbLedQJSlnI8iLQcFVxaGyrOgOJiDQTTR" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
 
 
     
