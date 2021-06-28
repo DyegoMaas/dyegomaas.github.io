@@ -51,6 +51,7 @@ function fillWith(containerId, numberOfPosts) {
                 let anchor = document.createElement('a')
                 span.appendChild(anchor)
                 anchor.href = item.url
+                anchor.target = '_blank'
                 anchor.innerText = item.title
 
                 let dateTextElement = document.createTextNode(` - ${item.date.month} ${item.date.day}, ${item.date.year}`)
