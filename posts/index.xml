@@ -31,27 +31,6 @@ O versionamento semântico, de acordo com o SemVer 2.0.0, segue a seguinte estru
     </item>
     
     <item>
-      <title>Artigo Asciidoctor Experiment</title>
-      <link>https://blog.dyegomaas.com.br/posts/artigo-asciidoctor-experiment/</link>
-      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.dyegomaas.com.br/posts/artigo-asciidoctor-experiment/</guid>
-      <description>Insert Lead paragraph here.
- A augue nunc lacus auctor efficitur tempor placerat, dictum volutpat mi vitae viverra porta non sem, himenaeos senectus vivamus potenti cubilia sollicitudin. Curae cursus inceptos tincidunt magna mi nibh ad enim etiam, molestie eu quis primis hendrerit taciti phasellus. Feugiat ultricies dictumst iaculis potenti odio laoreet urna at, ultrices curae leo accumsan proin sem lobortis.
- Texto 1 Texto 2
- Estilos Texto1 Texto 2</description>
-
-      
-      
-      
-      
-      
-      
-      
-      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
-    </item>
-    
-    <item>
       <title>Como criar um gerador de microserviços usando o Replicante</title>
       <link>https://blog.dyegomaas.com.br/posts/artigo-criando-um-gerador-microservicos-com-replicante/</link>
       <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>

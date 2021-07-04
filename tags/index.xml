@@ -93,54 +93,6 @@
     </item>
     
     <item>
-      <title>dev</title>
-      <link>https://blog.dyegomaas.com.br/tags/dev/</link>
-      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.dyegomaas.com.br/tags/dev/</guid>
-      <description></description>
-
-      
-      
-      
-      
-      
-      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
-    </item>
-    
-    <item>
-      <title>hugo</title>
-      <link>https://blog.dyegomaas.com.br/tags/hugo/</link>
-      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.dyegomaas.com.br/tags/hugo/</guid>
-      <description></description>
-
-      
-      
-      
-      
-      
-      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
-    </item>
-    
-    <item>
-      <title>hyde-hyde</title>
-      <link>https://blog.dyegomaas.com.br/tags/hyde-hyde/</link>
-      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.dyegomaas.com.br/tags/hyde-hyde/</guid>
-      <description></description>
-
-      
-      
-      
-      
-      
-      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
-    </item>
-    
-    <item>
       <title>ambev tech</title>
       <link>https://blog.dyegomaas.com.br/tags/ambev-tech/</link>
       <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
@@ -194,6 +146,22 @@
       <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/replicante/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>dev</title>
+      <link>https://blog.dyegomaas.com.br/tags/dev/</link>
+      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/dev/</guid>
       <description></description>
 
       
@@ -706,6 +674,22 @@
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/blog/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>hugo</title>
+      <link>https://blog.dyegomaas.com.br/tags/hugo/</link>
+      <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/hugo/</guid>
       <description></description>
 
       

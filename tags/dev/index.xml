@@ -7,31 +7,10 @@
     <description>Recent content in dev on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Tue, 01 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Apr 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/tags/dev/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Artigo Asciidoctor Experiment</title>
-      <link>https://blog.dyegomaas.com.br/posts/artigo-asciidoctor-experiment/</link>
-      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.dyegomaas.com.br/posts/artigo-asciidoctor-experiment/</guid>
-      <description>Insert Lead paragraph here.
- A augue nunc lacus auctor efficitur tempor placerat, dictum volutpat mi vitae viverra porta non sem, himenaeos senectus vivamus potenti cubilia sollicitudin. Curae cursus inceptos tincidunt magna mi nibh ad enim etiam, molestie eu quis primis hendrerit taciti phasellus. Feugiat ultricies dictumst iaculis potenti odio laoreet urna at, ultrices curae leo accumsan proin sem lobortis.
- Texto 1 Texto 2
- Estilos Texto1 Texto 2</description>
-
-      
-      
-      
-      
-      
-      
-      
-      <enclosure url="https://blog.dyegomaas.com.br/tags/dev/img/posts/social-media.png" type="image/png"/>      
-    </item>
     
     <item>
       <title>Uma estratégia para nivelar o conhecimento de um time em tempo recorde</title>

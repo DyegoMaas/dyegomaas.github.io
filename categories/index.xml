@@ -29,22 +29,6 @@
     </item>
     
     <item>
-      <title>Testes</title>
-      <link>https://blog.dyegomaas.com.br/categories/testes/</link>
-      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.dyegomaas.com.br/categories/testes/</guid>
-      <description></description>
-
-      
-      
-      
-      
-      
-      <enclosure url="https://blog.dyegomaas.com.br/categories/img/posts/social-media.png" type="image/png"/>      
-    </item>
-    
-    <item>
       <title>Ferramentas</title>
       <link>https://blog.dyegomaas.com.br/categories/ferramentas/</link>
       <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
@@ -130,6 +114,22 @@
       <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/categories/arquitetura/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/categories/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>Testes</title>
+      <link>https://blog.dyegomaas.com.br/categories/testes/</link>
+      <pubDate>Wed, 29 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/categories/testes/</guid>
       <description></description>
 
       
