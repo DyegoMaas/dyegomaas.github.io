@@ -2,11 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://blog.dyegomaas.com.br/recommendations/books/</loc>
+    <lastmod>2021-07-10T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.dyegomaas.com.br/</loc>
-    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
+    <lastmod>2021-07-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/categories/</loc>
-    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
+    <lastmod>2021-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.dyegomaas.com.br/tags/livros/</loc>
+    <lastmod>2021-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.dyegomaas.com.br/categories/recomenda%C3%A7%C3%B5es/</loc>
+    <lastmod>2021-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.dyegomaas.com.br/recommendations/</loc>
+    <lastmod>2021-07-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.dyegomaas.com.br/tags/</loc>
+    <lastmod>2021-07-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/dotnet/</loc>
     <lastmod>2021-06-09T00:00:00+00:00</lastmod>
@@ -24,9 +39,6 @@
     <lastmod>2021-06-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/semantic-versioning/</loc>
-    <lastmod>2021-06-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.dyegomaas.com.br/tags/</loc>
     <lastmod>2021-06-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/versionamento-sem%C3%A2ntico/</loc>

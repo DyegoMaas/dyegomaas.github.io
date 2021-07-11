@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recomendações on Blog Dyego Maas</title>
+    <link>https://blog.dyegomaas.com.br/categories/recomenda%C3%A7%C3%B5es/</link>
+    <description>Recent content in Recomendações on Blog Dyego Maas</description>   
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Sat, 10 Jul 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.dyegomaas.com.br/categories/recomenda%C3%A7%C3%B5es/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Livros</title>
+      <link>https://blog.dyegomaas.com.br/recommendations/books/</link>
+      <pubDate>Sat, 10 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/recommendations/books/</guid>
+      <description>Título Por que eu recomendo?        Código Limpo - Robert C. Martin (Uncle Bob)
+ Este livro é leitura imprescindível para qualquer desenvolvedor que deseje escrever código de qualidade. Através de uma série de exemplos, ele ensina uma série de práticas que melhoram exponencialmente a qualidade do nosso código, tornando-o mais simples, fácil de compreender, e o mais importante, fácil de manter.</description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/categories/recomenda%C3%A7%C3%B5es/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+  </channel>
+</rss>
