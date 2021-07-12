@@ -7,7 +7,7 @@
     <description>Recent content in Recomendações on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Sat, 10 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Jul 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/categories/recomenda%C3%A7%C3%B5es/index.xml" rel="self" type="application/rss+xml" />
     
@@ -20,6 +20,44 @@
       <guid>https://blog.dyegomaas.com.br/recommendations/books/</guid>
       <description>Título Por que eu recomendo?        Código Limpo - Robert C. Martin (Uncle Bob)
  Este livro é leitura imprescindível para qualquer desenvolvedor que deseje escrever código de qualidade. Através de uma série de exemplos, ele ensina uma série de práticas que melhoram exponencialmente a qualidade do nosso código, tornando-o mais simples, fácil de compreender, e o mais importante, fácil de manter.</description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/categories/recomenda%C3%A7%C3%B5es/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>Blogs</title>
+      <link>https://blog.dyegomaas.com.br/recommendations/blogs/</link>
+      <pubDate>Sun, 11 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/recommendations/blogs/</guid>
+      <description>Título Por que eu recomendo?     Stephen Guise Blog
+ Stephen Guise é o autor dos livros Mini Habits e Elastic Habits, e o seu site/blog é uma mina de insights sobre como melhorar vários aspectos da nossa vida. Da criação de hábitos saudáveis a estratégias de planejamento de longo prazo.
+   Blog do Scott Hanselman
+ O blog do Scott Hanselman traz muito conteúdo interessante relacionado a .</description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/categories/recomenda%C3%A7%C3%B5es/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>Podcasts</title>
+      <link>https://blog.dyegomaas.com.br/recommendations/podcasts/</link>
+      <pubDate>Sat, 10 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/recommendations/podcasts/</guid>
+      <description>Título Periodicidade Duração Por que eu recomendo?     Lex Fridman Podcast
+ 1 a 2 episódios por semana
+ 2-5 horas
+ Lex Fridman é um pesquisador em Machine Learning no MIT. No início, esse podcast de entrevistas se chamava Lex Fridman AI e era focado somente nos campos de inteligência artificial e aprendizado de máquina, mas depois pivotou para uma um modelo de entrevistas mais aberto, muito parecido com as entrevistas do Joe Rogan.</description>
 
       
       
