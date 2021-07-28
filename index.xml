@@ -7,7 +7,7 @@
     <description>Recent content on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 11 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jul 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/index.xml" rel="self" type="application/rss+xml" />
     
@@ -58,6 +58,23 @@
  1 a 2 episódios por semana
  2-5 horas
  Lex Fridman é um pesquisador em Machine Learning no MIT. No início, esse podcast de entrevistas se chamava Lex Fridman AI e era focado somente nos campos de inteligência artificial e aprendizado de máquina, mas depois pivotou para um modelo de entrevistas mais aberto, muito parecido com as entrevistas do Joe Rogan.</description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>Como depurar pacotes NuGet com Source Link</title>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-como-depurar-com-source-link/</link>
+      <pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-como-depurar-com-source-link/</guid>
+      <description>O Source Link é uma tecnologia que visa prover uma grande experiência de depuração para binários .NET e que facilita muito a vida dos desenvolvedores na hora de resolver problemas.
+ Para isso, ele insere metadados nos binários e nos pacotes NuGet, de modo que a IDE possa fazer o download do código fonte diretamente dos repositórios no GitHub, GitLab, Azure DevOps, ou qualquer outro provedor que tenha suporte ao recurso.</description>
 
       
       
