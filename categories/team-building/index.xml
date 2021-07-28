@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Team Building on Blog Dyego Maas</title>
+    <link>https://blog.dyegomaas.com.br/categories/team-building/</link>
+    <description>Recent content in Team Building on Blog Dyego Maas</description>   
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Wed, 14 Apr 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.dyegomaas.com.br/categories/team-building/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Uma estratégia para nivelar o conhecimento de um time em tempo recorde</title>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-construindo-um-time-que-nao-tem-medo-de-aprender-e-ensinar/</link>
+      <pubDate>Wed, 14 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-construindo-um-time-que-nao-tem-medo-de-aprender-e-ensinar/</guid>
+      <description>Por volta de maio de 2020, ainda bem no começo da pandemia, nasceu na Ambev Tech um time responsável por construir a nova plataforma de promocionamento de produtos da Ambev no Brasil. O time já nasceu com todos trabalhando remotamente, ainda aprendendo a lidar com as novas rotinas, e com a explosão de reuniões no Zoom.
+Excluindo outros papéis como product owner e coordenador, a composição do time era a seguinte:</description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/categories/team-building/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+  </channel>
+</rss>

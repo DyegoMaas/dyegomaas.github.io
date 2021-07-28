@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mediatr on Blog Dyego Maas</title>
+    <link>https://blog.dyegomaas.com.br/tags/mediatr/</link>
+    <description>Recent content in mediatr on Blog Dyego Maas</description>   
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.dyegomaas.com.br/tags/mediatr/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Arquitetura Gritante com MediatR</title>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-arquitetura-gritante-com-mediatr/</link>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-arquitetura-gritante-com-mediatr/</guid>
+      <description>Em artigos anteriores, falei sobre o conceito de Arquitetura Gritante e sobre a biblioteca MediatR. Neste arquivo vou mostrar como podemos usar o MediatR para pôr em prática os conceitos de Arquitetura Gritante, resultando numa camada de aplicação mais voltada às operações de negócio.
+Estrutura de aplicação Uma estrutura de aplicação que tenho testado e gostado bastante, é baseada no modelo apresentado por Jason Taylor no NDC Sydney 2019, que aplica Arquitetura Limpa a um projeto com ASP.</description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/mediatr/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>Explorando o MediatR</title>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-mediatr/</link>
+      <pubDate>Wed, 02 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-mediatr/</guid>
+      <description>O MediatR é uma biblioteca pouco ambiciosa, feita para resolver um problema bem específico: como, dentro de um processo, desacoplar o envio de mensagens do manuseio das mesmas? E o MediatR faz isso de forma simples e elegante.
+MediatR A biblioteca foi criada por Jimmy Bogard, o mesmo autor do AutoMapper, e está atualmente na sua quinta versão. Um item bacana é que a biblioteca não tem dependências.
+Requests e Handlers O que eu mais gosto do MediatR é a forma como ele facilita mover toda lógica de negócio da camada de apresentação para a camada de aplicação.</description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/mediatr/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+  </channel>
+</rss>

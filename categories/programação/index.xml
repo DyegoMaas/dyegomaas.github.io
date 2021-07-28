@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programação on Blog Dyego Maas</title>
+    <link>https://blog.dyegomaas.com.br/categories/programa%C3%A7%C3%A3o/</link>
+    <description>Recent content in Programação on Blog Dyego Maas</description>   
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Wed, 28 Jul 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.dyegomaas.com.br/categories/programa%C3%A7%C3%A3o/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Como depurar pacotes NuGet com Source Link</title>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-como-depurar-com-source-link/</link>
+      <pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-como-depurar-com-source-link/</guid>
+      <description>O Source Link é uma tecnologia que visa prover uma grande experiência de depuração para binários .NET e que facilita muito a vida dos desenvolvedores na hora de resolver problemas.
+ Para isso, ele insere metadados nos binários e nos pacotes NuGet, de modo que a IDE possa fazer o download do código fonte diretamente dos repositórios no GitHub, GitLab, Azure DevOps, ou qualquer outro provedor que tenha suporte ao recurso.</description>
+
+      
+      
+      
+      
+      
+        
+        
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-como-depurar-com-source-link//img/posts/post-dotnet.jpg" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>Versionamento semântico simplificado com MinVer</title>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-versionamento-semantico-com-minver/</link>
+      <pubDate>Wed, 09 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-versionamento-semantico-com-minver/</guid>
+      <description>MinVer é uma ferramenta extremamente útil para facilitar o versionamento semântico de assemblies .NET usando Git tags.
+O versionamento semântico, de acordo com o SemVer 2.0.0, segue a seguinte estrutura: [Major].[Minor].[Patch]. Resumindo:
+ Quando a Major sobe, isso indica que ouve uma grande mudança, e possível quebra de compatibilidade com as versões anteriores Quando a Minor sobe, isso indica adição de funcionalidade, sem perda de compatibilidade Quando o Patch sobe, isso indica correções ou melhorias  Versionamento semântico mal feito Tradicionalmente, a forma como controlamos a versão de um assembly é através da tag &amp;lt;PackageVersion&amp;gt;1.</description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/categories/programa%C3%A7%C3%A3o/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>Criando uma CLI com Gluegun</title>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-criando-uma-cli-com-gluegun/</link>
+      <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-criando-uma-cli-com-gluegun/</guid>
+      <description>Quando comecei a implementar o Replicante (o meu primeiro projeto que considero verdadeiramente open source), precisei de uma ferramenta que me permitisse implementar uma CLI (command line interface) apresentável, fácil de usar, e fácil de desenvolver. Encontrei tudo isso no Gluegun.
+Gluegun? Gluegun é um toolkit para desenvolvimento de apps de linha de comando escritos em TypeScript. O nome é bem condizente com a sua construção, pois ele cola com maestria uma série de excelentes bibliotecas para resolver os principais problemas de um app de linha de comando.</description>
+
+      
+      
+      
+      
+      
+        
+        
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-criando-uma-cli-com-gluegun/img/cover.jpg" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>Pattern matching no C# 8.0</title>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-pattern-matching-csharp/</link>
+      <pubDate>Wed, 27 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-pattern-matching-csharp/</guid>
+      <description>A partir do C# 7.0 a linguagem começou a receber funcionalidades que fazem uso de um recurso de programação funcional chamado pattern matching. A maioria desses recursos é derivada do F# e a introdução deles no C# visa facilitar a vida do desenvolvedor e solução de certos tipos de problemas.
+São recursos muito poderosos e que simplificam em muito alguns tipos de construções.
+Como os recursos de pattern matching do C# 8.</description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/categories/programa%C3%A7%C3%A3o/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+  </channel>
+</rss>

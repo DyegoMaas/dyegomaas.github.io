@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>source link on Blog Dyego Maas</title>
+    <link>https://blog.dyegomaas.com.br/tags/source-link/</link>
+    <description>Recent content in source link on Blog Dyego Maas</description>   
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Wed, 28 Jul 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.dyegomaas.com.br/tags/source-link/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Como depurar pacotes NuGet com Source Link</title>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-como-depurar-com-source-link/</link>
+      <pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-como-depurar-com-source-link/</guid>
+      <description>O Source Link é uma tecnologia que visa prover uma grande experiência de depuração para binários .NET e que facilita muito a vida dos desenvolvedores na hora de resolver problemas.
+ Para isso, ele insere metadados nos binários e nos pacotes NuGet, de modo que a IDE possa fazer o download do código fonte diretamente dos repositórios no GitHub, GitLab, Azure DevOps, ou qualquer outro provedor que tenha suporte ao recurso.</description>
+
+      
+      
+      
+      
+      
+        
+        
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-como-depurar-com-source-link//img/posts/post-dotnet.jpg" type="image/png"/>      
+    </item>
+    
+  </channel>
+</rss>

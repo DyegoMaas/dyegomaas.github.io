@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>node on Blog Dyego Maas</title>
+    <link>https://blog.dyegomaas.com.br/tags/node/</link>
+    <description>Recent content in node on Blog Dyego Maas</description>   
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Wed, 04 Nov 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.dyegomaas.com.br/tags/node/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Criando uma CLI com Gluegun</title>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-criando-uma-cli-com-gluegun/</link>
+      <pubDate>Wed, 04 Nov 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-criando-uma-cli-com-gluegun/</guid>
+      <description>Quando comecei a implementar o Replicante (o meu primeiro projeto que considero verdadeiramente open source), precisei de uma ferramenta que me permitisse implementar uma CLI (command line interface) apresentável, fácil de usar, e fácil de desenvolver. Encontrei tudo isso no Gluegun.
+Gluegun? Gluegun é um toolkit para desenvolvimento de apps de linha de comando escritos em TypeScript. O nome é bem condizente com a sua construção, pois ele cola com maestria uma série de excelentes bibliotecas para resolver os principais problemas de um app de linha de comando.</description>
+
+      
+      
+      
+      
+      
+        
+        
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-criando-uma-cli-com-gluegun/img/cover.jpg" type="image/png"/>      
+    </item>
+    
+  </channel>
+</rss>

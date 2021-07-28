@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Resenha on Blog Dyego Maas</title>
+    <link>https://blog.dyegomaas.com.br/categories/resenha/</link>
+    <description>Recent content in Resenha on Blog Dyego Maas</description>   
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Wed, 08 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.dyegomaas.com.br/categories/resenha/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Apprenticeship Patterns</title>
+      <link>https://blog.dyegomaas.com.br/posts/resenha-apprenticeship-patterns/</link>
+      <pubDate>Wed, 08 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/resenha-apprenticeship-patterns/</guid>
+      <description>Apprenticeship Patterns: Guidance for the Aspiring Software Craftsman foi um dos melhores livros que li em muito tempo. Uma guia completo para todo aquele que deseja perseguir uma carreira com desenvolvimento de software.
+   Neste livro, Dave Hoover, Adewale Oshineye fizeram um magnífico trabalho ao compilar a sabedoria e experiência de vários dos melhores profissionais mundo afora, trazendo exemplos de inúmeras situações que um desenvolvedor vai enfrentar ao longo da sua carreira, tudo num formato bastante simples e fácil entender, chamado Language Patterns.</description>
+
+      
+      
+      
+      
+      
+        
+        
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/resenha-apprenticeship-patterns/img/cover-apprenticeship-patterns.png" type="image/png"/>      
+    </item>
+    
+  </channel>
+</rss>
