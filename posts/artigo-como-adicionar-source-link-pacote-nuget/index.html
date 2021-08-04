@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+    
+
+
+    <head itemscope itemtype="https://blog.dyegomaas.com.br/">
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/blog.dyegomaas.com.br\/"
+    },
+    "articleSection" : "posts",
+    "name" : "Como adicionar Source Link num pacote NuGet",
+    "headline" : "Como adicionar Source Link num pacote NuGet",
+    "description" : "Neste artigo, exploro em detalhes como adicionar suporte ao Source Link em uma biblioteca publicada no NuGet.",
+    "inLanguage" : "pt-BR",
+    "author" : {
+        "@type": "Person",
+        "name": "Dyego Maas"
+    }, 
+    "creator" : "Dyego Maas",
+    "publisher": "Dyego Maas",
+    "accountablePerson" : "Dyego Maas",
+    "copyrightHolder" : "Dyego Maas",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-08-04",
+    "dateModified" : "2021-08-04",
+    "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/artigo-como-adicionar-source-link-pacote-nuget\/",
+    "wordCount" : "960",
+    "keywords" : [ "Programação","nuget","source link","builds deterministicos","dotnet","Blog"]
+}
+</script>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+<meta name="yandex-verification" content="20d83aeccd3b80c2" />
+<base href="https://blog.dyegomaas.com.br/posts/artigo-como-adicionar-source-link-pacote-nuget/">
+<meta name="generator" content="Hugo 0.82.0" />
+
+    
+    
+    
+
+<title itemprop="name">Como adicionar Source Link num pacote NuGet - Blog Dyego Maas</title>
+<meta property="description" content="Neste artigo, exploro em detalhes como adicionar suporte ao Source Link em uma biblioteca publicada no NuGet." />
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+
+
+<meta name="keywords" content="nuget,source-link,builds-deterministicos,dotnet" />
+<link rel="canonical" href="https://blog.dyegomaas.com.br/posts/artigo-como-adicionar-source-link-pacote-nuget/" itemprop="url" />
+<meta name="url" content="https://blog.dyegomaas.com.br/posts/artigo-como-adicionar-source-link-pacote-nuget/" />
+<meta property="og:site_name" content="Blog - Dyego Maas" />
+<meta property="og:title" content="Como adicionar Source Link num pacote NuGet" />
+<meta property="twitter:title" content="Como adicionar Source Link num pacote NuGet" />
+<meta property="og:description" content="Neste artigo, exploro em detalhes como adicionar suporte ao Source Link em uma biblioteca publicada no NuGet." />
+<meta property="twitter:description" content="Neste artigo, exploro em detalhes como adicionar suporte ao Source Link em uma biblioteca publicada no NuGet." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.dyegomaas.com.br/posts/artigo-como-adicionar-source-link-pacote-nuget/" /><meta property="og:image" content="/img/posts/social-media.png"/>
+<meta property="og:image:secure_url" content="https://blog.dyegomaas.com.br/img/posts/social-media.png"/>
+<meta property="twitter:image" content="https://blog.dyegomaas.com.br/img/posts/social-media.png"/>
+<meta property="article:published_time" content="2021-08-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-08-04T00:00:00+00:00" />
+
+<meta property="article:section" content="posts" />
+
+<meta property="article:tag" content="Programação" />
+
+<meta property="article:tag" content="nuget" /><meta property="article:tag" content="source link" /><meta property="article:tag" content="builds deterministicos" /><meta property="article:tag" content="dotnet" />
+
+
+<meta name="theme-color" content="#000000" />
+<meta name="msapplication-TileColor" content="#000000" />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="Blog - Dyego Maas" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" />
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.e5e196df6474bcb74d824774ca3a557d93f6257f2597e57a87872935825da415.css" integrity="sha256-5eGW32R0vLdNgkd0yjpVfZP2JX8ll&#43;V6h4cpNYJdpBU=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" crossorigin="anonymous" media="print">
+
+
+<link rel="stylesheet" href="/css/custom.69cb553f8fdb841923fb0042f13bb1a617b61a9c30b020d16fa9175995e8c089.css" integrity="sha256-actVP4/bhBkj&#43;wBC8Tuxphe2GpwwsCDRb6kXWZXowIk=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde/asciidoctor.2f9054ce19cfdc6b28121b506f34b2e3510ef2c9f179c547220757b9fcc87c3e.css" integrity="sha256-L5BUzhnP3GsoEhtQbzSy41EO8snxecVHIgdXufzIfD4=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/overrides.92e2d00fc0c06948ff56b30c5070b7a35da4eec32b0d37ece7765d76f4de1333.css" integrity="sha256-kuLQD8DAaUj/VrMMUHC3o12k7sMrDTfs53ZddvTeEzM=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/modal.11b0c58893fe79b01abe7d568271b58767087890f49a4b5cc9ed9783e718d620.css" integrity="sha256-EbDFiJP&#43;ebAavn1WgnG1h2cIeJD0mktcye2Xg&#43;cY1iA=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/custom.5d650f056ae1b5d754bee09fdb833f02ff6c28c5f859a3c36331e4f60f5851bb.css" integrity="sha256-XWUPBWrhtddUvuCf24M/Av9sKMX4WaPDYzHk9g9YUbs=" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=" crossorigin="anonymous">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js" defer></script>
+<script src="https://unpkg.com/lunr/lunr.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.pt.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" defer></script>
+
+<script src="/js/layout-adjustments.js" defer></script><script src="/js/custom-search.js" defer></script>
+
+<script async>
+  document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+      adjustLayout();
+      initializeSearch('/search-index.json', '/search-data-companion.json');
+   }
+ }
+</script>
+</head>
+
+    <body class=" ">
+    
+<div class="sidebar">
+    <div class="container ">
+      <div class="sidebar-about">
+        <span class="site__title">
+          <a href="https://blog.dyegomaas.com.br/">Blog Dyego Maas</a>
+        </span>
+        
+          
+          
+          
+          <div class="author-image">
+            <img src="https://blog.dyegomaas.com.br/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+          </div>
+          
+        
+        
+        <p class="site__description">
+           Arquiteto de software e Escritor 
+        </p>
+      </div>
+      <div class="collapsible-menu">
+        <input type="checkbox" id="menuToggle">
+        <label for="menuToggle">Blog Dyego Maas</label>
+        <div class="menu-content">
+          <div class="menu-container">
+	<ul class="sidebar-nav">
+		
+		
+			 
+				<li>
+					<a href="/">
+						<span><i class="fas fa-home"></i> Home</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
+					<a href="/posts/">
+						<span><i class="far fa-newspaper"></i> Artigos</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
+					<a href="/recommendations/">
+						<span><i class="fas fa-book"></i> Recomendações</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
+					<a href="https://dyegomaas.com.br/">
+						<span><i class="fas fa-address-card"></i> Dyego Maas</span>
+					</a>
+				</li>
+			
+		
+		<li>
+			<a id="search-button" rel="search" style="cursor: pointer;">
+    <i class="fa fa-search" aria-hidden="true"></i> Pesquisar
+</a>
+
+<div id="search-results-modal" class="modal display-none">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close">&times;</span>
+        <h2>O que você procura?</h2>
+      </div>
+      <div class="modal-body">
+        <input type="search" id="search-input" results="10" placeholder="Pesquisar... (pressione Enter)">
+        <div>
+            <ul id="search-results"></ul>
+        </div>
+      </div>
+      
+    </div>
+</div>
+		</li>
+	</ul>
+</div>
+
+          <section class="social">
+	
+	<a href="https://twitter.com/DyegoMaas" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/DyegoAlekssander" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/Dyegomaas" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/dyego-maas" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:dyego.maas@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+
+	
+	 
+	
+	
+	<a href="https://blog.dyegomaas.com.br/index.xml" rel="me"><i class="fas fa-rss fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+          
+<div class="sponsored-image-container">
+    
+    <img src="" class="sponsored-image">
+    
+</div>
+
+        </div>
+      </div>
+      
+
+
+    </div>
+  </div>
+  
+        <div class="content container">
+            
+    
+<article class="real">
+  <header>
+    <h1>Como adicionar Source Link num pacote NuGet</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 04
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    Ago, 
+  
+
+  
+
+  
+
+  
+
+  
+
+
+2021
+    
+    
+    
+      
+      
+          em
+          
+          
+              <a class="badge badge-category" href="/categories/programa%C3%A7%C3%A3o">PROGRAMAÇÃO</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/nuget">nuget</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/source-link">source link</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/builds-deterministicos">builds deterministicos</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/dotnet">dotnet</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> <span>5 min de leitura</span>
+
+    
+           
+      
+      
+      
+      
+        <p class="post-series-paragraph">Posts na série:</p>
+        <ul class="series">
+        
+          <li><a href="https://blog.dyegomaas.com.br/posts/artigo-como-adicionar-source-link-pacote-nuget/">Como adicionar Source Link num pacote NuGet</a></li>
+        
+          <li><a href="https://blog.dyegomaas.com.br/posts/artigo-como-depurar-com-source-link/">Como depurar pacotes NuGet com Source Link</a></li>
+        
+        </ul>
+      
+     
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">
+        <i class="fas fa-list-ul"></i>
+        <span id="toc-title">Nesta página&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      </label>
+      <div id="toc-toggle-cover"></div>
+      
+        <nav class="toc" id="TableOfContents"></nav>
+      
+    </div>
+  
+  
+  <div class="post">
+    <div class="paragraph">
+<p>Como pudemos ver no <a href="/posts/artigo-como-depurar-com-source-link">artigo anterior</a>, o <a href="https://github.com/dotnet/sourcelink">Source Link</a> é uma tecnologia que visa prover uma grande experiência de depuração para binários .NET e que facilita muito a vida dos desenvolvedores na hora de resolver problemas.</p>
+</div>
+<div class="paragraph">
+<p>Neste artigo, veremos como adicionar suporte ao Source Link nas nossas bibliotecas.</p>
+</div>
+<div class="sect1">
+<h2 id="_como_adicionar_source_link_num_assembly"><a class="anchor" href="#_como_adicionar_source_link_num_assembly"></a><a class="link" href="#_como_adicionar_source_link_num_assembly">Como adicionar Source Link num assembly</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>O primeiro passo para adicionar suporte ao Source Link nos nossos assemblies é instalar o pacote Source Link do provedor de controle de versão que você utiliza no seu projeto.</p>
+</div>
+<div class="paragraph">
+<p>Para fins de exemplo neste artigo, vou utilizar a minha biblioteca ForeverFactory, que está hospedada no GitHub. Para uma lista completa dos provedores suportados, consulte o repositório do <a href="https://github.com/dotnet/sourcelink">Source Link</a>.</p>
+</div>
+<div class="paragraph">
+<p>Assim, você pode instalar o SourceLink adicionando a seguinte referência no seu projeto:</p>
+</div>
+<div class="listingblock">
+<div class="title">Projeto.csproj</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;ItemGroup&gt;
+    &lt;PackageReference Include=&#34;Microsoft.SourceLink.GitHub&#34; Version=&#34;1.0.0&#34;&gt;
+        &lt;PrivateAssets&gt;all&lt;/PrivateAssets&gt;
+        &lt;IncludeAssets&gt;runtime; build; native; analyzers; buildtransitive&lt;/IncludeAssets&gt;
+    &lt;/PackageReference&gt;
+&lt;/ItemGroup&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+É de suma importância que a propriedade <code>PrivateAssets</code> seja definida como <code>all</code> para o Source Link funcionar.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Feito isso, precisamos configurar no arquivo do projeto como será feita a geração dos pacotes de símbolos.</p>
+</div>
+<div class="listingblock">
+<div class="title">ForeverFactory.csproj</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;PropertyGroup&gt;
+    &lt;TargetFrameworks&gt;net5.0;netstandard2.0;netstandard2.1&lt;/TargetFrameworks&gt;
+    &lt;Features&gt;strict&lt;/Features&gt;
+    &lt;Authors&gt;Dyego Alekssander Maas&lt;/Authors&gt;
+    &lt;Copyright&gt;Copyright Dyego Alekssander Maas&lt;/Copyright&gt;
+    &lt;PackageId&gt;ForeverFactory&lt;/PackageId&gt;
+    &lt;Description&gt;Forever Factory makes it super easy to build many customized objects.&lt;/Description&gt;
+    &lt;PackageProjectUrl&gt;https://github.com/DyegoMaas/ForeverFactory&lt;/PackageProjectUrl&gt;
+    &lt;RepositoryUrl&gt;https://github.com/DyegoMaas/ForeverFactory&lt;/RepositoryUrl&gt;
+    &lt;PackageTags&gt;ForeverFactory factory builder&lt;/PackageTags&gt;
+    &lt;PackageLicenseExpression&gt;MIT&lt;/PackageLicenseExpression&gt;
+    &lt;MinVerTagPrefix&gt;v&lt;/MinVerTagPrefix&gt;
+    &lt;EmbedUntrackedSources&gt;true&lt;/EmbedUntrackedSources&gt;
+    &lt;PackageIcon&gt;icon_128x128.png&lt;/PackageIcon&gt;
+    &lt;DebugType&gt;full&lt;/DebugType&gt;
+
+    &lt;PublishRepositoryUrl&gt;true&lt;/PublishRepositoryUrl&gt;       <i class="conum" data-value="1"></i><b>(1)</b>
+    &lt;EmbedUntrackedSources&gt;true&lt;/EmbedUntrackedSources&gt;     <i class="conum" data-value="2"></i><b>(2)</b>
+    &lt;IncludeSymbols&gt;true&lt;/IncludeSymbols&gt;                   <i class="conum" data-value="3"></i><b>(3)</b>
+    &lt;SymbolPackageFormat&gt;snupkg&lt;/SymbolPackageFormat&gt;       <i class="conum" data-value="4"></i><b>(4)</b>
+&lt;/PropertyGroup&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Define a URL do repositório que será incluída nos metadados do pacote de símbolos</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Instrui o o sistema de build a embarcar arquivos que participaram do build, mas não são rastreados pelo controle de versão</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Instrui o sistema de build a gerar um pacote de símbolos, além do pacote com os binários</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Define o formato do pacote de símbolos como <code>snupkg</code></td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Com essas configurações feitas, podemos gerar um pacote localmente com os seguintes comandos:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dotnet build -c Release
+dotnet pack src/ForeverFactory/ForeverFactory.csproj -c Release --no-build -o nuget-package</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Com este comando <code>dotnet pack</code>, geramos nosso pacote NuGet no diretório <code>nuget-package</code>, como podemos ver na imagem a seguir:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/diretorio-nuget-package.jpg" alt="Diretório gerado, com os arquivos ForeverFactory.4.0.2.nupkg e ForeverFactory.4.0.2.snupkg"/>
+</div>
+<div class="title">Figura 1. Diretório com os pacotes gerados</div>
+</div>
+<div class="sect2">
+<h3 id="_como_validar_pacotes_nuget_usando_ngpe"><a class="anchor" href="#_como_validar_pacotes_nuget_usando_ngpe"></a><a class="link" href="#_como_validar_pacotes_nuget_usando_ngpe">Como validar pacotes NuGet usando NGPE</a></h3>
+<div class="paragraph">
+<p>Antes de publicar nosso pacote, podemos validá-lo com a ferramenta <a href="https://github.com/NuGetPackageExplorer/NuGetPackageExplorer">NuGet Package Explorer (NGPE)</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/conteudo-nupkg.jpg" alt="Arquivo ForeverFactory.4.0.2.nupkg aberto no NuGet Package Explorer" width="com os metadados à esquerda" height="e a árvore de conteúdos à direita"/>
+</div>
+<div class="title">Figura 2. Pacote .nupkg aberto no NuGet Package Explorer</div>
+</div>
+<div class="paragraph">
+<p>Com o NGPE, podemos confirmar que os metadados necessários foram embarcados no pacote:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>O conteúdo do pacote, com os binários, ícone do projeto e XMLs de documentação</p>
+</li>
+<li>
+<p>Na seção <em>Repository</em>, encontramos a URL do repositório, e o commit atual</p>
+</li>
+<li>
+<p>Na seção Health, a ferramenta nos indica dois problemas:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>O pacote foi gerado a partir de um build não-determístico</p>
+</li>
+<li>
+<p>Há flags do compilador faltando</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Voltaremos a tratar desses dois pontos mais adiante no artigo. Vamos agora verificar o que contém o pacote de símbolos gerado:
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/conteudo-snupkg.jpg" alt="Arquivo ForeverFactory.4.0.2.snupkg aberto no NuGet Package Explorer" width="com os metadados à esquerda" height="e a árvore de conteúdos à direita"/>
+</div>
+<div class="title">Figura 3. Pacote .snupkg aberto no NuGet Package Explorer</div>
+</div>
+<div class="paragraph">
+<p>Como podemos verificar no arquivo, o pacote de símbolos contém os arquivos <a href="https://www.wikiwand.com/en/Program_database">PDB</a> para depuração, além dos metadados associando repositório e commit ao pacote.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configurando_builds_determinísticos"><a class="anchor" href="#_configurando_builds_determinísticos"></a><a class="link" href="#_configurando_builds_determinísticos">Configurando builds determinísticos</a></h3>
+<div class="paragraph">
+<p>Por padrão, <strong>os builds do .NET são indeterminísticos</strong>. Isso significa que cada build gera binários e símbolos ligeiramente diferentes de builds anteriores.</p>
+</div>
+<div class="paragraph">
+<p>Eles são diferentes porque incluem metadados acerca da máquina que executou o build, timestamp, entre outros, localização dos arquivos na máquina e muito mais. Essas informações servem principalmente para facilitar a depuração local desses binários.</p>
+</div>
+<div class="paragraph">
+<p>Isso é um problema para um pacote NuGet publicado porque não é possível garantir que este pacote é o que diz ser.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+A recomendação nesse caso, é fazer com que o build que publica o pacote nos servidores do NuGet, executado num pipeline de CI, execute builds determinísticos.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Esta configuração é feita através da</p>
+</div>
+<div class="listingblock">
+<div class="title">ForeverFactory.csproj</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml hljs" data-lang="xml">&lt;PropertyGroup&gt;
+    &lt;TargetFrameworks&gt;net5.0;netstandard2.0;netstandard2.1&lt;/TargetFrameworks&gt;
+    &lt;Features&gt;strict&lt;/Features&gt;
+    &lt;Authors&gt;Dyego Alekssander Maas&lt;/Authors&gt;
+    &lt;Copyright&gt;Copyright Dyego Alekssander Maas&lt;/Copyright&gt;
+    &lt;PackageId&gt;ForeverFactory&lt;/PackageId&gt;
+    &lt;Description&gt;Forever Factory makes it super easy to build many customized objects.&lt;/Description&gt;
+    &lt;PackageProjectUrl&gt;https://github.com/DyegoMaas/ForeverFactory&lt;/PackageProjectUrl&gt;
+    &lt;RepositoryUrl&gt;https://github.com/DyegoMaas/ForeverFactory&lt;/RepositoryUrl&gt;
+    &lt;PackageTags&gt;ForeverFactory factory builder&lt;/PackageTags&gt;
+    &lt;PackageLicenseExpression&gt;MIT&lt;/PackageLicenseExpression&gt;
+    &lt;MinVerTagPrefix&gt;v&lt;/MinVerTagPrefix&gt;
+    &lt;PackageIcon&gt;icon_128x128.png&lt;/PackageIcon&gt;
+    &lt;DebugType&gt;full&lt;/DebugType&gt;
+
+    &lt;PublishRepositoryUrl&gt;true&lt;/PublishRepositoryUrl&gt;
+    &lt;EmbedUntrackedSources&gt;true&lt;/EmbedUntrackedSources&gt;
+    &lt;IncludeSymbols&gt;true&lt;/IncludeSymbols&gt;
+    &lt;SymbolPackageFormat&gt;snupkg&lt;/SymbolPackageFormat&gt;
+
+    &lt;Deterministic&gt;true&lt;/Deterministic&gt; <i class="conum" data-value="1"></i><b>(1)</b>
+    &lt;ContinuousIntegrationBuild Condition=&#34;&#39;$(GITHUB_ACTIONS)&#39; == &#39;true&#39;&#34;&gt;true&lt;/ContinuousIntegrationBuild&gt; <i class="conum" data-value="2"></i><b>(2)</b>
+&lt;/PropertyGroup&gt;</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Instrui o sisema de build a utilizar builds determinísticos sempre que possível</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Determina que o build foi realizado num pipeline de integração contínua. Note que esta propriedade só é definida como <code>true</code> se o build for executado num workflow do GitHub Actions, conforme definido pela variável de ambiente <code>GITHUB_ACTIONS</code> estiver definida como <code>true</code></td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Conforme explicado <a href="https://github.com/clairernovotny/DeterministicBuilds">neste repositório</a>, builds determinísticos só acontecem em builds de integração contínua.</p>
+</div>
+<div class="paragraph">
+<p>Podemos simular um build de CI localmente com o seguinte comando:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">dotnet build /p:ContinuousIntegrationBuild=true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Abrindo este novo build no NGPE, podemos verificar que este novo pacote foi gerado com um <strong>build determinístico</strong>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/build-deterministico.jpg" alt="Pacote aberto no NuGet Package Explorer confirmando que o build foi determístico"/>
+</div>
+<div class="title">Figura 4. Build determinístico</div>
+</div>
+<div class="paragraph">
+<p>A próxima etapa, é realizar a publicação do pacote. Para fins de exemplo, compartilho a seguir o pipeline de release do meu projeto <a href="github.com/DyegoMaas/ForeverFactory">ForeverFactory</a>:</p>
+</div>
+<div class="listingblock">
+<div class="title">github/workflows/release.yaml</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-yaml hljs" data-lang="yaml">name: Release
+on:
+  push:
+    tags:
+    - &#39;*.*.*&#39;
+jobs:
+  release:
+    strategy:
+      fail-fast: false
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup dotnet 5.0
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 5.0.x
+      - name: Clean
+        run: dotnet clean -c Release
+      - name: Build
+        run: dotnet build -c Release
+      - name: Test
+        run: dotnet test -c Release -r nuget-package --no-build -l trx --verbosity=normal
+      - name: Pack
+        run: dotnet pack src/ForeverFactory/ForeverFactory.csproj -c Release --no-build -o nuget-package
+      - name: Publish to Nuget.org
+        run: dotnet nuget push nuget-package/*.nupkg -k ${{ secrets.NUGET_API_KEY }} -s https://api.nuget.org/v3/index.json <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Quando publicamos os arquivos <code>.nupkg</code>, o CLI do NuGet identifica a presença dos pacotes de símbolos <code>.snpkg</code> e publica eles também</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>A primeira coisa que precisamos confirmar, é se os símbolos estão sendo publicados corretamente no feed do projeto no <a href="https://www.nuget.org">NuGet.org</a>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/pacote-nuget-org.jpg" alt="Página do projeto ForeverFactory aberta no site nuget.org, mostrando que os pacotes de binários e de símbolos foram publicados"/>
+</div>
+<div class="title">Figura 5. Pacotes de binários símbolos publicados com sucesso</div>
+</div>
+<div class="paragraph">
+<p>Por fim, podemos validar o pacote publicado usando o NGPE. Para isso, basta abrir o pacote a partir do <em>feed</em> usando a opção <code>File → Open from Feed…​</code>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/resultado-final.jpg" alt="Pacote publicado aberto no NuGet Package Explorer, com todas as validações passando"/>
+</div>
+<div class="title">Figura 6. Validações passando</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusão"><a class="anchor" href="#_conclusão"></a><a class="link" href="#_conclusão">Conclusão</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Seguindo estes passos, habilitamos o Source Link na nossa biblioteca, tornando-a muito mais fácil de depurar, e tornando mais fácil a vida dos usuários.</p>
+</div>
+</div>
+</div>
+
+  </div>
+  <style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+position: relative;
+text-align: left;
+height: 36px;
+width: 32px;
+float: left;
+text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="color: silver;">Compartilhe: </span><div id="share-buttons">
+<div class="facebook" title="Compartilhe no Facebook" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-como-adicionar-source-link-pacote-nuget\/', 'sharer', 'width=626,height=436');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+<div class="twitter" title="Compartilhe no Twitter" onclick="window.open('http://twitter.com/share?text=Como adicionar Source Link num pacote NuGet&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-como-adicionar-source-link-pacote-nuget\/&hashtags=nuget,source-link,builds-deterministicos,dotnet');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+<div class="linkedin" title="Compartilhe no Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-como-adicionar-source-link-pacote-nuget\/&title=Como adicionar Source Link num pacote NuGet', 'sharer', 'width=626,height=700');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+<div class="mail" title="Compartilhe por Email" onclick="window.open('mailto:?&body=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-como-adicionar-source-link-pacote-nuget\/');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/artigo-como-depurar-com-source-link/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Como depurar pacotes NuGet com Source Link</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'blogdyegomaas';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111956442-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/v4-shims.min.css" integrity="sha256-wN7QJaqAwQ03kgUhyN4EU2phRdDkLrQYbFe0EvpQ60U=" crossorigin="anonymous" />
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/bash.min.js"></script>
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/yaml.min.js"></script>
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/xml.min.js"></script>
+            
+        
+    <script type="text/javascript">
+        
+        hljs.configure({languages: ["bash, yaml, xml"]});
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>
