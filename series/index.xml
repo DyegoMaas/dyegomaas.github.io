@@ -7,17 +7,17 @@
     <description>Recent content in Series on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 04 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/series/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Source Link</title>
-      <link>https://blog.dyegomaas.com.br/series/source-link/</link>
-      <pubDate>Wed, 04 Aug 2021 00:00:00 +0000</pubDate>
+      <title>Test Builders</title>
+      <link>https://blog.dyegomaas.com.br/series/test-builders/</link>
+      <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.dyegomaas.com.br/series/source-link/</guid>
+      <guid>https://blog.dyegomaas.com.br/series/test-builders/</guid>
       <description></description>
 
       
@@ -29,11 +29,11 @@
     </item>
     
     <item>
-      <title>Test Builders</title>
-      <link>https://blog.dyegomaas.com.br/series/test-builders/</link>
-      <pubDate>Wed, 22 Apr 2020 00:00:00 +0000</pubDate>
+      <title>Source Link</title>
+      <link>https://blog.dyegomaas.com.br/series/source-link/</link>
+      <pubDate>Wed, 04 Aug 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://blog.dyegomaas.com.br/series/test-builders/</guid>
+      <guid>https://blog.dyegomaas.com.br/series/source-link/</guid>
       <description></description>
 
       

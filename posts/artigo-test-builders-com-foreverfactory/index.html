@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+    
+
+
+    <head itemscope itemtype="https://blog.dyegomaas.com.br/">
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/blog.dyegomaas.com.br\/"
+    },
+    "articleSection" : "posts",
+    "name" : "Como implementar test builders em C# com ForeverFactory",
+    "headline" : "Como implementar test builders em C# com ForeverFactory",
+    "description" : "Neste artigo, apresento o ForeverFactory, biblioteca de código aberto de minha autoria focada em facilitar a criação de objetos para testes.",
+    "inLanguage" : "pt-BR",
+    "author" : {
+        "@type": "Person",
+        "name": "Dyego Maas"
+    }, 
+    "image": {
+        "@type": "imageObject",
+        "url": "https://blog.dyegomaas.com.br/img/posts/post-dotnet.jpg"
+    },
+    
+    "creator" : "Dyego Maas",
+    "publisher": "Dyego Maas",
+    "accountablePerson" : "Dyego Maas",
+    "copyrightHolder" : "Dyego Maas",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-08-11",
+    "dateModified" : "2021-08-11",
+    "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/artigo-test-builders-com-foreverfactory\/",
+    "wordCount" : "1236",
+    "keywords" : [ "Testes","csharp","test data builders","builder pattern","forever factory","nbuilder","Blog"]
+}
+</script>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+<meta name="yandex-verification" content="20d83aeccd3b80c2" />
+<base href="https://blog.dyegomaas.com.br/posts/artigo-test-builders-com-foreverfactory/">
+<meta name="generator" content="Hugo 0.82.0" />
+
+    
+    
+    
+
+<title itemprop="name">Como implementar test builders em C# com ForeverFactory - Blog Dyego Maas</title>
+<meta property="description" content="Neste artigo, apresento o ForeverFactory, biblioteca de código aberto de minha autoria focada em facilitar a criação de objetos para testes." />
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+
+
+<meta name="keywords" content="csharp,test-data-builders,builder-pattern,forever-factory,nbuilder" />
+<link rel="canonical" href="https://blog.dyegomaas.com.br/posts/artigo-test-builders-com-foreverfactory/" itemprop="url" />
+<meta name="url" content="https://blog.dyegomaas.com.br/posts/artigo-test-builders-com-foreverfactory/" />
+<meta property="og:site_name" content="Blog - Dyego Maas" />
+<meta property="og:title" content="Como implementar test builders em C# com ForeverFactory" />
+<meta property="twitter:title" content="Como implementar test builders em C# com ForeverFactory" />
+<meta property="og:description" content="Neste artigo, apresento o ForeverFactory, biblioteca de código aberto de minha autoria focada em facilitar a criação de objetos para testes." />
+<meta property="twitter:description" content="Neste artigo, apresento o ForeverFactory, biblioteca de código aberto de minha autoria focada em facilitar a criação de objetos para testes." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.dyegomaas.com.br/posts/artigo-test-builders-com-foreverfactory/" /><meta property="og:image" content="/img/posts/post-dotnet.jpg" />
+<meta property="og:image:secure_url" content="https://blog.dyegomaas.com.br/img/posts/post-dotnet.jpg" />
+<meta property="twitter:image" content="https://blog.dyegomaas.com.br/img/posts/post-dotnet.jpg" />
+<meta property="article:published_time" content="2021-08-11T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-08-11T00:00:00+00:00" />
+
+<meta property="article:section" content="posts" />
+
+<meta property="article:tag" content="Testes" />
+
+<meta property="article:tag" content="csharp" /><meta property="article:tag" content="test data builders" /><meta property="article:tag" content="builder pattern" /><meta property="article:tag" content="forever factory" /><meta property="article:tag" content="nbuilder" />
+
+
+<meta name="theme-color" content="#000000" />
+<meta name="msapplication-TileColor" content="#000000" />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="Blog - Dyego Maas" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" />
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.e5e196df6474bcb74d824774ca3a557d93f6257f2597e57a87872935825da415.css" integrity="sha256-5eGW32R0vLdNgkd0yjpVfZP2JX8ll&#43;V6h4cpNYJdpBU=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" crossorigin="anonymous" media="print">
+
+
+<link rel="stylesheet" href="/css/custom.69cb553f8fdb841923fb0042f13bb1a617b61a9c30b020d16fa9175995e8c089.css" integrity="sha256-actVP4/bhBkj&#43;wBC8Tuxphe2GpwwsCDRb6kXWZXowIk=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde/asciidoctor.2f9054ce19cfdc6b28121b506f34b2e3510ef2c9f179c547220757b9fcc87c3e.css" integrity="sha256-L5BUzhnP3GsoEhtQbzSy41EO8snxecVHIgdXufzIfD4=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/overrides.92e2d00fc0c06948ff56b30c5070b7a35da4eec32b0d37ece7765d76f4de1333.css" integrity="sha256-kuLQD8DAaUj/VrMMUHC3o12k7sMrDTfs53ZddvTeEzM=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/modal.11b0c58893fe79b01abe7d568271b58767087890f49a4b5cc9ed9783e718d620.css" integrity="sha256-EbDFiJP&#43;ebAavn1WgnG1h2cIeJD0mktcye2Xg&#43;cY1iA=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/custom.5d650f056ae1b5d754bee09fdb833f02ff6c28c5f859a3c36331e4f60f5851bb.css" integrity="sha256-XWUPBWrhtddUvuCf24M/Av9sKMX4WaPDYzHk9g9YUbs=" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=" crossorigin="anonymous">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js" defer></script>
+<script src="https://unpkg.com/lunr/lunr.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.pt.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" defer></script>
+
+<script src="/js/layout-adjustments.js" defer></script><script src="/js/custom-search.js" defer></script>
+
+<script async>
+  document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+      adjustLayout();
+      initializeSearch('/search-index.json', '/search-data-companion.json');
+   }
+ }
+</script>
+</head>
+
+    <body class=" ">
+    
+<div class="sidebar">
+    <div class="container ">
+      <div class="sidebar-about">
+        <span class="site__title">
+          <a href="https://blog.dyegomaas.com.br/">Blog Dyego Maas</a>
+        </span>
+        
+          
+          
+          
+          <div class="author-image">
+            <img src="https://blog.dyegomaas.com.br/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+          </div>
+          
+        
+        
+        <p class="site__description">
+           Arquiteto de software e Escritor 
+        </p>
+      </div>
+      <div class="collapsible-menu">
+        <input type="checkbox" id="menuToggle">
+        <label for="menuToggle">Blog Dyego Maas</label>
+        <div class="menu-content">
+          <div class="menu-container">
+	<ul class="sidebar-nav">
+		
+		
+			 
+				<li>
+					<a href="/">
+						<span><i class="fas fa-home"></i> Home</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
+					<a href="/posts/">
+						<span><i class="far fa-newspaper"></i> Artigos</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
+					<a href="/recommendations/">
+						<span><i class="fas fa-book"></i> Recomendações</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
+					<a href="https://dyegomaas.com.br/">
+						<span><i class="fas fa-address-card"></i> Dyego Maas</span>
+					</a>
+				</li>
+			
+		
+		<li>
+			<a id="search-button" rel="search" style="cursor: pointer;">
+    <i class="fa fa-search" aria-hidden="true"></i> Pesquisar
+</a>
+
+<div id="search-results-modal" class="modal display-none">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close">&times;</span>
+        <h2>O que você procura?</h2>
+      </div>
+      <div class="modal-body">
+        <input type="search" id="search-input" results="10" placeholder="Pesquisar... (pressione Enter)">
+        <div>
+            <ul id="search-results"></ul>
+        </div>
+      </div>
+      
+    </div>
+</div>
+		</li>
+	</ul>
+</div>
+
+          <section class="social">
+	
+	<a href="https://twitter.com/DyegoMaas" rel="me"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/DyegoAlekssander" rel="me"><i class="fab fa-facebook-f"></i></a>
+	
+	
+	<a href="https://github.com/Dyegomaas" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/dyego-maas" rel="me"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:dyego.maas@gmail.com" rel="me"><i class="fas fa-at fa-lg" aria-hidden="true"></i></a>
+	
+
+	
+	 
+	
+	
+	<a href="https://blog.dyegomaas.com.br/index.xml" rel="me"><i class="fas fa-rss fa-lg" aria-hidden="true"></i></a>
+	
+</section>
+          
+<div class="sponsored-image-container">
+    
+    <img src="" class="sponsored-image">
+    
+</div>
+
+        </div>
+      </div>
+      
+
+
+    </div>
+  </div>
+  
+        <div class="content container">
+            
+    
+<article class="real">
+  <header>
+    <h1>Como implementar test builders em C# com ForeverFactory</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 11
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    Ago, 
+  
+
+  
+
+  
+
+  
+
+  
+
+
+2021
+    
+    
+    
+      
+      
+          em
+          
+          
+              <a class="badge badge-category" href="/categories/testes">TESTES</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/csharp">csharp</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/test-data-builders">test data builders</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/builder-pattern">builder pattern</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/forever-factory">forever factory</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/nbuilder">nbuilder</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> <span>6 min de leitura</span>
+
+    
+           
+      
+      
+      
+      
+        <p class="post-series-paragraph">Posts na série:</p>
+        <ul class="series">
+        
+          <li><a href="https://blog.dyegomaas.com.br/posts/artigo-test-builders-com-foreverfactory/">Como implementar test builders em C# com ForeverFactory</a></li>
+        
+          <li><a href="https://blog.dyegomaas.com.br/posts/artigo-test-builders-csharp-boas-praticas/">Boas práticas para implementar Test Data Builders em C#</a></li>
+        
+          <li><a href="https://blog.dyegomaas.com.br/posts/artigo-test-builders-csharp-intro/">Simplificando setup de testes em C# com Test Data Builders</a></li>
+        
+        </ul>
+      
+     
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">
+        <i class="fas fa-list-ul"></i>
+        <span id="toc-title">Nesta página&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      </label>
+      <div id="toc-toggle-cover"></div>
+      
+        <nav class="toc" id="TableOfContents"></nav>
+      
+    </div>
+  
+  
+  <div class="post">
+    <div class="paragraph">
+<p><strong>Nos artigos anteriores da série, exploramos como o uso de <em>test builders</em> pode simplificar a construção de testes.</strong></p>
+</div>
+<div class="paragraph">
+<p>Neste artigo, apresento a biblioteca <a href="https://github.com/DyegoMaas/ForeverFactory">ForeverFactory</a>, que se propõe a simplificar a construção de <em>builders</em> ao mesmo tempo que maximiza a reutilização de configurações.</p>
+</div>
+<div class="sect1">
+<h2 id="_por_que_criei_a_foreverfactory"><a class="anchor" href="#_por_que_criei_a_foreverfactory"></a><a class="link" href="#_por_que_criei_a_foreverfactory">Por que criei a ForeverFactory?</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Gosto muito da abordagem de escrever <em>test builders</em> artesanais, totalmente customizados para os cenários de um software, como apresentado <a href="/posts/artigo-test-builders-csharp-intro/">neste outro artigo</a>, fazê-los sempre desta forma pode ser bastante repetitivo.</p>
+</div>
+<div class="paragraph">
+<p>Um dos problemas dessa abordagem, é que toda vez que quisermos customizar a configuração de uma propriedade, precisamos criar um novo método no nosso builder:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-csharp hljs" data-lang="csharp">[Fact]
+public class PessoaBuilder
+{
+    private int? _idade;
+    private string _nome;
+    private string _cpf;
+    // ...
+
+    public Pessoa Construir()
+    {
+        return new Pessoa()
+        {
+            CPF = _cpf ?? &#34;xxx.xxx.xxx-xx&#34;, <i class="conum" data-value="1"></i><b>(1)</b>
+            Nome = _nome ?? &#34;Ana&#34;,
+            Idade = _idade ?? 18
+            // ...
+        };
+    }
+
+    public PessoaBuilder ComCPF(string cpf)
+    {
+        _cpf = cpf;
+        return this;
+    }
+
+    public PessoaBuilder ComIdade(int idade)
+    {
+        _idade = idade;
+        return this;
+    }
+
+    public PessoaBuilder ComNome(string nome) <i class="conum" data-value="2"></i><b>(2)</b>
+    {
+        _nome = nome;
+        return this;
+    }
+
+    // ...
+}
+
+public void Deve_fazer_algo()
+{
+    var pessoa = new PessoaBuilder()
+        .ComNome(&#34;Arnoldo&#34;) <i class="conum" data-value="3"></i><b>(3)</b>
+        .ComIdade(27)
+        .Construir();
+
+    // resto do teste
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Temos um lugar centralizado para configurar uma &#34;pessoa padrão&#34;</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Foi necessário <strong>implementar na mão</strong> um novo método <code>ComNome(string nome)</code> para permitir customizar cada propriedade</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>A partir daí, podemos customizar a propriedade <code>Nome</code></td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>E esse é o problema que uma biblioteca bastante popular visa resolver: o <a href="https://github.com/nbuilder/nbuilder">NBuilder</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="_nbuilder"><a class="anchor" href="#_nbuilder"></a><a class="link" href="#_nbuilder">NBuilder</a></h3>
+<div class="paragraph">
+<p>O NBuilder nos permite evitar essa escrita repetitiva de métodos de configuração através de uma interface fluente e extensível.</p>
+</div>
+<div class="paragraph">
+<p>A título de comparação, o exemplo anterior ficaria assim:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-csharp hljs" data-lang="csharp">[Fact]
+public void Deve_fazer_algo()
+{
+    var pessoa = Builder&lt;Pessoa&gt;().CreateNew()
+        .With(x =&gt; x.Name = &#34;Arnoldo&#34;)
+        .With(x =&gt; x.Idade = 27)
+        .Build();
+
+    // resto do teste
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Como podemos ver no teste acima, o NBuilder torna possível configurar de maneira flexível qualquer propriedade dos objetos que estamos construindo, e isso por si só já resolve o problema da escrita manual desses métodos de customização.</p>
+</div>
+<div class="paragraph">
+<p>Além disso, o NBuilder também facilita a criação de coleções de objetos, como no exemplo a seguir:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-csharp hljs" data-lang="csharp">[Fact]
+public void Deve_fazer_algo()
+{
+    var dezPessoasCentenarias = Builder&lt;Pessoa&gt;().CreateListOfSize(10)
+        .With(x =&gt; x.Idade = 100)
+        .Build();
+
+    // resto do teste
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Mas essa flexibidade vem com um custo: <strong>fica mais difícil reutilizar cenários comuns</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Imagine um cenário onde nossa suíte de testes contenha 300 testes que precisem de objetos do tipo <code>Pessoa</code>, todos com CPFs válidos, mas com configurações ligeiramente diferentes.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-csharp hljs" data-lang="csharp">[Fact]
+public void Teste_1()
+{
+    var pessoaCentenaria = Builder&lt;Pessoa&gt;().CreateNew()
+        .With(x =&gt; x.CPF = &#34;xxx.xxx.xx-xx&#34;)
+        .With(x =&gt; x.Idade = 100)
+        .Build();
+
+    // resto do teste
+}
+
+// ...
+
+[Fact]
+public void Teste_N()
+{
+    var menorDeIdade = Builder&lt;Pessoa&gt;().CreateNew()
+        .With(x =&gt; x.CPF = &#34;xxx.xxx.xx-xx&#34;)
+        .With(x =&gt; x.Idade = 17)
+        .Build();
+
+    // resto do teste
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Como podemos ver no exemplo acima, apesar da flexibilidade, acabamos esbarrando na duplicação de setup de teste. E este é um problema que busquei resolver com a ForeverFactory tomando inspiração de uma biblioteca do ecossistema Python, chamada <a href="https://factoryboy.readthedocs.io/en/stable/">FactoryBoy</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_factoryboy"><a class="anchor" href="#_factoryboy"></a><a class="link" href="#_factoryboy">FactoryBoy</a></h3>
+<div class="paragraph">
+<p>A biblioteca FactoryBoy permite criar <em>factories</em> reutilizáveis, que podem ser customizados ainda mais para atender cada cenário de teste.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-python hljs" data-lang="python">import factory
+
+class Pessoa:
+   def __init__(self, cpf, idade, nome):
+        self.cpf = cpf
+        self.idade = idade
+        self.nome = nome
+
+
+class PessoaFactory(factory.Factory):
+    class Meta:
+        model = Pessoa
+
+    cpf = &#34;xxx.xxx.xxx-xx&#34; <i class="conum" data-value="1"></i><b>(1)</b>
+    idade = 18
+    nome = &#34;Ana&#34;
+
+
+class PessoaTests(unittest.TestCase):
+
+    def test_1(self):
+
+        pessoa_centenaria = PessoaFactory(idade=100) <i class="conum" data-value="2"></i><b>(2)</b>
+
+        # resto do teste
+    #...
+    def test_N(self):
+
+        menor_idade = PessoaFactory(idade=17)
+
+        # resto do teste</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>A classe <code>PessoaFactory</code> guarda toda a configuração padrão de uma pessoa, e configura características importantes, como por exemplo, <strong>toda pessoa possui um CPF</strong></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Apesar do teste customizar somente a propriedade idade, o resto das propriedades, como o CPF, serão herdadas das configurações definidas na classe <code>PessoaFactory</code></td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Assim, cada teste fica mais focado nos aspectos mais importantes aquele cenário específico, aumentando a consição sem abrir mão de configurar corretamente cada objeto.</p>
+</div>
+<div class="paragraph">
+<p>Como pudemos ver no exemplo acima, assim como fazíamos nos nossos builders feitos na mão, a biblioteca FactoryBoy nos permite maximizar a reutilização de configurações provendo um ponto centralizado para formalizar essas configurações.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_foreverfactory"><a class="anchor" href="#_foreverfactory"></a><a class="link" href="#_foreverfactory">ForeverFactory</a></h3>
+<div class="paragraph">
+<p>Construí a biblioteca <a href="https://github.com/DyegoMaas/ForeverFactory">ForeverFactory</a> buscando inspiração nessas duas excelentes ferramentas, com o objetivo de juntar essas duas características numa única biblioteca:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A flexibilidade de configuração do NBuilder</p>
+</li>
+<li>
+<p>A reutilização de configurações através uma factory centralizada do FactoryBoy</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>A título de exemplo, a seguir temos um teste simples escrito com ForeverFactory:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-csharp hljs" data-lang="csharp">[Fact]
+public void Teste_sem_factory_customizada() <i class="conum" data-value="1"></i><b>(1)</b>
+{
+    var pessoaCentenaria = MagicFactory.For&lt;Pessoa&gt;()
+        .With(x =&gt; x.CPF = &#34;xxx.xxx.xx-xx&#34;)
+        .With(x =&gt; x.Idade = 100)
+        .Build();
+
+    // resto do teste
+}
+
+[Fact]
+public void Teste_usando_uma_factory_customizada() <i class="conum" data-value="2"></i><b>(2)</b>
+{
+    var pessoaCentenaria = new PessoaFactory()
+        .With(x =&gt; x.Idade = 100)
+        .Build();
+
+    // resto do teste
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Teste sem factory customizada, como no NBuilder</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Teste com uma factory customizada <code>PessoaFactory</code>, como no FactoryBoy</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Nas seções a seguir, veremos em mais detalhes o que dá pra fazer com o ForeverFactory, e como tirar proveito da biblioteca para escrever testes enxutos e concisos.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_criando_objetos_com_foreverfactory"><a class="anchor" href="#_criando_objetos_com_foreverfactory"></a><a class="link" href="#_criando_objetos_com_foreverfactory">Criando objetos com ForeverFactory</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Como vimos no exemplo acima, podemos facilmente criar objetos no mesmo estilo do NBuilder:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-csharp hljs" data-lang="csharp">var pessoaCentenaria = MagicFactory.For&lt;Pessoa&gt;()
+    .With(x =&gt; x.CPF = &#34;xxx.xxx.xx-xx&#34;)
+    .With(x =&gt; x.Idade = 100)
+    .Build();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Além disso, também podemos criar coleções de objetos utilizando o método <code>Many(x)</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-csharp hljs" data-lang="csharp">var cemPessoas = MagicFactory.For&lt;Pessoa&gt;()
+    .Many(100)
+    .With(x =&gt; x.CPF = &#34;xxx.xxx.xx-xx&#34;)
+    .With(x =&gt; x.Idade = 100)
+    .Build();</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Ao criar coleções de objetos, podemos fazer também algumas configurações extras:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-csharp hljs" data-lang="csharp">var cemPessoas = MagicFactory.For&lt;Pessoa&gt;()
+    .Many(100)
+    .WithFirst(50, x.Idade = 17) <i class="conum" data-value="1"></i><b>(1)</b>
+    .WithLast(50, x.Idade = 18)  <i class="conum" data-value="2"></i><b>(2)</b>
+    .Build();</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>As primeiras 50 pessoas terão idade 17</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>As últimas 50 pessoas terão idade 18</td>
+</tr>
+</tbody></table>
+</div>
+<div class="sect2">
+<h3 id="_factories_customizadas"><a class="anchor" href="#_factories_customizadas"></a><a class="link" href="#_factories_customizadas">Factories customizadas</a></h3>
+<div class="paragraph">
+<p>Podemos criar factories customizadas extendendo a classe <code>MagicFactory&lt;T&gt;</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-csharp hljs" data-lang="csharp">public class PessoaFactory : MagicFactory&lt;Pessoa&gt;
+{
+    protected override void Customize(ICustomizeFactoryOptions&lt;Pessoa&gt; customization)
+    {
+        customization <i class="conum" data-value="1"></i><b>(1)</b>
+            .Set(x =&gt; x.CPF = &#34;xxx.xxx.xxx-xx&#34;) <i class="conum" data-value="2"></i><b>(2)</b>
+            .Set(x =&gt; x.Nome = &#34;Albert Einstein&#34;)
+            .Set(x =&gt; x.Age = 56);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>O objeto <code>customization</code> nos permite configurar como uma &#34;Pessoa padrão&#34; deve ser construída</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>O método <code>Set</code> instrui a factory a inicializar a propriedade com o valor informado. Este valor pode ser sobrescrito posteriormente, caso-a-caso</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_criando_conjuntos_complexos_de_objetos"><a class="anchor" href="#_criando_conjuntos_complexos_de_objetos"></a><a class="link" href="#_criando_conjuntos_complexos_de_objetos">Criando conjuntos complexos de objetos</a></h3>
+<div class="paragraph">
+<p>Considere uma factory customizada como a classe <code>PessoaFactory</code> abaixo:</p>
+</div>
+<div class="listingblock">
+<div class="title">PessoaFactory.cs</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-csharp hljs" data-lang="csharp">public class PessoaFactory : MagicFactory&lt;Pessoa&gt;
+{
+    protected override void Customize(ICustomizeFactoryOptions&lt;Pessoa&gt; customization)
+    {
+        customization
+            .Set(x =&gt; x.CPF = &#34;xxx.xxx.xxx-xx&#34;)
+            .Set(x =&gt; x.Nome = &#34;Albert Einstein&#34;)
+            .Set(x =&gt; x.Age = 56);
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Com ela, podemos criar conjuntos mais complexos para nossos cenários de teste, conforme necessário:</p>
+</div>
+<div class="listingblock">
+<div class="title">Teste.cs</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-csharp hljs" data-lang="csharp">var trintaPessoas = new PessoaFactory()
+    .Many(10).With(x =&gt; x.Idade = 17)                   <i class="conum" data-value="1"></i><b>(1)</b>
+    .Plus(10).With(x =&gt; x.Idade = 18)                   <i class="conum" data-value="2"></i><b>(2)</b>
+    .Plus(9).With(x =&gt; x.Idade = 100)                   <i class="conum" data-value="3"></i><b>(3)</b>
+    .PlusOne().With(x =&gt; x.Nome = &#34;Stephen Hawking&#34;)    <i class="conum" data-value="4"></i><b>(4)</b>
+    .Build();</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tbody><tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Cria 10 instâncias de <code>Pessoa</code> com a configuração { CPF = &#34;xxx.xxx.xxx-xx&#34;, Nome = &#34;Albert Einstein&#34;, Idade = 17 }</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Cria 10 instâncias de <code>Pessoa</code> com a configuração { CPF = &#34;xxx.xxx.xxx-xx&#34;, Nome = &#34;Albert Einstein&#34;, Idade = 18 }</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Cria 9 instâncias de <code>Pessoa</code> com a configuração { CPF = &#34;xxx.xxx.xxx-xx&#34;, Nome = &#34;Albert Einstein&#34;, Idade = 100 }</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Cria 1 instância de <code>Pessoa</code> com a configuração { CPF = &#34;xxx.xxx.xxx-xx&#34;, Nome = &#34;Stephen Hawking&#34;, Idade = 56 }</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusão"><a class="anchor" href="#_conclusão"></a><a class="link" href="#_conclusão">Conclusão</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A biblioteca ForeverFactory nos permite criar objetos para teste de forma flexível e reaproveitar configurações importantes através da implementação de factories customizadas.</p>
+</div>
+<div class="paragraph">
+<p>Podemos utilizá-la para criar testes mais focados nos detalhes que importam para cada cenário, e estender cenários base válidos.</p>
+</div>
+</div>
+</div>
+
+  </div>
+  <style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+position: relative;
+text-align: left;
+height: 36px;
+width: 32px;
+float: left;
+text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="color: silver;">Compartilhe: </span><div id="share-buttons">
+<div class="facebook" title="Compartilhe no Facebook" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-test-builders-com-foreverfactory\/', 'sharer', 'width=626,height=436');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+<div class="twitter" title="Compartilhe no Twitter" onclick="window.open('http://twitter.com/share?text=Como implementar test builders em C# com ForeverFactory&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-test-builders-com-foreverfactory\/&hashtags=csharp,test-data-builders,builder-pattern,forever-factory,nbuilder');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+<div class="linkedin" title="Compartilhe no Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-test-builders-com-foreverfactory\/&title=Como implementar test builders em C# com ForeverFactory', 'sharer', 'width=626,height=700');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+<div class="mail" title="Compartilhe por Email" onclick="window.open('mailto:?&body=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-test-builders-com-foreverfactory\/');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/artigo-como-adicionar-source-link-pacote-nuget/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Como adicionar Source Link num pacote NuGet</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'blogdyegomaas';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111956442-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/v4-shims.min.css" integrity="sha256-wN7QJaqAwQ03kgUhyN4EU2phRdDkLrQYbFe0EvpQ60U=" crossorigin="anonymous" />
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/csharp.min.js"></script>
+            
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/languages/python.min.js"></script>
+            
+        
+    <script type="text/javascript">
+        
+        hljs.configure({languages: ["csharp, python"]});
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>
