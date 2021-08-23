@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hyde-hyde on Blog Dyego Maas</title>
+    <link>https://blog.dyegomaas.com.br/tags/hyde-hyde/</link>
+    <description>Recent content in hyde-hyde on Blog Dyego Maas</description>   
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Sun, 22 Aug 2021 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.dyegomaas.com.br/tags/hyde-hyde/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>YouTube</title>
+      <link>https://blog.dyegomaas.com.br/recommendations/youtube/</link>
+      <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/recommendations/youtube/</guid>
+      <description>Título Periodicidade Duração Por que eu recomendo?     Continuous Delivery
+ Semanal
+ 15-20 minutos
+ Continuous Delivery é um dos melhores canais no YouTube quando o assunto abrange Integração Contínua, Entrega Contínua, TDD e BDD. O canal é mantido pelo Dave Farley, um dos autores do livro de 2010 que inpulsionou a adoção da abordagem da entrega contínua no mundo, Entrega Contínua.</description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/hyde-hyde/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+  </channel>
+</rss>

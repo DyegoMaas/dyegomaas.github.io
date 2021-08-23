@@ -7,10 +7,29 @@
     <description>Recent content in dev on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 14 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/tags/dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>YouTube</title>
+      <link>https://blog.dyegomaas.com.br/recommendations/youtube/</link>
+      <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/recommendations/youtube/</guid>
+      <description>Título Periodicidade Duração Por que eu recomendo?     Continuous Delivery
+ Semanal
+ 15-20 minutos
+ Continuous Delivery é um dos melhores canais no YouTube quando o assunto abrange Integração Contínua, Entrega Contínua, TDD e BDD. O canal é mantido pelo Dave Farley, um dos autores do livro de 2010 que inpulsionou a adoção da abordagem da entrega contínua no mundo, Entrega Contínua.</description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/dev/img/posts/social-media.png" type="image/png"/>      
+    </item>
     
     <item>
       <title>Uma estratégia para nivelar o conhecimento de um time em tempo recorde</title>

@@ -7,7 +7,7 @@
     <description>Recent content on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 11 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 22 Aug 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/index.xml" rel="self" type="application/rss+xml" />
     
@@ -58,6 +58,25 @@
  1 a 2 episódios por semana
  2-5 horas
  Lex Fridman é um pesquisador em Machine Learning no MIT. No início, esse podcast de entrevistas se chamava Lex Fridman AI e era focado somente nos campos de inteligência artificial e aprendizado de máquina, mas depois pivotou para um modelo de entrevistas mais aberto, muito parecido com as entrevistas do Joe Rogan.</description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>YouTube</title>
+      <link>https://blog.dyegomaas.com.br/recommendations/youtube/</link>
+      <pubDate>Sun, 22 Aug 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/recommendations/youtube/</guid>
+      <description>Título Periodicidade Duração Por que eu recomendo?     Continuous Delivery
+ Semanal
+ 15-20 minutos
+ Continuous Delivery é um dos melhores canais no YouTube quando o assunto abrange Integração Contínua, Entrega Contínua, TDD e BDD. O canal é mantido pelo Dave Farley, um dos autores do livro de 2010 que inpulsionou a adoção da abordagem da entrega contínua no mundo, Entrega Contínua.</description>
 
       
       
