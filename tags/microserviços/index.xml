@@ -7,10 +7,26 @@
     <description>Recent content in microserviços on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 21 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 Oct 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/tags/microservi%C3%A7os/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>O melhor e o pior tipo de testes para microserviços</title>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-melhor-e-pior-tipos-teste-para-microservicos/</link>
+      <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-melhor-e-pior-tipos-teste-para-microservicos/</guid>
+      <description>Não há dúvidas que a presença de bons testes é indispensável para garantir a qualidade de um microserviço. O que muita gente não se dá conta, é que algumas categorias de testes podem ser nocivas à produtividade de um time e devem ser evitadas. Existem também categorias de teste cujo retorno sobre investimento é absurdamente grande. Neste artigo, exploro esse cenário a fim de demonstrar quais são os melhores tipos de teste para aplicar em microserviços.</description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/tags/microservi%C3%A7os/img/posts/social-media.png" type="image/png"/>      
+    </item>
     
     <item>
       <title>Como criar um gerador de microserviços usando o Replicante</title>

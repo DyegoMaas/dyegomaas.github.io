@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+    
+
+
+    <head itemscope itemtype="https://blog.dyegomaas.com.br/">
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/blog.dyegomaas.com.br\/"
+    },
+    "articleSection" : "posts",
+    "name" : "O melhor e o pior tipo de testes para microserviços",
+    "headline" : "O melhor e o pior tipo de testes para microserviços",
+    "description" : "Quais tipos de testes devemos evitar em microserviços, e quais devemos adotar? Este artigo explora essa questão super importante para um projeto saudável.",
+    "inLanguage" : "pt-BR",
+    "author" : {
+        "@type": "Person",
+        "name": "Dyego Maas"
+    }, 
+    "image": {
+        "@type": "imageObject",
+        "url": "https://blog.dyegomaas.com.br/posts/artigo-melhor-e-pior-tipos-teste-para-microservicos/img/featured.jpg"
+    },
+    
+    "creator" : "Dyego Maas",
+    "publisher": "Dyego Maas",
+    "accountablePerson" : "Dyego Maas",
+    "copyrightHolder" : "Dyego Maas",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-10-13",
+    "dateModified" : "2021-10-13",
+    "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/artigo-melhor-e-pior-tipos-teste-para-microservicos\/",
+    "wordCount" : "1120",
+    "keywords" : [ "Testes","testes","microserviços","acoplamento","Blog"]
+}
+</script>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+<meta name="yandex-verification" content="20d83aeccd3b80c2" />
+<base href="https://blog.dyegomaas.com.br/posts/artigo-melhor-e-pior-tipos-teste-para-microservicos/">
+<meta name="generator" content="Hugo 0.82.0" />
+
+    
+    
+    
+
+<title itemprop="name">O melhor e o pior tipo de testes para microserviços - Blog Dyego Maas</title>
+<meta property="description" content="Quais tipos de testes devemos evitar em microserviços, e quais devemos adotar? Este artigo explora essa questão super importante para um projeto saudável." />
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+
+
+<meta name="keywords" content="testes,microserviços,acoplamento" />
+<link rel="canonical" href="https://blog.dyegomaas.com.br/posts/artigo-melhor-e-pior-tipos-teste-para-microservicos/" itemprop="url" />
+<meta name="url" content="https://blog.dyegomaas.com.br/posts/artigo-melhor-e-pior-tipos-teste-para-microservicos/" />
+<meta property="og:site_name" content="Blog - Dyego Maas" />
+<meta property="og:title" content="O melhor e o pior tipo de testes para microserviços" />
+<meta property="twitter:title" content="O melhor e o pior tipo de testes para microserviços" />
+<meta property="og:description" content="Quais tipos de testes devemos evitar em microserviços, e quais devemos adotar? Este artigo explora essa questão super importante para um projeto saudável." />
+<meta property="twitter:description" content="Quais tipos de testes devemos evitar em microserviços, e quais devemos adotar? Este artigo explora essa questão super importante para um projeto saudável." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.dyegomaas.com.br/posts/artigo-melhor-e-pior-tipos-teste-para-microservicos/" /><meta property="og:image" content="/posts/artigo-melhor-e-pior-tipos-teste-para-microservicos/img/featured.jpg" />
+<meta property="og:image:secure_url" content="https://blog.dyegomaas.com.br/posts/artigo-melhor-e-pior-tipos-teste-para-microservicos/img/featured.jpg" />
+<meta property="twitter:image" content="https://blog.dyegomaas.com.br/posts/artigo-melhor-e-pior-tipos-teste-para-microservicos/img/featured.jpg" />
+<meta property="article:published_time" content="2021-10-13T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-13T00:00:00+00:00" />
+<meta property="article:section" content="posts" />
+
+<meta property="article:tag" content="Testes" />
+
+<meta property="article:tag" content="testes" /><meta property="article:tag" content="microserviços" /><meta property="article:tag" content="acoplamento" />
+
+
+<meta name="theme-color" content="#000000" />
+<meta name="msapplication-TileColor" content="#000000" />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="Blog - Dyego Maas" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" />
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.e5e196df6474bcb74d824774ca3a557d93f6257f2597e57a87872935825da415.css" integrity="sha256-5eGW32R0vLdNgkd0yjpVfZP2JX8ll&#43;V6h4cpNYJdpBU=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" crossorigin="anonymous" media="print">
+
+
+<link rel="stylesheet" href="/css/custom.69cb553f8fdb841923fb0042f13bb1a617b61a9c30b020d16fa9175995e8c089.css" integrity="sha256-actVP4/bhBkj&#43;wBC8Tuxphe2GpwwsCDRb6kXWZXowIk=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde/asciidoctor.2f9054ce19cfdc6b28121b506f34b2e3510ef2c9f179c547220757b9fcc87c3e.css" integrity="sha256-L5BUzhnP3GsoEhtQbzSy41EO8snxecVHIgdXufzIfD4=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/overrides.06dfba6a39eef8349b0f3aadb7f81f70d7e426cd8d016a6a98cb93fbbfb9e0c2.css" integrity="sha256-Bt&#43;6ajnu&#43;DSbDzqtt/gfcNfkJs2NAWpqmMuT&#43;7&#43;54MI=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/modal.6d7540d4db30b9f19126fccff040151b083d05521b17dbc8f52a34d2a1044f6d.css" integrity="sha256-bXVA1NswufGRJvzP8EAVGwg9BVIbF9vI9So00qEET20=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/custom.fdaaa65ecac370c11e88d034c1a8887223adef069335c6b1d6a1eb136a839a56.css" integrity="sha256-/aqmXsrDcMEeiNA0waiIciOt7waTNcax1qHrE2qDmlY=" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=" crossorigin="anonymous">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js" defer></script>
+<script src="https://unpkg.com/lunr/lunr.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.pt.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" defer></script>
+
+<script src="/js/layout-adjustments.js" defer></script><script src="/js/custom-search.js" defer></script>
+
+<script async>
+  document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+      adjustLayout();
+      initializeSearch('/search-index.json', '/search-data-companion.json');
+   }
+ }
+</script>
+</head>
+
+    <body class=" ">
+    
+<div class="sidebar">
+    <div class="container ">
+      <div class="sidebar-about">
+        <span class="site__title">
+          <a href="https://blog.dyegomaas.com.br/">Blog Dyego Maas</a>
+        </span>
+        
+          
+          
+          
+          <div class="author-image">
+            <img src="https://blog.dyegomaas.com.br/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+          </div>
+          
+        
+        
+        <p class="site__description">
+           Arquiteto de software e Escritor 
+        </p>
+      </div>
+      <div class="collapsible-menu">
+        <input type="checkbox" id="menuToggle">
+        <label for="menuToggle">Blog Dyego Maas</label>
+        <div class="menu-content">
+          <div class="menu-container">
+	<ul class="sidebar-nav">
+		
+		
+			 
+				<li>
+					<a href="/">
+						<span><i class="fas fa-home"></i> Home</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
+					<a href="/posts/">
+						<span><i class="far fa-newspaper"></i> Artigos</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
+					<a href="/recommendations/">
+						<span><i class="fas fa-book"></i> Recomendações</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
+					<a href="https://dyegomaas.com.br/">
+						<span><i class="fas fa-address-card"></i> Dyego Maas</span>
+					</a>
+				</li>
+			
+		
+		<li>
+			<a id="search-button" rel="search" style="cursor: pointer;">
+    <i class="fa fa-search" aria-hidden="true"></i> Pesquisar
+</a>
+
+<div id="search-results-modal" class="modal display-none">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close">&times;</span>
+        <h2>O que você procura?</h2>
+      </div>
+      <div class="modal-body">
+        <input type="search" id="search-input" results="10" placeholder="Pesquisar... (pressione Enter)">
+        <div>
+            <ul id="search-results"></ul>
+        </div>
+      </div>
+      
+    </div>
+</div>
+		</li>
+	</ul>
+</div>
+
+          <section class="social">
+	
+	<a href="https://twitter.com/DyegoMaas" rel="me"><i class="fab fa-twitter fa-lg icon-social" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/DyegoAlekssander" rel="me"><i class="fab fa-facebook-f icon-social" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://github.com/Dyegomaas" rel="me"><i class="fab fa-github fa-lg icon-social" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/dyego-maas" rel="me"><i class="fab fa-linkedin fa-lg icon-social" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:dyego.maas@gmail.com" rel="me"><i class="fas fa-at fa-lg icon-social" aria-hidden="true"></i></a>
+	
+
+	
+	 
+	
+	
+	<a href="https://blog.dyegomaas.com.br/index.xml" rel="me"><i class="fas fa-rss fa-lg icon-social" aria-hidden="true"></i></a>
+	
+</section>
+          
+<div class="sponsored-image-container">
+    
+    <img src="" class="sponsored-image">
+    
+</div>
+
+        </div>
+      </div>
+      
+
+
+    </div>
+  </div>
+  
+        <div class="content container">
+            
+    
+<article class="real">
+  <header>
+    <h1>O melhor e o pior tipo de testes para microserviços</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 13
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    Out, 
+  
+
+  
+
+  
+
+
+2021
+    
+    
+    
+      
+      
+          em
+          
+          
+              <a class="badge badge-category" href="/categories/testes">TESTES</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/testes">testes</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/microservi%C3%A7os">microserviços</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/acoplamento">acoplamento</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> <span>6 min de leitura</span>
+
+     
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">
+        <i class="fas fa-list-ul"></i>
+        <span id="toc-title">Nesta página&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      </label>
+      <div id="toc-toggle-cover"></div>
+      
+        <nav class="toc" id="TableOfContents"></nav>
+      
+    </div>
+  
+  
+  <div class="post">
+    <div class="paragraph">
+<p><strong>Não há dúvidas que a presença de bons testes é indispensável para garantir a qualidade de um microserviço</strong>. O que muita gente não se dá conta, é que algumas categorias de testes podem ser nocivas à produtividade de um time e devem ser evitadas. Existem também categorias de teste cujo retorno sobre investimento é absurdamente grande. Neste artigo, exploro esse cenário a fim de demonstrar quais são os melhores tipos de teste para aplicar em microserviços.</p>
+</div>
+<div class="paragraph">
+<p>Nos últimos três anos, venho trabalhando com microserviços na AmbevTech, e uma coisa foi ficando clara ao longo do caminho: a clássica pirâmide de testes é inadequada para microserviços.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/traditional-testing-pyramid.png" alt="Pirâmide de testes tradicional, com muitos testes de unidade na base, quantidade mediana de testes de integração no meio, e poucos testes end to end no topo"/>
+</div>
+<div class="title">Figura 1. Pirâmide de testes tradicional</div>
+</div>
+<div class="paragraph">
+<p>Quando concebida, no início dos anos 2000, a ideia era que testes de unidade eram mais fáceis de escrever, e mais rápidos de rodar do que outros tipos, como os testes de integração. Isso foi antes do Docker, antes dos microserviços. Era outra realidade, ainda governada pelas grandes aplicações.</p>
+</div>
+<div class="paragraph">
+<p>Mas quando um microserviço tem apenas algumas poucas milhares de linhas de código, ele é tão pequeno que os testes de unidade acabam inevitavelmente <strong>acoplados aos detalhes de implementação.</strong> Tornam-se <strong>testes anêmicos</strong>.</p>
+</div>
+<div class="sect1">
+<h2 id="_testes_anêmicos"><a class="anchor" href="#_testes_anêmicos"></a><a class="link" href="#_testes_anêmicos">Testes anêmicos</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Testes anêmicos são aqueles que, para funcionarem corretamente, dependem em demasia da configuração de mocks. O uso exagerado de mocks é um anti-pattern conhecido como <a href="https://www.yegor256.com/2018/12/11/unit-testing-anti-patterns.html"><em>Mockery</em></a>.</p>
+</div>
+<div class="paragraph">
+<p>Testes anêmicos costumam apresentar as seguintes características:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>São difíceis de manter</p>
+</li>
+<li>
+<p>Podem ser difíceis compreender</p>
+</li>
+<li>
+<p>Tendem a quebrar com frequência</p>
+</li>
+<li>
+<p>Desencorajam refatorações</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Este último ponto é bastante importante: testes anêmicos quebram por qualquer coisinha. Uma pequena refatoração bem intencionada pode quebrar testes simplesmente porque alguns deles estavam mais preocupados com o funcionamento interno de uma classe do que com o resultado de uma operação.</p>
+</div>
+<div class="paragraph">
+<p><strong>Bons testes devem suportar e incentivar refatorações.</strong> Afinal, a prática da refatoração é desejável em qualquer projeto, visto que é vital para manter a saúde da base de código ao longo da vida do projeto.</p>
+</div>
+<div class="paragraph">
+<p>Assim, se os testes quebram até mesmo em refatorações que não afetam nem o comportamento nem o resultado dos processos, então esses testes estão no caminho, mais atrapalhando que ajudando.</p>
+</div>
+<div class="paragraph">
+<p>Um bom teste deveria dar ao desenvolvedor segurança de que sua refatoração não está mudando a regra de negócio acidentalmente. Se o teste quebra durante uma refatoração, torna-se inútil, e talvez eliminá-lo seja melhor no longo prazo.</p>
+</div>
+<div class="paragraph">
+<p>Aparentemente, no Spotify eles evitam chamar esses testes de &#34;testes de unidade&#34;, preferindo o termo &#34;<strong>testes de detalhes de implementação</strong>&#34;.</p>
+</div>
+<div class="paragraph">
+<p>Muitas vezes, a relação de acoplamento entre a suíte de testes e a aplicação terá o seguinte aspecto:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/alto-acoplamento-testes.jpg" alt="O diagrama mostra duas suítes de teste, com várias classes de teste. Cada classe de teste está correlacionada com uma das classes da aplicação, gerando alto acoplamento."/>
+</div>
+<div class="title">Figura 2. Alto acoplamento</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_qual_a_melhor_unidade_de_teste"><a class="anchor" href="#_qual_a_melhor_unidade_de_teste"></a><a class="link" href="#_qual_a_melhor_unidade_de_teste">Qual a melhor unidade de teste?</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Em projetos que utilizam design orientado a objetos, existe uma tendência de tratar as classes como as unidades que devem ser testadas. Já em projetos procedurais ou funcionais, existe a tendência de tratar as funções como unidade de teste.</p>
+</div>
+<div class="paragraph">
+<p>Mas como <a href="https://www.thoughtworks.com/insights/blog/mockists-are-dead-long-live-classicists">esse artigo do Fabio Pereira</a> aponta, as verdadeiras unidades são os <strong>comportamentos</strong>. Esta é uma afirmação importante, porque nos indica a importância do <a href="https://pt.wikipedia.org/wiki/Behavior_Driven_Development">BDD (Behavior Driven Develpment)</a> como potencial prática para resolver esse impasse.</p>
+</div>
+<div class="paragraph">
+<p>No livro <a href="https://www.amazon.com.br/Test-Driven-Development-Kent-Beck/dp/0321146530"><em>Test Driven Development: By Example</em></a>, do Kent Beck, podemos encontrar uma boa definição de testes de unidade. Ele os define como <strong>&#34;testes que são independentes um dos outros – significando que a execução de um não deve afetar os outros&#34;</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Ou seja, não têm nada a ver com testar classes ou funções, mas com testar unidades isoladas de forma determinística: toda vez que rodarmos um teste, o resultado deverá ser consistentemente o mesmo.</p>
+</div>
+<div class="paragraph">
+<p>A utilização do BDD converge naturalmente para uma resolução desse impasse: testar cada comportamento isolado dos outros, com foco em entradas e saídas, nos leva a testes que serão independentes dos detalhes de implementação.</p>
+</div>
+<div class="paragraph">
+<p>Testes focados em comportamento costumam ter as seguintes características:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>São fáceis de manter</p>
+</li>
+<li>
+<p>São fáceis de compreender</p>
+</li>
+<li>
+<p>São resilientes a refatorações</p>
+</li>
+<li>
+<p>Encorajam refatorações</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>São basicamente, a antítese dos testes anêmicos, e possuem justamente as características que buscamos num ambiente de desenvolvimento ágil e que visa qualidade e produtividade.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://engineering.atspotify.com/2018/01/11/testing-of-microservices/">Neste artigo do Spotify</a> sobre testes de microserviços, eles afirmam que os testes de integração são os que oferecem a melhor relação custo x benefício para microserviços:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/microservices-testing-honeycomb.png" alt="Favo de mel de testes de microserviços" width="com poucos testes de unidade na base" height="muitos de integração no meio"/>
+</div>
+<div class="title">Figura 3. Favo de mel de testes de microserviços</div>
+</div>
+<div class="paragraph">
+<p>Estes dois artigos do Kent C. Dodds também discutem esse tema no mundo das aplicações JavaScript e são leituras bem interessantes:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://kentcdodds.com/blog/the-testing-trophy-and-testing-classifications">The Testing Trophy and Testing Classifications</a></p>
+</li>
+<li>
+<p><a href="https://kentcdodds.com/blog/write-tests">Write tests. Not too many. Mostly integration.</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Testes desse tipo tenderão a ser, como <a href="https://martinfowler.com/bliki/UnitTest.html">o Martin Fowler costuma chamar, testes sociáveis</a> <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/sociable-tests.png" alt="Testes sociáveis e testes solitários"/>
+</div>
+<div class="title">Figura 4. Testes sociáveis são preferíveis em microserviços</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_testes_de_integração_como_forma_preferível_de_testar"><a class="anchor" href="#_testes_de_integração_como_forma_preferível_de_testar"></a><a class="link" href="#_testes_de_integração_como_forma_preferível_de_testar">Testes de integração como forma preferível de testar</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Testes de integração que aplicam BDD corretamente costumam ser bastante fáceis de compreender e possuem baixo custo de manutenção. Eles também se mantêm fiéis à regra de negócio por mais tempo.</p>
+</div>
+<div class="paragraph">
+<p>Ainda segundo <a href="https://engineering.atspotify.com/2018/01/11/testing-of-microservices/">o mesmo artigo do Spotify</a>, os testes por lá não costumam ser mais complexos do que isso:</p>
+</div>
+<div class="paragraph">
+<div class="title">Exemplo de teste de integração no Spotify</div>
+<p><span class="image"><img src="./img/Integration-Tests-700x473.png" alt="Exemplo de teste de integração no Spotify" width="resumidos a um setup simples" height="invocação da regra de negócio"/></span></p>
+</div>
+<div class="paragraph">
+<p>Em vários projetos na AmbevTech, empregamos a biblioteca <a href="https://github.com/jbogard/MediatR">MediatR</a> como forma de padronizar a invocação de interações com a aplicação, facilitando a escrita de testes com essas características. Nossos testes normalmente têm a seguinte aparência:</p>
+</div>
+<div class="listingblock">
+<div class="title">Exemplo de teste de integração num dos times da AmbevTech</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-C# hljs" data-lang="C#">public class ListagemBonificacoesTests : ApplicationTestBase
+{
+    [Fact]
+    public async Task Deve_ordenar_pelo_id_decrescente_quando_nao_for_especificada_nenhuma_ordenacao()
+    {
+        InsertMany(ListaBonificacoesComIdsSequencias());
+
+        ListarBonificacoesPaginadasRequest requestSemOrdenacao = new();
+        ListaBonificacoesPaginadasResponse response = await Handle&lt;ListarBonificacoesPaginadasRequest&gt;(requestSemOrdenacao);
+
+        var bonificacoes = response.Items;
+        bonificacoes.Should().BeInDescendingOrder();
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Em todo caso, é interessante que a forma de interagir com a aplicação sejam padronizadas, permitindo assim que os testes foquem nessas interações com entradas determinadas, e se restrinjam a verificar as saídas e eventuais efeitos colaterais, como registros inseridos no banco de dados ou mensagens publicadas em um broker.</p>
+</div>
+<div class="paragraph">
+<p>Seguindo esses passos, teremos uma suíte de testes confiável e bastante desacoplada dos detalhes de implementação, como ilustrado na figura abaixo:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/baixo-acoplamento-testes.jpg" alt="Bom relacionamento entre os módulos de teste e da aplicação, com cada suíte de teste acessando apenas um entrypoint do módulo de aplicação"/>
+</div>
+<div class="title">Figura 5. Baixo acoplamento</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusões"><a class="anchor" href="#_conclusões"></a><a class="link" href="#_conclusões">Conclusões</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Como vimos, testes de unidade em microserviços tendem a gerar acoplamento com os detalhes de implementação, e por isso seu uso deve ser reservado para componentes pontuais de alta complexidade, ou que sejam difíceis de testar por outros meios, como uma chamada a um serviço externo.</p>
+</div>
+<div class="paragraph">
+<p>Já <strong>a forma preferível de testar microserviços são os testes de integração focados em comportamento.</strong> A aplicação de técnicas de BDD traz inúmeros benefícios: em especial, a facilidade de manutenção e confiabilidade, provendo suporte para refatorações e evolução dos serviços.</p>
+</div>
+<div class="paragraph">
+<p>Essas conclusões são fruto dos meus estudos e reflexões ao longo dos últimos anos sobre esse assunto que eu gosto tanto, e espero que sejam úteis para você. Agora, leitor, te convido a deixar um comentário abaixo. Obrigado pela leitura!</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr/>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Quem criou os termos &#34;testes sociáveis&#34; e &#34;testes solitários&#34; foi Jay Fields, no livro <a href="https://leanpub.com/wewut">&#34;Working Effectively with Unit Tests&#34;</a>
+</div>
+</div>
+
+  </div>
+  <style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+position: relative;
+text-align: left;
+height: 36px;
+width: 32px;
+float: left;
+text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="color: silver;">Compartilhe: </span><div id="share-buttons">
+<div class="facebook" title="Compartilhe no Facebook" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-melhor-e-pior-tipos-teste-para-microservicos\/', 'sharer', 'width=626,height=436');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+<div class="twitter" title="Compartilhe no Twitter" onclick="window.open('http://twitter.com/share?text=O melhor e o pior tipo de testes para microserviços&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-melhor-e-pior-tipos-teste-para-microservicos\/&hashtags=testes,microserviços,acoplamento');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+<div class="linkedin" title="Compartilhe no Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-melhor-e-pior-tipos-teste-para-microservicos\/&title=O melhor e o pior tipo de testes para microserviços', 'sharer', 'width=626,height=700');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+<div class="mail" title="Compartilhe por Email" onclick="window.open('mailto:?&body=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-melhor-e-pior-tipos-teste-para-microservicos\/');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/artigo-test-builders-com-foreverfactory/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Como implementar test builders em C# com ForeverFactory</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'blogdyegomaas';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111956442-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/v4-shims.min.css" integrity="sha256-wN7QJaqAwQ03kgUhyN4EU2phRdDkLrQYbFe0EvpQ60U=" crossorigin="anonymous" />
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>

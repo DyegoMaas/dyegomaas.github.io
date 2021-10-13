@@ -7,7 +7,7 @@
     <description>Recent content on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Sun, 22 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 Oct 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/index.xml" rel="self" type="application/rss+xml" />
     
@@ -77,6 +77,22 @@
  Semanal
  15-20 minutos
  Continuous Delivery é um dos melhores canais no YouTube quando o assunto abrange Integração Contínua, Entrega Contínua, TDD e BDD. O canal é mantido pelo Dave Farley, um dos autores do livro de 2010 que inpulsionou a adoção da abordagem da entrega contínua no mundo, Entrega Contínua.</description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png"/>      
+    </item>
+    
+    <item>
+      <title>O melhor e o pior tipo de testes para microserviços</title>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-melhor-e-pior-tipos-teste-para-microservicos/</link>
+      <pubDate>Wed, 13 Oct 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-melhor-e-pior-tipos-teste-para-microservicos/</guid>
+      <description>Não há dúvidas que a presença de bons testes é indispensável para garantir a qualidade de um microserviço. O que muita gente não se dá conta, é que algumas categorias de testes podem ser nocivas à produtividade de um time e devem ser evitadas. Existem também categorias de teste cujo retorno sobre investimento é absurdamente grande. Neste artigo, exploro esse cenário a fim de demonstrar quais são os melhores tipos de teste para aplicar em microserviços.</description>
 
       
       
