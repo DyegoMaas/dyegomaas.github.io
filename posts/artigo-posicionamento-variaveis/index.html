@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+    
+
+
+    <head itemscope itemtype="https://blog.dyegomaas.com.br/">
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/blog.dyegomaas.com.br\/"
+    },
+    "articleSection" : "posts",
+    "name" : "A melhor forma de posicionar variáveis locais num método",
+    "headline" : "A melhor forma de posicionar variáveis locais num método",
+    "description" : "Neste artigo, apresento uma forma intuitiva de decidir onde declarar cada variável local de um método, que também é fácil de ensinar para quem está aprendendo clean code.",
+    "inLanguage" : "pt-BR",
+    "author" : {
+        "@type": "Person",
+        "name": "Dyego Maas"
+    }, 
+    "image": {
+        "@type": "imageObject",
+        "url": "https://blog.dyegomaas.com.br/posts/artigo-posicionamento-variaveis/img/featured.jpg"
+    },
+    
+    "creator" : "Dyego Maas",
+    "publisher": "Dyego Maas",
+    "accountablePerson" : "Dyego Maas",
+    "copyrightHolder" : "Dyego Maas",
+    "copyrightYear" : "2021",
+    "datePublished": "2021-11-03",
+    "dateModified" : "2021-11-03",
+    "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/artigo-posicionamento-variaveis\/",
+    "wordCount" : "650",
+    "keywords" : [ "Clean Code","Blog"]
+}
+</script>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+<meta name="yandex-verification" content="20d83aeccd3b80c2" />
+<base href="https://blog.dyegomaas.com.br/posts/artigo-posicionamento-variaveis/">
+<meta name="generator" content="Hugo 0.82.0" />
+
+    
+    
+    
+
+<title itemprop="name">A melhor forma de posicionar variáveis locais num método - Blog Dyego Maas</title>
+<meta property="description" content="Neste artigo, apresento uma forma intuitiva de decidir onde declarar cada variável local de um método, que também é fácil de ensinar para quem está aprendendo clean code." />
+
+
+
+    
+<link rel="canonical" href="https://blog.dyegomaas.com.br/posts/artigo-posicionamento-variaveis/" itemprop="url" />
+<meta name="url" content="https://blog.dyegomaas.com.br/posts/artigo-posicionamento-variaveis/" />
+<meta property="og:site_name" content="Blog - Dyego Maas" />
+<meta property="og:title" content="A melhor forma de posicionar variáveis locais num método" />
+<meta property="twitter:title" content="A melhor forma de posicionar variáveis locais num método" />
+<meta property="og:description" content="Neste artigo, apresento uma forma intuitiva de decidir onde declarar cada variável local de um método, que também é fácil de ensinar para quem está aprendendo clean code." />
+<meta property="twitter:description" content="Neste artigo, apresento uma forma intuitiva de decidir onde declarar cada variável local de um método, que também é fácil de ensinar para quem está aprendendo clean code." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.dyegomaas.com.br/posts/artigo-posicionamento-variaveis/" /><meta property="og:image" content="/posts/artigo-posicionamento-variaveis/img/featured.jpg" />
+<meta property="og:image:secure_url" content="https://blog.dyegomaas.com.br/posts/artigo-posicionamento-variaveis/img/featured.jpg" />
+<meta property="twitter:image" content="https://blog.dyegomaas.com.br/posts/artigo-posicionamento-variaveis/img/featured.jpg" />
+<meta property="article:published_time" content="2021-11-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-11-03T00:00:00+00:00" />
+<meta property="article:section" content="posts" />
+
+<meta property="article:tag" content="Clean Code" />
+
+
+<meta name="theme-color" content="#000000" />
+<meta name="msapplication-TileColor" content="#000000" />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="Blog - Dyego Maas" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" />
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.e5e196df6474bcb74d824774ca3a557d93f6257f2597e57a87872935825da415.css" integrity="sha256-5eGW32R0vLdNgkd0yjpVfZP2JX8ll&#43;V6h4cpNYJdpBU=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" crossorigin="anonymous" media="print">
+
+
+<link rel="stylesheet" href="/css/custom.69cb553f8fdb841923fb0042f13bb1a617b61a9c30b020d16fa9175995e8c089.css" integrity="sha256-actVP4/bhBkj&#43;wBC8Tuxphe2GpwwsCDRb6kXWZXowIk=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde/asciidoctor.2f9054ce19cfdc6b28121b506f34b2e3510ef2c9f179c547220757b9fcc87c3e.css" integrity="sha256-L5BUzhnP3GsoEhtQbzSy41EO8snxecVHIgdXufzIfD4=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/overrides.06dfba6a39eef8349b0f3aadb7f81f70d7e426cd8d016a6a98cb93fbbfb9e0c2.css" integrity="sha256-Bt&#43;6ajnu&#43;DSbDzqtt/gfcNfkJs2NAWpqmMuT&#43;7&#43;54MI=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/modal.6d7540d4db30b9f19126fccff040151b083d05521b17dbc8f52a34d2a1044f6d.css" integrity="sha256-bXVA1NswufGRJvzP8EAVGwg9BVIbF9vI9So00qEET20=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/custom.fdaaa65ecac370c11e88d034c1a8887223adef069335c6b1d6a1eb136a839a56.css" integrity="sha256-/aqmXsrDcMEeiNA0waiIciOt7waTNcax1qHrE2qDmlY=" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=" crossorigin="anonymous">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js" defer></script>
+<script src="https://unpkg.com/lunr/lunr.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.pt.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" defer></script>
+
+<script src="/js/layout-adjustments.js" defer></script><script src="/js/custom-search.js" defer></script>
+
+<script async>
+  document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+      adjustLayout();
+      initializeSearch('/search-index.json', '/search-data-companion.json');
+   }
+ }
+</script>
+</head>
+
+    <body class=" ">
+    
+<div class="sidebar">
+    <div class="container ">
+      <div class="sidebar-about">
+        <span class="site__title">
+          <a href="https://blog.dyegomaas.com.br/">Blog Dyego Maas</a>
+        </span>
+        
+          
+          
+          
+          <div class="author-image">
+            <img src="https://blog.dyegomaas.com.br/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+          </div>
+          
+        
+        
+        <p class="site__description">
+           Arquiteto de software e Escritor 
+        </p>
+      </div>
+      <div class="collapsible-menu">
+        <input type="checkbox" id="menuToggle">
+        <label for="menuToggle">Blog Dyego Maas</label>
+        <div class="menu-content">
+          <div class="menu-container">
+	<ul class="sidebar-nav">
+		
+		
+			 
+				<li>
+					<a href="/">
+						<span><i class="fas fa-home"></i> Home</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
+					<a href="/posts/">
+						<span><i class="far fa-newspaper"></i> Artigos</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
+					<a href="/recommendations/">
+						<span><i class="fas fa-book"></i> Recomendações</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
+					<a href="https://dyegomaas.com.br/">
+						<span><i class="fas fa-address-card"></i> Dyego Maas</span>
+					</a>
+				</li>
+			
+		
+		<li>
+			<a id="search-button" rel="search" style="cursor: pointer;">
+    <i class="fa fa-search" aria-hidden="true"></i> Pesquisar
+</a>
+
+<div id="search-results-modal" class="modal display-none">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close">&times;</span>
+        <h2>O que você procura?</h2>
+      </div>
+      <div class="modal-body">
+        <input type="search" id="search-input" results="10" placeholder="Pesquisar... (pressione Enter)">
+        <div>
+            <ul id="search-results"></ul>
+        </div>
+      </div>
+      
+    </div>
+</div>
+		</li>
+	</ul>
+</div>
+
+          <section class="social">
+	
+	<a href="https://twitter.com/DyegoMaas" rel="me"><i class="fab fa-twitter fa-lg icon-social" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/DyegoAlekssander" rel="me"><i class="fab fa-facebook-f icon-social" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://github.com/Dyegomaas" rel="me"><i class="fab fa-github fa-lg icon-social" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/dyego-maas" rel="me"><i class="fab fa-linkedin fa-lg icon-social" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:dyego.maas@gmail.com" rel="me"><i class="fas fa-at fa-lg icon-social" aria-hidden="true"></i></a>
+	
+
+	
+	 
+	
+	
+	<a href="https://blog.dyegomaas.com.br/index.xml" rel="me"><i class="fas fa-rss fa-lg icon-social" aria-hidden="true"></i></a>
+	
+</section>
+          
+<div class="sponsored-image-container">
+    
+    <img src="" class="sponsored-image">
+    
+</div>
+
+        </div>
+      </div>
+      
+
+
+    </div>
+  </div>
+  
+        <div class="content container">
+            
+    
+<article class="real">
+  <header>
+    <h1>A melhor forma de posicionar variáveis locais num método</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> 03
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    Nov, 
+  
+
+  
+
+
+2021
+    
+    
+    
+      
+      
+          em
+          
+          
+              <a class="badge badge-category" href="/categories/clean-code">CLEAN CODE</a>
+              
+          
+      
+    
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> <span>4 min de leitura</span>
+
+     
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">
+        <i class="fas fa-list-ul"></i>
+        <span id="toc-title">Nesta página&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      </label>
+      <div id="toc-toggle-cover"></div>
+      
+        <nav class="toc" id="TableOfContents"></nav>
+      
+    </div>
+  
+  
+  <div class="post">
+    <div class="paragraph">
+<p><strong>Um dos itens mais simples e importantes quando falamos de <em>clean code</em> é a declaração de variáveis. Enquanto os nomes das variáveis são de extrema importância na elaboração de um código limpo, seu posicionamento dentro de um método frequentemente recebe pouca atenção, o que pode influenciar negativamente a compreensibilidade do código.</strong></p>
+</div>
+<div class="paragraph">
+<p>Mas existem algumas práticas super intuitivas que podemos aplicar para facilitar ainda mais a leitura do nosso código, e que são bastante fáceis de ensinar para desenvolvedores com qualquer nível de experiência.</p>
+</div>
+<div class="sect1">
+<h2 id="_proximidade"><a class="anchor" href="#_proximidade"></a><a class="link" href="#_proximidade">Proximidade</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Infelizmente, uma prática comum de programação é declarar as variáveis mais ao topo de um método, para então utilizá-las mais à frente:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/variaveis-topo.svg" alt="As variáveis utilizadas ao longo do método são declaradas no topo, de modo que sua função não fica óbvia."/>
+</div>
+<div class="title">Figura 1. Variáveis declaradas no topo do método</div>
+</div>
+<div class="paragraph">
+<p>No exemplo acima, essa abordagem acaba gerando ruído desnecessário. As variáveis <code>raioBusca</code> e <code>utilizarBuscaEstendida</code> são declaradas no topo, e usadas somente mais abaixo, depois de duas outras duas operações. Apesar de os nomes dessas variáveis serem bastante expressivos, estão muito <strong>distantes do seu contexto de uso</strong>, o que pode ser representado por um triângulo retângulo desenhado sobre o código.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/variaveis-topo-distancia.jpg" alt="O mesmo código de antes, com um triângulo retângulo ligando a declaração da variável com seu primeiro uso mais abaixo."/>
+</div>
+<div class="title">Figura 2. Distância entre declaração e primeiro uso</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Quanto mais longo for o método, mais ruído essa abordagem gera.
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="paragraph">
+<p>Como podemos ver no exemplo acima, um bom tanto de código está compreendido dentro do triângulo. Podemos dizer que este trecho está no caminho um código mais expressivo. O mesmo problema afeta a variável <code>timestamp</code>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/variaveis-topo-distancia2.jpg" alt="O mesmo código de antes, com um triângulo retângulo ligando outra variável declarada no topo com uma chamada ainda mais ao final do método."/>
+</div>
+<div class="title">Figura 3. Distância entre declaração e primeiro uso da variável timestamp</div>
+</div>
+<div class="paragraph">
+<p>Podemos resolver isso facilmente aproximando as variáveis do seu contexto de uso, como vemos na imagem a seguir:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/variaveis-proximas.svg" alt="As variáveis utilizadas ao longo do método são próximo de onde declaradas no topo."/>
+</div>
+<div class="title">Figura 4. Variáveis declaradas próximas do uso</div>
+</div>
+<div class="paragraph">
+<p>Dessa forma, cada grupo de operações fica isolado dos outros, e cada etapa de processamento de um método recebe ainda mais destaque.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/variaveis-proximas2.jpg" alt="A hipotenusa agora se aproxima de uma reta."/>
+</div>
+<div class="title">Figura 5. Pequena distância entre declaração e uso</div>
+</div>
+<div class="sect2">
+<h3 id="_a_ordem_dos_fatores_importa"><a class="anchor" href="#_a_ordem_dos_fatores_importa"></a><a class="link" href="#_a_ordem_dos_fatores_importa">A ordem dos fatores importa</a></h3>
+<div class="paragraph">
+<p>Mesmo no segundo cenário, em que as variáveis são declaradas próximas do uso, a ordem com que são declaradas importa na hora da leitura do código. No exemplo que trabalhamos até aqui, a variável <code>raioBusca</code> é declarada antes da <code>utilizarBuscaEstendida</code>, mas utilizada depois.</p>
+</div>
+<div class="paragraph">
+<p>Apesar de estarem próximas de onde são usadas, há uma quebra de sequência que mata um pouco da fluidez do código. Isso pode ser visualizado novamente usando os triângulos:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/variaveis-fora-ordem.jpg" alt="O triângulo da variável primeira variável envolve completamente o outro, evidenciando um problema."/>
+</div>
+<div class="title">Figura 6. A ordem de declaração não bate com a ordem de uso</div>
+</div>
+<div class="paragraph">
+<p>Ao inverter a ordem de declaração das variáveis de modo que bata com a ordem em que são utilizadas, podemos ver que nenhum triângulo engloba totalmente o outro:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/variaveis-em-ordem.jpg" alt="A hipotenusa do primeiro triângulo cruza a do segundo."/>
+</div>
+<div class="title">Figura 7. A ordem de declaração bate com a ordem de uso</div>
+</div>
+<div class="paragraph">
+<p>A simples ação de reordenar a declaração das variáveis já facilita um pouquinho mais a leitura, tornando-a mais natural, com basicamente zero esforço adicional.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_distância_como_forma_de_decidir_onde_posicionar"><a class="anchor" href="#_distância_como_forma_de_decidir_onde_posicionar"></a><a class="link" href="#_distância_como_forma_de_decidir_onde_posicionar">Distância como forma de decidir onde posicionar</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Obviamente, ninguém precisa ficar desenhando triângulos sobre o código enquanto programa. Utilizei esses desenhos para ilustrar uma forma intuitiva de decidir onde posicionar cada variável local dentro de um método.</p>
+</div>
+<div class="paragraph">
+<p>É muito fácil imaginar uma linha reta da declaração de uma variável até onde é usada pela primeira vez. Podemos então aplicar uma heurística simples: <strong>nosso objetivo então deve ser reduzir essa distância o máximo possível para cada variável dentro do método</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Essa linha reta imaginária também coincide com a hipotenusa de um triângulo reto. Sempre que ela for maior que o necessário, a área desse triângulo vai acabar compreendendo código que não está diretamente relacionado às variáveis que estamos declarando, e elas precisam ser movidas para um local mais próximo de onde são usadas.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/diminuicao-area-triangulo.jpg" alt="Ao mover as variáveis para perto do uso, o cateto lateral diminui."/>
+</div>
+<div class="title">Figura 8. A área do triângulo diminui</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusões"><a class="anchor" href="#_conclusões"></a><a class="link" href="#_conclusões">Conclusões</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Há aspectos bastante sutis que influenciam na legibilidade de um código, e cujo impacto está longe de ser óbvio para muitos desenvolvedores, especialmente aqueles que estão ainda no começo da sua jornada.</p>
+</div>
+<div class="paragraph">
+<p>Numa sala de Zoom, é muito fácil desenhar sobre a tela, e eu costumo utilizar o método descrito acima para explicar esses conceitos em sessões de <em>pair-programming</em>. Costuma funcionar muito bem.</p>
+</div>
+</div>
+</div>
+
+  </div>
+  <style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+position: relative;
+text-align: left;
+height: 36px;
+width: 32px;
+float: left;
+text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+
+
+
+
+
+
+
+
+<span style="color: silver;">Compartilhe: </span><div id="share-buttons">
+<div class="facebook" title="Compartilhe no Facebook" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-posicionamento-variaveis\/', 'sharer', 'width=626,height=436');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+<div class="twitter" title="Compartilhe no Twitter" onclick="window.open('http://twitter.com/share?text=A melhor forma de posicionar variáveis locais num método&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-posicionamento-variaveis\/&hashtags=');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+<div class="linkedin" title="Compartilhe no Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-posicionamento-variaveis\/&title=A melhor forma de posicionar variáveis locais num método', 'sharer', 'width=626,height=700');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+<div class="mail" title="Compartilhe por Email" onclick="window.open('mailto:?&body=https:\/\/blog.dyegomaas.com.br\/posts\/artigo-posicionamento-variaveis\/');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/artigo-melhor-e-pior-tipos-teste-para-microservicos/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">O melhor e o pior tipo de testes para microserviços</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'blogdyegomaas';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111956442-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/v4-shims.min.css" integrity="sha256-wN7QJaqAwQ03kgUhyN4EU2phRdDkLrQYbFe0EvpQ60U=" crossorigin="anonymous" />
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>
