@@ -2,14 +2,14 @@
 
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>gource on Blog Dyego Maas</title>
-    <link>https://blog.dyegomaas.com.br/tags/gource/</link>
-    <description>Recent content in gource on Blog Dyego Maas</description>   
+    <title>Gource on Blog Dyego Maas</title>
+    <link>https://blog.dyegomaas.com.br/series/gource/</link>
+    <description>Recent content in Gource on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <lastBuildDate>Wed, 29 Dec 2021 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.dyegomaas.com.br/tags/gource/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.dyegomaas.com.br/series/gource/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -26,7 +26,7 @@
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/tags/gource/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/series/gource/img/posts/social-media.png" type="image/png"/>      
     </item>
     
     <item>

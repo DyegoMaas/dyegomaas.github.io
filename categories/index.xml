@@ -7,10 +7,26 @@
     <description>Recent content in Categories on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 03 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Dec 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tutorial</title>
+      <link>https://blog.dyegomaas.com.br/categories/tutorial/</link>
+      <pubDate>Wed, 29 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/categories/tutorial/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/categories/img/posts/social-media.png" type="image/png"/>      
+    </item>
     
     <item>
       <title>Clean Code</title>
@@ -194,22 +210,6 @@
       <pubDate>Wed, 17 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/categories/blogging/</guid>
-      <description></description>
-
-      
-      
-      
-      
-      
-      <enclosure url="https://blog.dyegomaas.com.br/categories/img/posts/social-media.png" type="image/png"/>      
-    </item>
-    
-    <item>
-      <title>Tutorial</title>
-      <link>https://blog.dyegomaas.com.br/categories/tutorial/</link>
-      <pubDate>Wed, 10 Jun 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.dyegomaas.com.br/categories/tutorial/</guid>
       <description></description>
 
       

@@ -7,10 +7,27 @@
     <description>Recent content in Posts on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 03 Nov 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 29 Dec 2021 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Visualizando centenas repositórios usando a ferramenta Gource</title>
+      <link>https://blog.dyegomaas.com.br/posts/artigo-visualizando-centenas-projetos-com-gource/</link>
+      <pubDate>Wed, 29 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/artigo-visualizando-centenas-projetos-com-gource/</guid>
+      <description>Visualizar um repositório com a ferramenta Gource é bastante simples. Basta rodar o comando gource dentro do repositório e voilà. Mas e se quisermos gerar uma visualização de centenas de repositórios de uma vez? É este cenário que exploro nesse post.
+  Figura 1. Visualização com Gource  Organizações que trabalham com microsserviços tendem a distribuir o desenvolvimento em um grande número de pequenos repositórios. Cada microsserviço e cada microfrontend reside em um repositório próprio.</description>
+
+      
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
+    </item>
     
     <item>
       <title>A melhor forma de posicionar variáveis locais num método</title>

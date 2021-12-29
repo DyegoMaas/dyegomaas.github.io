@@ -36,7 +36,7 @@
     "datePublished": "2021-10-13",
     "dateModified" : "2021-10-13",
     "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/artigo-melhor-e-pior-tipos-teste-para-microservicos\/",
-    "wordCount" : "1120",
+    "wordCount" : "1122",
     "keywords" : [ "Testes","testes","microserviços","acoplamento","Blog"]
 }
 </script>
@@ -556,9 +556,11 @@
 <div class="paragraph">
 <p>Ainda segundo <a href="https://engineering.atspotify.com/2018/01/11/testing-of-microservices/">o mesmo artigo do Spotify</a>, os testes por lá não costumam ser mais complexos do que isso:</p>
 </div>
-<div class="paragraph">
-<div class="title">Exemplo de teste de integração no Spotify</div>
-<p><span class="image"><img src="./img/Integration-Tests-700x473.png" alt="Exemplo de teste de integração no Spotify" width="resumidos a um setup simples" height="invocação da regra de negócio"/></span></p>
+<div class="imageblock">
+<div class="content">
+<img src="./img/Integration-Tests-700x473.png" alt="Exemplo de teste de integração no Spotify" width="resumidos a um setup simples" height="invocação da regra de negócio"/>
+</div>
+<div class="title">Figura 5. Exemplo de teste de integração no Spotify</div>
 </div>
 <div class="paragraph">
 <p>Em vários projetos na AmbevTech, empregamos a biblioteca <a href="https://github.com/jbogard/MediatR">MediatR</a> como forma de padronizar a invocação de interações com a aplicação, facilitando a escrita de testes com essas características. Nossos testes normalmente têm a seguinte aparência:</p>
@@ -592,7 +594,7 @@
 <div class="content">
 <img src="./img/baixo-acoplamento-testes.jpg" alt="Bom relacionamento entre os módulos de teste e da aplicação, com cada suíte de teste acessando apenas um entrypoint do módulo de aplicação"/>
 </div>
-<div class="title">Figura 5. Baixo acoplamento</div>
+<div class="title">Figura 6. Baixo acoplamento</div>
 </div>
 </div>
 </div>
