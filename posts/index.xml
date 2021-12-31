@@ -23,10 +23,15 @@
 
       
       
+        
+        
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-visualizando-centenas-projetos-com-gource/img/featured.jpg" type="image/jpg" />
     </item>
     
     <item>
@@ -40,10 +45,15 @@
 
       
       
+        
+        
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-posicionamento-variaveis/img/featured.jpg" type="image/jpg" />
     </item>
     
     <item>
@@ -56,10 +66,15 @@
 
       
       
+        
+        
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-melhor-e-pior-tipos-teste-para-microservicos/img/featured.jpg" type="image/jpg" />
     </item>
     
     <item>
@@ -76,8 +91,7 @@
       
       
       
-      
-      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -92,10 +106,19 @@
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -109,10 +132,19 @@
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -127,10 +159,19 @@ O versionamento semântico, de acordo com o SemVer 2.0.0, segue a seguinte estru
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -144,10 +185,19 @@ Em muitos lugares, a estratégia da estrada pavimentada ainda não é uma realid
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -161,10 +211,19 @@ Excluindo outros papéis como product owner e coordenador, a composição do tim
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -179,15 +238,15 @@ Testar um serviço ou alguns poucos serviços localmente pode ser feito facilmen
 
       
       
-      
-      
-      
         
         
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-tilt/img/cover.jpg" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-tilt/img/cover.jpg" type="image/jpg" />
     </item>
     
     <item>
@@ -202,15 +261,15 @@ De um jeito ou de outro, precisamos escolher qual solução de cluster local usa
 
       
       
-      
-      
-      
         
         
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-criando-um-cluster-k8s-local-com-kind/img/cover.jpg" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-criando-um-cluster-k8s-local-com-kind/img/cover.jpg" type="image/jpg" />
     </item>
     
     <item>
@@ -225,10 +284,19 @@ CTRL+C, CTRL+V Plus De vez em quando temos que começar um novo projeto de softw
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -242,15 +310,15 @@ Gluegun? Gluegun é um toolkit para desenvolvimento de apps de linha de comando 
 
       
       
-      
-      
-      
         
         
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-criando-uma-cli-com-gluegun/img/cover.jpg" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-criando-uma-cli-com-gluegun/img/cover.jpg" type="image/jpg" />
     </item>
     
     <item>
@@ -264,15 +332,15 @@ TL;DR Se você for muito impaciente, ou estar sem tempo pra ler o texto todo, po
 
       
       
-      
-      
-      
         
         
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-deep-thinking-papel-e-caneta/img/cover.jpg" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-deep-thinking-papel-e-caneta/img/cover.jpg" type="image/jpg" />
     </item>
     
     <item>
@@ -286,10 +354,19 @@ yUML O yUML é uma ferramenta de geração de diagramas UML como esboço. Ele n�
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -303,10 +380,19 @@ Estrutura de aplicação Uma estrutura de aplicação que tenho testado e gostad
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -321,10 +407,19 @@ Requests e Handlers O que eu mais gosto do MediatR é a forma como ele facilita 
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -339,15 +434,15 @@ Pair programming A ideia básica é simples: tal como no rally, em que o piloto 
 
       
       
-      
-      
-      
         
         
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-ping-pong-pair-programming/img/cover-tdd-cycle.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-ping-pong-pair-programming/img/cover-tdd-cycle.png" type="image/png" />
     </item>
     
     <item>
@@ -361,15 +456,15 @@ Pair programming A ideia básica é simples: tal como no rally, em que o piloto 
 
       
       
-      
-      
-      
         
         
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/resenha-apprenticeship-patterns/img/cover-apprenticeship-patterns.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/resenha-apprenticeship-patterns/img/cover-apprenticeship-patterns.png" type="image/png" />
     </item>
     
     <item>
@@ -384,15 +479,15 @@ Mas nem por isso ele precisa ser muito restrito em funcionalidades. Não é a fa
 
       
       
-      
-      
-      
         
         
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-como-implementei-busca-offline-blog/img/cover-lunr.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-como-implementei-busca-offline-blog/img/cover-lunr.png" type="image/png" />
     </item>
     
     <item>
@@ -407,15 +502,15 @@ Por exemplo, esta é uma visualização de quase 2 horas de toda a história de 
 
       
       
-      
-      
-      
         
         
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-como-visualizar-desenvolvimento-com-gource/img/cover-gource.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-como-visualizar-desenvolvimento-com-gource/img/cover-gource.png" type="image/png" />
     </item>
     
     <item>
@@ -431,10 +526,19 @@ O conceito é muito simples, mas certamente nos faz refletir sobre como estrutur
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -451,8 +555,7 @@ Como os recursos de pattern matching do C# 8.</description>
       
       
       
-      
-      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -466,10 +569,19 @@ Um endpoint de Health Check bem implementado pode nos ajudar de inúmeras formas
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -483,15 +595,15 @@ Os sistemas de arquivo tmpfs não armazenam os dados em dispositivos de armazena
 
       
       
-      
-      
-      
         
         
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-testes-mais-rapidos-com-mongodb-inmemory/img/cover.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-testes-mais-rapidos-com-mongodb-inmemory/img/cover.png" type="image/png" />
     </item>
     
     <item>
@@ -505,15 +617,15 @@ Os testes unitários são uma das principais ferramentas do desenvolvedor para g
 
       
       
-      
-      
-      
         
         
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-testes-mutacao-stryker-net/img/cover.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-testes-mutacao-stryker-net/img/cover.png" type="image/png" />
     </item>
     
     <item>
@@ -527,15 +639,15 @@ A partir do momento que o blog estiver todo configurado, com todos os templates 
 
       
       
-      
-      
-      
         
         
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-continuous-delivery-blog-com-hugo/img/cover.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-continuous-delivery-blog-com-hugo/img/cover.png" type="image/png" />
     </item>
     
     <item>
@@ -550,10 +662,19 @@ Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -569,8 +690,7 @@ Vejamos um cenário muito comum, e que pode ser resolvido facilmente com o desig
       
       
       
-      
-      <enclosure url="https://blog.dyegomaas.com.br/posts/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
   </channel>

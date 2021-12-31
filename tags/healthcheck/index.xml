@@ -23,10 +23,19 @@ Um endpoint de Health Check bem implementado pode nos ajudar de inúmeras formas
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/tags/healthcheck/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
   </channel>

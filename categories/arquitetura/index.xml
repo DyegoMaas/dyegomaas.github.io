@@ -23,10 +23,19 @@ Estrutura de aplicação Uma estrutura de aplicação que tenho testado e gostad
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/categories/arquitetura/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -41,10 +50,19 @@ Requests e Handlers O que eu mais gosto do MediatR é a forma como ele facilita 
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/categories/arquitetura/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -60,10 +78,19 @@ O conceito é muito simples, mas certamente nos faz refletir sobre como estrutur
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/categories/arquitetura/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
   </channel>

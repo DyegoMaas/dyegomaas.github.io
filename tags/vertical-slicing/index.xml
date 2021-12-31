@@ -23,10 +23,19 @@ Estrutura de aplicação Uma estrutura de aplicação que tenho testado e gostad
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/tags/vertical-slicing/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
   </channel>

@@ -24,15 +24,15 @@ Testar um serviço ou alguns poucos serviços localmente pode ser feito facilmen
 
       
       
-      
-      
-      
         
         
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-tilt/img/cover.jpg" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-tilt/img/cover.jpg" type="image/jpg" />
     </item>
     
   </channel>

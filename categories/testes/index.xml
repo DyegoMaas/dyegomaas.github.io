@@ -22,10 +22,15 @@
 
       
       
+        
+        
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/categories/testes/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-melhor-e-pior-tipos-teste-para-microservicos/img/featured.jpg" type="image/jpg" />
     </item>
     
     <item>
@@ -42,8 +47,7 @@
       
       
       
-      
-      <enclosure url="https://blog.dyegomaas.com.br/categories/testes/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -58,15 +62,15 @@ Pair programming A ideia básica é simples: tal como no rally, em que o piloto 
 
       
       
-      
-      
-      
         
         
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-ping-pong-pair-programming/img/cover-tdd-cycle.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-ping-pong-pair-programming/img/cover-tdd-cycle.png" type="image/png" />
     </item>
     
     <item>
@@ -80,15 +84,15 @@ Os sistemas de arquivo tmpfs não armazenam os dados em dispositivos de armazena
 
       
       
-      
-      
-      
         
         
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-testes-mais-rapidos-com-mongodb-inmemory/img/cover.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-testes-mais-rapidos-com-mongodb-inmemory/img/cover.png" type="image/png" />
     </item>
     
     <item>
@@ -102,15 +106,15 @@ Os testes unitários são uma das principais ferramentas do desenvolvedor para g
 
       
       
-      
-      
-      
         
         
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-testes-mutacao-stryker-net/img/cover.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-testes-mutacao-stryker-net/img/cover.png" type="image/png" />
     </item>
     
     <item>
@@ -125,10 +129,19 @@ Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/categories/testes/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -144,8 +157,7 @@ Vejamos um cenário muito comum, e que pode ser resolvido facilmente com o desig
       
       
       
-      
-      <enclosure url="https://blog.dyegomaas.com.br/categories/testes/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
   </channel>

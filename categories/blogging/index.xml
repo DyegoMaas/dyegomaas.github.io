@@ -24,15 +24,15 @@ Mas nem por isso ele precisa ser muito restrito em funcionalidades. Não é a fa
 
       
       
-      
-      
-      
         
         
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-como-implementei-busca-offline-blog/img/cover-lunr.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-como-implementei-busca-offline-blog/img/cover-lunr.png" type="image/png" />
     </item>
     
     <item>
@@ -46,15 +46,15 @@ A partir do momento que o blog estiver todo configurado, com todos os templates 
 
       
       
-      
-      
-      
         
         
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-continuous-delivery-blog-com-hugo/img/cover.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-continuous-delivery-blog-com-hugo/img/cover.png" type="image/png" />
     </item>
     
   </channel>

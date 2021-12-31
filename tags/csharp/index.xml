@@ -26,8 +26,7 @@
       
       
       
-      
-      <enclosure url="https://blog.dyegomaas.com.br/tags/csharp/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -41,10 +40,19 @@ Estrutura de aplicação Uma estrutura de aplicação que tenho testado e gostad
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/tags/csharp/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -59,10 +67,19 @@ Requests e Handlers O que eu mais gosto do MediatR é a forma como ele facilita 
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/tags/csharp/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -79,8 +96,7 @@ Como os recursos de pattern matching do C# 8.</description>
       
       
       
-      
-      <enclosure url="https://blog.dyegomaas.com.br/tags/csharp/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -94,10 +110,19 @@ Um endpoint de Health Check bem implementado pode nos ajudar de inúmeras formas
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/tags/csharp/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -111,15 +136,15 @@ Os testes unitários são uma das principais ferramentas do desenvolvedor para g
 
       
       
-      
-      
-      
         
         
+        
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-testes-mutacao-stryker-net/img/cover.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/artigo-testes-mutacao-stryker-net/img/cover.png" type="image/png" />
     </item>
     
     <item>
@@ -134,10 +159,19 @@ Erros comuns e Antipatterns Builders ajudam bastante, mas temos que tomar alguns
 
       
       
+        
+        
+        
+          
+          
+            
+            
+          
+        
       
       
       
-      <enclosure url="https://blog.dyegomaas.com.br/tags/csharp/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
     <item>
@@ -153,8 +187,7 @@ Vejamos um cenário muito comum, e que pode ser resolvido facilmente com o desig
       
       
       
-      
-      <enclosure url="https://blog.dyegomaas.com.br/tags/csharp/img/posts/social-media.png" type="image/png"/>      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
     </item>
     
   </channel>
