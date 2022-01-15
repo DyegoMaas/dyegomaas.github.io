@@ -7,10 +7,32 @@
     <description>Recent content in Posts on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 29 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 Jan 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Atualizando o livro mais influente da era BASIC</title>
+      <link>https://blog.dyegomaas.com.br/posts/atualizando-basic-computer-games/</link>
+      <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/atualizando-basic-computer-games/</guid>
+      <description>O livro &amp;#34;BASIC Computer Games é considerado um dos livros mais influentes da sua época. Foi o primeiro livro de programação a vender mais de 1 milhão de cópias e houve uma época em que havia mais cópias do livro distribuídos em bibliotecas do que computadores capazes de rodar BASIC.
+ Nas décadas de 1970 e 1980, revistas de programação traziam uma série de programas impressos, que precisavam então ser digitados num computador para rodar.</description>
+
+      
+      
+        
+        
+        
+          
+        
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/atualizando-basic-computer-games/img/featured.png" type="image/png" />
+    </item>
     
     <item>
       <title>Visualizando centenas de repositórios usando a ferramenta Gource</title>

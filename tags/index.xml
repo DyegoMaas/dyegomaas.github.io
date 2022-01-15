@@ -7,10 +7,55 @@
     <description>Recent content in Tags on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Wed, 29 Dec 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 Jan 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>basic</title>
+      <link>https://blog.dyegomaas.com.br/tags/basic/</link>
+      <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/basic/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
+    </item>
+    
+    <item>
+      <title>open source</title>
+      <link>https://blog.dyegomaas.com.br/tags/open-source/</link>
+      <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/open-source/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
+    </item>
+    
+    <item>
+      <title>vintage basic</title>
+      <link>https://blog.dyegomaas.com.br/tags/vintage-basic/</link>
+      <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/vintage-basic/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
+    </item>
     
     <item>
       <title>ambevtech</title>

@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+    
+
+
+    <head itemscope itemtype="https://blog.dyegomaas.com.br/">
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <script type="application/ld+json">
+{
+    "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/blog.dyegomaas.com.br\/"
+    },
+    "articleSection" : "posts",
+    "name" : "Atualizando o livro mais influente da era BASIC",
+    "headline" : "Atualizando o livro mais influente da era BASIC",
+    "description" : "Neste post, apresento o projeto de atualização do livro BASIC Computer Games para novas linguagens de programação, falo sobre como participar, e compartilho um pouco da minha experiência portando o jogo Life para C#.",
+    "inLanguage" : "pt-BR",
+    "author" : {
+        "@type": "Person",
+        "name": "Dyego Maas"
+    }, 
+    "image": {
+        "@type": "imageObject",
+        "url": "https://blog.dyegomaas.com.br/img/featured.png"
+    },
+    
+    "creator" : "Dyego Maas",
+    "publisher": "Dyego Maas",
+    "accountablePerson" : "Dyego Maas",
+    "copyrightHolder" : "Dyego Maas",
+    "copyrightYear" : "2022",
+    "datePublished": "2022-01-15",
+    "dateModified" : "2022-01-15",
+    "url" : "https:\/\/blog.dyegomaas.com.br\/posts\/atualizando-basic-computer-games\/",
+    "wordCount" : "914",
+    "keywords" : [ "Programação","basic","open source","vintage basic","Blog"]
+}
+</script>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="robots" content="index,follow" />
+<meta name="googlebot" content="index,follow" />
+<meta name="yandex-verification" content="20d83aeccd3b80c2" />
+
+
+
+    
+
+<meta name="author" content="Dyego Maas"/>
+
+<base href="https://blog.dyegomaas.com.br/posts/atualizando-basic-computer-games/">
+<meta name="generator" content="Hugo 0.82.0" />
+
+    
+    
+    
+
+<title itemprop="name">Atualizando o livro mais influente da era BASIC - Blog Dyego Maas</title>
+<meta property="description" content="Neste post, apresento o projeto de atualização do livro BASIC Computer Games para novas linguagens de programação, falo sobre como participar, e compartilho um pouco da minha experiência portando o jogo Life para C#." />
+
+
+
+    
+        
+        
+    
+        
+        
+    
+        
+        
+    
+
+
+<meta name="keywords" content="basic,open-source,vintage-basic" />
+<link rel="canonical" href="https://blog.dyegomaas.com.br/posts/atualizando-basic-computer-games/" itemprop="url" />
+<meta name="url" content="https://blog.dyegomaas.com.br/posts/atualizando-basic-computer-games/" />
+<meta property="og:site_name" content="Blog - Dyego Maas" />
+<meta property="og:title" content="Atualizando o livro mais influente da era BASIC" />
+<meta property="twitter:title" content="Atualizando o livro mais influente da era BASIC" />
+<meta property="og:description" content="Neste post, apresento o projeto de atualização do livro BASIC Computer Games para novas linguagens de programação, falo sobre como participar, e compartilho um pouco da minha experiência portando o jogo Life para C#." />
+<meta property="twitter:description" content="Neste post, apresento o projeto de atualização do livro BASIC Computer Games para novas linguagens de programação, falo sobre como participar, e compartilho um pouco da minha experiência portando o jogo Life para C#." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.dyegomaas.com.br/posts/atualizando-basic-computer-games/" /><meta property="og:image" content="/img/featured.png" />
+<meta property="og:image:secure_url" content="https://blog.dyegomaas.com.br/img/featured.png" />
+<meta property="twitter:image" content="https://blog.dyegomaas.com.br/img/featured.png" />
+
+<meta property="article:published_time" content="2022-01-15T00:00:00+00:00" />
+<meta property="og:publish_date" content="2022-01-15T00:00:00-1200" name="publish_date" />
+
+<meta property="article:modified_time" content="2022-01-15T00:00:00+00:00" />
+
+<meta property="article:section" content="posts" />
+
+<meta property="article:tag" content="Programação" />
+
+<meta property="article:tag" content="basic" /><meta property="article:tag" content="open source" /><meta property="article:tag" content="vintage basic" />
+
+
+<meta name="theme-color" content="#000000" />
+<meta name="msapplication-TileColor" content="#000000" />
+<meta name="imagemode" content="force" />
+<meta name="coverage" content="Worldwide" />
+<meta name="distribution" content="Global" />
+<meta name="HandheldFriendly" content="True" />
+<meta name="msapplication-tap-highlight" content="no" />
+<meta name="apple-mobile-web-app-title" content="Blog - Dyego Maas" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-touch-fullscreen" content="yes" />
+
+    
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/zenburn.min.css">
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.e5e196df6474bcb74d824774ca3a557d93f6257f2597e57a87872935825da415.css" integrity="sha256-5eGW32R0vLdNgkd0yjpVfZP2JX8ll&#43;V6h4cpNYJdpBU=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" crossorigin="anonymous" media="print">
+
+
+<link rel="stylesheet" href="/css/custom.69cb553f8fdb841923fb0042f13bb1a617b61a9c30b020d16fa9175995e8c089.css" integrity="sha256-actVP4/bhBkj&#43;wBC8Tuxphe2GpwwsCDRb6kXWZXowIk=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/asciinema-player.08be1bb04c21933f3a86e361c7ee3a41ed8933bcf7aff45463fa970980b7ae40.css" integrity="sha256-CL4bsEwhkz86huNhx&#43;46Qe2JM7z3r/RUY/qXCYC3rkA=" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde/asciidoctor.2f9054ce19cfdc6b28121b506f34b2e3510ef2c9f179c547220757b9fcc87c3e.css" integrity="sha256-L5BUzhnP3GsoEhtQbzSy41EO8snxecVHIgdXufzIfD4=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/overrides.06dfba6a39eef8349b0f3aadb7f81f70d7e426cd8d016a6a98cb93fbbfb9e0c2.css" integrity="sha256-Bt&#43;6ajnu&#43;DSbDzqtt/gfcNfkJs2NAWpqmMuT&#43;7&#43;54MI=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/modal.6d7540d4db30b9f19126fccff040151b083d05521b17dbc8f52a34d2a1044f6d.css" integrity="sha256-bXVA1NswufGRJvzP8EAVGwg9BVIbF9vI9So00qEET20=" crossorigin="anonymous">
+<link rel="stylesheet" href="/scss/custom.fdaaa65ecac370c11e88d034c1a8887223adef069335c6b1d6a1eb136a839a56.css" integrity="sha256-/aqmXsrDcMEeiNA0waiIciOt7waTNcax1qHrE2qDmlY=" crossorigin="anonymous">
+
+
+
+
+<link rel="stylesheet" href="/scss/tocbot.5ef07cebc3c477b54270456f149ee02922479bb7555fd344b2c69f953b0e7e5e.css" integrity="sha256-XvB868PEd7VCcEVvFJ7gKSJHm7dVX9NEssaflTsOfl4=" crossorigin="anonymous">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/asciinema-player/2.6.1/asciinema-player.min.css" integrity="sha512-tv24MiwP+0CRCL80VsmJYPl/xDD2tdlDMz9fhNCIAQ6UPrj6Kh/57hOt9A4YnoNDKH5QDxJqGhtt9NPW2sgQeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+<link rel="shortcut icon" href="/favicons/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-match-height@0.7.2/dist/jquery.matchHeight.min.js" defer></script>
+<script src="https://unpkg.com/lunr/lunr.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.stemmer.support.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lunr-languages@1.4.0/min/lunr.pt.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.0.1/mustache.min.js" defer></script>
+
+<script src="/js/layout-adjustments.js" defer></script><script src="/js/custom-search.js" defer></script>
+
+<script async>
+  document.onreadystatechange = function () {
+    if (document.readyState == "complete") {
+      adjustLayout();
+      initializeSearch('/search-index.json', '/search-data-companion.json');
+   }
+ }
+</script>
+</head>
+
+    <body class=" ">
+    
+<div class="sidebar">
+    <div class="container ">
+      <div class="sidebar-about">
+        <span class="site__title">
+          <a href="https://blog.dyegomaas.com.br/">Blog Dyego Maas</a>
+        </span>
+        
+          
+          
+          
+          <div class="author-image">
+            <img src="https://blog.dyegomaas.com.br/img/avatar.png" alt="Author Image" class="img--circle img--headshot element--center">
+          </div>
+          
+        
+        
+        <p class="site__description">
+           Arquiteto de software e Escritor 
+        </p>
+      </div>
+      <div class="collapsible-menu">
+        <input type="checkbox" id="menuToggle">
+        <label for="menuToggle">Blog Dyego Maas</label>
+        <div class="menu-content">
+          <div class="menu-container">
+	<ul class="sidebar-nav">
+		
+		
+			 
+				<li>
+					<a href="/">
+						<span><i class="fas fa-home"></i> Home</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
+					<a href="/posts/">
+						<span><i class="far fa-newspaper"></i> Artigos</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
+					<a href="/recommendations/">
+						<span><i class="fas fa-book"></i> Recomendações</span>
+					</a>
+				</li>
+			
+		
+			 
+				<li>
+					<a href="https://dyegomaas.com.br/">
+						<span><i class="fas fa-address-card"></i> Dyego Maas</span>
+					</a>
+				</li>
+			
+		
+		<li>
+			<a id="search-button" rel="search" style="cursor: pointer;">
+    <i class="fa fa-search" aria-hidden="true"></i> Pesquisar
+</a>
+
+<div id="search-results-modal" class="modal display-none">
+    
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="modal-close">&times;</span>
+        <h2>O que você procura?</h2>
+      </div>
+      <div class="modal-body">
+        <input type="search" id="search-input" results="10" placeholder="Pesquisar... (pressione Enter)">
+        <div>
+            <ul id="search-results"></ul>
+        </div>
+      </div>
+      
+    </div>
+</div>
+		</li>
+	</ul>
+</div>
+
+          <section class="social">
+	
+	<a href="https://twitter.com/DyegoMaas" rel="me"><i class="fab fa-twitter fa-lg icon-social" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://facebook.com/DyegoAlekssander" rel="me"><i class="fab fa-facebook-f icon-social" aria-hidden="true"></i></a>
+	
+	
+	<a href="https://github.com/Dyegomaas" rel="me"><i class="fab fa-github fa-lg icon-social" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	<a href="https://linkedin.com/in/dyego-maas" rel="me"><i class="fab fa-linkedin fa-lg icon-social" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="mailto:dyego.maas@gmail.com" rel="me"><i class="fas fa-at fa-lg icon-social" aria-hidden="true"></i></a>
+	
+
+	
+	 
+	
+	
+	<a href="https://blog.dyegomaas.com.br/index.xml" rel="me"><i class="fas fa-rss fa-lg icon-social" aria-hidden="true"></i></a>
+	
+</section>
+          
+<div class="sponsored-image-container">
+    
+    <img src="" class="sponsored-image">
+    
+</div>
+
+        </div>
+      </div>
+      
+
+
+    </div>
+  </div>
+  
+        <div class="content container">
+            
+    
+<article class="real">
+  <header>
+    <h1>Atualizando o livro mais influente da era BASIC</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i>
+       <time datetime="2022-01-15">  15
+
+
+  
+    Jan, 
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+2022 </time>
+    
+    
+    
+      
+      
+          em
+          
+          
+              <a class="badge badge-category" href="/categories/programa%C3%A7%C3%A3o">PROGRAMAÇÃO</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/basic">basic</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/open-source">open source</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/vintage-basic">vintage basic</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> <span>5 min de leitura</span>
+
+    
+
+     
+</div>
+
+
+  </header>
+  
+  
+  
+    <div class="toc-wrapper">
+      <input type="checkbox" id="tocToggle">
+      <label for="tocToggle">
+        <i class="fas fa-list-ul"></i>
+        <span id="toc-title">Nesta página&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      </label>
+      <div id="toc-toggle-cover"></div>
+      
+        <nav class="toc" id="TableOfContents"></nav>
+      
+    </div>
+  
+  
+  <div class="post">
+    <div class="imageblock">
+<div class="content">
+<img src="./img/featured.png" alt="&#34;Capas de duas edições do livro BASIC Computer Games"/>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>O livro &#34;BASIC Computer Games é considerado um dos livros mais influentes da sua época. Foi o primeiro livro de programação a vender mais de 1 milhão de cópias e houve uma época em que havia mais cópias do livro distribuídos em bibliotecas do que computadores capazes de rodar BASIC.</strong></p>
+</div>
+<div class="paragraph">
+<p>Nas décadas de 1970 e 1980, revistas de programação traziam uma série de programas impressos, que precisavam então ser digitados num computador para rodar. Era um conceito bem interessante <em>DIY gaming</em>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/page101.gif" alt="Página 101, escaneada do BASIC Computer Games, contendo o programa LIFE"/>
+</div>
+<div class="title">Figura 1. Página do livro BASIC Computer Games, com o jogo Life</div>
+</div>
+<div class="paragraph">
+<p>Os jogos do livro estão agora sendo atualizados para linguagens de programação modernas, de modo a preservar uma parte da história e torná-los mais acessíveis. Um projeto open source organizado pelo <a href="https://twitter.com/codinghorror">Jeff Atwood</a>, co-fundador do StackOverflow, e apresentado em detalhes no post <a href="https://blog.codinghorror.com/updating-the-single-most-influential-book-of-the-basic-era/">Updating The Single Most Influential Book of the BASIC Era</a>.</p>
+</div>
+<div class="sect1">
+<h2 id="_como_contribuir"><a class="anchor" href="#_como_contribuir"></a><a class="link" href="#_como_contribuir">Como contribuir</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Os jogos estão sendo atualizados para as linguagens no topo do índice <a href="https://www.tiobe.com/tiobe-index/">TIOBE Fevereiro 2021</a> que são consideradas <em>memory safe</em> e de <em>script de propósito geral</em>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Java</p>
+</li>
+<li>
+<p>Python</p>
+</li>
+<li>
+<p>C#</p>
+</li>
+<li>
+<p>VB.NET</p>
+</li>
+<li>
+<p>JavaScript</p>
+</li>
+<li>
+<p>Ruby</p>
+</li>
+<li>
+<p>Delphi / Object Pascal</p>
+</li>
+<li>
+<p>Perl</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Se você conhece alguma dessas linguagens, pode contribuir também. Imagino que algumas outras linguagens podem ser aceitas, mas teria que perguntar (é um projeto de código aberto, afinal).</p>
+</div>
+<div class="sect2">
+<h3 id="_escolhendo_um_jogo_para_portar"><a class="anchor" href="#_escolhendo_um_jogo_para_portar"></a><a class="link" href="#_escolhendo_um_jogo_para_portar">Escolhendo um jogo para portar</a></h3>
+<div class="paragraph">
+<p>A primeira coisa que você precisa fazer (depois de ler o <a href="https://blog.codinghorror.com/updating-the-single-most-influential-book-of-the-basic-era/">artigo</a>, é claro) é acessar o repositório e identificar algum jogo que não tenha sido portado para uma linguagem que você domina.</p>
+</div>
+<div class="paragraph">
+<p>No meu caso, escolhi portar para C# o jogo 55 da lista, <a href="https://github.com/coding-horror/basic-computer-games/tree/main/55_Life">Life</a>.</p>
+</div>
+<div class="paragraph">
+<p>Por sorte, não vai ser necessário transcrever o código em BASIC a partir da revista, pois isso já foi feito. Aliás, o conteúdo do livro pode ser encontrado no site <a href="https://www.atariarchives.org/basicgames/index.php">Atari Archives</a>, e o livro pode ser baixado na <a href="https://annarchive.com/files/Basic_Computer_Games_Microcomputer_Edition.pdf">íntegra aqui</a>.</p>
+</div>
+<div class="paragraph">
+<p>A próxima etapa é preparar o ambiente local.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_preparando_o_ambiente_basic"><a class="anchor" href="#_preparando_o_ambiente_basic"></a><a class="link" href="#_preparando_o_ambiente_basic">Preparando o ambiente BASIC</a></h3>
+<div class="paragraph">
+<p>Por volta de 2009, Lyle Kopnicky normalizou todo o código para o <a href="http://www.vintage-basic.net/download.html">Vintage BASIC</a>. Isso facilita nossa vida, pois a ferramenta é fácil de instalar e rodar no Windows, Linux e MacOS.</p>
+</div>
+<div class="paragraph">
+<p>O Vintage BASIC é um interpretador de BASIC implementado em Haskell e apresenta comportamento semelhante ao BASIC do Commodore 64.</p>
+</div>
+<div class="paragraph">
+<p>No site do projeto, há um <a href="http://www.vintage-basic.net/downloads/Vintage_BASIC_Users_Guide.html">Guia de Usuário</a> bem completo, e que pode ser lido em cerca de uma hora.</p>
+</div>
+<div class="paragraph">
+<p>Uma vez instalado, você pode rodar um programa em BASIC no seu terminal desta forma: <code>vintbas myprogram.bas</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_fork_do_projeto"><a class="anchor" href="#_fork_do_projeto"></a><a class="link" href="#_fork_do_projeto">Fork do projeto</a></h3>
+<div class="paragraph">
+<p>Para contribuir com o projeto, você terá primeiro que bifurcar (criar um <em>fork</em>) o <a href="https://github.com/coding-horror/basic-computer-games">repositório do projeto no GitHub</a>.</p>
+</div>
+<div class="paragraph">
+<p>Se você é novo no mundo dos projetos <em>open source</em>, <a href="https://docs.github.com/pt/get-started/quickstart/fork-a-repo">a documentação do GitHub mostra em detalhes como bifurcar um repositório</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_convertendo_para_outra_linguagem"><a class="anchor" href="#_convertendo_para_outra_linguagem"></a><a class="link" href="#_convertendo_para_outra_linguagem">Convertendo para outra linguagem</a></h3>
+<div class="paragraph">
+<p>Essa é a parte divertida, e é com você. É importante lembrar no entanto que se trata de um porte, e não simplesmente de uma nova versão. Então é importante buscar reproduzir com grande fidelidade o comportamento do original.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Para testar o seu porte, você pode abrir dois terminais: no primeiro, você roda o jogo original usando o Vintage BASIC; no segundo o seu. Se estiver tudo certinho, o resultado deveria ser o mesmo.
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pull_request"><a class="anchor" href="#_pull_request"></a><a class="link" href="#_pull_request">Pull Request</a></h3>
+<div class="paragraph">
+<p>Quando você estiver satisfeito com o porte, basta abrir um Pull Request para o repositório original. Eu acabei abrindo dois, porque encontrei alguns bugs na primeira implementação.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_minha_contribuição_life_em_c"><a class="anchor" href="#_minha_contribuição_life_em_c"></a><a class="link" href="#_minha_contribuição_life_em_c">Minha contribuição: Life em C#</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Escolhi o <a href="https://www.atariarchives.org/basicgames/showpage.php?page=100">jogo 55 do livro, chamado LIFE</a>, e decidi portá-lo para C#. Dediquei aproximadamente um dia e meio das minhas férias para o porte. Isso incluiu estudar BASIC, entender o programa original, escrever meu porte e corrigir um monte de bugs.</p>
+</div>
+<div class="sect2">
+<h3 id="_background"><a class="anchor" href="#_background"></a><a class="link" href="#_background">Background</a></h3>
+<div class="paragraph">
+<p>Escolhi especificamente <strong>Life</strong> pois já admirava. Conhecido como <a href="https://www.wikiwand.com/pt/Jogo_da_vida"><em>Conway’s Game of Life</em></a>, trata-se de uma simulação com autômatos celulares criada por John Conway em 1970. A partir de um conjunto de regras simples, comportamentos complexos emergem. Mais tarde, Stephen Wolfram estudou mais a fundo os autômatos celulares, publicando uma série de artigos que culminaram na escrita do livro <em>A New Kind of Science</em>, publicado em 2002.</p>
+</div>
+<div class="paragraph">
+<p>Mais recentemente, Stephen Wolfram tem trabalhado num modelo unificado da física que tem suas raízes nesses mesmos conceitos. A teoria propõe um modelo computacional do universo, e você pode ver mais sobre ela <a href="https://www.wolframphysics.org">aqui</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./img/stephen-wolfram-physics-project.jpg" alt="Sumário visual do Wolfram Physics Project, apresentando o conceito das Ruliads"/>
+</div>
+<div class="title">Figura 2. Sumário visual do Wolfram Physics Project</div>
+</div>
+<div class="paragraph">
+<p>Caso tenha batido a curiosidade e o seu inglês estiver bom, pode conhecer mais sobre o projeto no podcast do <a href="https://lexfridman.com/podcast/">Lex Fridman</a>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://lexfridman.com/stephen-wolfram">#234 - Stephen Wolfram - Cellular Automata, Computation, and Physics</a></p>
+</li>
+<li>
+<p><a href="https://lexfridman.com/stephen-wolfram-2/">#124 - Stephen Wolfram - Fundamental Theory of Physics</a></p>
+</li>
+<li>
+<p><a href="https://lexfridman.com/stephen-wolfram-3/">#89 - Stephen Wolfram - Complexity and the Fabric of Reality</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_o_processo_de_portar_o_jogo_para_c"><a class="anchor" href="#_o_processo_de_portar_o_jogo_para_c"></a><a class="link" href="#_o_processo_de_portar_o_jogo_para_c">O processo de portar o jogo para C#</a></h3>
+<div class="paragraph">
+<p>Portar Life para C# foi mais divertido do que eu esperava. A maior dificuldade do projeto foi tornar a simulação do porte fiel à do original.</p>
+</div>
+<div class="paragraph">
+<p>Como BASIC é uma linguagem cujos arrays são indexados em 1, ao invés de 0, como Java ou C#, o programa original tinha vários valores <em>hard-coded</em> que complicaram a conversão. Alguns erros ao ajustar os índices levaram a diferenças sutis na simulação após algumas dezenas de iterações.</p>
+</div>
+<div class="paragraph">
+<p>Devido à alterações que tive que fazer na indexação, a primeira implementação funcionava, mas só até alguma célula atingir as bordas da simulação. A partir daí, a simulação do porte evoluía de forma complementamente diferente da original.</p>
+</div>
+<div class="paragraph">
+<p>Depois de algumas horas de testes, consegui finalmente corrigir e chegar a um resultado satisfatório:</p>
+</div>
+<div id="life-container"></div>
+<script src="/js/asciinema-player.min.js"></script>
+<script>
+AsciinemaPlayer.create(
+    'res\/462009.cast',
+    document.getElementById('life-container'),
+    { 
+        cols: 70, 
+        rows: 30, 
+        theme: 'solarized-dark'
+    }
+);
+</script>
+<div class="paragraph">
+<p>O código você encontra <a href="https://github.com/coding-horror/basic-computer-games/tree/main/55_Life/csharp">aqui</a>.</p>
+</div>
+</div>
+</div>
+</div>
+
+  </div>
+  <style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+position: relative;
+text-align: left;
+height: 36px;
+width: 32px;
+float: left;
+text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span style="color: silver;">Compartilhe: </span><div id="share-buttons">
+<div class="facebook" title="Compartilhe no Facebook" onclick="window.open('http://www.facebook.com/sharer/sharer.php?u=https:\/\/blog.dyegomaas.com.br\/posts\/atualizando-basic-computer-games\/', 'sharer', 'width=626,height=436');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+<div class="twitter" title="Compartilhe no Twitter" onclick="window.open('http://twitter.com/share?text=Atualizando o livro mais influente da era BASIC&url=https:\/\/blog.dyegomaas.com.br\/posts\/atualizando-basic-computer-games\/&hashtags=basic,open-source,vintage-basic');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+<div class="linkedin" title="Compartilhe no Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=https:\/\/blog.dyegomaas.com.br\/posts\/atualizando-basic-computer-games\/&title=Atualizando o livro mais influente da era BASIC', 'sharer', 'width=626,height=700');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+<div class="mail" title="Compartilhe por Email" onclick="window.open('mailto:?&body=https:\/\/blog.dyegomaas.com.br\/posts\/atualizando-basic-computer-games\/');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+  
+
+<div class="navigation navigation-single">
+    
+    <a href="/posts/artigo-visualizando-centenas-projetos-com-gource/" class="navigation-prev">
+      <i aria-hidden="true" class="fa fa-chevron-left"></i>
+      <span class="navigation-tittle">Visualizando centenas de repositórios usando a ferramenta Gource</span>
+    </a>
+    
+    
+</div>
+
+
+  
+
+  
+    
+        <div id="disqus_thread"></div>
+<script type="text/javascript">
+    
+
+    (function () {
+    if (location.hostname === "localhost" ||
+      location.hostname === "127.0.0.1" ||
+      location.hostname === "") {
+      return;
+    }
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    var disqus_shortname = 'blogdyegomaas';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || 
+      document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+<noscript>
+  Please enable JavaScript to view the
+  <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+</noscript>
+<a href="http://disqus.com/" class="dsq-brlink">comments powered by
+  <span class="logo-disqus">Disqus</span>
+</a>
+
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+  
+  
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-111956442-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/v4-shims.min.css" integrity="sha256-wN7QJaqAwQ03kgUhyN4EU2phRdDkLrQYbFe0EvpQ60U=" crossorigin="anonymous" />
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.js"></script>
+<script type="text/javascript">
+  if (tocbot) {
+    tocbot.init({
+      
+      tocSelector: '.toc',
+      
+      contentSelector: '.post',
+      
+      headingSelector: 'h2, h3, h4',
+      collapseDepth: 4
+    });
+  }
+</script>
+
+
+
+    
+
+
+
+    </body>
+</html>
