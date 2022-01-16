@@ -98,7 +98,7 @@
       <pubDate>Sat, 15 Jan 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/posts/atualizando-basic-computer-games/</guid>
-      <description>O livro &amp;#34;BASIC Computer Games é considerado um dos livros mais influentes da sua época. Foi o primeiro livro de programação a vender mais de 1 milhão de cópias e houve uma época em que havia mais cópias do livro distribuídos em bibliotecas do que computadores capazes de rodar BASIC.
+      <description>BASIC Computer Games é considerado um dos livros mais influentes da sua época. Foi o primeiro livro de programação a vender mais de 1 milhão de cópias e houve uma época em que havia mais cópias do livro distribuídos em bibliotecas do que computadores capazes de rodar BASIC.
  Nas décadas de 1970 e 1980, revistas de programação traziam uma série de programas impressos, que precisavam então ser digitados num computador para rodar.</description>
 
       
@@ -180,13 +180,13 @@
     </item>
     
     <item>
-      <title>Como implementar test builders em C# com ForeverFactory</title>
+      <title>Como implementar test data builders em C# com ForeverFactory</title>
       <link>https://blog.dyegomaas.com.br/posts/artigo-test-builders-com-foreverfactory/</link>
       <pubDate>Wed, 11 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/posts/artigo-test-builders-com-foreverfactory/</guid>
       <description>Nos artigos anteriores da série, exploramos como o uso de test builders pode simplificar a construção de testes.
- Neste artigo, apresento a biblioteca ForeverFactory, que se propõe a simplificar a construção de builders ao mesmo tempo que maximiza a reutilização de configurações.
+ Neste artigo, apresento a biblioteca ForeverFactory, que se propõe a simplificar a implementação de builders ao mesmo tempo que maximiza a reutilização de configurações.
  Por que criei a ForeverFactory? Gosto muito da abordagem de escrever test builders artesanais, totalmente customizados para os cenários de um software, como apresentado neste outro artigo, fazê-los sempre desta forma pode ser bastante repetitivo.</description>
 
       
