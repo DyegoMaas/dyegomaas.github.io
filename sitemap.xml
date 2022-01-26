@@ -21,25 +21,25 @@
     <lastmod>2022-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/</loc>
-    <lastmod>2022-01-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/categories/</loc>
-    <lastmod>2022-01-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/csharp/</loc>
-    <lastmod>2022-01-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/open-source/</loc>
     <lastmod>2022-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/posts/</loc>
-    <lastmod>2022-01-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/categories/programa%C3%A7%C3%A3o/</loc>
     <lastmod>2022-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/</loc>
-    <lastmod>2022-01-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/vintage-basic/</loc>
     <lastmod>2022-01-15T00:00:00+00:00</lastmod>
@@ -57,7 +57,7 @@
     <lastmod>2022-01-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/series/</loc>
-    <lastmod>2022-01-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/categories/tutorial/</loc>
     <lastmod>2022-01-15T00:00:00+00:00</lastmod>
@@ -84,7 +84,7 @@
     <lastmod>2021-10-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/categories/testes/</loc>
-    <lastmod>2022-01-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/testes/</loc>
     <lastmod>2021-10-13T00:00:00+00:00</lastmod>
@@ -104,23 +104,26 @@
     <loc>https://blog.dyegomaas.com.br/recommendations/</loc>
     <lastmod>2021-09-17T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://blog.dyegomaas.com.br/tags/benchmark/</loc>
+    <lastmod>2022-01-25T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/builder-pattern/</loc>
-    <lastmod>2022-01-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/posts/artigo-test-builders-com-foreverfactory/</loc>
-    <lastmod>2022-01-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/forever-factory/</loc>
-    <lastmod>2022-01-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/nbuilder/</loc>
-    <lastmod>2022-01-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/series/test-builders/</loc>
-    <lastmod>2022-01-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/test-data-builders/</loc>
-    <lastmod>2022-01-16T00:00:00+00:00</lastmod>
+    <lastmod>2022-01-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/builds-deterministicos/</loc>
     <lastmod>2021-08-04T00:00:00+00:00</lastmod>
