@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>unit testing on Blog Dyego Maas</title>
+    <link>https://blog.dyegomaas.com.br/tags/unit-testing/</link>
+    <description>Recent content in unit testing on Blog Dyego Maas</description>   
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Thu, 03 Feb 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.dyegomaas.com.br/tags/unit-testing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Code Coverage garante qualidade?</title>
+      <link>https://blog.dyegomaas.com.br/posts/code-coverage/</link>
+      <pubDate>Thu, 03 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/code-coverage/</guid>
+      <description>Code coverage (cobertura de código) é o percentual de código que está coberto por testes automatizados. Essa métrica é medida em todo código que é executado quando os testes rodam. Ela pode nos dar um feedback poderoso, mas também tem suas fragilidades.
+ Neste artigo, vamos explorar vários aspectos do Code Coverage, veremos como melhor aplicá-la para obter bons resultados, e também um pouco sobre métricas complementares que ajudam a ganhar confiança nos números obtidos.</description>
+
+      
+      
+        
+        
+        
+          
+        
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/posts/code-coverage/img/featured.jpg" type="image/jpg" />
+    </item>
+    
+  </channel>
+</rss>

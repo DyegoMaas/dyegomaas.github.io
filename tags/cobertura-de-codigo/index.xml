@@ -2,14 +2,14 @@
 
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>code coverage on Blog Dyego Maas</title>
-    <link>https://blog.dyegomaas.com.br/tags/code-coverage/</link>
-    <description>Recent content in code coverage on Blog Dyego Maas</description>   
+    <title>cobertura de codigo on Blog Dyego Maas</title>
+    <link>https://blog.dyegomaas.com.br/tags/cobertura-de-codigo/</link>
+    <description>Recent content in cobertura de codigo on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <lastBuildDate>Thu, 03 Feb 2022 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.dyegomaas.com.br/tags/code-coverage/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.dyegomaas.com.br/tags/cobertura-de-codigo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
