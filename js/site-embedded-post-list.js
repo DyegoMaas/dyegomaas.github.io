@@ -26,7 +26,6 @@ function fillWith(containerId, numberOfPosts) {
 
             let itemElements = feed.getElementsByTagName('item')
             let items = Array.from(itemElements)
-                .slice(0, numberOfPosts)
                 .map(item => {
                     let dateRegex = /(\d{2} .{3} \d{4})/
                     let date = item.getElementsByTagName('pubDate')[0].innerText.match(dateRegex)[0]
@@ -40,7 +39,9 @@ function fillWith(containerId, numberOfPosts) {
                             year: dateParts[2]
                         }
                     }
-                })                            
+                })
+                .sort((a, b) => parseInt(`${b.year}${b.month}${b.day}`) - parseInt(`${a.year}${a.month}${a.day}`))
+                .slice(0, numberOfPosts)
 
             let paragraph = document.createElement('p')
             let spans = items.map(item => {
