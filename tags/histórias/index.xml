@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>histórias on Blog Dyego Maas</title>
+    <link>https://blog.dyegomaas.com.br/tags/hist%C3%B3rias/</link>
+    <description>Recent content in histórias on Blog Dyego Maas</description>   
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Thu, 03 Feb 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.dyegomaas.com.br/tags/hist%C3%B3rias/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Que História é Essa?</title>
+      <link>https://blog.dyegomaas.com.br/podcasts/que-historia-e-essa/</link>
+      <pubDate>Thu, 03 Feb 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/podcasts/que-historia-e-essa/</guid>
+      <description>&amp;#34;Que História é Essa?&amp;#34; é um podcast que co-criei com meus colegas do Conte Histórias, um projeto literário do qual faço parte desde 2016.
+    </description>
+
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
+    </item>
+    
+  </channel>
+</rss>
