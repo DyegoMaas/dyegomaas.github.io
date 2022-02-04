@@ -40,7 +40,8 @@ function fillWith(containerId, numberOfPosts) {
                         }
                     }
                 })
-                .sort((a, b) => parseInt(`${b.year}${b.month}${b.day}`) - parseInt(`${a.year}${a.month}${a.day}`))
+                .filter(item => item.url.includes('/posts'))
+                .sort((a, b) => parseInt(`${b.date.year}${b.date.month}${b.date.day}`) - parseInt(`${a.date.year}${a.date.month}${a.date.day}`))
                 .slice(0, numberOfPosts)
 
             let paragraph = document.createElement('p')
