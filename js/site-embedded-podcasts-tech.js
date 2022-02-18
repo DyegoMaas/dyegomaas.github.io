@@ -13,11 +13,10 @@ function createIframeElement(episodeId) {
 function fillWith(containerId, episodeIds) {
     episodeIds
         .reverse()
-        .forEach((episodeId, index) => {
+        .forEach(episodeId => {
             let container = document.getElementById(containerId)
             let iframe = createIframeElement(episodeId)
-            // let paragraph = document.createElement('p')
-            // paragraph.appendChild(iframe)
+            iframe.setAttribute('style', 'margin-bottom:15px')
             container.appendChild(iframe)
         });
 }
