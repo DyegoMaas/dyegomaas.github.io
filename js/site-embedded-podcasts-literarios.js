@@ -1,6 +1,6 @@
 function createIframeElement(episodeId) {
     let iframe = document.createElement('iframe')
-    iframe.setAttribute('style', 'border-radius:12px')
+    iframe.setAttribute('style', 'border-radius:12px; margin-bottom:15px')
     iframe.setAttribute('width', '100%')
     iframe.setAttribute('height', '232')
     iframe.setAttribute('frameBorder', '0')
@@ -11,12 +11,11 @@ function createIframeElement(episodeId) {
 }
 
 function fillWith(containerId, episodeIds) {
+    let container = document.getElementById(containerId)
     episodeIds
         .reverse()
         .forEach(episodeId => {
-            let container = document.getElementById(containerId)
             let iframe = createIframeElement(episodeId)
-            iframe.setAttribute('style', 'margin-bottom:15px')
             container.appendChild(iframe)
         });
 }
