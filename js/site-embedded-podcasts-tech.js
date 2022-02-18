@@ -16,9 +16,9 @@ function fillWith(containerId, episodeIds) {
         .forEach((episodeId, index) => {
             let container = document.getElementById(containerId)
             let iframe = createIframeElement(episodeId)
-            let paragraph = document.createElement('p')
-            paragraph.appendChild(iframe)
-            container.appendChild(paragraph)
+            // let paragraph = document.createElement('p')
+            // paragraph.appendChild(iframe)
+            container.appendChild(iframe)
         });
 }
 
