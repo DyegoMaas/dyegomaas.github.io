@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Talks on Blog Dyego Maas</title>
+    <link>https://blog.dyegomaas.com.br/categories/talks/</link>
+    <description>Recent content in Talks on Blog Dyego Maas</description>   
+    <generator>Hugo -- gohugo.io</generator>
+    <language>pt-BR</language>
+    <lastBuildDate>Sun, 29 May 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.dyegomaas.com.br/categories/talks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Palestras</title>
+      <link>https://blog.dyegomaas.com.br/talks/talks/</link>
+      <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/talks/talks/</guid>
+      <description>Tech&amp;amp;Cheers - 25/05/2022 - Testes de Mutação - Dyego Maas
+ Palestra sobre como Testes de Mutação podem nos ajudar a construir suítes de testes mais eficazes e mais capazes de identificar problemas.
+  </description>
+
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
+    </item>
+    
+  </channel>
+</rss>

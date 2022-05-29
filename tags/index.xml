@@ -7,10 +7,55 @@
     <description>Recent content in Tags on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Thu, 03 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 29 May 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>palestras</title>
+      <link>https://blog.dyegomaas.com.br/tags/palestras/</link>
+      <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/palestras/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
+    </item>
+    
+    <item>
+      <title>qualidade</title>
+      <link>https://blog.dyegomaas.com.br/tags/qualidade/</link>
+      <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/qualidade/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
+    </item>
+    
+    <item>
+      <title>tecnologia</title>
+      <link>https://blog.dyegomaas.com.br/tags/tecnologia/</link>
+      <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/tecnologia/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
+    </item>
     
     <item>
       <title>cinema</title>
@@ -93,21 +138,6 @@
       <pubDate>Thu, 03 Feb 2022 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/mutation-testing/</guid>
-      <description></description>
-
-      
-      
-      
-      
-      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
-    </item>
-    
-    <item>
-      <title>tecnologia</title>
-      <link>https://blog.dyegomaas.com.br/tags/tecnologia/</link>
-      <pubDate>Thu, 03 Feb 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.dyegomaas.com.br/tags/tecnologia/</guid>
       <description></description>
 
       

@@ -7,7 +7,7 @@
     <description>Recent content on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Thu, 03 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 29 May 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/index.xml" rel="self" type="application/rss+xml" />
     
@@ -66,6 +66,23 @@
  Semanal
  15-20 minutos
  Continuous Delivery é um dos melhores canais no YouTube quando o assunto abrange Integração Contínua, Entrega Contínua, TDD e BDD. O canal é mantido pelo Dave Farley, um dos autores do livro de 2010 que inpulsionou a adoção da abordagem da entrega contínua no mundo, Entrega Contínua.</description>
+
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
+    </item>
+    
+    <item>
+      <title>Palestras</title>
+      <link>https://blog.dyegomaas.com.br/talks/talks/</link>
+      <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/talks/talks/</guid>
+      <description>Tech&amp;amp;Cheers - 25/05/2022 - Testes de Mutação - Dyego Maas
+ Palestra sobre como Testes de Mutação podem nos ajudar a construir suítes de testes mais eficazes e mais capazes de identificar problemas.
+  </description>
 
       
       
@@ -636,7 +653,7 @@ Mas nem por isso ele precisa ser muito restrito em funcionalidades. Não é a fa
       <guid>https://blog.dyegomaas.com.br/posts/artigo-como-visualizar-desenvolvimento-com-gource/</guid>
       <description>O Gource é uma ferramenta open-source que permite visualizar o desenvolvimento de projetos de software com base num sistema de controle de versão como Git, Mercurial, Bazaar and SVN.
 Por exemplo, esta é uma visualização de quase 2 horas de toda a história de desenvolvimento do kernel do Linux de 1991 a 2015:
-  Esse tipo de visualização pode ter várias utilidades. Para um projeto open-source, pode servir como reconhecimento ao trabalho de uma comunidade engajada.</description>
+Esse tipo de visualização pode ter várias utilidades. Para um projeto open-source, pode servir como reconhecimento ao trabalho de uma comunidade engajada.</description>
 
       
       

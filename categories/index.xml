@@ -7,10 +7,25 @@
     <description>Recent content in Categories on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Thu, 03 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 29 May 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Talks</title>
+      <link>https://blog.dyegomaas.com.br/categories/talks/</link>
+      <pubDate>Sun, 29 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/categories/talks/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
+    </item>
     
     <item>
       <title>Podcasts</title>

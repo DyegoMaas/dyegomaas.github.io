@@ -42,7 +42,7 @@
       <guid>https://blog.dyegomaas.com.br/posts/artigo-como-visualizar-desenvolvimento-com-gource/</guid>
       <description>O Gource é uma ferramenta open-source que permite visualizar o desenvolvimento de projetos de software com base num sistema de controle de versão como Git, Mercurial, Bazaar and SVN.
 Por exemplo, esta é uma visualização de quase 2 horas de toda a história de desenvolvimento do kernel do Linux de 1991 a 2015:
-  Esse tipo de visualização pode ter várias utilidades. Para um projeto open-source, pode servir como reconhecimento ao trabalho de uma comunidade engajada.</description>
+Esse tipo de visualização pode ter várias utilidades. Para um projeto open-source, pode servir como reconhecimento ao trabalho de uma comunidade engajada.</description>
 
       
       
