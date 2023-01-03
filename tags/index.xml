@@ -7,10 +7,70 @@
     <description>Recent content in Tags on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Sat, 28 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Jan 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>docker</title>
+      <link>https://blog.dyegomaas.com.br/tags/docker/</link>
+      <pubDate>Tue, 03 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/docker/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
+    </item>
+    
+    <item>
+      <title>dotnet</title>
+      <link>https://blog.dyegomaas.com.br/tags/dotnet/</link>
+      <pubDate>Tue, 03 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/dotnet/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
+    </item>
+    
+    <item>
+      <title>integration tests</title>
+      <link>https://blog.dyegomaas.com.br/tags/integration-tests/</link>
+      <pubDate>Tue, 03 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/integration-tests/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
+    </item>
+    
+    <item>
+      <title>testcontainers</title>
+      <link>https://blog.dyegomaas.com.br/tags/testcontainers/</link>
+      <pubDate>Tue, 03 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/tags/testcontainers/</guid>
+      <description></description>
+
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
+    </item>
     
     <item>
       <title>palestras</title>
@@ -453,21 +513,6 @@
       <pubDate>Wed, 04 Aug 2021 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/builds-deterministicos/</guid>
-      <description></description>
-
-      
-      
-      
-      
-      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
-    </item>
-    
-    <item>
-      <title>dotnet</title>
-      <link>https://blog.dyegomaas.com.br/tags/dotnet/</link>
-      <pubDate>Wed, 04 Aug 2021 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.dyegomaas.com.br/tags/dotnet/</guid>
       <description></description>
 
       
@@ -1323,21 +1368,6 @@
       <pubDate>Wed, 20 May 2020 00:00:00 +0000</pubDate>
       
       <guid>https://blog.dyegomaas.com.br/tags/healthcheck/</guid>
-      <description></description>
-
-      
-      
-      
-      
-      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
-    </item>
-    
-    <item>
-      <title>docker</title>
-      <link>https://blog.dyegomaas.com.br/tags/docker/</link>
-      <pubDate>Wed, 13 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.dyegomaas.com.br/tags/docker/</guid>
       <description></description>
 
       

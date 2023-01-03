@@ -7,10 +7,37 @@
     <description>Recent content in Posts on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Thu, 03 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Jan 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Testes de integração melhores usando containers Docker e a biblioteca Testcontainers</title>
+      <link>https://blog.dyegomaas.com.br/posts/testes-dotnet-testcontainers/</link>
+      <pubDate>Tue, 03 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/posts/testes-dotnet-testcontainers/</guid>
+      <description>Costuma ser complicado construir uma infra de testes de integração fácil de usar e que simplifique a vida do desenvolvedor no dia a dia, ao mesmo tempo em que promove testes confiáveis e rápidos.
+ A biblioteca testconainers vem para nos ajudar nessa frente. Neste artigo, apresento a biblioteca e mostro algumas formas como pode ser usada para construir uma boa infra de testes de integração para .NET.
+     Vale notar que o projeto Testcontainers abarca várias linguagens e stacks, incluindo Java, DotNet, Python, Go, Node e Ruby.</description>
+
+      
+      
+        
+        
+        
+          
+          
+            
+            
+          
+        
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
+    </item>
     
     <item>
       <title>Code Coverage garante qualidade?</title>
