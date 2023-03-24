@@ -2,14 +2,14 @@
 
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Podcasts on Blog Dyego Maas</title>
-    <link>https://blog.dyegomaas.com.br/categories/podcasts/</link>
-    <description>Recent content in Podcasts on Blog Dyego Maas</description>   
+    <title>Dyego Maas on Blog Dyego Maas</title>
+    <link>https://blog.dyegomaas.com.br/tags/dyego-maas/</link>
+    <description>Recent content in Dyego Maas on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
     <lastBuildDate>Fri, 24 Mar 2023 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://blog.dyegomaas.com.br/categories/podcasts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.dyegomaas.com.br/tags/dyego-maas/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

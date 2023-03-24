@@ -7,10 +7,26 @@
     <description>Recent content in Podcasts on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Thu, 03 Feb 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Mar 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/podcasts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Explorando com Dyego Maas</title>
+      <link>https://blog.dyegomaas.com.br/podcasts/explorando-com-dyego-maas/</link>
+      <pubDate>Fri, 24 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/podcasts/explorando-com-dyego-maas/</guid>
+      <description>Explorando com Dyego Maas é um podcast de entrevistas longas, abordando temas variados, como tecnologia, história, ciência, cultura, arte, esportes, filosofia e muito mais. Dyego é arquiteto de software, escritor e aprendedor entusiasta.
+  </description>
+
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
+    </item>
     
     <item>
       <title>Ambev Tech Talk</title>

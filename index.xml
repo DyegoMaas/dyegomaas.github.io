@@ -7,7 +7,7 @@
     <description>Recent content on Blog Dyego Maas</description>   
     <generator>Hugo -- gohugo.io</generator>
     <language>pt-BR</language>
-    <lastBuildDate>Tue, 03 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 24 Mar 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://blog.dyegomaas.com.br/index.xml" rel="self" type="application/rss+xml" />
     
@@ -84,6 +84,22 @@
  Semanal
  15-20 minutos
  Continuous Delivery é um dos melhores canais no YouTube quando o assunto abrange Integração Contínua, Entrega Contínua, TDD e BDD. O canal é mantido pelo Dave Farley, um dos autores do livro de 2010 que inpulsionou a adoção da abordagem da entrega contínua no mundo, Entrega Contínua.</description>
+
+      
+      
+      
+      
+      <enclosure url="https://blog.dyegomaas.com.br/img/posts/social-media.png" type="image/png" />
+    </item>
+    
+    <item>
+      <title>Explorando com Dyego Maas</title>
+      <link>https://blog.dyegomaas.com.br/podcasts/explorando-com-dyego-maas/</link>
+      <pubDate>Fri, 24 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://blog.dyegomaas.com.br/podcasts/explorando-com-dyego-maas/</guid>
+      <description>Explorando com Dyego Maas é um podcast de entrevistas longas, abordando temas variados, como tecnologia, história, ciência, cultura, arte, esportes, filosofia e muito mais. Dyego é arquiteto de software, escritor e aprendedor entusiasta.
+  </description>
 
       
       

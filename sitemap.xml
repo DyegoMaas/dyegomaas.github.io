@@ -14,20 +14,38 @@
     <loc>https://blog.dyegomaas.com.br/recommendations/youtube/</loc>
     <lastmod>2021-08-22T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://blog.dyegomaas.com.br/podcasts/explorando-com-dyego-maas/</loc>
+    <lastmod>2023-03-24T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://blog.dyegomaas.com.br/talks/talks/</loc>
     <lastmod>2022-05-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/podcasts/ambev-tech-talk/</loc>
-    <lastmod>2022-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/podcasts/que-historia-e-essa/</loc>
-    <lastmod>2022-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/</loc>
-    <lastmod>2023-01-03T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/categories/</loc>
-    <lastmod>2023-01-03T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.dyegomaas.com.br/tags/dyego-maas/</loc>
+    <lastmod>2023-03-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.dyegomaas.com.br/categories/podcasts/</loc>
+    <lastmod>2023-03-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.dyegomaas.com.br/podcasts/</loc>
+    <lastmod>2023-03-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.dyegomaas.com.br/tags/</loc>
+    <lastmod>2023-03-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://blog.dyegomaas.com.br/tags/tecnologia/</loc>
+    <lastmod>2023-03-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/docker/</loc>
     <lastmod>2023-01-03T00:00:00+00:00</lastmod>
@@ -39,9 +57,6 @@
     <lastmod>2023-01-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/posts/</loc>
-    <lastmod>2023-01-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.dyegomaas.com.br/tags/</loc>
     <lastmod>2023-01-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/testcontainers/</loc>
@@ -65,11 +80,8 @@
     <loc>https://blog.dyegomaas.com.br/talks/</loc>
     <lastmod>2022-05-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.dyegomaas.com.br/tags/tecnologia/</loc>
-    <lastmod>2022-05-28T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/cinema/</loc>
-    <lastmod>2022-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/cobertura-de-codigo/</loc>
     <lastmod>2022-02-03T00:00:00+00:00</lastmod>
@@ -81,18 +93,12 @@
     <lastmod>2022-02-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/hist%C3%B3rias/</loc>
-    <lastmod>2022-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/literatura/</loc>
-    <lastmod>2022-02-03T00:00:00+00:00</lastmod>
+    <lastmod>2023-03-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/mutation-testing/</loc>
-    <lastmod>2022-02-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.dyegomaas.com.br/categories/podcasts/</loc>
-    <lastmod>2022-02-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.dyegomaas.com.br/podcasts/</loc>
     <lastmod>2022-02-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://blog.dyegomaas.com.br/tags/unit-testing/</loc>
