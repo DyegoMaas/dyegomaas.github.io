@@ -20,8 +20,10 @@ function fillWith(containerId, episodeIds) {
         });
 }
 
+// do mais recente para o mais antigo
 fillWith('podcasts-tech', [
     '6WmjaeH6WWM26dyuvvZXsd',
     '1DQejs2AVZ7cRdpkkZpH9u',
-    '4G5Be1tIc85LzUkiDCtzWh'
+    '4G5Be1tIc85LzUkiDCtzWh',
+    '6pha0C7qjet9hcKPimrPoo'
 ])
