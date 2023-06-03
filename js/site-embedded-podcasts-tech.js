@@ -22,7 +22,9 @@ function fillWith(containerId, episodeIds) {
 
 // do mais recente para o mais antigo
 fillWith('podcasts-tech', [
+    '6NEBrU8wt8vSvr5wplHPTA',
     '6WmjaeH6WWM26dyuvvZXsd',
+    '3OksX4kOZZ4ZMKsyudilOJ',
     '1DQejs2AVZ7cRdpkkZpH9u',
     '4G5Be1tIc85LzUkiDCtzWh',
     '6pha0C7qjet9hcKPimrPoo'
