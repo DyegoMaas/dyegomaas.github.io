@@ -20,8 +20,9 @@ function fillWith(containerId, episodeIds) {
         });
 }
 
-// do mais recente para o mais antigo
+// Spotify do mais recente para o mais antigo
 fillWith('podcasts-tech', [
+    '3Lba03caplERe1qCtpqwEl',
     '6NEBrU8wt8vSvr5wplHPTA',
     '6WmjaeH6WWM26dyuvvZXsd',
     '3OksX4kOZZ4ZMKsyudilOJ',
