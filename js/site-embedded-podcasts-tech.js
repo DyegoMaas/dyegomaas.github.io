@@ -22,6 +22,8 @@ function fillWith(containerId, episodeIds) {
 
 // Spotify do mais recente para o mais antigo
 fillWith('podcasts-tech', [
+    '1QXfUaD9ZK3QrGFklPzPzg',
+    '30JLKYM3mirSWynPeP7tsw',
     '3Lba03caplERe1qCtpqwEl',
     '6NEBrU8wt8vSvr5wplHPTA',
     '6WmjaeH6WWM26dyuvvZXsd',
