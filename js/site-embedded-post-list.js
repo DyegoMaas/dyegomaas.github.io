@@ -48,7 +48,7 @@ function fillWith(containerId, numberOfPosts) {
             let spans = items.map(item => {
                 let span = document.createElement('span')
                 span.classList.add('li')
-                span.setAttribute('style', 'color: white; font-family: Source Sans Pro, sans-serif; font-weight: 200')
+                span.setAttribute('style', 'display: block; margin-bottom: 10px; color: white; font-family: Source Sans Pro, sans-serif; font-weight: 200')
 
                 let anchor = document.createElement('a')
                 span.appendChild(anchor)
@@ -62,6 +62,9 @@ function fillWith(containerId, numberOfPosts) {
             })
             spans.forEach(span => {
                 paragraph.appendChild(span)
+
+                let linebreak = document.createElement('br')
+                paragraph.appendChild(linebreak)
             });
 
             let container = document.getElementById(containerId)

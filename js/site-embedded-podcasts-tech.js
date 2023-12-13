@@ -20,19 +20,18 @@ function fillWith(containerId, episodeIds) {
         });
 }
 
-// Spotify do mais recente para o mais antigo
+// Spotify do antigo para o recente para o mais antigo
 fillWith('podcasts-tech', [
-    '0ZttCLe89bGlqdQviChDK2',
-    '35xwvZCq9WF8gT4mK9VJZw', 
-    '1TGpt5Q2ZKUr488xIGuDH1',    
-    '1QXfUaD9ZK3QrGFklPzPzg',
-    '3Lba03caplERe1qCtpqwEl',
-    '6NEBrU8wt8vSvr5wplHPTA',
-    '6pha0C7qjet9hcKPimrPoo',
-    '3OksX4kOZZ4ZMKsyudilOJ',
-    '4G5Be1tIc85LzUkiDCtzWh',
-    '30JLKYM3mirSWynPeP7tsw',
-    '6WmjaeH6WWM26dyuvvZXsd',
     '1DQejs2AVZ7cRdpkkZpH9u',
+    '6WmjaeH6WWM26dyuvvZXsd',
     '30JLKYM3mirSWynPeP7tsw',
+    '4G5Be1tIc85LzUkiDCtzWh',
+    '3OksX4kOZZ4ZMKsyudilOJ',
+    '6pha0C7qjet9hcKPimrPoo',
+    '6NEBrU8wt8vSvr5wplHPTA',
+    '3Lba03caplERe1qCtpqwEl',
+    '1QXfUaD9ZK3QrGFklPzPzg',
+    '1TGpt5Q2ZKUr488xIGuDH1',
+    '35xwvZCq9WF8gT4mK9VJZw',
+    '0ZttCLe89bGlqdQviChDK2'
 ])
