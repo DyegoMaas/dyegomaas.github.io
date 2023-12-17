@@ -20,7 +20,7 @@ function fillWith(containerId, episodeIds) {
         });
 }
 
-// Spotify do antigo para o recente para o mais antigo
+// Spotify do antigo para o recente
 fillWith('podcasts-tech', [
     '1DQejs2AVZ7cRdpkkZpH9u',
     '6WmjaeH6WWM26dyuvvZXsd',
@@ -33,5 +33,6 @@ fillWith('podcasts-tech', [
     '1QXfUaD9ZK3QrGFklPzPzg',
     '1TGpt5Q2ZKUr488xIGuDH1',
     '35xwvZCq9WF8gT4mK9VJZw',
-    '0ZttCLe89bGlqdQviChDK2'
+    '0ZttCLe89bGlqdQviChDK2',
+    '5OSTrKOsDjfc8JlqIq6AZy'
 ])
