@@ -34,5 +34,7 @@ fillWith('podcasts-tech', [
     '1TGpt5Q2ZKUr488xIGuDH1',
     '35xwvZCq9WF8gT4mK9VJZw',
     '0ZttCLe89bGlqdQviChDK2',
-    '5OSTrKOsDjfc8JlqIq6AZy'
+    '5OSTrKOsDjfc8JlqIq6AZy',
+    '2qQWdSFCN8lI7HXGJrzMA6',
+    '7dxfC34J2EzOJut4XLCXZQ'
 ])
